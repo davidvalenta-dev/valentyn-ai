@@ -59,6 +59,14 @@ On the fresh frozen 128-problem suite, learned beam-4 search solved 91 and a mat
 
 [Architecture](ARCHITECTURE.md) · [Experiments](EXPERIMENTS.md) · [Benchmark protocol](BENCHMARKS.md) · [Frontier source audit](FRONTIER_CODE_REVIEW.md) · [Findings](DISCOVERIES.md) · [Roadmap](ROADMAP.md) · [Research log](RESEARCH_LOG.md)
 
+## Arithmetic and algebra curriculum
+
+Valentyn now has a separate, deliberately small arithmetic track for natural-number expressions and equality. It parses addition, multiplication, subtraction, variables, and parentheses, evaluates expressions, and sends every identity through Lean. The initial curriculum covers closed calculations and definitionally equal identities such as `n + 0 = n`; all 7 examples currently verify. This is a foundation for algebraic proof search, not a claim of general algebra ability.
+
+```sh
+valentyn arithmetic
+```
+
 ## What executes
 
 1. A parser constructs a bounded formula tree.

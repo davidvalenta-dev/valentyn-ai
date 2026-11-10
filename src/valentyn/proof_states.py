@@ -14,6 +14,12 @@ ACTIONS = (*RULES, *(f"exact:{i}" for i in range(32)),
            *(f"apply:{i}" for i in range(32)), *(f"cases:{i}" for i in range(32)))
 
 
+def action_label(action: int) -> str:
+    if not 0 <= action < len(ACTIONS) + 32:
+        raise ValueError("Invalid inference action")
+    return ACTIONS[action] if action < len(ACTIONS) else f"derive:{action-len(ACTIONS)}"
+
+
 @dataclass(frozen=True)
 class Term:
     head: str
@@ -100,7 +106,7 @@ def premises(function: Formula, goal: Formula) -> list[Formula] | None:
     return None
 
 
-def available(goal: Formula, context) -> list[int]:
+def available(goal: Formula, context, *, forward_actions=False) -> list[int]:
     context = saturate(context)
     choices = []
     if goal.op == "imp":
@@ -118,6 +124,17 @@ def available(goal: Formula, context) -> list[int]:
             choices.append(ACTIONS.index(f"apply:{index}"))
         if formula.op == "or":
             choices.append(ACTIONS.index(f"cases:{index}"))
+    if forward_actions:
+        known = {f for f, _ in context}
+        for index, (formula, term) in enumerate(context):
+            if formula.op == "imp" and formula.args[0] in known and formula.args[1] not in known:
+                premise = next(t for f, t in context if f == formula.args[0])
+                evidence = Term("call", (term, premise))
+                try:
+                    saturate((*context, (formula.args[1], evidence)))
+                except ValueError:
+                    continue
+                choices.append(len(ACTIONS) + index)
     # True has a dedicated trivial proof, represented as an exact fact in context.
     return choices
 

@@ -26,6 +26,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--checkpoints", type=Path, nargs="+", required=True)
+    parser.add_argument("--exclude", type=Path, nargs="*", default=[], help="Also exclude previously examined suites")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--count", type=int, default=128)
     parser.add_argument("--seed", type=int, default=20261110)
@@ -41,8 +42,13 @@ def main():
             raise SystemExit("Invalid model checkpoint")
         frozen[str(path)] = checksum
     seen = {canonical(parse(row["formula"])) for split in ("train", "validation", "test") for row in base[split]}
+    excluded = {}
+    for path in args.exclude:
+        previous = load_dataset(path)
+        excluded[str(path)] = previous["digest"]
+        seen.update(canonical(parse(row["formula"])) for split in ("train", "validation", "test") for row in previous[split])
     data = {**base, "test": [], "fresh_test_protocol": {
-        "seed": args.seed, "frozen_checkpoints": frozen,
+        "seed": args.seed, "frozen_checkpoints": frozen, "excluded_datasets": excluded,
         "base_dataset_digest": base["digest"],
         "purpose": "New structural samples after architecture development. Same synthetic problem domain; not open mathematics."}}
     rng = random.Random(args.seed)

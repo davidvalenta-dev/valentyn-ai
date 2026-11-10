@@ -26,7 +26,7 @@ def training_arguments(path: Path):
     for key in ("epochs", "batch_size", "width", "seed"):
         if type(args[key]) is not int:
             raise ValueError(f"Configuration field {key} must be an integer")
-    if args["kind"] not in ("transformer", "gru", "state", "mha", "gqa", "mla", "hybrid"):
+    if args["kind"] not in ("transformer", "gru", "state", "relational", "relational-cost", "mha", "gqa", "mla", "hybrid"):
         raise ValueError("Unsupported training architecture")
     if args["device"] not in ("cpu", "mps", "auto"):
         raise ValueError("Unsupported training device")

@@ -1,0 +1,19 @@
+{
+  "kind": "forward_action_frozen_summary",
+  "suite": "fresh-transfer-v2",
+  "tasks": 192,
+  "excluded_suites": ["fresh-transfer", "fresh-transfer-v2-base"],
+  "learned_seeds": {
+    "greedy": {"7": 174, "11": 188, "23": 166},
+    "beam4": {"7": 188, "11": 190, "23": 188}
+  },
+  "selected_seed": 11,
+  "bounded_controls": {
+    "old_symbolic_200_nodes": 149,
+    "previous_learned_beam4": 148,
+    "structural_heuristic_beam4": 137,
+    "closed_first_random_best_beam4": 143,
+    "symbolic_5000_nodes": 192
+  },
+  "claim_boundary": "The learned policy beats the bounded and previous learned controls, but not the larger symbolic search. All results are Lean-verified elementary propositional proofs, not new mathematics."
+}

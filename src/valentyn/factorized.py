@@ -19,7 +19,7 @@ from torch.nn import functional as F
 from .logic import Formula, parse
 from .neural import IDS, VOCAB, memory_measurement, select_device, tokens
 from .proof_data import ascii_formula
-from .proof_states import ACTIONS, Term, available, extract_steps, premises, with_truth
+from .proof_states import ACTIONS, Term, action_label, available, extract_steps, premises, with_truth
 
 
 def state_tokens(goal: Formula, context, max_length: int = 512) -> list[int]:
@@ -74,6 +74,9 @@ def save_policy(model, path: Path, metadata):
 
 def load_policy(path: Path, device):
     manifest = json.loads((path / "model.json").read_text())
+    if manifest.get("architecture") == "relational-action-policy":
+        from .relational import load
+        return load(path, device)
     if manifest["schema"] != 1 or manifest["actions"] != list(ACTIONS) or manifest["vocabulary"] != list(VOCAB):
         raise ValueError("Incompatible factorized policy")
     weights = path / "weights.pt"
@@ -170,7 +173,7 @@ class Goal:
 
 def expand(goal: Goal, action: int, serial: int):
     target, context = goal.formula, with_truth(goal.context)
-    label = ACTIONS[action]
+    label = action_label(action)
     children = []
 
     def hole(formula, facts=context):
@@ -194,7 +197,11 @@ def expand(goal: Goal, action: int, serial: int):
     else:
         operation, index = label.split(":")
         formula, term = context[int(index)]
-        if operation == "exact":
+        if operation == "derive":
+            premise = next(t for f, t in context if f == formula.args[0])
+            evidence = Term("call", (term, premise))
+            expression = hole(target, (*context, (formula.args[1], evidence)))
+        elif operation == "exact":
             expression = term.lean()
         elif operation == "apply":
             needed = premises(formula, target)
@@ -210,7 +217,7 @@ def expand(goal: Goal, action: int, serial: int):
 
 
 @torch.inference_mode()
-def generate_proof(model, formula: str, *, max_nodes=200, beam=4, timeout=10.0, random_seed=None):
+def generate_proof(model, formula: str, *, max_nodes=200, beam=4, timeout=10.0, random_seed=None, prefer_closing=False):
     if not 1 <= max_nodes <= 10000 or not 1 <= beam <= 16 or not 0 < timeout <= 300:
         raise ValueError("Invalid factorized search budget")
     device = next(model.parameters()).device
@@ -236,22 +243,30 @@ def generate_proof(model, formula: str, *, max_nodes=200, beam=4, timeout=10.0, 
         key = (current.formula, frozenset(f for f, _ in context))
         if key in current.ancestry:
             continue
-        choices = available(current.formula, context)
+        choices = available(current.formula, context, forward_actions=getattr(model, "forward_actions", False))
         if not choices:
             continue
         nodes += 1
-        try:
-            sequence = state_tokens(current.formula, context)
-        except ValueError:
-            continue
         if random_seed is None:
-            ids, lengths, _ = state_batch([(sequence, 0)], device)
-            logits = model(ids, lengths)[0]
+            if hasattr(model, "score_actions"):
+                candidate_logits = model.score_actions(current.formula, context, choices)
+            else:
+                try:
+                    sequence = state_tokens(current.formula, context)
+                except ValueError:
+                    continue
+                ids, lengths, _ = state_batch([(sequence, 0)], device)
+                logits = model(ids, lengths)[0]
+                selected = torch.tensor(choices, device=device)
+                candidate_logits = logits[selected]
             calls += 1
-            selected = torch.tensor(choices, device=device)
-            probabilities = F.log_softmax(logits[selected], dim=0).tolist()
+            probabilities = F.log_softmax(candidate_logits, dim=0).tolist()
             ranked = sorted(zip(choices, probabilities), key=lambda pair: -pair[1])[:beam]
         else:
+            if prefer_closing:
+                closed = [a for a in choices if action_label(a).startswith("exact:")]
+                if closed:
+                    choices = closed
             rng.shuffle(choices)
             # Uniform local policy. Random order breaks ties; the probability is
             # normalized over ALL legal actions, like the learned policy above.
@@ -267,4 +282,4 @@ def generate_proof(model, formula: str, *, max_nodes=200, beam=4, timeout=10.0, 
             heapq.heapify(frontier)
     return {"proofs": proofs, "nodes": nodes, "inference_calls": calls,
             "elapsed_seconds": time.monotonic() - start, "random_policy_seed": random_seed,
-            "symbolic_solver_fallback": False}
+            "symbolic_solver_fallback": False, "prefer_closing": prefer_closing}

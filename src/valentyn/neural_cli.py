@@ -12,10 +12,15 @@ def add_commands(sub) -> None:
     dataset.add_argument("--validation-count", type=int, default=80)
     dataset.add_argument("--test-count", type=int, default=100)
     dataset.add_argument("--seed", type=int, default=41)
+    cost = sub.add_parser("model-cost-data", help="Collect bounded alternative-action labels on fitting data only")
+    cost.add_argument("--data", type=Path, required=True)
+    cost.add_argument("--output", type=Path, required=True)
+    cost.add_argument("--forward-actions", action="store_true", help="Include explicit intermediate forward derivations")
+    cost.add_argument("--seed", type=int, default=17)
     train = sub.add_parser("model-train", help="Train Valentyn's neural proof generator")
     train.add_argument("--data", type=Path, required=True)
     train.add_argument("--output", type=Path, required=True)
-    train.add_argument("--kind", choices=("transformer", "gru", "state", "mha", "gqa", "mla", "hybrid"), default="transformer")
+    train.add_argument("--kind", choices=("transformer", "gru", "state", "relational", "relational-cost", "mha", "gqa", "mla", "hybrid"), default="transformer")
     train.add_argument("--epochs", type=int, default=30)
     train.add_argument("--batch-size", type=int, default=32)
     train.add_argument("--width", type=int, default=96)
@@ -31,6 +36,7 @@ def add_commands(sub) -> None:
     evaluation.add_argument("--retrieval-baseline", action="store_true")
     evaluation.add_argument("--random-policy-seed", type=int,
                             help="Legality-matched random control for a factorized checkpoint")
+    evaluation.add_argument("--control", choices=("ordered", "structural", "relevance", "random-closed"), help="Explicit heuristic control in the same typed environment")
     evaluation.add_argument("--nodes", type=int, default=200, help="Factorized proof construction budget")
     evolution = sub.add_parser("model-evolve", help="Test neural decoding improvements on validation only")
     evolution.add_argument("--data", type=Path, required=True)
@@ -70,8 +76,33 @@ def run(args, project: Path, state: Path) -> int:
     from .neural_evaluation import evaluate_model, model_attempt, retrieval_baseline
     from .verifier import LeanVerifier
     memory = Memory(state / "neural.sqlite3")
+    if args.command == "model-cost-data":
+        from .cost_supervision import collect
+        report = collect(load_dataset(args.data), seed=args.seed, forward_actions=args.forward_actions,
+                         progress=lambda text: print(text, file=sys.stderr, flush=True))
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(report, indent=2) + "\n")
+        print(json.dumps({"output": str(args.output), "train_states": len(report["train"]),
+                          "validation_states": len(report["validation"]), "test_accessed": False}))
+        return 0
     if args.command == "model-train":
-        if args.kind == "state":
+        if args.kind == "relational-cost":
+            from .relational import train_cost
+            if args.initial or args.device == "mps":
+                raise ValueError("Relational cost training currently supports CPU from scratch")
+            if args.data.stat().st_size > 128 * 1024**2:
+                raise ValueError("Cost supervision file exceeds 128 MiB")
+            report = train_cost(json.loads(args.data.read_text()), args.output, epochs=args.epochs,
+                                width=args.width, batch_size=args.batch_size, learning_rate=args.learning_rate,
+                                seed=args.seed, progress=lambda entry: print(json.dumps(entry), file=sys.stderr, flush=True))
+        elif args.kind == "relational":
+            from .relational import train
+            if args.initial or args.device == "mps":
+                raise ValueError("Relational training currently supports CPU from scratch")
+            report = train(load_dataset(args.data), args.output, epochs=args.epochs,
+                           width=args.width, batch_size=args.batch_size, learning_rate=args.learning_rate,
+                           seed=args.seed, progress=lambda entry: print(json.dumps(entry), file=sys.stderr, flush=True))
+        elif args.kind == "state":
             from .factorized import train_policy
             if args.initial:
                 raise ValueError("State policy continuation is not implemented")
@@ -96,13 +127,15 @@ def run(args, project: Path, state: Path) -> int:
     elif args.command == "model-evaluate":
         data = load_dataset(args.data)
         manifest = json.loads((args.checkpoint / "model.json").read_text())
-        if manifest.get("architecture") == "factorized-gru-policy" and not args.retrieval_baseline:
+        if manifest.get("architecture") in ("factorized-gru-policy", "relational-action-policy") and not args.retrieval_baseline:
             from .factorized_evaluation import evaluate
             report = evaluate(project, memory, args.checkpoint, data, split=args.split,
-                              beam=args.beam, nodes=args.nodes, random_seed=args.random_policy_seed,
+                              beam=args.beam, nodes=args.nodes, random_seed=args.random_policy_seed, control=getattr(args, "control", None),
                               device_name=args.device, limit=args.limit,
                               progress=lambda text: print(text, file=sys.stderr, flush=True))
         else:
+            if getattr(args, "control", None):
+                raise ValueError("Typed heuristic controls require a factorized checkpoint")
             if args.random_policy_seed is not None:
                 raise ValueError("Random action control requires a factorized checkpoint")
             report = (retrieval_baseline(project, memory, data, split=args.split)
@@ -113,7 +146,7 @@ def run(args, project: Path, state: Path) -> int:
     else:
         torch.set_num_threads(2)
         manifest = json.loads((args.checkpoint / "model.json").read_text())
-        if manifest.get("architecture") == "factorized-gru-policy":
+        if manifest.get("architecture") in ("factorized-gru-policy", "relational-action-policy"):
             from .factorized import load_policy
             from .factorized_evaluation import attempt
             model, _ = load_policy(args.checkpoint, select_device(args.device))

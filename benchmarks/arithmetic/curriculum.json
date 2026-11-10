@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "kind": "lean-rfl-natural-arithmetic",
+  "identities": [
+    "2 + 3 = 5",
+    "4 * 6 = 24",
+    "(2 + 3) * 4 = 20",
+    "n + 0 = n",
+    "(n + 1) + 2 = n + 3",
+    "(2 * n) + 0 = 2 * n",
+    "(n * 2) + 0 = n * 2"
+  ],
+  "verification": "Each identity is compiled by pinned Lean 4.24 with rfl.",
+  "scope": "Natural-number evaluation and definitional equality only; not general algebra."
+}
