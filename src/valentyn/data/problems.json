@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "description": "Small public development suite, not a novelty or frontier benchmark. Test formulas are excluded from train/validation by canonical atom-renaming structure.",
+  "train": [
+    {"id": "identity", "formula": "p -> p"},
+    {"id": "and_swap", "formula": "(p & q) -> (q & p)"},
+    {"id": "compose", "formula": "(p -> q) -> (q -> r) -> p -> r"},
+    {"id": "or_cases", "formula": "(p -> r) -> (q -> r) -> (p | q) -> r"},
+    {"id": "and_intro", "formula": "p -> q -> (p & q)"},
+    {"id": "or_swap", "formula": "(p | q) -> (q | p)"},
+    {"id": "curry", "formula": "((p & q) -> r) -> p -> q -> r"},
+    {"id": "uncurry", "formula": "(p -> q -> r) -> (p & q) -> r"},
+    {"id": "contradiction", "formula": "p -> !p -> q"},
+    {"id": "false_goal", "formula": "p -> q"},
+    {"id": "true_intro", "formula": "True"},
+    {"id": "and_left", "formula": "(p & q) -> p"}
+  ],
+  "validation": [
+    {"id": "and_assoc", "formula": "((p & q) & r) -> (p & (q & r))"},
+    {"id": "distribute", "formula": "(p & (q | r)) -> ((p & q) | (p & r))"},
+    {"id": "map_or", "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)"},
+    {"id": "double_neg_intro", "formula": "p -> !!p"},
+    {"id": "false_or", "formula": "(p | q) -> p"},
+    {"id": "peirce", "formula": "((p -> q) -> p) -> p"}
+  ],
+  "test": [
+    {"id": "chain_four", "formula": "(p -> q) -> (q -> r) -> (r -> s) -> p -> s"},
+    {"id": "and_reverse_three", "formula": "(p & (q & r)) -> (r & (q & p))"},
+    {"id": "or_assoc", "formula": "((p | q) | r) -> (p | (q | r))"},
+    {"id": "map_pair", "formula": "(p -> r) -> (q -> s) -> (p & q) -> (r & s)"},
+    {"id": "distribute_reverse", "formula": "((p & q) | (p & r)) -> (p & (q | r))"},
+    {"id": "neg_or", "formula": "!(p | q) -> (!p & !q)"},
+    {"id": "neg_or_reverse", "formula": "(!p & !q) -> !(p | q)"},
+    {"id": "modus_tollens", "formula": "(p -> q) -> !q -> !p"},
+    {"id": "higher_order", "formula": "((p -> q) -> r) -> (q -> r)"},
+    {"id": "nested_cases", "formula": "(p -> s) -> (q -> s) -> (r -> s) -> (p | (q | r)) -> s"},
+    {"id": "false_converse", "formula": "(p -> q) -> (q -> p)"},
+    {"id": "false_distribute", "formula": "(p | (q & r)) -> ((p & q) | r)"},
+    {"id": "excluded_middle", "formula": "p | !p"},
+    {"id": "double_neg_elim", "formula": "!!p -> p"}
+  ]
+}

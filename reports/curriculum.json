@@ -1,0 +1,1609 @@
+{
+  "experiment": "curriculum",
+  "seed": 0,
+  "updates_per_arm": 360,
+  "corpus_digest": "874e38c5e104246930e0978f31c809f6294338816baf301fa0be14acd1b78c83",
+  "arms": {
+    "random": {
+      "kind": "benchmark",
+      "split": "validation",
+      "tasks": 6,
+      "corpus_digest": "9191207fbbbe24cd7916483d009479b79a9a8744bb9a3723d8932d268d91a679",
+      "policy_digest": "355bea1b52ced92e9666775fde7092aa9a94f83f8513342258454790ce10eb06",
+      "budget": {
+        "nodes": 1000,
+        "depth": 24,
+        "timeout_seconds": 5
+      },
+      "summary": {
+        "baseline": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 493,
+          "mean_reward": 0.6545416666666667
+        },
+        "fixed_forward": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 516,
+          "mean_reward": 0.6535833333333333
+        },
+        "fixed_split": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 427,
+          "mean_reward": 0.6572916666666666
+        },
+        "learned": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 427,
+          "mean_reward": 0.6572916666666666
+        }
+      },
+      "regressions": [],
+      "results": [
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 8.841598173603415e-05,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.21887316700303927,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 463
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.0001184159773401916,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22200470900861546,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 464
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00011550000635907054,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.37055625003995374,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 465
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00010329100769013166,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2231579580111429,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 466
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h27 => (Or.inl (And.intro (And.left h14) h27))) (fun h28 => (Or.inr (And.intro (And.left h14) h28)))))",
+          "nodes": 139,
+          "elapsed": 0.00019587500719353557,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c4819dccb625074e8c2cbdd1e4e62c3f8fcb907e59a0bf8469fda753ddb3a4a0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2246001249877736,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h27 => ( Or.inl ( And.intro ( And.left h14 ) h27 ) ) ) ( fun h28 => ( Or.inr ( And.intro ( And.left h14 ) h28 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 467
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h27 => (Or.inl (And.intro (And.left h14) h27))) (fun h28 => (Or.inr (And.intro (And.left h14) h28)))))",
+          "nodes": 139,
+          "elapsed": 0.00021216704044491053,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c4819dccb625074e8c2cbdd1e4e62c3f8fcb907e59a0bf8469fda753ddb3a4a0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22319354099454358,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h27 => ( Or.inl ( And.intro ( And.left h14 ) h27 ) ) ) ( fun h28 => ( Or.inr ( And.intro ( And.left h14 ) h28 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 468
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h15 => (Or.inl (And.intro (And.left h14) h15))) (fun h16 => (Or.inr (And.intro (And.left h14) h16)))))",
+          "nodes": 102,
+          "elapsed": 0.0001815840369090438,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3632eb9bddf578fd22c8a8d6975db05dafde6d1405e5ddccd9fb15fa4285f85b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22885270800907165,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h15 => ( Or.inl ( And.intro ( And.left h14 ) h15 ) ) ) ( fun h16 => ( Or.inr ( And.intro ( And.left h14 ) h16 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 469
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h15 => (Or.inl (And.intro (And.left h14) h15))) (fun h16 => (Or.inr (And.intro (And.left h14) h16)))))",
+          "nodes": 102,
+          "elapsed": 0.0001913749729283154,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3632eb9bddf578fd22c8a8d6975db05dafde6d1405e5ddccd9fb15fa4285f85b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22869429195998237,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h15 => ( Or.inl ( And.intro ( And.left h14 ) h15 ) ) ) ( fun h16 => ( Or.inr ( And.intro ( And.left h14 ) h16 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 470
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h23 => (Or.inl (h12 h23))) (fun h24 => (Or.inr (h13 h24)))))))",
+          "nodes": 105,
+          "elapsed": 0.0002252080012112856,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f38ece8114adc80b5451c557785c2d81cf04a141fc99bc4085e57071ad36f459",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22584662499139085,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h23 => ( Or.inl ( h12 h23 ) ) ) ( fun h24 => ( Or.inr ( h13 h24 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 471
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h23 => (Or.inl (h12 h23))) (fun h24 => (Or.inr (h13 h24)))))))",
+          "nodes": 128,
+          "elapsed": 0.00026950001483783126,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f38ece8114adc80b5451c557785c2d81cf04a141fc99bc4085e57071ad36f459",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22577774996170774,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h23 => ( Or.inl ( h12 h23 ) ) ) ( fun h24 => ( Or.inr ( h13 h24 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 472
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h15 => (Or.inl (h12 h15))) (fun h16 => (Or.inr (h13 h16)))))))",
+          "nodes": 76,
+          "elapsed": 0.00021229201229289174,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "df907ad636c75d796bf43a3335bb1b1c88014f0b4a1c34f2ad85e03c8941e3ae",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22730720799881965,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h15 => ( Or.inl ( h12 h15 ) ) ) ( fun h16 => ( Or.inr ( h13 h16 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 473
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h15 => (Or.inl (h12 h15))) (fun h16 => (Or.inr (h13 h16)))))))",
+          "nodes": 76,
+          "elapsed": 0.00021483399905264378,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "df907ad636c75d796bf43a3335bb1b1c88014f0b4a1c34f2ad85e03c8941e3ae",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22617904102662578,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h15 => ( Or.inl ( h12 h15 ) ) ) ( fun h16 => ( Or.inr ( h13 h16 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 474
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 5.120900459587574e-05,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22840725001879036,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 475
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.079202285036445e-05,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22871416702400893,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 476
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.600003689527512e-05,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22790004196576774,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 477
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 7.208395982161164e-05,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2296415840392001,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 478
+        },
+        {
+          "arm": "baseline",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 1.3459008187055588e-05,
+          "strategy": "focused",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 479
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 7.959024515002966e-06,
+          "strategy": "forward",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 480
+        },
+        {
+          "arm": "fixed_split",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 7.62502895668149e-06,
+          "strategy": "split",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 481
+        },
+        {
+          "arm": "learned",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 1.033296575769782e-05,
+          "strategy": "split",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 482
+        },
+        {
+          "arm": "baseline",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00040666700806468725,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 483
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00032125000143423676,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 484
+        },
+        {
+          "arm": "fixed_split",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.0003168329712934792,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 485
+        },
+        {
+          "arm": "learned",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.0003150830161757767,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 486
+        }
+      ],
+      "limitations": [
+        "Small public synthetic suite; no mathematical novelty claim.",
+        "Test is held out from fitting, not from human development.",
+        "Classically valid nonconstructive formulas may remain exhausted.",
+        "Equal search budgets; model fitting and evolution costs reported separately."
+      ]
+    },
+    "easy_to_hard": {
+      "kind": "benchmark",
+      "split": "validation",
+      "tasks": 6,
+      "corpus_digest": "9191207fbbbe24cd7916483d009479b79a9a8744bb9a3723d8932d268d91a679",
+      "policy_digest": "146176ed8792fed271c00c1873717008f9dd36bcb0c9f7620517fffd899e276e",
+      "budget": {
+        "nodes": 1000,
+        "depth": 24,
+        "timeout_seconds": 5
+      },
+      "summary": {
+        "baseline": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 493,
+          "mean_reward": 0.6545416666666667
+        },
+        "fixed_forward": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 516,
+          "mean_reward": 0.6535833333333333
+        },
+        "fixed_split": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 427,
+          "mean_reward": 0.6572916666666666
+        },
+        "learned": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 427,
+          "mean_reward": 0.6572916666666666
+        }
+      },
+      "regressions": [],
+      "results": [
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 8.195801638066769e-05,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2273934169788845,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 487
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00010429200483486056,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2244793749996461,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 488
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00011179200373589993,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22555029101204127,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 489
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00011766701936721802,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28381395898759365,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 490
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h27 => (Or.inl (And.intro (And.left h14) h27))) (fun h28 => (Or.inr (And.intro (And.left h14) h28)))))",
+          "nodes": 139,
+          "elapsed": 0.00021199998445808887,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c4819dccb625074e8c2cbdd1e4e62c3f8fcb907e59a0bf8469fda753ddb3a4a0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2244376249727793,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h27 => ( Or.inl ( And.intro ( And.left h14 ) h27 ) ) ) ( fun h28 => ( Or.inr ( And.intro ( And.left h14 ) h28 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 491
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h27 => (Or.inl (And.intro (And.left h14) h27))) (fun h28 => (Or.inr (And.intro (And.left h14) h28)))))",
+          "nodes": 139,
+          "elapsed": 0.00021645898232236505,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c4819dccb625074e8c2cbdd1e4e62c3f8fcb907e59a0bf8469fda753ddb3a4a0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22450866602594033,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h27 => ( Or.inl ( And.intro ( And.left h14 ) h27 ) ) ) ( fun h28 => ( Or.inr ( And.intro ( And.left h14 ) h28 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 492
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h15 => (Or.inl (And.intro (And.left h14) h15))) (fun h16 => (Or.inr (And.intro (And.left h14) h16)))))",
+          "nodes": 102,
+          "elapsed": 0.00019033299759030342,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3632eb9bddf578fd22c8a8d6975db05dafde6d1405e5ddccd9fb15fa4285f85b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2265555000049062,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h15 => ( Or.inl ( And.intro ( And.left h14 ) h15 ) ) ) ( fun h16 => ( Or.inr ( And.intro ( And.left h14 ) h16 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 493
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h15 => (Or.inl (And.intro (And.left h14) h15))) (fun h16 => (Or.inr (And.intro (And.left h14) h16)))))",
+          "nodes": 102,
+          "elapsed": 0.00018191698472946882,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3632eb9bddf578fd22c8a8d6975db05dafde6d1405e5ddccd9fb15fa4285f85b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22782804199960083,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h15 => ( Or.inl ( And.intro ( And.left h14 ) h15 ) ) ) ( fun h16 => ( Or.inr ( And.intro ( And.left h14 ) h16 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 494
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h23 => (Or.inl (h12 h23))) (fun h24 => (Or.inr (h13 h24)))))))",
+          "nodes": 105,
+          "elapsed": 0.00022425001952797174,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f38ece8114adc80b5451c557785c2d81cf04a141fc99bc4085e57071ad36f459",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22750895901117474,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h23 => ( Or.inl ( h12 h23 ) ) ) ( fun h24 => ( Or.inr ( h13 h24 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 495
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h23 => (Or.inl (h12 h23))) (fun h24 => (Or.inr (h13 h24)))))))",
+          "nodes": 128,
+          "elapsed": 0.00025095901219174266,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f38ece8114adc80b5451c557785c2d81cf04a141fc99bc4085e57071ad36f459",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.21840391599107534,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h23 => ( Or.inl ( h12 h23 ) ) ) ( fun h24 => ( Or.inr ( h13 h24 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 496
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h15 => (Or.inl (h12 h15))) (fun h16 => (Or.inr (h13 h16)))))))",
+          "nodes": 76,
+          "elapsed": 0.00022587500279769301,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "df907ad636c75d796bf43a3335bb1b1c88014f0b4a1c34f2ad85e03c8941e3ae",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2279435420059599,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h15 => ( Or.inl ( h12 h15 ) ) ) ( fun h16 => ( Or.inr ( h13 h16 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 497
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h15 => (Or.inl (h12 h15))) (fun h16 => (Or.inr (h13 h16)))))))",
+          "nodes": 76,
+          "elapsed": 0.00022191699827089906,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "df907ad636c75d796bf43a3335bb1b1c88014f0b4a1c34f2ad85e03c8941e3ae",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2288492500083521,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h15 => ( Or.inl ( h12 h15 ) ) ) ( fun h16 => ( Or.inr ( h13 h16 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 498
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 5.208299262449145e-05,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2275986250024289,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 499
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 7.24170240573585e-05,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22454158397158608,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 500
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.437499541789293e-05,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22757233295124024,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 501
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.620801286771894e-05,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22563600004650652,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 502
+        },
+        {
+          "arm": "baseline",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 1.4749995898455381e-05,
+          "strategy": "focused",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 503
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 7.875030860304832e-06,
+          "strategy": "forward",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 504
+        },
+        {
+          "arm": "fixed_split",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 6.624963134527206e-06,
+          "strategy": "split",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 505
+        },
+        {
+          "arm": "learned",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 6.458023563027382e-06,
+          "strategy": "split",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 506
+        },
+        {
+          "arm": "baseline",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00033412501215934753,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 507
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00038991705514490604,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 508
+        },
+        {
+          "arm": "fixed_split",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00031341699650511146,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 509
+        },
+        {
+          "arm": "learned",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.0003100839676335454,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 510
+        }
+      ],
+      "limitations": [
+        "Small public synthetic suite; no mathematical novelty claim.",
+        "Test is held out from fitting, not from human development.",
+        "Classically valid nonconstructive formulas may remain exhausted.",
+        "Equal search budgets; model fitting and evolution costs reported separately."
+      ]
+    },
+    "hard_to_easy": {
+      "kind": "benchmark",
+      "split": "validation",
+      "tasks": 6,
+      "corpus_digest": "9191207fbbbe24cd7916483d009479b79a9a8744bb9a3723d8932d268d91a679",
+      "policy_digest": "128f2c222984bbe0fdff77ae322e41da3050a408091d712335f108f291201ae1",
+      "budget": {
+        "nodes": 1000,
+        "depth": 24,
+        "timeout_seconds": 5
+      },
+      "summary": {
+        "baseline": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 493,
+          "mean_reward": 0.6545416666666667
+        },
+        "fixed_forward": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 516,
+          "mean_reward": 0.6535833333333333
+        },
+        "fixed_split": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 427,
+          "mean_reward": 0.6572916666666666
+        },
+        "learned": {
+          "verified": 4,
+          "counterexamples": 1,
+          "exhausted": 1,
+          "rejected": 0,
+          "total_nodes": 427,
+          "mean_reward": 0.6572916666666666
+        }
+      },
+      "regressions": [],
+      "results": [
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 7.650000043213367e-05,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22851029195589945,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 511
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00010854197898879647,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22745649999706075,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 512
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.0001076660118997097,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22668537503341213,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 513
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h3 => (And.intro (And.left (And.left h3)) (And.intro (And.right (And.left h3)) (And.right h3))))",
+          "nodes": 35,
+          "elapsed": 0.00011604203609749675,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p & q) & r) -> (p & (q & r))",
+          "task_id": "and_assoc",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7395ce21d9922925ea1479eaf0061ba0e5a3984824c10641b54e52288477c2ce",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22779808298218995,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : (((p \u2227 q) \u2227 r) \u2192 (p \u2227 (q \u2227 r))) :=\n  ( fun h3 => ( And.intro ( And.left ( And.left h3 ) ) ( And.intro ( And.right ( And.left h3 ) ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 514
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h27 => (Or.inl (And.intro (And.left h14) h27))) (fun h28 => (Or.inr (And.intro (And.left h14) h28)))))",
+          "nodes": 139,
+          "elapsed": 0.00021166703663766384,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c4819dccb625074e8c2cbdd1e4e62c3f8fcb907e59a0bf8469fda753ddb3a4a0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28359904198441654,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h27 => ( Or.inl ( And.intro ( And.left h14 ) h27 ) ) ) ( fun h28 => ( Or.inr ( And.intro ( And.left h14 ) h28 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 515
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h27 => (Or.inl (And.intro (And.left h14) h27))) (fun h28 => (Or.inr (And.intro (And.left h14) h28)))))",
+          "nodes": 139,
+          "elapsed": 0.0002187499776482582,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c4819dccb625074e8c2cbdd1e4e62c3f8fcb907e59a0bf8469fda753ddb3a4a0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22277616703649983,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h27 => ( Or.inl ( And.intro ( And.left h14 ) h27 ) ) ) ( fun h28 => ( Or.inr ( And.intro ( And.left h14 ) h28 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 516
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h15 => (Or.inl (And.intro (And.left h14) h15))) (fun h16 => (Or.inr (And.intro (And.left h14) h16)))))",
+          "nodes": 102,
+          "elapsed": 0.00018295901827514172,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3632eb9bddf578fd22c8a8d6975db05dafde6d1405e5ddccd9fb15fa4285f85b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.228166000044439,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h15 => ( Or.inl ( And.intro ( And.left h14 ) h15 ) ) ) ( fun h16 => ( Or.inr ( And.intro ( And.left h14 ) h16 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 517
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h14 => (Or.elim (And.right h14) (fun h15 => (Or.inl (And.intro (And.left h14) h15))) (fun h16 => (Or.inr (And.intro (And.left h14) h16)))))",
+          "nodes": 102,
+          "elapsed": 0.00019362499006092548,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p & (q | r)) -> ((p & q) | (p & r))",
+          "task_id": "distribute",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3632eb9bddf578fd22c8a8d6975db05dafde6d1405e5ddccd9fb15fa4285f85b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2224204579833895,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2227 (q \u2228 r)) \u2192 ((p \u2227 q) \u2228 (p \u2227 r))) :=\n  ( fun h14 => ( Or.elim ( And.right h14 ) ( fun h15 => ( Or.inl ( And.intro ( And.left h14 ) h15 ) ) ) ( fun h16 => ( Or.inr ( And.intro ( And.left h14 ) h16 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 518
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h23 => (Or.inl (h12 h23))) (fun h24 => (Or.inr (h13 h24)))))))",
+          "nodes": 105,
+          "elapsed": 0.00023120903642848134,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f38ece8114adc80b5451c557785c2d81cf04a141fc99bc4085e57071ad36f459",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22789341700263321,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h23 => ( Or.inl ( h12 h23 ) ) ) ( fun h24 => ( Or.inr ( h13 h24 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 519
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h23 => (Or.inl (h12 h23))) (fun h24 => (Or.inr (h13 h24)))))))",
+          "nodes": 128,
+          "elapsed": 0.00026187498588114977,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f38ece8114adc80b5451c557785c2d81cf04a141fc99bc4085e57071ad36f459",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22105441702296957,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h23 => ( Or.inl ( h12 h23 ) ) ) ( fun h24 => ( Or.inr ( h13 h24 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 520
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h15 => (Or.inl (h12 h15))) (fun h16 => (Or.inr (h13 h16)))))))",
+          "nodes": 76,
+          "elapsed": 0.0002145000034943223,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "df907ad636c75d796bf43a3335bb1b1c88014f0b4a1c34f2ad85e03c8941e3ae",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22366641700500622,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h15 => ( Or.inl ( h12 h15 ) ) ) ( fun h16 => ( Or.inr ( h13 h16 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 521
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h12 => (fun h13 => (fun h14 => (Or.elim h14 (fun h15 => (Or.inl (h12 h15))) (fun h16 => (Or.inr (h13 h16)))))))",
+          "nodes": 76,
+          "elapsed": 0.0002173750544898212,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "(p -> r) -> (q -> s) -> (p | q) -> (r | s)",
+          "task_id": "map_or",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "df907ad636c75d796bf43a3335bb1b1c88014f0b4a1c34f2ad85e03c8941e3ae",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22519095899770036,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((p \u2192 r) \u2192 ((q \u2192 s) \u2192 ((p \u2228 q) \u2192 (r \u2228 s)))) :=\n  ( fun h12 => ( fun h13 => ( fun h14 => ( Or.elim h14 ( fun h15 => ( Or.inl ( h12 h15 ) ) ) ( fun h16 => ( Or.inr ( h13 h16 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 522
+        },
+        {
+          "arm": "baseline",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 5.3750001825392246e-05,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2277621669927612,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 523
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.487499922513962e-05,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22539654094725847,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 524
+        },
+        {
+          "arm": "fixed_split",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.437499541789293e-05,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22791104100178927,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 525
+        },
+        {
+          "arm": "learned",
+          "status": "verified",
+          "proof": "(fun h4 => (fun h5 => (h5 h4)))",
+          "nodes": 12,
+          "elapsed": 6.045796908438206e-05,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "p -> !!p",
+          "task_id": "double_neg_intro",
+          "split": "validation",
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "33b4213df36396ec5abf7a060e2c2c84a89f6f0626bad24c5d05055ef9318cb2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2275787919643335,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p : Prop) : (p \u2192 ((p \u2192 False) \u2192 False)) :=\n  ( fun h4 => ( fun h5 => ( h5 h4 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 526
+        },
+        {
+          "arm": "baseline",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 1.4083983842283487e-05,
+          "strategy": "focused",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 527
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 7.1249669417738914e-06,
+          "strategy": "forward",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 528
+        },
+        {
+          "arm": "fixed_split",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 6.165995728224516e-06,
+          "strategy": "split",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 529
+        },
+        {
+          "arm": "learned",
+          "status": "counterexample",
+          "proof": null,
+          "nodes": 0,
+          "elapsed": 5.749985575675964e-06,
+          "strategy": "split",
+          "counterexample": {
+            "p": false,
+            "q": true
+          },
+          "formula": "(p | q) -> p",
+          "task_id": "false_or",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 530
+        },
+        {
+          "arm": "baseline",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00033424998400732875,
+          "strategy": "focused",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 531
+        },
+        {
+          "arm": "fixed_forward",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.0003007500199601054,
+          "strategy": "forward",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 532
+        },
+        {
+          "arm": "fixed_split",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.00030020897975191474,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 533
+        },
+        {
+          "arm": "learned",
+          "status": "exhausted",
+          "proof": null,
+          "nodes": 202,
+          "elapsed": 0.0003041249583475292,
+          "strategy": "split",
+          "counterexample": null,
+          "formula": "((p -> q) -> p) -> p",
+          "task_id": "peirce",
+          "split": "validation",
+          "verification": null,
+          "attempt_id": 534
+        }
+      ],
+      "limitations": [
+        "Small public synthetic suite; no mathematical novelty claim.",
+        "Test is held out from fitting, not from human development.",
+        "Classically valid nonconstructive formulas may remain exhausted.",
+        "Equal search budgets; model fitting and evolution costs reported separately."
+      ]
+    }
+  },
+  "limitation": "Development probe on six validation formulas; no significance or novelty claim.",
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "36b90e560143f2672d915f45242cc7249d5729217f7eb44f9d7123b2a664081d",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}

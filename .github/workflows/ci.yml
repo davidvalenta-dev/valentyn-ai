@@ -1,0 +1,33 @@
+name: Verify Valentyn
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python package
+        run: python -m pip install -e .
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://elan.lean-lang.org/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build, test and audit proofs
+        run: sh scripts/check.sh
+      - name: Recheck recorded proof artifacts
+        run: python scripts/recheck_reports.py
+      - name: Reproduce a small experiment
+        run: |
+          python -m valentyn train --epochs 50
+          python -m valentyn evolve --generations 2
+          python -m valentyn benchmark --policy .valentyn/evolved-policy.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: valentyn-experiment-reports
+          path: .valentyn/*report.json

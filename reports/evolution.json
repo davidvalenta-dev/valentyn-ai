@@ -1,0 +1,254 @@
+{
+  "kind": "evolution",
+  "seed": 0,
+  "generations": 12,
+  "selection_split": "validation",
+  "selection_digest": "9191207fbbbe24cd7916483d009479b79a9a8744bb9a3723d8932d268d91a679",
+  "initial_score": [
+    4,
+    -427
+  ],
+  "final_score": [
+    4,
+    -427
+  ],
+  "promotions": 0,
+  "lineage": [
+    {
+      "generation": 0,
+      "candidate_digest": "a33975a9d3bf05ca172ea5cd1e6c65871932dbf4e9d09d18106acf25206fd79c",
+      "score": [
+        4,
+        -479
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "generation": 1,
+      "candidate_digest": "4f83fe70f2227647de456128fa5a8ea59c7bafcb7294212255038e0432878abf",
+      "score": [
+        4,
+        -427
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "generation": 2,
+      "candidate_digest": "aae343efce6b8f4e9185ea633e4a0ae8f66174d471c57b45f9cb4bed8cf63e33",
+      "score": [
+        4,
+        -516
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "generation": 3,
+      "candidate_digest": "b48e0552c37c5d751a53a45bc2d1496552b6d3439e4cd2819cfda7591fe81548",
+      "score": [
+        4,
+        -427
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ]
+    },
+    {
+      "generation": 4,
+      "candidate_digest": "19c0faa630e3378406b34c7d30080a001227900f325d3193f913a31400a1d0b6",
+      "score": [
+        4,
+        -464
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "generation": 5,
+      "candidate_digest": "353629558fd829c48bc54645261d7495ac0153aa6f96a975a15fa1d9bc80572c",
+      "score": [
+        4,
+        -493
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "generation": 6,
+      "candidate_digest": "5313c7b4253770fc6066656d20e171c2bc7cb8e5ede8f6ed842abc0b27471d56",
+      "score": [
+        4,
+        -516
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "generation": 7,
+      "candidate_digest": "57da7f4be3dc43057b640163caad0fced6c4dd5952b7b84defe4e82cd64b49f7",
+      "score": [
+        4,
+        -427
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ]
+    },
+    {
+      "generation": 8,
+      "candidate_digest": "961bdb047e9253348dd7bbabfb3a13e55226f68091403f71964473eb4f007734",
+      "score": [
+        4,
+        -427
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        91,
+        92,
+        93,
+        94,
+        95,
+        96
+      ]
+    },
+    {
+      "generation": 9,
+      "candidate_digest": "64dcdc0aa51bbdbd3b29b761295d780589c4fc50248605b56db678f9992c5038",
+      "score": [
+        4,
+        -464
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ]
+    },
+    {
+      "generation": 10,
+      "candidate_digest": "6d91b624534a5c1f997cbb7947c308bb84d331df3e85ef32bfa53f2f14bbd4e3",
+      "score": [
+        4,
+        -493
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ]
+    },
+    {
+      "generation": 11,
+      "candidate_digest": "7f86959da72e4506b18cff51f916b643e56a83fe46eb8ab3aded0fdc0557c387",
+      "score": [
+        4,
+        -427
+      ],
+      "promoted": false,
+      "regressions": [],
+      "attempt_ids": [
+        109,
+        110,
+        111,
+        112,
+        113,
+        114
+      ]
+    }
+  ],
+  "policy_digest": "34de609c95a2bc5db10fab8e7559e52b9e4afba3fd8698d95274bec4e9c5528b",
+  "initial_attempt_ids": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "scope": "Numeric strategy-selection policies only. No generated code is executed.",
+  "isolation": "Fresh Python -I process, minimal environment, CPU/file/descriptor limits and wall timeout; not an OS sandbox.",
+  "limitation": "Validation nonregression does not guarantee test or real-world nonregression.",
+  "policy_path": "/Users/davidvalenta/Documents/ChatGPT/Valentyn/.valentyn/release-0.1/evolved-policy.json",
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "36b90e560143f2672d915f45242cc7249d5729217f7eb44f9d7123b2a664081d",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "kind": "train",
+  "seed": 0,
+  "epochs": 100,
+  "tasks": 12,
+  "search_observations": 36,
+  "verified_observations": 33,
+  "budget_nodes_per_attempt": 10000,
+  "corpus_digest": "874e38c5e104246930e0978f31c809f6294338816baf301fa0be14acd1b78c83",
+  "policy_digest": "34de609c95a2bc5db10fab8e7559e52b9e4afba3fd8698d95274bec4e9c5528b",
+  "observations": [
+    [
+      "(p -> q) -> (q -> r) -> p -> r",
+      "split",
+      0.999275
+    ],
+    [
+      "(p -> r) -> (q -> r) -> (p | q) -> r",
+      "split",
+      0.998425
+    ],
+    [
+      "(p | q) -> (q | p)",
+      "split",
+      0.99955
+    ],
+    [
+      "p -> p",
+      "focused",
+      0.99995
+    ],
+    [
+      "(p & q) -> p",
+      "forward",
+      0.999875
+    ],
+    [
+      "(p -> r) -> (q -> r) -> (p | q) -> r",
+      "focused",
+      0.99805
+    ],
+    [
+      "(p -> q -> r) -> (p & q) -> r",
+      "focused",
+      0.99945
+    ],
+    [
+      "((p & q) -> r) -> p -> q -> r",
+      "split",
+      0.998525
+    ],
+    [
+      "True",
+      "forward",
+      0.999975
+    ],
+    [
+      "p -> !p -> q",
+      "split",
+      0.9997
+    ],
+    [
+      "p -> p",
+      "split",
+      0.99995
+    ],
+    [
+      "((p & q) -> r) -> p -> q -> r",
+      "forward",
+      0.998125
+    ],
+    [
+      "(p | q) -> (q | p)",
+      "forward",
+      0.999375
+    ],
+    [
+      "p -> !p -> q",
+      "focused",
+      0.9997
+    ],
+    [
+      "(p & q) -> (q & p)",
+      "split",
+      0.99975
+    ],
+    [
+      "(p & q) -> (q & p)",
+      "forward",
+      0.99975
+    ],
+    [
+      "(p -> r) -> (q -> r) -> (p | q) -> r",
+      "forward",
+      0.997525
+    ],
+    [
+      "p -> q",
+      "split",
+      0.0
+    ],
+    [
+      "p -> q",
+      "forward",
+      0.0
+    ],
+    [
+      "(p | q) -> (q | p)",
+      "focused",
+      0.999375
+    ],
+    [
+      "p -> !p -> q",
+      "forward",
+      0.9997
+    ],
+    [
+      "(p -> q) -> (q -> r) -> p -> r",
+      "forward",
+      0.99895
+    ],
+    [
+      "p -> q -> (p & q)",
+      "split",
+      0.99965
+    ],
+    [
+      "p -> q -> (p & q)",
+      "focused",
+      0.99965
+    ],
+    [
+      "(p & q) -> p",
+      "focused",
+      0.999875
+    ],
+    [
+      "(p & q) -> p",
+      "split",
+      0.999875
+    ],
+    [
+      "(p -> q -> r) -> (p & q) -> r",
+      "split",
+      0.99945
+    ],
+    [
+      "(p -> q -> r) -> (p & q) -> r",
+      "forward",
+      0.999375
+    ],
+    [
+      "p -> q",
+      "focused",
+      0.0
+    ],
+    [
+      "((p & q) -> r) -> p -> q -> r",
+      "focused",
+      0.998525
+    ],
+    [
+      "(p -> q) -> (q -> r) -> p -> r",
+      "focused",
+      0.999275
+    ],
+    [
+      "True",
+      "split",
+      0.999975
+    ],
+    [
+      "p -> q -> (p & q)",
+      "forward",
+      0.99965
+    ],
+    [
+      "p -> p",
+      "forward",
+      0.99995
+    ],
+    [
+      "(p & q) -> (q & p)",
+      "focused",
+      0.99975
+    ],
+    [
+      "True",
+      "focused",
+      0.999975
+    ]
+  ],
+  "note": "Observations include failures with zero reward; epochs reuse these observations.",
+  "policy_path": "/Users/davidvalenta/Documents/ChatGPT/Valentyn/.valentyn/release-0.1/policy.json",
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "36b90e560143f2672d915f45242cc7249d5729217f7eb44f9d7123b2a664081d",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}
