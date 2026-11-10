@@ -31,3 +31,5 @@ jobs:
         with:
           name: valentyn-experiment-reports
           path: .valentyn/*report.json
+          include-hidden-files: true
+          if-no-files-found: error
