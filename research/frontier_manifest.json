@@ -1,0 +1,297 @@
+{
+  "inspected_at": "2026-11-10T20:33:20.829288+00:00",
+  "repositories": [
+    {
+      "requested_repo": "openai/gpt-oss",
+      "files": [
+        {
+          "path": "gpt_oss/torch/model.py",
+          "local": ".valentyn/frontier-sources/openai__gpt-oss/gpt_oss/torch/model.py",
+          "sha256": "319ba3c6e4d827eb3115fe4838942af448376b513c02cea4b6b471bf6c21a346",
+          "lines": 477,
+          "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/torch/model.py"
+        },
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/openai__gpt-oss/README.md",
+          "sha256": "578ad0f82c1d823229f9bf2b52b3f1c55ce82772ac57f634f0ca4eb46a6370aa",
+          "lines": 596,
+          "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/openai__gpt-oss/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "lines": 202,
+          "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/LICENSE"
+        }
+      ],
+      "resolved_repo": "openai/gpt-oss",
+      "default_branch": "main",
+      "pushed_at": "2026-10-29T16:42:13Z",
+      "license": "Apache-2.0",
+      "commit": "277020131d524f06bed5f66b694a92ed7f6e5224"
+    },
+    {
+      "requested_repo": "deepseek-ai/DeepSeek-V3",
+      "files": [
+        {
+          "path": "inference/model.py",
+          "local": ".valentyn/frontier-sources/deepseek-ai__DeepSeek-V3/inference/model.py",
+          "sha256": "fdb7995bc234badbf0011b5af8cf391be94343abc51305428cb9a04452116f02",
+          "lines": 808,
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/inference/model.py"
+        },
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/deepseek-ai__DeepSeek-V3/README.md",
+          "sha256": "1f766f151bb4d501b18c9d1e229ac25682c68c75893d6d3bc9734e2a60125c0e",
+          "lines": 361,
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/README.md"
+        },
+        {
+          "path": "LICENSE-CODE",
+          "local": ".valentyn/frontier-sources/deepseek-ai__DeepSeek-V3/LICENSE-CODE",
+          "sha256": "1c8f573e830ca9b3ebfeb7ace1823146e22b66f99ee223840e7637c9e745e1c7",
+          "lines": 21,
+          "url": "https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/LICENSE-CODE"
+        }
+      ],
+      "resolved_repo": "deepseek-ai/DeepSeek-V3",
+      "default_branch": "main",
+      "pushed_at": "2025-08-28T03:24:37Z",
+      "license": "MIT",
+      "commit": "9b4e9788e4a3a731f7567338ed15d3ec549ce03b"
+    },
+    {
+      "requested_repo": "QwenLM/Qwen3",
+      "files": [
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/QwenLM__Qwen3/README.md",
+          "sha256": "0b2c2bb11806f7a00c8465f2586e2e99f15de28622fd5c9b70b83ae1ab18c75d",
+          "lines": 428,
+          "url": "https://github.com/QwenLM/Qwen3/blob/7a2f61ffc7a20d47efcd2bf97f6f2bf52729042e/README.md"
+        }
+      ],
+      "resolved_repo": "QwenLM/Qwen3",
+      "default_branch": "main",
+      "pushed_at": "2026-01-09T03:05:47Z",
+      "license": null,
+      "commit": "7a2f61ffc7a20d47efcd2bf97f6f2bf52729042e",
+      "license_error": "gh: Not Found (HTTP 404)\n"
+    },
+    {
+      "requested_repo": "QwenLM/Qwen3.8",
+      "files": [
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/QwenLM__Qwen3.8/README.md",
+          "sha256": "a71ec46607f81d6056336fb0a8431a26a1c7d8db6ac568a0c021c36f1ed3c92e",
+          "lines": 239,
+          "url": "https://github.com/QwenLM/Qwen3.8/blob/2ea10dc725823bf7c3e21ce8557cbe15245132ae/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/QwenLM__Qwen3.8/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "lines": 201,
+          "url": "https://github.com/QwenLM/Qwen3.8/blob/2ea10dc725823bf7c3e21ce8557cbe15245132ae/LICENSE"
+        }
+      ],
+      "resolved_repo": "QwenLM/Qwen3.8",
+      "default_branch": "main",
+      "pushed_at": "2026-08-17T05:17:40Z",
+      "license": "Apache-2.0",
+      "commit": "2ea10dc725823bf7c3e21ce8557cbe15245132ae"
+    },
+    {
+      "requested_repo": "huggingface/transformers",
+      "files": [
+        {
+          "path": "src/transformers/models/qwen3/modeling_qwen3.py",
+          "local": ".valentyn/frontier-sources/huggingface__transformers/src/transformers/models/qwen3/modeling_qwen3.py",
+          "sha256": "eba96e3720325b4e8046c93a68a99de2fdf8dba3ab09f32b098c2c53945b7354",
+          "lines": 515,
+          "url": "https://github.com/huggingface/transformers/blob/07cc8e8c1b19160cfba6893ceb3099dc8f09d90c/src/transformers/models/qwen3/modeling_qwen3.py"
+        },
+        {
+          "path": "src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+          "local": ".valentyn/frontier-sources/huggingface__transformers/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+          "sha256": "1a475c45d900e0bfb06b9b245257d7f3234fd247474fcbd3363b03430e504a68",
+          "lines": 1947,
+          "url": "https://github.com/huggingface/transformers/blob/07cc8e8c1b19160cfba6893ceb3099dc8f09d90c/src/transformers/models/qwen3_5/modeling_qwen3_5.py"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/huggingface__transformers/LICENSE",
+          "sha256": "77fd4710def9ec3c0f6225800e0235f15a425abd4a8b03559127fcd782612049",
+          "lines": 203,
+          "url": "https://github.com/huggingface/transformers/blob/07cc8e8c1b19160cfba6893ceb3099dc8f09d90c/LICENSE"
+        },
+        {
+          "path": "src/transformers/models/glm_moe_dsa/modeling_glm_moe_dsa.py",
+          "local": ".valentyn/frontier-sources/huggingface__transformers/src/transformers/models/glm_moe_dsa/modeling_glm_moe_dsa.py",
+          "sha256": "226f5a24b6aa15eca90bcc74e6bf1e2e887687ccfeb0d1ae28da4bf4c216038f",
+          "lines": 806,
+          "url": "https://github.com/huggingface/transformers/blob/07cc8e8c1b19160cfba6893ceb3099dc8f09d90c/src/transformers/models/glm_moe_dsa/modeling_glm_moe_dsa.py"
+        },
+        {
+          "path": "src/transformers/models/kimi_k25/modeling_kimi_k25.py",
+          "local": ".valentyn/frontier-sources/huggingface__transformers/src/transformers/models/kimi_k25/modeling_kimi_k25.py",
+          "sha256": "91aeaa95edb64d3c25bc0accd127c3c31f55f71df97f04e867bb4d9bc60602f4",
+          "lines": 864,
+          "url": "https://github.com/huggingface/transformers/blob/07cc8e8c1b19160cfba6893ceb3099dc8f09d90c/src/transformers/models/kimi_k25/modeling_kimi_k25.py"
+        },
+        {
+          "path": "src/transformers/models/kimi_linear/modeling_kimi_linear.py",
+          "local": ".valentyn/frontier-sources/huggingface__transformers/src/transformers/models/kimi_linear/modeling_kimi_linear.py",
+          "sha256": "fb0258868fb14144c08debeab2e4c2fd6f4ff44fe6c85ef8ecc724897dde2eab",
+          "lines": 1027,
+          "url": "https://github.com/huggingface/transformers/blob/07cc8e8c1b19160cfba6893ceb3099dc8f09d90c/src/transformers/models/kimi_linear/modeling_kimi_linear.py"
+        }
+      ],
+      "resolved_repo": "huggingface/transformers",
+      "default_branch": "main",
+      "pushed_at": "2026-11-10T19:17:06Z",
+      "license": "Apache-2.0",
+      "commit": "07cc8e8c1b19160cfba6893ceb3099dc8f09d90c"
+    },
+    {
+      "requested_repo": "ml-explore/mlx-lm",
+      "files": [
+        {
+          "path": "mlx_lm/models/qwen3_5.py",
+          "local": ".valentyn/frontier-sources/ml-explore__mlx-lm/mlx_lm/models/qwen3_5.py",
+          "sha256": "851449fd9989d6bf4b3c4fed92ddc3be5f1e781eb2246f89c54d7eff2518d9c6",
+          "lines": 584,
+          "url": "https://github.com/ml-explore/mlx-lm/blob/56230fa02b8ff8330daf26dc95c28480423ed5fe/mlx_lm/models/qwen3_5.py"
+        },
+        {
+          "path": "mlx_lm/models/cache.py",
+          "local": ".valentyn/frontier-sources/ml-explore__mlx-lm/mlx_lm/models/cache.py",
+          "sha256": "c96cb169fd5e0ec4584a162dd61dc62ab08ccdca03a9850f8a491ce6809145e6",
+          "lines": 1741,
+          "url": "https://github.com/ml-explore/mlx-lm/blob/56230fa02b8ff8330daf26dc95c28480423ed5fe/mlx_lm/models/cache.py"
+        },
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/ml-explore__mlx-lm/README.md",
+          "sha256": "fc4dc67d70ca364ef8c2f94e84d170072d3c5f4fdfd2aa7a7be7a38a6b3d0008",
+          "lines": 290,
+          "url": "https://github.com/ml-explore/mlx-lm/blob/56230fa02b8ff8330daf26dc95c28480423ed5fe/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/ml-explore__mlx-lm/LICENSE",
+          "sha256": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01",
+          "lines": 21,
+          "url": "https://github.com/ml-explore/mlx-lm/blob/56230fa02b8ff8330daf26dc95c28480423ed5fe/LICENSE"
+        }
+      ],
+      "resolved_repo": "ml-explore/mlx-lm",
+      "default_branch": "main",
+      "pushed_at": "2026-11-06T11:23:26Z",
+      "license": "MIT",
+      "commit": "56230fa02b8ff8330daf26dc95c28480423ed5fe"
+    },
+    {
+      "requested_repo": "zai-org/GLM-5",
+      "files": [
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/zai-org__GLM-5/README.md",
+          "sha256": "78ebb1936e94a4c4412bca2abc1c9cbe599455df12fb1373e75c495cb043651e",
+          "lines": 136,
+          "url": "https://github.com/zai-org/GLM-5/blob/83c03d317378f86f0a012f7c4cd48b6243c7e69b/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/zai-org__GLM-5/LICENSE",
+          "sha256": "086c6e7f5082b4640dfb03a892f32504f24afd247c702c38a3aae8c3474c54f0",
+          "lines": 201,
+          "url": "https://github.com/zai-org/GLM-5/blob/83c03d317378f86f0a012f7c4cd48b6243c7e69b/LICENSE"
+        }
+      ],
+      "resolved_repo": "zai-org/GLM-5",
+      "default_branch": "main",
+      "pushed_at": "2026-10-15T01:36:08Z",
+      "license": "Apache-2.0",
+      "commit": "83c03d317378f86f0a012f7c4cd48b6243c7e69b"
+    },
+    {
+      "requested_repo": "MoonshotAI/Kimi-K2",
+      "files": [
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/MoonshotAI__Kimi-K2/README.md",
+          "sha256": "c03aae84ce013a298699fc5ef9be474a825308fddd2c4571da8cd4b6f89af90b",
+          "lines": 799,
+          "url": "https://github.com/MoonshotAI/Kimi-K2/blob/1b4022bbb7187cf4011a8bdf0b4cd10e2daa26c4/README.md"
+        },
+        {
+          "path": "inference/model.py",
+          "error": "gh: Not Found (HTTP 404)\n"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/MoonshotAI__Kimi-K2/LICENSE",
+          "sha256": "b280da6f496d75e0c5beb79b03520d190fce67dfe12f75cf3aadad8670839d93",
+          "lines": 27,
+          "url": "https://github.com/MoonshotAI/Kimi-K2/blob/1b4022bbb7187cf4011a8bdf0b4cd10e2daa26c4/LICENSE"
+        }
+      ],
+      "resolved_repo": "MoonshotAI/Kimi-K2",
+      "default_branch": "main",
+      "pushed_at": "2026-01-21T05:33:12Z",
+      "license": "NOASSERTION",
+      "commit": "1b4022bbb7187cf4011a8bdf0b4cd10e2daa26c4"
+    },
+    {
+      "requested_repo": "karpathy/nanochat",
+      "files": [
+        {
+          "path": "nanochat/gpt.py",
+          "local": ".valentyn/frontier-sources/karpathy__nanochat/nanochat/gpt.py",
+          "sha256": "8cdedc2e418b9d4dc45884e07f59904fcdec066bb3d76664b2adf2d415f704e3",
+          "lines": 555,
+          "url": "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/gpt.py"
+        },
+        {
+          "path": "nanochat/optim.py",
+          "local": ".valentyn/frontier-sources/karpathy__nanochat/nanochat/optim.py",
+          "sha256": "7c9b714c6f76e3a9d50fc530044b2767d0cd89391237e609548f1cd730afed8f",
+          "lines": 459,
+          "url": "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/optim.py"
+        },
+        {
+          "path": "scripts/base_train.py",
+          "local": ".valentyn/frontier-sources/karpathy__nanochat/scripts/base_train.py",
+          "sha256": "87395b8078491d5088e7e8100866162b494638097215759b46d8ceb5d2f0fdcc",
+          "lines": 604,
+          "url": "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/scripts/base_train.py"
+        },
+        {
+          "path": "README.md",
+          "local": ".valentyn/frontier-sources/karpathy__nanochat/README.md",
+          "sha256": "77b8dfce94f45ed7c29eecdbd52e4e4137a060036b38c250519341ba3270daca",
+          "lines": 230,
+          "url": "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "local": ".valentyn/frontier-sources/karpathy__nanochat/LICENSE",
+          "sha256": "42bb09f339a8af8b90d3b4969b6f6e4ba4aff3b5c614103b031fccdf71c8f772",
+          "lines": 21,
+          "url": "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/LICENSE"
+        }
+      ],
+      "resolved_repo": "karpathy/nanochat",
+      "default_branch": "master",
+      "pushed_at": "2026-09-07T20:06:43Z",
+      "license": "MIT",
+      "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    }
+  ],
+  "newer_deepseek_audit": "gh: Not Found (HTTP 404)\n"
+}

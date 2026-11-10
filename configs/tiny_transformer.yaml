@@ -1,0 +1,11 @@
+{
+  "data": "benchmarks/neural/dataset.json",
+  "output": ".valentyn/training/tiny-gqa",
+  "kind": "gqa",
+  "width": 64,
+  "epochs": 15,
+  "batch_size": 16,
+  "seed": 7,
+  "device": "auto",
+  "report": ".valentyn/training/tiny-gqa-report.json"
+}

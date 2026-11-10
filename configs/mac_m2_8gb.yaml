@@ -1,0 +1,12 @@
+{
+  "data": "benchmarks/neural/dataset.json",
+  "output": ".valentyn/training/state-policy",
+  "kind": "state",
+  "width": 96,
+  "epochs": 15,
+  "batch_size": 32,
+  "learning_rate": 0.002,
+  "seed": 7,
+  "device": "auto",
+  "report": ".valentyn/training/state-policy-report.json"
+}

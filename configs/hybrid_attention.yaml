@@ -1,0 +1,11 @@
+{
+  "data": "benchmarks/neural/dataset.json",
+  "output": ".valentyn/training/hybrid",
+  "kind": "hybrid",
+  "width": 64,
+  "epochs": 12,
+  "batch_size": 16,
+  "seed": 7,
+  "device": "cpu",
+  "report": ".valentyn/training/hybrid-report.json"
+}

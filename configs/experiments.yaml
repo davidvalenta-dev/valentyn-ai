@@ -1,0 +1,11 @@
+{
+  "data": "benchmarks/neural/dataset.json",
+  "output": ".valentyn/training/mha-baseline",
+  "kind": "mha",
+  "width": 64,
+  "epochs": 12,
+  "batch_size": 16,
+  "seed": 7,
+  "device": "cpu",
+  "report": ".valentyn/training/mha-baseline-report.json"
+}

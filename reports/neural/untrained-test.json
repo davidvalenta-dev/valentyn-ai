@@ -1,0 +1,3373 @@
+{
+  "kind": "neural_evaluation",
+  "split": "test",
+  "dataset_digest": "a5f2d032e59715ad2932b605513078f0751f22f382c69d084dd22f186da26002",
+  "weights_sha256": "ecdf2d14dc94ad9a47162efb5697ff918ee1522fe40579a007c26289e84bc30e",
+  "architecture": {
+    "kind": "transformer",
+    "width": 96,
+    "layers": 2,
+    "heads": 4,
+    "context": 256
+  },
+  "parameters": 260800,
+  "device": "cpu",
+  "torch_version": "2.9.1",
+  "tasks": 100,
+  "solved": 0,
+  "beam": 1,
+  "max_generated_tokens": 100,
+  "inference_calls": 4850,
+  "inference_seconds": 4.2773420389858074,
+  "total_evaluation_seconds": 22.41892587498296,
+  "loading_seconds": 0.008663667016662657,
+  "memory": {
+    "peak_process_rss_bytes": 227704832
+  },
+  "slices": {
+    "substitution": {
+      "tasks": 75,
+      "solved": 0
+    },
+    "held_out_family": {
+      "tasks": 25,
+      "solved": 0
+    }
+  },
+  "results": [
+    {
+      "task_id": "test-0",
+      "formula": "((p & (t & p)) -> (p & (t & p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h26 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h2 h2 And.right And.right And.right h2 And.right h2 And.right h2 And.right"
+        ],
+        "inference_calls": 24,
+        "expanded_tokens": 24,
+        "elapsed_seconds": 0.01497358299093321,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-0",
+          "split": "neural-test",
+          "formula": "((p & (t & p)) -> (p & (t & p)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 24,
+          "proof": "h26 h26 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h2 h2 And.right And.right And.right h2 And.right h2 And.right h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "88866e3d0b2f799427308a2b01d51eb4d921bbd494338b5cca56ba1eb500b8c9",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23526924999896437,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-q824ejwm/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((p \u2227 (t \u2227 p)) \u2192 (p \u2227 (t \u2227 p))) :=\n  h26 h26 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h2 h2 And.right And.right And.right h2 And.right h2 And.right h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 84
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-1",
+      "formula": "(s -> ((s -> (q | p)) -> (s & (s -> (q | p)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.0824542089831084,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-2",
+      "formula": "(((p & u) -> u) -> ((u -> t) -> ((p & u) -> t)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h26 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 And.right => h5 h25 h5 h5 h5 h26 h5 h5 h5 h26 h5 h26 h5 h26 h15 h15 h5 h5 h26"
+        ],
+        "inference_calls": 34,
+        "expanded_tokens": 34,
+        "elapsed_seconds": 0.020342874980997294,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-2",
+          "split": "neural-test",
+          "formula": "(((p & u) -> u) -> ((u -> t) -> ((p & u) -> t)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 34,
+          "proof": "h5 h26 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 And.right => h5 h25 h5 h5 h5 h26 h5 h5 h5 h26 h5 h26 h5 h26 h15 h15 h5 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "483835f3f20707367a84cea2acb6acce6967ca9b8f74d73057b6ce673d932aef",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2353809579508379,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-e_99b6w6/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-e_99b6w6/Candidate.lean:5:49: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : (((p \u2227 u) \u2192 u) \u2192 ((u \u2192 t) \u2192 ((p \u2227 u) \u2192 t))) :=\n  h5 h26 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 And.right => h5 h25 h5 h5 h5 h26 h5 h5 h5 h26 h5 h26 h5 h26 h15 h15 h5 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 86
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-3",
+      "formula": "(u -> (((s & q) -> (t -> p)) | u))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 And.right And.right And.right And.right And.right And.right And.right And.right And.right => h2 And.right And.right And.right h13 h2 And.right h6 h13 h2 h2 And.right h13 h13 h15 h13"
+        ],
+        "inference_calls": 41,
+        "expanded_tokens": 41,
+        "elapsed_seconds": 0.024483166984282434,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-3",
+          "split": "neural-test",
+          "formula": "(u -> (((s & q) -> (t -> p)) | u))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 41,
+          "proof": "h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 And.right And.right And.right And.right And.right And.right And.right And.right And.right => h2 And.right And.right And.right h13 h2 And.right h6 h13 h2 h2 And.right h13 h13 h15 h13",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "01e9013318342472e611dcb4cd695d33f46dadf56f3d8e4ce69881c143af6995",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2339544999995269,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-44ohwl6w/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-44ohwl6w/Candidate.lean:5:135: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (u \u2192 (((s \u2227 q) \u2192 (t \u2192 p)) \u2228 u)) :=\n  h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 And.right And.right And.right And.right And.right And.right And.right And.right And.right => h2 And.right And.right And.right h13 h2 And.right h6 h13 h2 h2 And.right h13 h13 h15 h13\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 88
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "inject_right"
+    },
+    {
+      "task_id": "test-4",
+      "formula": "(((t & (t -> q)) | (t | (t & q))) -> ((t | (t & q)) | (t & (t -> q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h5 h2 h2 h5 h2 h2 h5 h2 h26 h5 h29 h3 h30 h26 h15 h7 h15 h15 h5 h15 h5 h26 h15 h7 h15 h5 h26 h3 h25 h15 h7 h15 h7 h15 h7 h15 h15 h15 h7 h15 h7 h15 h3"
+        ],
+        "inference_calls": 45,
+        "expanded_tokens": 45,
+        "elapsed_seconds": 0.03917800000635907,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-4",
+          "split": "neural-test",
+          "formula": "(((t & (t -> q)) | (t | (t & q))) -> ((t | (t & q)) | (t & (t -> q))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 45,
+          "proof": "h29 h5 h2 h2 h5 h2 h2 h5 h2 h26 h5 h29 h3 h30 h26 h15 h7 h15 h15 h5 h15 h5 h26 h15 h7 h15 h5 h26 h3 h25 h15 h7 h15 h7 h15 h7 h15 h15 h15 h7 h15 h7 h15 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "16a2743c42e42027014e985ca85399606dc15827741c438e628e63d944435331",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22960091702407226,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-m4h1qyz5/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((t \u2227 (t \u2192 q)) \u2228 (t \u2228 (t \u2227 q))) \u2192 ((t \u2228 (t \u2227 q)) \u2228 (t \u2227 (t \u2192 q)))) :=\n  h29 h5 h2 h2 h5 h2 h2 h5 h2 h26 h5 h29 h3 h30 h26 h15 h7 h15 h15 h5 h15 h5 h26 h15 h7 h15 h5 h26 h3 h25 h15 h7 h15 h7 h15 h7 h15 h15 h15 h7 h15 h7 h15 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 90
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-5",
+      "formula": "((((q -> q) | s) -> t) -> ((t -> t) -> ((((q -> q) | s) | t) -> t)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h6 h2 h2 h2 h2 h2 And.right h10 h2 h2 h2 h2 And.right h30 h25 => h2 h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 And.right h2 And.right h30 h2 And.right And.right And.right h2 And.right"
+        ],
+        "inference_calls": 59,
+        "expanded_tokens": 59,
+        "elapsed_seconds": 0.04479974997229874,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-5",
+          "split": "neural-test",
+          "formula": "((((q -> q) | s) -> t) -> ((t -> t) -> ((((q -> q) | s) | t) -> t)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 59,
+          "proof": "h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h6 h2 h2 h2 h2 h2 And.right h10 h2 h2 h2 h2 And.right h30 h25 => h2 h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 And.right h2 And.right h30 h2 And.right And.right And.right h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "0fccfa5252988fc673313bf9cee3ba8775dbcde9996446dbf079ef86f5196273",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23325337504502386,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-6_le6p6m/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-6_le6p6m/Candidate.lean:5:97: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((((q \u2192 q) \u2228 s) \u2192 t) \u2192 ((t \u2192 t) \u2192 ((((q \u2192 q) \u2228 s) \u2228 t) \u2192 t))) :=\n  h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h6 h2 h2 h2 h2 h2 And.right h10 h2 h2 h2 h2 And.right h30 h25 => h2 h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 And.right h2 And.right h30 h2 And.right And.right And.right h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 92
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-6",
+      "formula": "((((t | s) & (s & p)) -> t) -> ((t | s) -> ((s & p) -> t)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.10460095800226554,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-7",
+      "formula": "((r -> (((p | p) -> p) -> u)) -> ((r & ((p | p) -> p)) -> u))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h6 h6 h6 h28 h5"
+        ],
+        "inference_calls": 6,
+        "expanded_tokens": 6,
+        "elapsed_seconds": 0.004046917019877583,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-7",
+          "split": "neural-test",
+          "formula": "((r -> (((p | p) -> p) -> u)) -> ((r & ((p | p) -> p)) -> u))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 6,
+          "proof": "h6 h6 h6 h28 h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "ce5879ddd31740528fed3da2942f7a70b2ff14a0f1bcd15f9d015e5a76391b53",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23189462500158697,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kuitkx80/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h6`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : ((r \u2192 (((p \u2228 p) \u2192 p) \u2192 u)) \u2192 ((r \u2227 ((p \u2228 p) \u2192 p)) \u2192 u)) :=\n  h6 h6 h6 h28 h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 93
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-8",
+      "formula": "(((s | (u & p)) & (t | (s & (u | p)))) -> (((s | (u & p)) & t) | ((s | (u & p)) & (s & (u | p)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.12123904202599078,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-9",
+      "formula": "((((t & u) -> q) & q) -> (q & ((t & u) -> q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.09839950001332909,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-10",
+      "formula": "(((r & r) & u) -> (u -> (((r & r) & u) & u)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right => h5 h2 h2 h5 h5 h2 h5 h2 h5 h26 h5 h2 h5 h26 False.elim h5 h26 h5 h26"
+        ],
+        "inference_calls": 34,
+        "expanded_tokens": 34,
+        "elapsed_seconds": 0.02048133296193555,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-10",
+          "split": "neural-test",
+          "formula": "(((r & r) & u) -> (u -> (((r & r) & u) & u)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 34,
+          "proof": "h26 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right => h5 h2 h2 h5 h5 h2 h5 h2 h5 h26 h5 h2 h5 h26 False.elim h5 h26 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "a922825f9eaf138e9595c51adcb66f1200503056892766c1da9973ad6e15a725",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23175758396973833,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8ad4gbg7/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8ad4gbg7/Candidate.lean:5:49: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r u : Prop) : (((r \u2227 r) \u2227 u) \u2192 (u \u2192 (((r \u2227 r) \u2227 u) \u2227 u))) :=\n  h26 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right => h5 h2 h2 h5 h5 h2 h5 h2 h5 h26 h5 h2 h5 h26 False.elim h5 h26 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 96
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-11",
+      "formula": "(((u -> (p & r)) -> q) -> ((q -> t) -> ((u -> (p & r)) -> t)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h5 h25 h2 h2 h5 h2 h5 h2 h2 h5 h2 h2 h2 h2 h2 And.right h5 h2 h2 h2 h2 And.right h17 h2 h2 And.right h2 h2 And.right And.right"
+        ],
+        "inference_calls": 37,
+        "expanded_tokens": 37,
+        "elapsed_seconds": 0.025081625033635646,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-11",
+          "split": "neural-test",
+          "formula": "(((u -> (p & r)) -> q) -> ((q -> t) -> ((u -> (p & r)) -> t)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 37,
+          "proof": "h2 h2 h2 h2 h2 h2 h5 h25 h2 h2 h5 h2 h5 h2 h2 h5 h2 h2 h2 h2 h2 And.right h5 h2 h2 h2 h2 And.right h17 h2 h2 And.right h2 h2 And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "c062cb1e49b5ddc9efbf9984d97550ad64dc25a13b0ca8ff17fdb213f9572c92",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22622233402216807,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-hawbtihd/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : (((u \u2192 (p \u2227 r)) \u2192 q) \u2192 ((q \u2192 t) \u2192 ((u \u2192 (p \u2227 r)) \u2192 t))) :=\n  h2 h2 h2 h2 h2 h2 h5 h25 h2 h2 h5 h2 h5 h2 h2 h5 h2 h2 h2 h2 h2 And.right h5 h2 h2 h2 h2 And.right h17 h2 h2 And.right h2 h2 And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 98
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-12",
+      "formula": "((((u | s) & (u & q)) -> (p & q)) -> (((u | s) & (u & q)) -> (p & q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 False.elim h5 h2 h26 h2 h2 h2 And.right h13 h1 h25 h5 h2 h2 h2 And.right => h5 h2 And.right"
+        ],
+        "inference_calls": 25,
+        "expanded_tokens": 25,
+        "elapsed_seconds": 0.017640459001995623,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-12",
+          "split": "neural-test",
+          "formula": "((((u | s) & (u & q)) -> (p & q)) -> (((u | s) & (u & q)) -> (p & q)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 25,
+          "proof": "h26 h2 h2 h2 False.elim h5 h2 h26 h2 h2 h2 And.right h13 h1 h25 h5 h2 h2 h2 And.right => h5 h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "4a96d207b66dc8ae6573250c17dbb291bf76b318b0f4f92e72e0b7db64db8d31",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22806133300764486,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-yw3sjt4b/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-yw3sjt4b/Candidate.lean:5:88: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : ((((u \u2228 s) \u2227 (u \u2227 q)) \u2192 (p \u2227 q)) \u2192 (((u \u2228 s) \u2227 (u \u2227 q)) \u2192 (p \u2227 q))) :=\n  h26 h2 h2 h2 False.elim h5 h2 h26 h2 h2 h2 And.right h13 h1 h25 h5 h2 h2 h2 And.right => h5 h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 100
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-13",
+      "formula": "((p | (u -> q)) -> ((p | (u -> q)) | (p & p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right And.right h2 And.right"
+        ],
+        "inference_calls": 14,
+        "expanded_tokens": 14,
+        "elapsed_seconds": 0.009489374991972,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-13",
+          "split": "neural-test",
+          "formula": "((p | (u -> q)) -> ((p | (u -> q)) | (p & p)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 14,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right And.right h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "7fe27b1e72b3bfd2e33595155b9296b870841b769335aabf2ef94bf1d589c9a7",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2439100420451723,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vp2wzcjx/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q u : Prop) : ((p \u2228 (u \u2192 q)) \u2192 ((p \u2228 (u \u2192 q)) \u2228 (p \u2227 p))) :=\n  h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right And.right h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 102
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-14",
+      "formula": "((r -> s) -> ((r -> ((s | p) | q)) -> ((r & r) -> (s & ((s | p) | q)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h5 h2 h2 h26 h2 h2 h2 h2 h2 h26 h26 h5 h2 h2 h2 And.right h30 h25 => h5 h2"
+        ],
+        "inference_calls": 26,
+        "expanded_tokens": 26,
+        "elapsed_seconds": 0.01907820801716298,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-14",
+          "split": "neural-test",
+          "formula": "((r -> s) -> ((r -> ((s | p) | q)) -> ((r & r) -> (s & ((s | p) | q)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 26,
+          "proof": "h26 h2 h2 h2 h5 h2 h2 h26 h2 h2 h2 h2 h2 h26 h26 h5 h2 h2 h2 And.right h30 h25 => h5 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "27954b5b8c8a77ff0822b5ba524d1a78dfd8092f4080faa882e61c007286a3c8",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2350559170008637,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-iv224deg/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-iv224deg/Candidate.lean:5:81: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((r \u2192 s) \u2192 ((r \u2192 ((s \u2228 p) \u2228 q)) \u2192 ((r \u2227 r) \u2192 (s \u2227 ((s \u2228 p) \u2228 q))))) :=\n  h26 h2 h2 h2 h5 h2 h2 h26 h2 h2 h2 h2 h2 h26 h26 h5 h2 h2 h2 And.right h30 h25 => h5 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 104
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-15",
+      "formula": "((t & (s | (u | (p | s)))) -> ((t & s) | (t & (u | (p | s)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.11029754200717434,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-16",
+      "formula": "((r & p) -> ((t -> s) -> (r & p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 And.right h2 And.right h2 h2 And.right h2 And.right"
+        ],
+        "inference_calls": 24,
+        "expanded_tokens": 24,
+        "elapsed_seconds": 0.0135859590373002,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-16",
+          "split": "neural-test",
+          "formula": "((r & p) -> ((t -> s) -> (r & p)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 24,
+          "proof": "h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 And.right h2 And.right h2 h2 And.right h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "bfaea6979e5bd32490383a6d74210b34473c9d6be0db44ed72a0623e2ef63664",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2341127079562284,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-j1b81ece/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : ((r \u2227 p) \u2192 ((t \u2192 s) \u2192 (r \u2227 p))) :=\n  h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 And.right h2 And.right h2 h2 And.right h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 106
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "weaken"
+    },
+    {
+      "task_id": "test-17",
+      "formula": "(r -> ((r & s) -> (r & (r & s))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 And.right h2 h2 And.right h2 And.right h2 And.right"
+        ],
+        "inference_calls": 24,
+        "expanded_tokens": 24,
+        "elapsed_seconds": 0.01610954204807058,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-17",
+          "split": "neural-test",
+          "formula": "(r -> ((r & s) -> (r & (r & s))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 24,
+          "proof": "h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 And.right h2 h2 And.right h2 And.right h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "3c4875199cd88f284da5db32bcef0f6cf9eab68d131c5d8d85b69495ffc2683d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23603212501620874,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-9mw44g17/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : (r \u2192 ((r \u2227 s) \u2192 (r \u2227 (r \u2227 s)))) :=\n  h26 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 And.right h2 h2 And.right h2 And.right h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 107
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-18",
+      "formula": "(((s -> (s & q)) -> s) -> ((s -> (s & q)) -> s))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "=> h29 => h2 h2 h2 h29 => h29 False.elim h2 h28 h5 => => => h29 h28 h5 h2 And.right h6 h6 h6 => h29 => h29 False.elim h15 h15 h5 h15 h25 h15 h5 h15 h15 h15 h15 h15 h15 h15 h25 fun => h15 h15 h15 h5 h25 h29 h13 h6 h6 h6 h1 h13 h28 h13 h5 h26 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h3"
+        ],
+        "inference_calls": 80,
+        "expanded_tokens": 80,
+        "elapsed_seconds": 0.060815416974946856,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-18",
+          "split": "neural-test",
+          "formula": "(((s -> (s & q)) -> s) -> ((s -> (s & q)) -> s))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 80,
+          "proof": "=> h29 => h2 h2 h2 h29 => h29 False.elim h2 h28 h5 => => => h29 h28 h5 h2 And.right h6 h6 h6 => h29 => h29 False.elim h15 h15 h5 h15 h25 h15 h5 h15 h15 h15 h15 h15 h15 h15 h25 fun => h15 h15 h15 h5 h25 h29 h13 h6 h6 h6 h1 h13 h28 h13 h5 h26 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "0a2acb14484c7eb6328342286f7ab67472138d4aac1cf0f758f680cf619df35d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23367512499680743,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-0k9bfxhf/Candidate.lean:4:88: error: unexpected token '=>'; expected term\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : (((s \u2192 (s \u2227 q)) \u2192 s) \u2192 ((s \u2192 (s \u2227 q)) \u2192 s)) :=\n  => h29 => h2 h2 h2 h29 => h29 False.elim h2 h28 h5 => => => h29 h28 h5 h2 And.right h6 h6 h6 => h29 => h29 False.elim h15 h15 h5 h15 h25 h15 h5 h15 h15 h15 h15 h15 h15 h15 h25 fun => h15 h15 h15 h5 h25 h29 h13 h6 h6 h6 h1 h13 h28 h13 h5 h26 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h15 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 109
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-19",
+      "formula": "(p -> (p | ((r -> t) -> s)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 Or.inl h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h6"
+        ],
+        "inference_calls": 18,
+        "expanded_tokens": 18,
+        "elapsed_seconds": 0.010579166992101818,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-19",
+          "split": "neural-test",
+          "formula": "(p -> (p | ((r -> t) -> s)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 18,
+          "proof": "h26 Or.inl h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h6",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "5ee3c6f21f203aa090648c18fcd3b9451307d3e32e0f2d0710d7e4ba94bbc4e4",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28418049996253103,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-88pwn2_h/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : (p \u2192 (p \u2228 ((r \u2192 t) \u2192 s))) :=\n  h26 Or.inl h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h6\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 111
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-20",
+      "formula": "((q -> r) -> (((q & s) -> r) -> ((q | (q & s)) -> r)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h15 h2 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h5 h2 And.right h6 False.elim h5 h15 h7 h15 h5 h25 h15 h7 h15 h5 h15 h25 h5 h3"
+        ],
+        "inference_calls": 33,
+        "expanded_tokens": 33,
+        "elapsed_seconds": 0.02286704198922962,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-20",
+          "split": "neural-test",
+          "formula": "((q -> r) -> (((q & s) -> r) -> ((q | (q & s)) -> r)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 33,
+          "proof": "h15 h2 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h5 h2 And.right h6 False.elim h5 h15 h7 h15 h5 h25 h15 h7 h15 h5 h15 h25 h5 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "85e302da0fa202330cac8162e3a0483f5296eddd3023476bd41a77bbd6870de3",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23510283301584423,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-n2ipozm8/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h15`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s : Prop) : ((q \u2192 r) \u2192 (((q \u2227 s) \u2192 r) \u2192 ((q \u2228 (q \u2227 s)) \u2192 r))) :=\n  h15 h2 h2 h2 h2 h2 h2 h2 h2 h2 h5 h2 And.right h5 h2 And.right h6 False.elim h5 h15 h7 h15 h5 h25 h15 h7 h15 h5 h15 h25 h5 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 113
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-21",
+      "formula": "((p -> (u & t)) -> ((((t -> r) -> (q -> s)) -> t) -> ((p & ((t -> r) -> (q -> s))) -> ((u & t) & t))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h2 h2 h2 h2 h29 h2 h2 h2 h2 h2 And.right h2 h2 h2 And.right h2 h2 h2 h2 And.right h6 h2 h2 h2 h2 And.right h2 h2 h2 And.right h30 h2"
+        ],
+        "inference_calls": 34,
+        "expanded_tokens": 34,
+        "elapsed_seconds": 0.033875875000376254,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-21",
+          "split": "neural-test",
+          "formula": "((p -> (u & t)) -> ((((t -> r) -> (q -> s)) -> t) -> ((p & ((t -> r) -> (q -> s))) -> ((u & t) & t))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 34,
+          "proof": "h5 h2 h2 h2 h2 h29 h2 h2 h2 h2 h2 And.right h2 h2 h2 And.right h2 h2 h2 h2 And.right h6 h2 h2 h2 h2 And.right h2 h2 h2 And.right h30 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "ae4675e73319d789b878486cdc0c1b4aac700a101c543fedf397daad18f49019",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23532337503274903,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-99ucqkvg/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t u : Prop) : ((p \u2192 (u \u2227 t)) \u2192 ((((t \u2192 r) \u2192 (q \u2192 s)) \u2192 t) \u2192 ((p \u2227 ((t \u2192 r) \u2192 (q \u2192 s))) \u2192 ((u \u2227 t) \u2227 t)))) :=\n  h5 h2 h2 h2 h2 h29 h2 h2 h2 h2 h2 And.right h2 h2 h2 And.right h2 h2 h2 h2 And.right h6 h2 h2 h2 h2 And.right h2 h2 h2 And.right h30 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 114
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-22",
+      "formula": "(((q & (r -> (p | q))) -> s) -> (q -> ((r -> (p | q)) -> s)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h5 h2 And.right h5 h2 And.right h6 h6 h2 h2 h2 h2 h2 And.right h13"
+        ],
+        "inference_calls": 22,
+        "expanded_tokens": 22,
+        "elapsed_seconds": 0.01445000001695007,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-22",
+          "split": "neural-test",
+          "formula": "(((q & (r -> (p | q))) -> s) -> (q -> ((r -> (p | q)) -> s)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 22,
+          "proof": "h2 h2 h2 h2 h2 h2 h5 h2 And.right h5 h2 And.right h6 h6 h2 h2 h2 h2 h2 And.right h13",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "087e77cfb967afa78e60361db247aaf13a752319a6e7e6ecb7c8a897ba0b8062",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23405629198532552,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-q32qkkye/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : (((q \u2227 (r \u2192 (p \u2228 q))) \u2192 s) \u2192 (q \u2192 ((r \u2192 (p \u2228 q)) \u2192 s))) :=\n  h2 h2 h2 h2 h2 h2 h5 h2 And.right h5 h2 And.right h6 h6 h2 h2 h2 h2 h2 And.right h13\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 116
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-23",
+      "formula": "(((s & p) -> (r -> p)) -> (((s & p) & r) -> p))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h28 h26 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h5 h2 And.right h5 h2 And.right h6 h6 h6 h6 h6"
+        ],
+        "inference_calls": 26,
+        "expanded_tokens": 26,
+        "elapsed_seconds": 0.017022082989569753,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-23",
+          "split": "neural-test",
+          "formula": "(((s & p) -> (r -> p)) -> (((s & p) & r) -> p))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 26,
+          "proof": "h26 h28 h26 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h5 h2 And.right h5 h2 And.right h6 h6 h6 h6 h6",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "7a1eaa1ac979c39205ff10bb82c7424a849043b1584e817591b1e3d9f0d36a7f",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2347690419992432,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c74qj48p/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : (((s \u2227 p) \u2192 (r \u2192 p)) \u2192 (((s \u2227 p) \u2227 r) \u2192 p)) :=\n  h26 h28 h26 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h5 h2 And.right h5 h2 And.right h6 h6 h6 h6 h6\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 118
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-24",
+      "formula": "((q & (t | (t | (q & s)))) -> ((q & t) | (q & (t | (q & s)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.0993689579772763,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-25",
+      "formula": "((q -> (q | r)) -> (((q | r) -> False) -> (q -> False)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h2 h2 And.right And.right And.right h25 h2 And.right h2 And.right And.right h2 h2 And.right h2 h2 h2 And.right h13"
+        ],
+        "inference_calls": 30,
+        "expanded_tokens": 30,
+        "elapsed_seconds": 0.017740125011187047,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-25",
+          "split": "neural-test",
+          "formula": "((q -> (q | r)) -> (((q | r) -> False) -> (q -> False)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 30,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h2 h2 And.right And.right And.right h25 h2 And.right h2 And.right And.right h2 h2 And.right h2 h2 h2 And.right h13",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "3f018421cee83c5fe6047655eadc032f7f6ac0f09254ab3d200c66cdbae86e84",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23140658397460356,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-_xdygyhp/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : ((q \u2192 (q \u2228 r)) \u2192 (((q \u2228 r) \u2192 False) \u2192 (q \u2192 False))) :=\n  h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h2 h2 And.right And.right And.right h25 h2 And.right h2 And.right And.right h2 h2 And.right h2 h2 h2 And.right h13\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 120
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-26",
+      "formula": "((p -> ((t -> u) -> q)) -> ((((t -> u) -> q) -> q) -> (p -> q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h5 h25 h2 h2 h2 h2 h5 h2 h2 h6 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 And.right h2 h2 h2 And.right h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 h2 h2 And.right h13 h2"
+        ],
+        "inference_calls": 58,
+        "expanded_tokens": 58,
+        "elapsed_seconds": 0.05125525000039488,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-26",
+          "split": "neural-test",
+          "formula": "((p -> ((t -> u) -> q)) -> ((((t -> u) -> q) -> q) -> (p -> q)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 58,
+          "proof": "h2 h2 h2 h2 h2 h2 h5 h25 h2 h2 h2 h2 h5 h2 h2 h6 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 And.right h2 h2 h2 And.right h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 h2 h2 And.right h13 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "4081e266b1ea38ff9c0f798e6caa134d1caf771dc1a228c77fc1f057623aa412",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23184341698652133,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-olftf9mb/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t u : Prop) : ((p \u2192 ((t \u2192 u) \u2192 q)) \u2192 ((((t \u2192 u) \u2192 q) \u2192 q) \u2192 (p \u2192 q))) :=\n  h2 h2 h2 h2 h2 h2 h5 h25 h2 h2 h2 h2 h5 h2 h2 h6 h2 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 And.right h2 h2 h2 And.right h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 h2 h2 And.right h13 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 121
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-27",
+      "formula": "((((q & q) -> s) -> ((t -> s) | u)) -> ((s -> ((t -> s) | u)) -> ((((q & q) -> s) | s) -> ((t -> s) | u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.11440891597885638,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-28",
+      "formula": "((q -> (r | (s -> p))) -> ((u -> q) -> ((q & u) -> ((r | (s -> p)) & q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h13 h5 h2 h2 h2 And.right h30 h25 => h2 h2 h2 And.right And.right And.right h2 And.right And.right h2 h2 And.right And.right And.right"
+        ],
+        "inference_calls": 38,
+        "expanded_tokens": 38,
+        "elapsed_seconds": 0.03134200000204146,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-28",
+          "split": "neural-test",
+          "formula": "((q -> (r | (s -> p))) -> ((u -> q) -> ((q & u) -> ((r | (s -> p)) & q))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 38,
+          "proof": "h29 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h13 h5 h2 h2 h2 And.right h30 h25 => h2 h2 h2 And.right And.right And.right h2 And.right And.right h2 h2 And.right And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "d85bf74fb44552026d01adb72422c6605348d243541fa6776bf3a4d3c15d7537",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23429033299908042,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-io7jbfjl/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-io7jbfjl/Candidate.lean:5:93: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((q \u2192 (r \u2228 (s \u2192 p))) \u2192 ((u \u2192 q) \u2192 ((q \u2227 u) \u2192 ((r \u2228 (s \u2192 p)) \u2227 q)))) :=\n  h29 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h13 h5 h2 h2 h2 And.right h30 h25 => h2 h2 h2 And.right And.right And.right h2 And.right And.right h2 h2 And.right And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 123
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-29",
+      "formula": "((p -> (((u -> u) -> (u -> q)) -> (t & r))) -> ((p & ((u -> u) -> (u -> q))) -> (t & r)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h2 h2 h2 h2 h29 h5 h2 h2 h2 fun h2 h2 h30 h2 And.right h2 h2 h2 And.right => h2 And.right And.right h2 h5 h25 h5"
+        ],
+        "inference_calls": 29,
+        "expanded_tokens": 29,
+        "elapsed_seconds": 0.02289854100672528,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-29",
+          "split": "neural-test",
+          "formula": "((p -> (((u -> u) -> (u -> q)) -> (t & r))) -> ((p & ((u -> u) -> (u -> q))) -> (t & r)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 29,
+          "proof": "h5 h2 h2 h2 h2 h29 h5 h2 h2 h2 fun h2 h2 h30 h2 And.right h2 h2 h2 And.right => h2 And.right And.right h2 h5 h25 h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "e6f61f874ed448233b54aa0691a1ca5b80ca0ed10b1b1aa717cde98a689cb044",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23218937497586012,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ns2yk5n0/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((p \u2192 (((u \u2192 u) \u2192 (u \u2192 q)) \u2192 (t \u2227 r))) \u2192 ((p \u2227 ((u \u2192 u) \u2192 (u \u2192 q))) \u2192 (t \u2227 r))) :=\n  h5 h2 h2 h2 h2 h29 h5 h2 h2 h2 fun h2 h2 h30 h2 And.right h2 h2 h2 And.right => h2 And.right And.right h2 h5 h25 h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 125
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-30",
+      "formula": "(((q -> q) -> t) -> ((t -> False) -> ((q -> q) -> False)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.10221545799868181,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-31",
+      "formula": "(((s | p) -> s) -> ((s -> p) -> ((s | p) -> p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h28 h26 h15 h15 h26 h2 h2 And.right h30 h30 h15 h15 h15 h15 Or.inl h30 h2 h2 fun Or.inl False.elim h2 h6 h6 h6 h6 h6 h15 h15 h15 Or.inl Or.inl"
+        ],
+        "inference_calls": 34,
+        "expanded_tokens": 34,
+        "elapsed_seconds": 0.022550624969881028,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-31",
+          "split": "neural-test",
+          "formula": "(((s | p) -> s) -> ((s -> p) -> ((s | p) -> p)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 34,
+          "proof": "h26 h28 h26 h15 h15 h26 h2 h2 And.right h30 h30 h15 h15 h15 h15 Or.inl h30 h2 h2 fun Or.inl False.elim h2 h6 h6 h6 h6 h6 h15 h15 h15 Or.inl Or.inl",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "46a386470f96195b72fa848b84baafca6c0f4997a9ef6c399b59608bfc72f4cc",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23622854199493304,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-20rvuh0i/Candidate.lean:5:148: error: unexpected token '#print'; expected '\u21a6', '=>'\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s : Prop) : (((s \u2228 p) \u2192 s) \u2192 ((s \u2192 p) \u2192 ((s \u2228 p) \u2192 p))) :=\n  h26 h28 h26 h15 h15 h26 h2 h2 And.right h30 h30 h15 h15 h15 h15 Or.inl h30 h2 h2 fun Or.inl False.elim h2 h6 h6 h6 h6 h6 h15 h15 h15 Or.inl Or.inl\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 127
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-32",
+      "formula": "((((p & t) & t) -> p) -> (((p & t) & t) -> p))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h2 h2 And.right h10 h26 h2 And.right h2 h5 h2 h2 h2 h2 h2 And.right h2 h2 And.right h10 And.intro h2 h2 h2 And.right h10 And.intro h2 h2 h2 And.right h10"
+        ],
+        "inference_calls": 38,
+        "expanded_tokens": 38,
+        "elapsed_seconds": 0.03070195799227804,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-32",
+          "split": "neural-test",
+          "formula": "((((p & t) & t) -> p) -> (((p & t) & t) -> p))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 38,
+          "proof": "h26 h2 h2 h2 h2 h2 h2 h2 And.right h10 h26 h2 And.right h2 h5 h2 h2 h2 h2 h2 And.right h2 h2 And.right h10 And.intro h2 h2 h2 And.right h10 And.intro h2 h2 h2 And.right h10",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "f9ec83732e90e8e39e3463bd173746f52133a16db2287ef420a1d7d56d25a098",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23597033397527412,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-aq3igvb8/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((((p \u2227 t) \u2227 t) \u2192 p) \u2192 (((p \u2227 t) \u2227 t) \u2192 p)) :=\n  h26 h2 h2 h2 h2 h2 h2 h2 And.right h10 h26 h2 And.right h2 h5 h2 h2 h2 h2 h2 And.right h2 h2 And.right h10 And.intro h2 h2 h2 And.right h10 And.intro h2 h2 h2 And.right h10\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 128
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-33",
+      "formula": "((s | ((r -> s) -> q)) -> (((r -> s) -> q) | s))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "=> => => h2 h2 Or.inl => => h2 h30 False.elim h2"
+        ],
+        "inference_calls": 13,
+        "expanded_tokens": 13,
+        "elapsed_seconds": 0.009719541994854808,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-33",
+          "split": "neural-test",
+          "formula": "((s | ((r -> s) -> q)) -> (((r -> s) -> q) | s))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 13,
+          "proof": "=> => => h2 h2 Or.inl => => h2 h30 False.elim h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "c70010c955f697fbfb2c19e3bd559069c91d263f646ef7ef5a8cbe3384bdc56e",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23236270801862702,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vi2w0j5p/Candidate.lean:4:90: error: unexpected token '=>'; expected term\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s : Prop) : ((s \u2228 ((r \u2192 s) \u2192 q)) \u2192 (((r \u2192 s) \u2192 q) \u2228 s)) :=\n  => => => h2 h2 Or.inl => => h2 h30 False.elim h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 130
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-34",
+      "formula": "((((u | p) -> p) -> s) -> ((s -> p) -> ((((u | p) -> p) & s) -> (s & p))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h2 h6 h6 h6 => h2 h2 h2 h2 And.right h2 h2 h2 And.right h30 h25 => h5 h2 h2 And.right And.right"
+        ],
+        "inference_calls": 29,
+        "expanded_tokens": 29,
+        "elapsed_seconds": 0.021915416000410914,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-34",
+          "split": "neural-test",
+          "formula": "((((u | p) -> p) -> s) -> ((s -> p) -> ((((u | p) -> p) & s) -> (s & p))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 29,
+          "proof": "h26 h2 h2 h2 h2 h2 h2 h6 h6 h6 => h2 h2 h2 h2 And.right h2 h2 h2 And.right h30 h25 => h5 h2 h2 And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "77279532d705fb8fdcaf1706155e9e06bedbd47859db36b2638272e4ee464818",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23101583297830075,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-xwvxwrzj/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-xwvxwrzj/Candidate.lean:5:33: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s u : Prop) : ((((u \u2228 p) \u2192 p) \u2192 s) \u2192 ((s \u2192 p) \u2192 ((((u \u2228 p) \u2192 p) \u2227 s) \u2192 (s \u2227 p)))) :=\n  h26 h2 h2 h2 h2 h2 h2 h6 h6 h6 => h2 h2 h2 h2 And.right h2 h2 h2 And.right h30 h25 => h5 h2 h2 And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 132
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-35",
+      "formula": "((((t & p) & r) -> (s -> t)) -> ((t & p) -> (r -> (s -> t))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.09725074999732897,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-36",
+      "formula": "(((u & (t | p)) -> (p -> s)) -> (((u & (t | p)) & p) -> s))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h29 h5 h26"
+        ],
+        "inference_calls": 9,
+        "expanded_tokens": 9,
+        "elapsed_seconds": 0.005141499976161867,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-36",
+          "split": "neural-test",
+          "formula": "(((u & (t | p)) -> (p -> s)) -> (((u & (t | p)) & p) -> s))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 9,
+          "proof": "h26 h2 h2 h2 h2 h29 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "e72a98da43537673a4b5514cff59e5245c6cf7566c5c32d0aee0693116fbc7b3",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22985699999844655,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vyvpuuzq/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : (((u \u2227 (t \u2228 p)) \u2192 (p \u2192 s)) \u2192 (((u \u2227 (t \u2228 p)) \u2227 p) \u2192 s)) :=\n  h26 h2 h2 h2 h2 h29 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 134
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-37",
+      "formula": "((p & ((u | (r -> p)) | p)) -> ((p & (u | (r -> p))) | (p & p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26"
+        ],
+        "inference_calls": 2,
+        "expanded_tokens": 2,
+        "elapsed_seconds": 0.0021495410474017262,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-37",
+          "split": "neural-test",
+          "formula": "((p & ((u | (r -> p)) | p)) -> ((p & (u | (r -> p))) | (p & p)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 2,
+          "proof": "h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "f856de2b1baa26d2536ebddf2b65a624a917a85142a09632431575cbf7a96c42",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23597054200945422,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-x2pbbn0q/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : ((p \u2227 ((u \u2228 (r \u2192 p)) \u2228 p)) \u2192 ((p \u2227 (u \u2228 (r \u2192 p))) \u2228 (p \u2227 p))) :=\n  h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 135
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-38",
+      "formula": "((((q -> s) | u) & ((s & u) -> u)) -> (((s & u) -> u) & ((q -> s) | u)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 False.elim h5 h26 h2 h2 h2 And.right => => h5 h2 h2 h2 fun => h5 => => h5 h26 h3 => h5 h25 => h1 h15 h7 h15 h5 h2 And.right => h5 h25 h5 h25 h5 h25 => h5 h26 False.elim h25 h15 h5 h15 h7 h15 h5 h26 h15 h5 h15 h15 h7 h15 h3 h25 h15 h15 h15 h5 h25 h5 h26 h3 h25 h5 h15 h5 h15 h15 h15 h28 h5"
+        ],
+        "inference_calls": 82,
+        "expanded_tokens": 82,
+        "elapsed_seconds": 0.0751917909947224,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-38",
+          "split": "neural-test",
+          "formula": "((((q -> s) | u) & ((s & u) -> u)) -> (((s & u) -> u) & ((q -> s) | u)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 82,
+          "proof": "h26 h2 h2 h2 h2 False.elim h5 h26 h2 h2 h2 And.right => => h5 h2 h2 h2 fun => h5 => => h5 h26 h3 => h5 h25 => h1 h15 h7 h15 h5 h2 And.right => h5 h25 h5 h25 h5 h25 => h5 h26 False.elim h25 h15 h5 h15 h7 h15 h5 h26 h15 h5 h15 h15 h7 h15 h3 h25 h15 h15 h15 h5 h25 h5 h26 h3 h25 h5 h15 h5 h15 h15 h15 h28 h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "760d3b78313c99f88e93ef88d45f3b9ffad0c8c18989b2605733c419cf0131c9",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23511991696432233,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-j263iccc/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-j263iccc/Candidate.lean:5:55: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : ((((q \u2192 s) \u2228 u) \u2227 ((s \u2227 u) \u2192 u)) \u2192 (((s \u2227 u) \u2192 u) \u2227 ((q \u2192 s) \u2228 u))) :=\n  h26 h2 h2 h2 h2 False.elim h5 h26 h2 h2 h2 And.right => => h5 h2 h2 h2 fun => h5 => => h5 h26 h3 => h5 h25 => h1 h15 h7 h15 h5 h2 And.right => h5 h25 h5 h25 h5 h25 => h5 h26 False.elim h25 h15 h5 h15 h7 h15 h5 h26 h15 h5 h15 h15 h7 h15 h3 h25 h15 h15 h15 h5 h25 h5 h26 h3 h25 h5 h15 h5 h15 h15 h15 h28 h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 137
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-39",
+      "formula": "((((r | q) -> (p & s)) -> q) -> ((q -> t) -> (((r | q) -> (p & s)) -> t)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h13 h5 h2 h2 h2 And.right h30 h25 => h5 h2 h2 And.right And.right"
+        ],
+        "inference_calls": 29,
+        "expanded_tokens": 29,
+        "elapsed_seconds": 0.020968500000890344,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-39",
+          "split": "neural-test",
+          "formula": "((((r | q) -> (p & s)) -> q) -> ((q -> t) -> (((r | q) -> (p & s)) -> t)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 29,
+          "proof": "h29 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h13 h5 h2 h2 h2 And.right h30 h25 => h5 h2 h2 And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "2f05309f71558750405ac0adf75ce11599d1507d0b16d1601e3884e0c8570b0c",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23509987501893193,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-wk892ldv/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-wk892ldv/Candidate.lean:5:93: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t : Prop) : ((((r \u2228 q) \u2192 (p \u2227 s)) \u2192 q) \u2192 ((q \u2192 t) \u2192 (((r \u2228 q) \u2192 (p \u2227 s)) \u2192 t))) :=\n  h29 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h13 h5 h2 h2 h2 And.right h30 h25 => h5 h2 h2 And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 139
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-40",
+      "formula": "(u -> (u | (p | (p | q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.08091112499823794,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-41",
+      "formula": "(((r & r) -> t) -> ((u -> t) -> (((r & r) & u) -> (t & t))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.10024566599167883,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-42",
+      "formula": "(((s | r) -> (t -> u)) -> (((s | r) & t) -> u))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h29 False.elim h2 h5 h2 h2 And.right => h5 h25 => h5 h2 And.right h5 h2 h2 h26 Or.inl h5 h2 Or.inl h5 h26 h1 h6 False.elim h5 h2 h0 => Or.inr h15 h15 h7 h15 h5 And.right h10"
+        ],
+        "inference_calls": 46,
+        "expanded_tokens": 46,
+        "elapsed_seconds": 0.03142020798986778,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-42",
+          "split": "neural-test",
+          "formula": "(((s | r) -> (t -> u)) -> (((s | r) & t) -> u))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 46,
+          "proof": "h26 h2 h2 h2 h2 h2 h29 False.elim h2 h5 h2 h2 And.right => h5 h25 => h5 h2 And.right h5 h2 h2 h26 Or.inl h5 h2 Or.inl h5 h26 h1 h6 False.elim h5 h2 h0 => Or.inr h15 h15 h7 h15 h5 And.right h10",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "714123aa0dc7a695d15fa38f4f4e90226f967a99c283a117b0116f76409699e0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23526341700926423,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-fgf3afan/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-fgf3afan/Candidate.lean:5:58: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s t u : Prop) : (((s \u2228 r) \u2192 (t \u2192 u)) \u2192 (((s \u2228 r) \u2227 t) \u2192 u)) :=\n  h26 h2 h2 h2 h2 h2 h29 False.elim h2 h5 h2 h2 And.right => h5 h25 => h5 h2 And.right h5 h2 h2 h26 Or.inl h5 h2 Or.inl h5 h26 h1 h6 False.elim h5 h2 h0 => Or.inr h15 h15 h7 h15 h5 And.right h10\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 141
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-43",
+      "formula": "(((r -> q) | q) -> ((r -> q) | q))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right And.right h2 And.right And.right h2 And.right And.right And.right"
+        ],
+        "inference_calls": 24,
+        "expanded_tokens": 24,
+        "elapsed_seconds": 0.014661749999504536,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-43",
+          "split": "neural-test",
+          "formula": "(((r -> q) | q) -> ((r -> q) | q))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 24,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right And.right h2 And.right And.right h2 And.right And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "52d604c60120edf85a87588ba0b90fe3301ee684674674c2e02d17ee03de1231",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23169116699136794,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-rtojaxnx/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : (((r \u2192 q) \u2228 q) \u2192 ((r \u2192 q) \u2228 q)) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right And.right h2 And.right And.right h2 And.right And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 143
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-44",
+      "formula": "((p -> (t -> q)) -> (t -> (p -> (t -> q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.09710729104699567,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "weaken"
+    },
+    {
+      "task_id": "test-45",
+      "formula": "(((t | (p & p)) -> p) -> ((p -> q) -> ((t | (p & p)) -> q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 And.right h29 h13 h25 h29 h13 h5 h2 h2 h2 h2 h6 h6 h6"
+        ],
+        "inference_calls": 19,
+        "expanded_tokens": 19,
+        "elapsed_seconds": 0.013749375008046627,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-45",
+          "split": "neural-test",
+          "formula": "(((t | (p & p)) -> p) -> ((p -> q) -> ((t | (p & p)) -> q)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 19,
+          "proof": "h2 h2 h2 h2 And.right h29 h13 h25 h29 h13 h5 h2 h2 h2 h2 h6 h6 h6",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "f55c8520baa8d54c9a244dc8c2ebc72b011ca5426e0486561c04a62888745b2b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2314037919859402,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-pbleyhyx/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t : Prop) : (((t \u2228 (p \u2227 p)) \u2192 p) \u2192 ((p \u2192 q) \u2192 ((t \u2228 (p \u2227 p)) \u2192 q))) :=\n  h2 h2 h2 h2 And.right h29 h13 h25 h29 h13 h5 h2 h2 h2 h2 h6 h6 h6\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 144
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-46",
+      "formula": "((((t & u) | s) -> s) -> (((q -> t) -> r) -> ((((t & u) | s) & (q -> t)) -> (s & r))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h29 False.elim h2 h5 h2 h2 h2 h2 h2 => h5 h2 h26 h2 h2 h2 And.right => h2 And.right And.right h2 h5 h2 And.right"
+        ],
+        "inference_calls": 29,
+        "expanded_tokens": 29,
+        "elapsed_seconds": 0.025961500010453165,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-46",
+          "split": "neural-test",
+          "formula": "((((t & u) | s) -> s) -> (((q -> t) -> r) -> ((((t & u) | s) & (q -> t)) -> (s & r))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 29,
+          "proof": "h26 h2 h2 h29 False.elim h2 h5 h2 h2 h2 h2 h2 => h5 h2 h26 h2 h2 h2 And.right => h2 And.right And.right h2 h5 h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "2eb5352449a9c455ff4570b3abfa273aed007228def502ff0c2a9975ac9d0033",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28733379201730713,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-z5esynik/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-z5esynik/Candidate.lean:5:48: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t u : Prop) : ((((t \u2227 u) \u2228 s) \u2192 s) \u2192 (((q \u2192 t) \u2192 r) \u2192 ((((t \u2227 u) \u2228 s) \u2227 (q \u2192 t)) \u2192 (s \u2227 r)))) :=\n  h26 h2 h2 h29 False.elim h2 h5 h2 h2 h2 h2 h2 => h5 h2 h26 h2 h2 h2 And.right => h2 And.right And.right h2 h5 h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 146
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-47",
+      "formula": "(((u -> t) -> ((t -> q) -> p)) -> (((u -> t) & (t -> q)) -> p))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.09111491701332852,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-48",
+      "formula": "((p & (((u | q) | r) | p)) -> ((p & ((u | q) | r)) | (p & p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26"
+        ],
+        "inference_calls": 2,
+        "expanded_tokens": 2,
+        "elapsed_seconds": 0.001132958976086229,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-48",
+          "split": "neural-test",
+          "formula": "((p & (((u | q) | r) | p)) -> ((p & ((u | q) | r)) | (p & p)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 2,
+          "proof": "h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "551e6498865cb7e744856906a1bb6fc6d627aae6221d39dc66e310b0855fc52b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2841021660133265,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-w7xk0t77/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : ((p \u2227 (((u \u2228 q) \u2228 r) \u2228 p)) \u2192 ((p \u2227 ((u \u2228 q) \u2228 r)) \u2228 (p \u2227 p))) :=\n  h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 148
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-49",
+      "formula": "(((s -> q) -> (u & q)) -> ((s -> q) -> (u & q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h5 h2 And.right h2 And.right And.right h2 h2 And.right h6 h2 h2 h2 And.right h13 h2 And.right And.right h2 h2 h2 And.right And.right h30 h2 And.right h2"
+        ],
+        "inference_calls": 42,
+        "expanded_tokens": 42,
+        "elapsed_seconds": 0.028501124994363636,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-49",
+          "split": "neural-test",
+          "formula": "(((s -> q) -> (u & q)) -> ((s -> q) -> (u & q)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 42,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h5 h2 And.right h2 And.right And.right h2 h2 And.right h6 h2 h2 h2 And.right h13 h2 And.right And.right h2 h2 h2 And.right And.right h30 h2 And.right h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "52ce42a822472ec9b9c3cee7d7e1c3ba63d1ffb62c0648d90fd8ece896f72150",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22859741700813174,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-cjifldwr/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : (((s \u2192 q) \u2192 (u \u2227 q)) \u2192 ((s \u2192 q) \u2192 (u \u2227 q))) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h5 h2 And.right h2 And.right And.right h2 h2 And.right h6 h2 h2 h2 And.right h13 h2 And.right And.right h2 h2 h2 And.right And.right h30 h2 And.right h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 150
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-50",
+      "formula": "(((u | t) | s) -> ((u -> s) -> ((u | t) | s)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.08573937503388152,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "weaken"
+    },
+    {
+      "task_id": "test-51",
+      "formula": "(((s | q) & (s -> s)) -> ((s -> s) & (s | q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.08288337499834597,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-52",
+      "formula": "((s & (s | s)) -> s)",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.07275437499629334,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "first"
+    },
+    {
+      "task_id": "test-53",
+      "formula": "((((q | r) | u) | r) -> (r | ((q | r) | u)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h8 h31 h31 h8 h31 h8 h2"
+        ],
+        "inference_calls": 9,
+        "expanded_tokens": 9,
+        "elapsed_seconds": 0.004859833046793938,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-53",
+          "split": "neural-test",
+          "formula": "((((q | r) | u) | r) -> (r | ((q | r) | u)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 9,
+          "proof": "h26 h8 h31 h31 h8 h31 h8 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "5ee7e6a3a6aaa8615ae3fd4d3bc2c4c5368fcfb122790fb5b7f3cc792807e34e",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28408850001869723,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-fhkl09o4/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r u : Prop) : ((((q \u2228 r) \u2228 u) \u2228 r) \u2192 (r \u2228 ((q \u2228 r) \u2228 u))) :=\n  h26 h8 h31 h31 h8 h31 h8 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 152
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-54",
+      "formula": "((((r | s) | r) -> (t -> (s -> q))) -> ((s -> (t -> (s -> q))) -> ((((r | s) | r) | s) -> (t -> (s -> q)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 => h2 h2 h2 h2 h2 And.right h28 h5 => h2 h2 h2 h2 h2 And.right"
+        ],
+        "inference_calls": 18,
+        "expanded_tokens": 18,
+        "elapsed_seconds": 0.014749958994798362,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-54",
+          "split": "neural-test",
+          "formula": "((((r | s) | r) -> (t -> (s -> q))) -> ((s -> (t -> (s -> q))) -> ((((r | s) | r) | s) -> (t -> (s -> q)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 18,
+          "proof": "h26 => h2 h2 h2 h2 h2 And.right h28 h5 => h2 h2 h2 h2 h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "1f79927ab671e506a9f0e29e15b46cf8339c30030f9d08593b485c98501e87db",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23562345799291506,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-bhkj6ax5/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-bhkj6ax5/Candidate.lean:5:6: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t : Prop) : ((((r \u2228 s) \u2228 r) \u2192 (t \u2192 (s \u2192 q))) \u2192 ((s \u2192 (t \u2192 (s \u2192 q))) \u2192 ((((r \u2228 s) \u2228 r) \u2228 s) \u2192 (t \u2192 (s \u2192 q))))) :=\n  h26 => h2 h2 h2 h2 h2 And.right h28 h5 => h2 h2 h2 h2 h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 154
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-55",
+      "formula": "(((s & p) -> q) -> (((s & (p | u)) -> q) -> (((s & p) & (s & (p | u))) -> (q & q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h29 h15 h2 h2 And.right h2 h2 h2 And.right => h5 h2 And.right h2 h2 h2 And.right h13 h2 And.right And.right h2 h2 And.right And.right"
+        ],
+        "inference_calls": 29,
+        "expanded_tokens": 29,
+        "elapsed_seconds": 0.026576541014946997,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-55",
+          "split": "neural-test",
+          "formula": "(((s & p) -> q) -> (((s & (p | u)) -> q) -> (((s & p) & (s & (p | u))) -> (q & q))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 29,
+          "proof": "h26 h2 h2 h29 h15 h2 h2 And.right h2 h2 h2 And.right => h5 h2 And.right h2 h2 h2 And.right h13 h2 And.right And.right h2 h2 And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "99bc8269fdf2016f04eae632fa839969126686cdd1e9e6c9fb0880d505e38b96",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22413254203274846,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vj72kxo5/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vj72kxo5/Candidate.lean:5:55: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : (((s \u2227 p) \u2192 q) \u2192 (((s \u2227 (p \u2228 u)) \u2192 q) \u2192 (((s \u2227 p) \u2227 (s \u2227 (p \u2228 u))) \u2192 (q \u2227 q)))) :=\n  h26 h2 h2 h29 h15 h2 h2 And.right h2 h2 h2 And.right => h5 h2 And.right h2 h2 h2 And.right h13 h2 And.right And.right h2 h2 And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 155
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-56",
+      "formula": "(((s & s) -> ((t & t) & q)) -> (s -> (s -> ((t & t) & q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.10666962503455579,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-57",
+      "formula": "((t -> (u -> ((p & u) -> t))) -> ((t & u) -> ((p & u) -> t)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.09925104200374335,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-58",
+      "formula": "(((s | (p & t)) -> q) -> ((q -> False) -> ((s | (p & t)) -> False)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h30 h2 h2 And.right h29 h25 => h29 h25 h2 And.right h30 h2 h2 h6 h6 h2 h2 h29 h25 => h25 h5 h2 h2 h2 And.right h30 h25 h2 And.right h29 h25 h2 And.right h29 h25 h15 h15 h15 h13 h25 h29 h13 h25 h2 h29 h25 h2 And.right h29"
+        ],
+        "inference_calls": 53,
+        "expanded_tokens": 53,
+        "elapsed_seconds": 0.037383000017143786,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-58",
+          "split": "neural-test",
+          "formula": "(((s | (p & t)) -> q) -> ((q -> False) -> ((s | (p & t)) -> False)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 53,
+          "proof": "h2 h30 h2 h2 And.right h29 h25 => h29 h25 h2 And.right h30 h2 h2 h6 h6 h2 h2 h29 h25 => h25 h5 h2 h2 h2 And.right h30 h25 h2 And.right h29 h25 h2 And.right h29 h25 h15 h15 h15 h13 h25 h29 h13 h25 h2 h29 h25 h2 And.right h29",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "5fc229d36efd1f2b9dcedb6900810820192f65e87dfbc4cecf8a03fd9b8367ca",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2344376670080237,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kaquzscv/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kaquzscv/Candidate.lean:5:33: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((s \u2228 (p \u2227 t)) \u2192 q) \u2192 ((q \u2192 False) \u2192 ((s \u2228 (p \u2227 t)) \u2192 False))) :=\n  h2 h30 h2 h2 And.right h29 h25 => h29 h25 h2 And.right h30 h2 h2 h6 h6 h2 h2 h29 h25 => h25 h5 h2 h2 h2 And.right h30 h25 h2 And.right h29 h25 h2 And.right h29 h25 h15 h15 h15 h13 h25 h29 h13 h25 h2 h29 h25 h2 And.right h29\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 158
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-59",
+      "formula": "(((p & r) -> r) -> ((u -> (p | r)) -> (((p & r) -> r) & (u -> (p | r)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h5 h2 h2 h2 h2 h2 h2 h2 h2"
+        ],
+        "inference_calls": 14,
+        "expanded_tokens": 14,
+        "elapsed_seconds": 0.011817583988886327,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-59",
+          "split": "neural-test",
+          "formula": "(((p & r) -> r) -> ((u -> (p | r)) -> (((p & r) -> r) & (u -> (p | r)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 14,
+          "proof": "h26 h2 h2 h2 h5 h2 h2 h2 h2 h2 h2 h2 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "ca2850bce73a6388d401964d62f25171aff177e183fb0b3e925db8c78f9c8a7d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.228632332989946,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-xcha5c0b/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : (((p \u2227 r) \u2192 r) \u2192 ((u \u2192 (p \u2228 r)) \u2192 (((p \u2227 r) \u2192 r) \u2227 (u \u2192 (p \u2228 r))))) :=\n  h26 h2 h2 h2 h5 h2 h2 h2 h2 h2 h2 h2 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 159
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-60",
+      "formula": "(((p | (t | u)) -> (s | q)) -> ((p | (t | u)) -> (s | q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h30 h2 h2 h30 => h2 Or.inl h3 h2 h2 And.right h30 h31 h31 h4 h3"
+        ],
+        "inference_calls": 18,
+        "expanded_tokens": 18,
+        "elapsed_seconds": 0.012564875010866672,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-60",
+          "split": "neural-test",
+          "formula": "(((p | (t | u)) -> (s | q)) -> ((p | (t | u)) -> (s | q)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 18,
+          "proof": "h2 h30 h2 h2 h30 => h2 Or.inl h3 h2 h2 And.right h30 h31 h31 h4 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "0f4729bf1f7e745bda9a175155fc20d42c434aa285e4006b95f5e4fe645ef1c2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2745459589641541,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-4s7jy4sn/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-4s7jy4sn/Candidate.lean:5:19: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (((p \u2228 (t \u2228 u)) \u2192 (s \u2228 q)) \u2192 ((p \u2228 (t \u2228 u)) \u2192 (s \u2228 q))) :=\n  h2 h30 h2 h2 h30 => h2 Or.inl h3 h2 h2 And.right h30 h31 h31 h4 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 161
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-61",
+      "formula": "((p -> s) -> (((p -> s) -> r) -> ((p & (p -> s)) -> (s & r))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h6 h6 h2 h2 h2 h2 h28 h5 h2 h2 h5 h2 h5 h2 h2 h26 Or.inl h5"
+        ],
+        "inference_calls": 19,
+        "expanded_tokens": 19,
+        "elapsed_seconds": 0.013247124967165291,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-61",
+          "split": "neural-test",
+          "formula": "((p -> s) -> (((p -> s) -> r) -> ((p & (p -> s)) -> (s & r))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 19,
+          "proof": "h6 h6 h2 h2 h2 h2 h28 h5 h2 h2 h5 h2 h5 h2 h2 h26 Or.inl h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "76e0c320806ff27657a7e8c1ffae3f927281760219dc6f01d98aa60ef9ad75ad",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23476779100019485,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-5o73bskp/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h6`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((p \u2192 s) \u2192 (((p \u2192 s) \u2192 r) \u2192 ((p \u2227 (p \u2192 s)) \u2192 (s \u2227 r)))) :=\n  h6 h6 h2 h2 h2 h2 h28 h5 h2 h2 h5 h2 h5 h2 h2 h26 Or.inl h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 163
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-62",
+      "formula": "(((s & (p -> s)) -> u) -> (s -> ((p -> s) -> u)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "=> h2 h2 h2 h2 h2 h29 => h29 h13 h5 h2 And.right => h5 => h29 h5 h5 h26 h15 h5 h2 h17 => h5"
+        ],
+        "inference_calls": 27,
+        "expanded_tokens": 27,
+        "elapsed_seconds": 0.020307582977693528,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-62",
+          "split": "neural-test",
+          "formula": "(((s & (p -> s)) -> u) -> (s -> ((p -> s) -> u)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 27,
+          "proof": "=> h2 h2 h2 h2 h2 h29 => h29 h13 h5 h2 And.right => h5 => h29 h5 h5 h26 h15 h5 h2 h17 => h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "fd1b91ba6dc73a404b55fd3d5248e95e2c6cdfe2194b714fd037ec57e77ad487",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23080479202326387,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-e1bavxhh/Candidate.lean:4:90: error: unexpected token '=>'; expected term\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s u : Prop) : (((s \u2227 (p \u2192 s)) \u2192 u) \u2192 (s \u2192 ((p \u2192 s) \u2192 u))) :=\n  => h2 h2 h2 h2 h2 h29 => h29 h13 h5 h2 And.right => h5 => h29 h5 h5 h26 h15 h5 h2 h17 => h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 164
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-63",
+      "formula": "((t -> (t -> ((u | t) & p))) -> ((t & t) -> ((u | t) & p)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.08905033301562071,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-64",
+      "formula": "(((p & t) & (r | (t | q))) -> (((p & t) & r) | ((p & t) & (t | q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.0954460829962045,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-65",
+      "formula": "((q & (q | (q -> s))) -> ((q | (q -> s)) & q))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 And.right And.right h2 And.right And.right h2 And.right h2 And.right h13 h2 And.right h13 h15 h15 h13 h2 And.right h13 h15 h15 h7 h15 h13 h15 h13 h15 h15 h15 h13 h15 h15 h15 h15 h7 h15 h15 h25 h3"
+        ],
+        "inference_calls": 46,
+        "expanded_tokens": 46,
+        "elapsed_seconds": 0.02900770795531571,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-65",
+          "split": "neural-test",
+          "formula": "((q & (q | (q -> s))) -> ((q | (q -> s)) & q))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 46,
+          "proof": "h2 h2 h2 h2 h2 h2 And.right And.right h2 And.right And.right h2 And.right h2 And.right h13 h2 And.right h13 h15 h15 h13 h2 And.right h13 h15 h15 h7 h15 h13 h15 h13 h15 h15 h15 h13 h15 h15 h15 h15 h7 h15 h15 h25 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "b99814e938f6a105423ffedb019ef697585781103ed3fd3e4dfce558b56a4d88",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2362882500165142,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-u1o2yz54/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : ((q \u2227 (q \u2228 (q \u2192 s))) \u2192 ((q \u2228 (q \u2192 s)) \u2227 q)) :=\n  h2 h2 h2 h2 h2 h2 And.right And.right h2 And.right And.right h2 And.right h2 And.right h13 h2 And.right h13 h15 h15 h13 h2 And.right h13 h15 h15 h7 h15 h13 h15 h13 h15 h15 h15 h13 h15 h15 h15 h15 h7 h15 h15 h25 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 167
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-66",
+      "formula": "((r -> r) -> ((r -> ((t -> q) -> (u & r))) -> (r -> ((t -> q) -> (u & r)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h28 h5 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 h5 h25 h5 h2 h2 h2 h2 h26 h25 => h5 h26 h3 h2 And.right h28 h5 h26 h7 h15 h5 h25 h5 h26"
+        ],
+        "inference_calls": 38,
+        "expanded_tokens": 38,
+        "elapsed_seconds": 0.0328376250108704,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-66",
+          "split": "neural-test",
+          "formula": "((r -> r) -> ((r -> ((t -> q) -> (u & r))) -> (r -> ((t -> q) -> (u & r)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 38,
+          "proof": "h29 h28 h5 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 h5 h25 h5 h2 h2 h2 h2 h26 h25 => h5 h26 h3 h2 And.right h28 h5 h26 h7 h15 h5 h25 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "3ec00f38be3e475fd88b304d8eadbcc832c9a6aa6ef349ee3e8c6bc644c35d75",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23273574997438118,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-aox3tpyd/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-aox3tpyd/Candidate.lean:5:73: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t u : Prop) : ((r \u2192 r) \u2192 ((r \u2192 ((t \u2192 q) \u2192 (u \u2227 r))) \u2192 (r \u2192 ((t \u2192 q) \u2192 (u \u2227 r))))) :=\n  h29 h28 h5 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 h5 h25 h5 h2 h2 h2 h2 h26 h25 => h5 h26 h3 h2 And.right h28 h5 h26 h7 h15 h5 h25 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 169
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-67",
+      "formula": "((s -> (u & u)) -> (t | (s -> (u & u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.09651983296498656,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "inject_right"
+    },
+    {
+      "task_id": "test-68",
+      "formula": "((r | ((s & s) -> t)) -> (((s & s) -> t) | r))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.08876662503462285,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-69",
+      "formula": "((r -> ((s -> s) -> s)) -> (((r | q) -> (u | (p & u))) -> ((r & (r | q)) -> (((s -> s) -> s) & (u | (p & u))))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h26 h2 h2 h2 h2 h2 h2 h2 h2 h26"
+        ],
+        "inference_calls": 14,
+        "expanded_tokens": 14,
+        "elapsed_seconds": 0.01054975000442937,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-69",
+          "split": "neural-test",
+          "formula": "((r -> ((s -> s) -> s)) -> (((r | q) -> (u | (p & u))) -> ((r & (r | q)) -> (((s -> s) -> s) & (u | (p & u))))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 14,
+          "proof": "h26 h2 h2 h26 h2 h2 h2 h2 h2 h2 h2 h2 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "dc1434dbc80db262d83e198942b0c0f9823a82b212be6728a0fea3d8b9c8a67c",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23392874997807667,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-jfs64vug/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((r \u2192 ((s \u2192 s) \u2192 s)) \u2192 (((r \u2228 q) \u2192 (u \u2228 (p \u2227 u))) \u2192 ((r \u2227 (r \u2228 q)) \u2192 (((s \u2192 s) \u2192 s) \u2227 (u \u2228 (p \u2227 u)))))) :=\n  h26 h2 h2 h26 h2 h2 h2 h2 h2 h2 h2 h2 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 171
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-70",
+      "formula": "(((p & (r & s)) -> u) -> ((u -> False) -> ((p & (r & s)) -> False)))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h29 h5 h26 h2 h5 h5 h2 h5 h2 h5 h26 h5 h26 h5 h26 h15 h15 h5 h26 h26"
+        ],
+        "inference_calls": 26,
+        "expanded_tokens": 26,
+        "elapsed_seconds": 0.016775374999269843,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-70",
+          "split": "neural-test",
+          "formula": "(((p & (r & s)) -> u) -> ((u -> False) -> ((p & (r & s)) -> False)))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 26,
+          "proof": "h2 h2 h2 h2 h2 h29 h5 h26 h2 h5 h5 h2 h5 h2 h5 h26 h5 h26 h5 h26 h15 h15 h5 h26 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "3a9db73522edb23704522391d2c4caed40481199b30a5f73ea67af71203031eb",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23376224999083206,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-_u2xv_4v/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s u : Prop) : (((p \u2227 (r \u2227 s)) \u2192 u) \u2192 ((u \u2192 False) \u2192 ((p \u2227 (r \u2227 s)) \u2192 False))) :=\n  h2 h2 h2 h2 h2 h29 h5 h26 h2 h5 h5 h2 h5 h2 h5 h26 h5 h26 h5 h26 h15 h15 h5 h26 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 173
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-71",
+      "formula": "(((r -> q) -> r) -> ((r -> q) -> r))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h2 And.right"
+        ],
+        "inference_calls": 24,
+        "expanded_tokens": 24,
+        "elapsed_seconds": 0.01660308300051838,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-71",
+          "split": "neural-test",
+          "formula": "(((r -> q) -> r) -> ((r -> q) -> r))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 24,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "ba052deef75e38d8c20539fcff78eeb57a6ee28da53501ac81e9edc863025482",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23628945898963138,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-11_w7vcj/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : (((r \u2192 q) \u2192 r) \u2192 ((r \u2192 q) \u2192 r)) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 And.right h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 174
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-72",
+      "formula": "((s -> p) -> ((p -> ((s | r) | (u -> q))) -> (s -> ((s | r) | (u -> q)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h30 h31 h31 => h2 h2 h2 And.right h6 h28 h25 h6 h6 => fun => => h25 => h5 h2"
+        ],
+        "inference_calls": 26,
+        "expanded_tokens": 26,
+        "elapsed_seconds": 0.01904762495541945,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-72",
+          "split": "neural-test",
+          "formula": "((s -> p) -> ((p -> ((s | r) | (u -> q))) -> (s -> ((s | r) | (u -> q)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 26,
+          "proof": "h26 h2 h2 h2 h30 h31 h31 => h2 h2 h2 And.right h6 h28 h25 h6 h6 => fun => => h25 => h5 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "6a3e7e1a1dbe7ef30f569c4c7ffe114aa9fb9f686439c74dd923993ac74ac7cb",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23103866598103195,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-v3es5yjp/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-v3es5yjp/Candidate.lean:5:27: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((s \u2192 p) \u2192 ((p \u2192 ((s \u2228 r) \u2228 (u \u2192 q))) \u2192 (s \u2192 ((s \u2228 r) \u2228 (u \u2192 q))))) :=\n  h26 h2 h2 h2 h30 h31 h31 => h2 h2 h2 And.right h6 h28 h25 h6 h6 => fun => => h25 => h5 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 176
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-73",
+      "formula": "(s -> (s | ((t | p) | q)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.07597895798971877,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-74",
+      "formula": "((s -> u) -> ((s | r) | (s -> u)))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.13551545899827033,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "inject_right"
+    },
+    {
+      "task_id": "test-75",
+      "formula": "(((q | r) -> u) -> (((q -> (q -> s)) -> u) -> (((r -> q) -> u) -> (((q | r) | ((q -> (q -> s)) | (r -> q))) -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 And.right h2 h2 h2 h2 h2 h2 h2 h2 h2"
+        ],
+        "inference_calls": 14,
+        "expanded_tokens": 14,
+        "elapsed_seconds": 0.015019082988146693,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-75",
+          "split": "neural-test",
+          "formula": "(((q | r) -> u) -> (((q -> (q -> s)) -> u) -> (((r -> q) -> u) -> (((q | r) | ((q -> (q -> s)) | (r -> q))) -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 14,
+          "proof": "h2 h2 h2 And.right h2 h2 h2 h2 h2 h2 h2 h2 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "a0dc878cb28b9952c3420221d691d0c129bcfc4ad6e312e618962bcb1731e744",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2806882919976488,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-jaj789fg/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s u : Prop) : (((q \u2228 r) \u2192 u) \u2192 (((q \u2192 (q \u2192 s)) \u2192 u) \u2192 (((r \u2192 q) \u2192 u) \u2192 (((q \u2228 r) \u2228 ((q \u2192 (q \u2192 s)) \u2228 (r \u2192 q))) \u2192 u)))) :=\n  h2 h2 h2 And.right h2 h2 h2 h2 h2 h2 h2 h2 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 178
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-76",
+      "formula": "((p -> t) -> ((t -> r) -> ((r -> q) -> (p -> q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [],
+        "inference_calls": 100,
+        "expanded_tokens": 100,
+        "elapsed_seconds": 0.08502679195953533,
+        "completed": 0,
+        "timed_out": false
+      },
+      "attempts": [],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-77",
+      "formula": "((r -> r) -> (((p | q) -> r) -> ((r -> r) -> ((r | ((p | q) | r)) -> r))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h25 h2 h2 h2 h2 h2 h2 h2 h2 h2"
+        ],
+        "inference_calls": 12,
+        "expanded_tokens": 12,
+        "elapsed_seconds": 0.007844625040888786,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-77",
+          "split": "neural-test",
+          "formula": "((r -> r) -> (((p | q) -> r) -> ((r -> r) -> ((r | ((p | q) | r)) -> r))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 12,
+          "proof": "h29 h25 h2 h2 h2 h2 h2 h2 h2 h2 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "f18e33f070dbd52ec6f5d245351e1697766b135623c4f90d7bd9e723559ca6f7",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23349862499162555,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-paulloq0/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((r \u2192 r) \u2192 (((p \u2228 q) \u2192 r) \u2192 ((r \u2192 r) \u2192 ((r \u2228 ((p \u2228 q) \u2228 r)) \u2192 r)))) :=\n  h29 h25 h2 h2 h2 h2 h2 h2 h2 h2 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 180
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-78",
+      "formula": "(((p | u) -> q) -> ((q -> r) -> ((r -> q) -> ((p | u) -> q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 And.right h5 h2 And.right h6"
+        ],
+        "inference_calls": 14,
+        "expanded_tokens": 14,
+        "elapsed_seconds": 0.017032165953423828,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-78",
+          "split": "neural-test",
+          "formula": "(((p | u) -> q) -> ((q -> r) -> ((r -> q) -> ((p | u) -> q))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 14,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 And.right h5 h2 And.right h6",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "fbeedc542a0afdabef177e17e87beb90c1db62589645d170794abee0bfa96a6a",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2935525000211783,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-j_t77hul/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : (((p \u2228 u) \u2192 q) \u2192 ((q \u2192 r) \u2192 ((r \u2192 q) \u2192 ((p \u2228 u) \u2192 q)))) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 And.right h5 h2 And.right h6\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 182
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-79",
+      "formula": "((t -> q) -> (((t & r) -> q) -> ((t -> q) -> ((t | ((t & r) | t)) -> q))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h5 h2 h2 h5 h2 h2 h5 h2 h2 h5 h25 h2 h29 h25 h5 h2 h2 fun h26 h15 h15 h15 h15 h7 h15 h2 And.right h29 h25 h15 h7 h15 h7 h29 h13 h5 h3 fun h29 h7 h15 h15 h3"
+        ],
+        "inference_calls": 45,
+        "expanded_tokens": 45,
+        "elapsed_seconds": 0.03930108400527388,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-79",
+          "split": "neural-test",
+          "formula": "((t -> q) -> (((t & r) -> q) -> ((t -> q) -> ((t | ((t & r) | t)) -> q))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 45,
+          "proof": "h29 h5 h2 h2 h5 h2 h2 h5 h2 h2 h5 h25 h2 h29 h25 h5 h2 h2 fun h26 h15 h15 h15 h15 h7 h15 h2 And.right h29 h25 h15 h7 h15 h7 h29 h13 h5 h3 fun h29 h7 h15 h15 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "fafefab79be73339a14d069193db08118e461a4162a34eee28484ed488cb2fee",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2316050839726813,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-xjfkhezj/Candidate.lean:5:161: error: unexpected token '#print'; expected '\u21a6', '=>'\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t : Prop) : ((t \u2192 q) \u2192 (((t \u2227 r) \u2192 q) \u2192 ((t \u2192 q) \u2192 ((t \u2228 ((t \u2227 r) \u2228 t)) \u2192 q)))) :=\n  h29 h5 h2 h2 h5 h2 h2 h5 h2 h2 h5 h25 h2 h29 h25 h5 h2 h2 fun h26 h15 h15 h15 h15 h7 h15 h2 And.right h29 h25 h15 h7 h15 h7 h29 h13 h5 h3 fun h29 h7 h15 h15 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 184
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-80",
+      "formula": "((((u -> q) & (r -> u)) -> (s -> u)) -> (((s -> u) -> ((s -> r) & r)) -> ((((s -> r) & r) -> s) -> (((u -> q) & (r -> u)) -> s))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2"
+        ],
+        "inference_calls": 18,
+        "expanded_tokens": 18,
+        "elapsed_seconds": 0.016799666977021843,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-80",
+          "split": "neural-test",
+          "formula": "((((u -> q) & (r -> u)) -> (s -> u)) -> (((s -> u) -> ((s -> r) & r)) -> ((((s -> r) & r) -> s) -> (((u -> q) & (r -> u)) -> s))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 18,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "f1235ecaef9bb67fa4b0f2367f723ecae9739f51d873b2b05e5a3c77c5230be2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23401933297282085,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-mv5_rcik/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s u : Prop) : ((((u \u2192 q) \u2227 (r \u2192 u)) \u2192 (s \u2192 u)) \u2192 (((s \u2192 u) \u2192 ((s \u2192 r) \u2227 r)) \u2192 ((((s \u2192 r) \u2227 r) \u2192 s) \u2192 (((u \u2192 q) \u2227 (r \u2192 u)) \u2192 s)))) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 186
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-81",
+      "formula": "((s -> s) -> ((s -> s) -> ((r -> s) -> ((s | (s | r)) -> s))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 => h28 => => => => h28 h28 h5 h26 h15 h28 h5 h26 => h1 => h28 h28 h28 h28 h5 => h6 h6 => => h30 => h5 h26 h3 => h5 => => h5 h15 h28 h5 => h6 h28 h28 h5 => h5 => h28 h5 h26"
+        ],
+        "inference_calls": 54,
+        "expanded_tokens": 54,
+        "elapsed_seconds": 0.04425766598433256,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-81",
+          "split": "neural-test",
+          "formula": "((s -> s) -> ((s -> s) -> ((r -> s) -> ((s | (s | r)) -> s))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 54,
+          "proof": "h26 h2 => h28 => => => => h28 h28 h5 h26 h15 h28 h5 h26 => h1 => h28 h28 h28 h28 h5 => h6 h6 => => h30 => h5 h26 h3 => h5 => => h5 h15 h28 h5 => h6 h28 h28 h5 => h5 => h28 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "a398cb36635e74f3630de38f595435a27ec64faf79e4d4626f9cf1906e2d4f80",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22984383295988664,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c8zy8gtf/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c8zy8gtf/Candidate.lean:5:9: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : ((s \u2192 s) \u2192 ((s \u2192 s) \u2192 ((r \u2192 s) \u2192 ((s \u2228 (s \u2228 r)) \u2192 s)))) :=\n  h26 h2 => h28 => => => => h28 h28 h5 h26 h15 h28 h5 h26 => h1 => h28 h28 h28 h28 h5 => h6 h6 => => h30 => h5 h26 h3 => h5 => => h5 h15 h28 h5 => h6 h28 h28 h5 => h5 => h28 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 188
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-82",
+      "formula": "((s -> t) -> ((t -> u) -> ((u -> s) -> (s -> s))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h2 h2 h2 h29 => h2 h2 h2 h2 h2 h2 h5 => h2 h5 h5 h2 h5 => h5 h5 => h5 => h5 => h5 h26 h5 h26"
+        ],
+        "inference_calls": 34,
+        "expanded_tokens": 34,
+        "elapsed_seconds": 0.0233997919713147,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-82",
+          "split": "neural-test",
+          "formula": "((s -> t) -> ((t -> u) -> ((u -> s) -> (s -> s))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 34,
+          "proof": "h26 h2 h2 h2 h2 h2 h29 => h2 h2 h2 h2 h2 h2 h5 => h2 h5 h5 h2 h5 => h5 h5 => h5 => h5 => h5 h26 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "a9e316b500913a7bdaee36281d0184cacf8054de9902ba61092d235562f29926",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23293958295835182,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ae3282sz/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ae3282sz/Candidate.lean:5:25: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((s \u2192 t) \u2192 ((t \u2192 u) \u2192 ((u \u2192 s) \u2192 (s \u2192 s)))) :=\n  h26 h2 h2 h2 h2 h2 h29 => h2 h2 h2 h2 h2 h2 h5 => h2 h5 h5 h2 h5 => h5 h5 => h5 => h5 => h5 h26 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 190
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-83",
+      "formula": "((t -> ((u | s) & s)) -> ((u -> ((u | s) & s)) -> (((u | s) -> ((u | s) & s)) -> ((t | (u | (u | s))) -> ((u | s) & s)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 False.elim => => h26 => h29 h28 h26 h2 h29 h28 h26 h26 h26 h26 h26 h29 => => h29 h13 h26 h29 h15 h2 h29 => => h29 h28 h28 h26 Or.inl => h29 h28 h25 => h2 h29 => h29 h28 h29 => h29 => h28 h13 Or.inl h5 h26 h3 => h29 h28 h13 h28 h28 h28 h26 h29 => h29 => h29 h13 h5 h26 fun => fun => h29 => h15 h29 h13 h28 h28 h25 => h5 h26 h3 => h2 h28 h13 h28 h13 h3 => h5"
+        ],
+        "inference_calls": 96,
+        "expanded_tokens": 96,
+        "elapsed_seconds": 0.12288658402394503,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-83",
+          "split": "neural-test",
+          "formula": "((t -> ((u | s) & s)) -> ((u -> ((u | s) & s)) -> (((u | s) -> ((u | s) & s)) -> ((t | (u | (u | s))) -> ((u | s) & s)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 96,
+          "proof": "h26 False.elim => => h26 => h29 h28 h26 h2 h29 h28 h26 h26 h26 h26 h26 h29 => => h29 h13 h26 h29 h15 h2 h29 => => h29 h28 h28 h26 Or.inl => h29 h28 h25 => h2 h29 => h29 h28 h29 => h29 => h28 h13 Or.inl h5 h26 h3 => h29 h28 h13 h28 h28 h28 h26 h29 => h29 => h29 h13 h5 h26 fun => fun => h29 => h15 h29 h13 h28 h28 h25 => h5 h26 h3 => h2 h28 h13 h28 h13 h3 => h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "e33bf209558b2a8f0b2729efc799df6b2b23384859b2f929fc7f3dd112a30338",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28143650002311915,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-v0v95zj7/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-v0v95zj7/Candidate.lean:5:17: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((t \u2192 ((u \u2228 s) \u2227 s)) \u2192 ((u \u2192 ((u \u2228 s) \u2227 s)) \u2192 (((u \u2228 s) \u2192 ((u \u2228 s) \u2227 s)) \u2192 ((t \u2228 (u \u2228 (u \u2228 s))) \u2192 ((u \u2228 s) \u2227 s))))) :=\n  h26 False.elim => => h26 => h29 h28 h26 h2 h29 h28 h26 h26 h26 h26 h26 h29 => => h29 h13 h26 h29 h15 h2 h29 => => h29 h28 h28 h26 Or.inl => h29 h28 h25 => h2 h29 => h29 h28 h29 => h29 => h28 h13 Or.inl h5 h26 h3 => h29 h28 h13 h28 h28 h28 h26 h29 => h29 => h29 h13 h5 h26 fun => fun => h29 => h15 h29 h13 h28 h28 h25 => h5 h26 h3 => h2 h28 h13 h28 h13 h3 => h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 192
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-84",
+      "formula": "((r -> u) -> ((s -> u) -> ((r -> u) -> ((r | (s | r)) -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h5 => h2 h5 h5 h2 h5 => h5 h26 Or.inl h5 => h5 h26 h26 h26 h5 h26"
+        ],
+        "inference_calls": 26,
+        "expanded_tokens": 26,
+        "elapsed_seconds": 0.01886179205030203,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-84",
+          "split": "neural-test",
+          "formula": "((r -> u) -> ((s -> u) -> ((r -> u) -> ((r | (s | r)) -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 26,
+          "proof": "h2 h2 h2 h2 h2 h2 h5 => h2 h5 h5 h2 h5 => h5 h26 Or.inl h5 => h5 h26 h26 h26 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "439b7bdc6615dcfa4068359b9db01b63ce3ffb136f85e8f0761cc8e8aabbdd34",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22808099997928366,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8wdvasfd/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8wdvasfd/Candidate.lean:5:23: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s u : Prop) : ((r \u2192 u) \u2192 ((s \u2192 u) \u2192 ((r \u2192 u) \u2192 ((r \u2228 (s \u2228 r)) \u2192 u)))) :=\n  h2 h2 h2 h2 h2 h2 h5 => h2 h5 h5 h2 h5 => h5 h26 Or.inl h5 => h5 h26 h26 h26 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 194
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-85",
+      "formula": "((p -> p) -> ((p -> (p -> t)) -> (((p -> t) -> t) -> (p -> t))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h6 h6 h6 h6 h6 h29 h28 h5 h26 h28 h5 h2 h6 h6 h6 h6 h6 h6 Or.inl h5 h26 Or.inl h5 h26 Or.inl h5 h26 Or.inl h5 h26"
+        ],
+        "inference_calls": 31,
+        "expanded_tokens": 31,
+        "elapsed_seconds": 0.025082417007070035,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-85",
+          "split": "neural-test",
+          "formula": "((p -> p) -> ((p -> (p -> t)) -> (((p -> t) -> t) -> (p -> t))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 31,
+          "proof": "h6 h6 h6 h6 h6 h29 h28 h5 h26 h28 h5 h2 h6 h6 h6 h6 h6 h6 Or.inl h5 h26 Or.inl h5 h26 Or.inl h5 h26 Or.inl h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "e900ce76b7dc4ac5f08d2a091079d1530db8dbcfe5b27a0c50b64079ac6f5553",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2632381250150502,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-n09eicef/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h6`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((p \u2192 p) \u2192 ((p \u2192 (p \u2192 t)) \u2192 (((p \u2192 t) \u2192 t) \u2192 (p \u2192 t)))) :=\n  h6 h6 h6 h6 h6 h29 h28 h5 h26 h28 h5 h2 h6 h6 h6 h6 h6 h6 Or.inl h5 h26 Or.inl h5 h26 Or.inl h5 h26 Or.inl h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 195
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-86",
+      "formula": "((r -> (s -> s)) -> ((r -> (s -> s)) -> ((p -> (s -> s)) -> ((r | (r | p)) -> (s -> s)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h29 h15 h28 h5 => h2 h2 h2 => => => => h5 h26 h15 h2 And.right h28 h5 => h5 h2 h5 => h28 h28 h5 => h5 => h5 => h28 h28 h5 h26 h15 h5"
+        ],
+        "inference_calls": 42,
+        "expanded_tokens": 42,
+        "elapsed_seconds": 0.034281833039131016,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-86",
+          "split": "neural-test",
+          "formula": "((r -> (s -> s)) -> ((r -> (s -> s)) -> ((p -> (s -> s)) -> ((r | (r | p)) -> (s -> s)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 42,
+          "proof": "h26 h2 h2 h29 h15 h28 h5 => h2 h2 h2 => => => => h5 h26 h15 h2 And.right h28 h5 => h5 h2 h5 => h28 h28 h5 => h5 => h5 => h28 h28 h5 h26 h15 h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "9fbe90cb29557627988efc4f5713db2c7ceff41db0b51c2e64952cc706b82d3b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2310189579729922,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-5p4imvq0/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-5p4imvq0/Candidate.lean:5:27: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((r \u2192 (s \u2192 s)) \u2192 ((r \u2192 (s \u2192 s)) \u2192 ((p \u2192 (s \u2192 s)) \u2192 ((r \u2228 (r \u2228 p)) \u2192 (s \u2192 s))))) :=\n  h26 h2 h2 h29 h15 h28 h5 => h2 h2 h2 => => => => h5 h26 h15 h2 And.right h28 h5 => h5 h2 h5 => h28 h28 h5 => h5 => h5 => h28 h28 h5 h26 h15 h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 197
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-87",
+      "formula": "((p -> ((p | u) | p)) -> ((((p | u) | p) -> ((q & s) & (p & u))) -> ((((q & s) & (p & u)) -> u) -> (p -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26"
+        ],
+        "inference_calls": 2,
+        "expanded_tokens": 2,
+        "elapsed_seconds": 0.002162209013476968,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-87",
+          "split": "neural-test",
+          "formula": "((p -> ((p | u) | p)) -> ((((p | u) | p) -> ((q & s) & (p & u))) -> ((((q & s) & (p & u)) -> u) -> (p -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 2,
+          "proof": "h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "cba5d20de13694d7e09d671f444fb1cc0c812c11531bf70bb04c65a548ee764b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23409916699165478,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-lpji085x/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : ((p \u2192 ((p \u2228 u) \u2228 p)) \u2192 ((((p \u2228 u) \u2228 p) \u2192 ((q \u2227 s) \u2227 (p \u2227 u))) \u2192 ((((q \u2227 s) \u2227 (p \u2227 u)) \u2192 u) \u2192 (p \u2192 u)))) :=\n  h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 199
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-88",
+      "formula": "((p -> r) -> (((q | (t | u)) -> r) -> (((p & (q -> t)) -> r) -> ((p | ((q | (t | u)) | (p & (q -> t)))) -> r))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h25 h2 And.right h29 h25 h2 h2 h2 h2 h2 h2"
+        ],
+        "inference_calls": 13,
+        "expanded_tokens": 13,
+        "elapsed_seconds": 0.013312332972418517,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-88",
+          "split": "neural-test",
+          "formula": "((p -> r) -> (((q | (t | u)) -> r) -> (((p & (q -> t)) -> r) -> ((p | ((q | (t | u)) | (p & (q -> t)))) -> r))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 13,
+          "proof": "h5 h25 h2 And.right h29 h25 h2 h2 h2 h2 h2 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "d17db16c0dba89025afa42e8185c4471402cba03bad0be07963af44936232556",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23194958397652954,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-bhi8pmjn/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((p \u2192 r) \u2192 (((q \u2228 (t \u2228 u)) \u2192 r) \u2192 (((p \u2227 (q \u2192 t)) \u2192 r) \u2192 ((p \u2228 ((q \u2228 (t \u2228 u)) \u2228 (p \u2227 (q \u2192 t)))) \u2192 r)))) :=\n  h5 h25 h2 And.right h29 h25 h2 h2 h2 h2 h2 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 200
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-89",
+      "formula": "((q -> s) -> ((s -> t) -> ((t -> t) -> (q -> t))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h2 h2 h2 h2 h2 h29 h13 h2 h5 h2 h2 h5 => h5 h25 => h5 h5 h26 h15 h5 h2 h17 h2 h0 h5 h25 h15 h15 h5 h5 h15 h15 h15 h5 h15 h15 h15 h15 h7 h15 h15 h5 h17 h0 h5 h15 h15 h5 h15 h15 h15 h15 h15 h3"
+        ],
+        "inference_calls": 57,
+        "expanded_tokens": 57,
+        "elapsed_seconds": 0.04409091599518433,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-89",
+          "split": "neural-test",
+          "formula": "((q -> s) -> ((s -> t) -> ((t -> t) -> (q -> t))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 57,
+          "proof": "h5 h2 h2 h2 h2 h2 h29 h13 h2 h5 h2 h2 h5 => h5 h25 => h5 h5 h26 h15 h5 h2 h17 h2 h0 h5 h25 h15 h15 h5 h5 h15 h15 h15 h5 h15 h15 h15 h15 h7 h15 h15 h5 h17 h0 h5 h15 h15 h5 h15 h15 h15 h15 h15 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "a98ecafef4061ab5d35e2e67b07ec83f031c1e869dcf6f09fe387457ba989918",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23620045802090317,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-9d7aufe2/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-9d7aufe2/Candidate.lean:5:43: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((q \u2192 s) \u2192 ((s \u2192 t) \u2192 ((t \u2192 t) \u2192 (q \u2192 t)))) :=\n  h5 h2 h2 h2 h2 h2 h29 h13 h2 h5 h2 h2 h5 => h5 h25 => h5 h5 h26 h15 h5 h2 h17 h2 h0 h5 h25 h15 h15 h5 h5 h15 h15 h15 h5 h15 h15 h15 h15 h7 h15 h15 h5 h17 h0 h5 h15 h15 h5 h15 h15 h15 h15 h15 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 202
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-90",
+      "formula": "(((t & r) -> ((q | r) -> s)) -> ((((p | t) -> q) -> ((q | r) -> s)) -> (((u -> q) -> ((q | r) -> s)) -> (((t & r) | (((p | t) -> q) | (u -> q))) -> ((q | r) -> s)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h29 h13 h25 h5 h2 And.right h2 h2 h2"
+        ],
+        "inference_calls": 26,
+        "expanded_tokens": 26,
+        "elapsed_seconds": 0.030251291987951845,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-90",
+          "split": "neural-test",
+          "formula": "(((t & r) -> ((q | r) -> s)) -> ((((p | t) -> q) -> ((q | r) -> s)) -> (((u -> q) -> ((q | r) -> s)) -> (((t & r) | (((p | t) -> q) | (u -> q))) -> ((q | r) -> s)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 26,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h29 h13 h25 h5 h2 And.right h2 h2 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "eab689c872cab4f6a2071f6d94b6c5929ec5938723c320ec179f1ca1b32fc420",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28335945901926607,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-lvr8ui6v/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t u : Prop) : (((t \u2227 r) \u2192 ((q \u2228 r) \u2192 s)) \u2192 ((((p \u2228 t) \u2192 q) \u2192 ((q \u2228 r) \u2192 s)) \u2192 (((u \u2192 q) \u2192 ((q \u2228 r) \u2192 s)) \u2192 (((t \u2227 r) \u2228 (((p \u2228 t) \u2192 q) \u2228 (u \u2192 q))) \u2192 ((q \u2228 r) \u2192 s))))) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h29 h13 h25 h5 h2 And.right h2 h2 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 204
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-91",
+      "formula": "(((u | p) -> t) -> ((t -> s) -> ((s -> (q -> t)) -> ((u | p) -> (q -> t)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h28 h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h2 h2 h2 And.right h30 h2 And.right h2 h2 h2 And.right h2 h2 And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 h2 h2 And.right h13 h2"
+        ],
+        "inference_calls": 50,
+        "expanded_tokens": 50,
+        "elapsed_seconds": 0.0407198749599047,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-91",
+          "split": "neural-test",
+          "formula": "(((u | p) -> t) -> ((t -> s) -> ((s -> (q -> t)) -> ((u | p) -> (q -> t)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 50,
+          "proof": "h29 h28 h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h2 h2 h2 And.right h30 h2 And.right h2 h2 h2 And.right h2 h2 And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 h2 h2 And.right h13 h2",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "f1875710b7d880b0610a6c7e13c0e9717012a6d39bd1e1fd53bf27538517ec89",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23077045800164342,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-a9maeonl/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (((u \u2228 p) \u2192 t) \u2192 ((t \u2192 s) \u2192 ((s \u2192 (q \u2192 t)) \u2192 ((u \u2228 p) \u2192 (q \u2192 t))))) :=\n  h29 h28 h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 And.right h2 h2 h2 h2 And.right h30 h2 And.right h2 h2 h2 And.right h2 h2 And.right And.right h2 h2 And.right And.right And.right And.right h2 h2 And.right h2 And.right h2 h2 h2 And.right h13 h2\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 206
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-92",
+      "formula": "((((u -> u) -> (u & p)) -> (s & q)) -> ((t -> (s & q)) -> ((s -> (s & q)) -> ((((u -> u) -> (u & p)) | (t | s)) -> (s & q)))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h29 h13 h2 h29 h2 h2 h2 h2 h2 h29 => h2 And.right h30 h2 h29 h13 h25 h2 h29 h13 h5 h2 h2 h29 => h2 h29 h3 h2 h2 h29 => h5 h2 h29 => h2 h29 h13 h25 h5 h2 And.right h29 => h5"
+        ],
+        "inference_calls": 50,
+        "expanded_tokens": 50,
+        "elapsed_seconds": 0.050940082990564406,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-92",
+          "split": "neural-test",
+          "formula": "((((u -> u) -> (u & p)) -> (s & q)) -> ((t -> (s & q)) -> ((s -> (s & q)) -> ((((u -> u) -> (u & p)) | (t | s)) -> (s & q)))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 50,
+          "proof": "h2 h2 h29 h13 h2 h29 h2 h2 h2 h2 h2 h29 => h2 And.right h30 h2 h29 h13 h25 h2 h29 h13 h5 h2 h2 h29 => h2 h29 h3 h2 h2 h29 => h5 h2 h29 => h2 h29 h13 h25 h5 h2 And.right h29 => h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "48581affe19bf1b3953e3c20b0b11255c24e0b1872bcaf8a30f297aa50228b45",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23475854197749868,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-9793_mgl/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-9793_mgl/Candidate.lean:5:42: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : ((((u \u2192 u) \u2192 (u \u2227 p)) \u2192 (s \u2227 q)) \u2192 ((t \u2192 (s \u2227 q)) \u2192 ((s \u2192 (s \u2227 q)) \u2192 ((((u \u2192 u) \u2192 (u \u2227 p)) \u2228 (t \u2228 s)) \u2192 (s \u2227 q))))) :=\n  h2 h2 h29 h13 h2 h29 h2 h2 h2 h2 h2 h29 => h2 And.right h30 h2 h29 h13 h25 h2 h29 h13 h5 h2 h2 h29 => h2 h29 h3 h2 h2 h29 => h5 h2 h29 => h2 h29 h13 h25 h5 h2 And.right h29 => h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 208
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-93",
+      "formula": "(((q | (p & s)) -> ((s | u) & s)) -> ((((s | u) & s) -> r) -> ((r -> u) -> ((q | (p & s)) -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h29 => => => h29 h28 h5 h2 And.right h28 h5 => h29 => => => h29 h28 h13 h5 h25 => h29 h28 h13 h25 => And.right h30 h2 h29 h28 h13 h5"
+        ],
+        "inference_calls": 38,
+        "expanded_tokens": 38,
+        "elapsed_seconds": 0.03269058297155425,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-93",
+          "split": "neural-test",
+          "formula": "(((q | (p & s)) -> ((s | u) & s)) -> ((((s | u) & s) -> r) -> ((r -> u) -> ((q | (p & s)) -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 38,
+          "proof": "h26 h2 h2 h29 => => => h29 h28 h5 h2 And.right h28 h5 => h29 => => => h29 h28 h13 h5 h25 => h29 h28 h13 h25 => And.right h30 h2 h29 h28 h13 h5",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "e9f90d5588e0df3c925f2e81836275db8fb857937559a954411568b9a4ae183b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23399716697167605,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ckilebig/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ckilebig/Candidate.lean:5:16: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : (((q \u2228 (p \u2227 s)) \u2192 ((s \u2228 u) \u2227 s)) \u2192 ((((s \u2228 u) \u2227 s) \u2192 r) \u2192 ((r \u2192 u) \u2192 ((q \u2228 (p \u2227 s)) \u2192 u)))) :=\n  h26 h2 h2 h29 => => => h29 h28 h5 h2 And.right h28 h5 => h29 => => => h29 h28 h13 h5 h25 => h29 h28 h13 h25 => And.right h30 h2 h29 h28 h13 h5\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 210
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-94",
+      "formula": "(((q | (t -> t)) -> p) -> (((t -> t) -> p) -> (((s & p) -> p) -> (((q | (t -> t)) | ((t -> t) | (s & p))) -> p))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h26 h2 h2 h29 h28 h5 h2 h30 h2 h2 h2 h2 h30 h2 h2 h2 h2 h2 h30 h2 h2 h2 And.right h30 h2 h29 h13 h25 h2 And.right"
+        ],
+        "inference_calls": 31,
+        "expanded_tokens": 31,
+        "elapsed_seconds": 0.03302804101258516,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-94",
+          "split": "neural-test",
+          "formula": "(((q | (t -> t)) -> p) -> (((t -> t) -> p) -> (((s & p) -> p) -> (((q | (t -> t)) | ((t -> t) | (s & p))) -> p))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 31,
+          "proof": "h26 h2 h2 h29 h28 h5 h2 h30 h2 h2 h2 h2 h30 h2 h2 h2 h2 h2 h30 h2 h2 h2 And.right h30 h2 h29 h13 h25 h2 And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "b336f847dc11389046244d7b4eacb8073e5d347cb3fbcf8e6a5ae1a8b1a507b3",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2359106249641627,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-27hps_ix/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h26`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((q \u2228 (t \u2192 t)) \u2192 p) \u2192 (((t \u2192 t) \u2192 p) \u2192 (((s \u2227 p) \u2192 p) \u2192 (((q \u2228 (t \u2192 t)) \u2228 ((t \u2192 t) \u2228 (s \u2227 p))) \u2192 p)))) :=\n  h26 h2 h2 h29 h28 h5 h2 h30 h2 h2 h2 h2 h30 h2 h2 h2 h2 h2 h30 h2 h2 h2 And.right h30 h2 h29 h13 h25 h2 And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 211
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-95",
+      "formula": "((u -> u) -> ((u -> p) -> ((p -> u) -> (u -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h5 h2 h2 h2 h2 h2 h2 h2 h2 h5 h5 h2 h5 => h5 => h5 h5 h5 h5 h5 h5 h5 h26 h5 h5 h5 h17 => h5 h26 h5 h26"
+        ],
+        "inference_calls": 34,
+        "expanded_tokens": 34,
+        "elapsed_seconds": 0.0227628750144504,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-95",
+          "split": "neural-test",
+          "formula": "((u -> u) -> ((u -> p) -> ((p -> u) -> (u -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 34,
+          "proof": "h5 h2 h2 h2 h2 h2 h2 h2 h2 h5 h5 h2 h5 => h5 => h5 h5 h5 h5 h5 h5 h5 h26 h5 h5 h5 h17 => h5 h26 h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "3bee6ed6f80e08b87a5dde769428135060df92dea85e1c34808c09e229033794",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23542745801387355,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-19n9lwn7/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h5`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-19n9lwn7/Candidate.lean:5:41: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p u : Prop) : ((u \u2192 u) \u2192 ((u \u2192 p) \u2192 ((p \u2192 u) \u2192 (u \u2192 u)))) :=\n  h5 h2 h2 h2 h2 h2 h2 h2 h2 h5 h5 h2 h5 => h5 => h5 h5 h5 h5 h5 h5 h5 h26 h5 h5 h5 h17 => h5 h26 h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 213
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-96",
+      "formula": "((r -> u) -> ((p -> u) -> ((t -> u) -> ((r | (p | t)) -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h5 h2 h5 h25 h29 h5 h5 h2 fun => h5 h26 Or.inl h5 h5 h25 h15 h15 h15 h5 h15 h5 h26 h5 h15 h15 h15 h15 h7 h15 h15 h15 h7 h15 h15 h7 h15 h7 h15 h7 h15 h15 h15 h7 h15 h7 h15 h3"
+        ],
+        "inference_calls": 53,
+        "expanded_tokens": 53,
+        "elapsed_seconds": 0.037973917031195015,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-96",
+          "split": "neural-test",
+          "formula": "((r -> u) -> ((p -> u) -> ((t -> u) -> ((r | (p | t)) -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 53,
+          "proof": "h2 h2 h2 h2 h5 h2 h5 h25 h29 h5 h5 h2 fun => h5 h26 Or.inl h5 h5 h25 h15 h15 h15 h5 h15 h5 h26 h5 h15 h15 h15 h15 h7 h15 h15 h15 h7 h15 h15 h7 h15 h7 h15 h7 h15 h15 h15 h7 h15 h7 h15 h3",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "5e835cc582dbd7527ce32032519f700beef14f49b83e1f6e1f783300f22118b5",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23276695801177993,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-3k75l6p1/Candidate.lean:5:43: error: unexpected token '=>'; expected '[', '{', '|', '\u2983' or term\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r t u : Prop) : ((r \u2192 u) \u2192 ((p \u2192 u) \u2192 ((t \u2192 u) \u2192 ((r \u2228 (p \u2228 t)) \u2192 u)))) :=\n  h2 h2 h2 h2 h5 h2 h5 h25 h29 h5 h5 h2 fun => h5 h26 Or.inl h5 h5 h25 h15 h15 h15 h5 h15 h5 h26 h5 h15 h15 h15 h15 h7 h15 h15 h15 h7 h15 h15 h7 h15 h7 h15 h7 h15 h15 h15 h7 h15 h7 h15 h3\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 215
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-97",
+      "formula": "(((t & t) -> (u -> s)) -> (((u -> s) -> r) -> ((r -> p) -> ((t & t) -> p))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h29 h5 h2 h2 h5 h2 h2 h5 h2 h2 h2 h2 h2 h5 h26 h5 h2 h2 h5 h26 h26 h15 h15 h5 h26 h3 => h5 h26"
+        ],
+        "inference_calls": 30,
+        "expanded_tokens": 30,
+        "elapsed_seconds": 0.024894666974432766,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-97",
+          "split": "neural-test",
+          "formula": "(((t & t) -> (u -> s)) -> (((u -> s) -> r) -> ((r -> p) -> ((t & t) -> p))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 30,
+          "proof": "h29 h5 h2 h2 h5 h2 h2 h5 h2 h2 h2 h2 h2 h5 h26 h5 h2 h2 h5 h26 h26 h15 h15 h5 h26 h3 => h5 h26",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "26cd3cc88cbd78a4f42eca70e746756439cbe8d447f1e34318bce339bbf6eea2",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23384283401537687,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-g5rm04uh/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h29`\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-g5rm04uh/Candidate.lean:5:87: error: unexpected token '=>'; expected command\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t u : Prop) : (((t \u2227 t) \u2192 (u \u2192 s)) \u2192 (((u \u2192 s) \u2192 r) \u2192 ((r \u2192 p) \u2192 ((t \u2227 t) \u2192 p)))) :=\n  h29 h5 h2 h2 h5 h2 h2 h5 h2 h2 h2 h2 h2 h5 h26 h5 h2 h2 h5 h26 h26 h15 h15 h5 h26 h3 => h5 h26\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 216
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-98",
+      "formula": "((p -> p) -> ((r -> p) -> ((q -> p) -> ((p | (r | q)) -> p))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h6 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h6 h6 h2 h2 h2 h2 And.right h30 h2 h2 h2 h2 And.right h30 h25"
+        ],
+        "inference_calls": 31,
+        "expanded_tokens": 31,
+        "elapsed_seconds": 0.022305833001155406,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-98",
+          "split": "neural-test",
+          "formula": "((p -> p) -> ((r -> p) -> ((q -> p) -> ((p | (r | q)) -> p))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 31,
+          "proof": "h2 h6 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h6 h6 h2 h2 h2 h2 And.right h30 h2 h2 h2 h2 And.right h30 h25",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "50beea923bc2cba437b61b932da37fba5a529969f44032a12b7c8d2a9dd777ba",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2860010829754174,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-p7wqxygn/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2192 p) \u2192 ((r \u2192 p) \u2192 ((q \u2192 p) \u2192 ((p \u2228 (r \u2228 q)) \u2192 p)))) :=\n  h2 h6 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h6 h6 h2 h2 h2 h2 And.right h30 h2 h2 h2 h2 And.right h30 h25\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 218
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-99",
+      "formula": "((t -> (q | p)) -> (((q | p) -> ((r & r) | t)) -> ((((r & r) | t) -> u) -> (t -> u))))",
+      "solved": false,
+      "generation": {
+        "proofs": [
+          "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h30 h2 And.right h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right"
+        ],
+        "inference_calls": 29,
+        "expanded_tokens": 29,
+        "elapsed_seconds": 0.02199675003066659,
+        "completed": 1,
+        "timed_out": false
+      },
+      "attempts": [
+        {
+          "task_id": "test-99",
+          "split": "neural-test",
+          "formula": "((t -> (q | p)) -> (((q | p) -> ((r & r) | t)) -> ((((r & r) | t) -> u) -> (t -> u))))",
+          "strategy": "neural-transformer",
+          "status": "rejected",
+          "nodes": 29,
+          "proof": "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h30 h2 And.right h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right",
+          "verification": {
+            "accepted": false,
+            "reason": "lean_rejected",
+            "source_hash": "16d9a9fc287c16663e47209a946d7d136b684d0809fb2aeb8d589bd0f4cbd4bb",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23030320898396894,
+            "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-4oh2eswh/Candidate.lean:5:2: error(lean.unknownIdentifier): Unknown identifier `h2`\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((t \u2192 (q \u2228 p)) \u2192 (((q \u2228 p) \u2192 ((r \u2227 r) \u2228 t)) \u2192 ((((r \u2227 r) \u2228 t) \u2192 u) \u2192 (t \u2192 u)))) :=\n  h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h30 h2 And.right h2 h2 h2 And.right h2 And.right And.right And.right h2 h2 And.right And.right\n#print axioms valentyn_candidate\n"
+          },
+          "candidate_rank": 0,
+          "attempt_id": 220
+        }
+      ],
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    }
+  ],
+  "symbolic_fallback": false,
+  "note": "Valid proofs must pass Lean and its zero-axiom audit. Failed predictions remain in the log.",
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "9f958c47d53fa0139f778bf5f2fc692d08e848316b49c911dcb120e6caa114ea",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}

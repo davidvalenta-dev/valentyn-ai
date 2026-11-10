@@ -1,0 +1,132 @@
+{
+  "kind": "neural_training",
+  "dataset_digest": "c0a4c4ac485d7faaa5b02af837a9ec05fc28bc341f0359950e839bd474d4c02b",
+  "initialization": {
+    "random_seed": 7,
+    "pretrained_weights": false
+  },
+  "torch_version": "2.9.1",
+  "device": "cpu",
+  "architecture": {
+    "kind": "gqa",
+    "width": 64,
+    "layers": 2,
+    "heads": 4,
+    "context": 256,
+    "kv_heads": 2,
+    "latent_rank": 24
+  },
+  "parameters": 98496,
+  "epochs": 12,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "best_epoch": 12,
+  "examples": 256,
+  "unique_supervised_tokens": 5576,
+  "supervised_tokens_seen": 66912,
+  "initial_validation_loss": 4.094658115278298,
+  "best_validation_loss": 0.21676638029862022,
+  "training_seconds": 3.94950612494722,
+  "memory": {
+    "peak_process_rss_bytes": 368951296
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "training_loss": 2.163872815668583,
+      "validation_loss": 1.2916963911842907,
+      "elapsed_seconds": 0.7735999169526622
+    },
+    {
+      "epoch": 2,
+      "training_loss": 1.07871925085783,
+      "validation_loss": 0.8842038636443497,
+      "elapsed_seconds": 1.0545502500026487
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.7861155644059181,
+      "validation_loss": 0.683849580641808,
+      "elapsed_seconds": 1.341335666947998
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.6177828498184681,
+      "validation_loss": 0.5817374210843796,
+      "elapsed_seconds": 1.6312346249469556
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.5101523213088512,
+      "validation_loss": 0.45948732024368677,
+      "elapsed_seconds": 1.9078375419485383
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.41277075931429863,
+      "validation_loss": 0.3899765472183342,
+      "elapsed_seconds": 2.2014781249454245
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.33618752285838127,
+      "validation_loss": 0.3230617814871861,
+      "elapsed_seconds": 2.50634258298669
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.25839576683938503,
+      "validation_loss": 0.2710200800173644,
+      "elapsed_seconds": 2.799865416949615
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.212150520645082,
+      "validation_loss": 0.26059656557829486,
+      "elapsed_seconds": 3.088393707992509
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.17083300277590752,
+      "validation_loss": 0.2270537895419966,
+      "elapsed_seconds": 3.3730877499911003
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.14901331486180425,
+      "validation_loss": 0.22849058640235545,
+      "elapsed_seconds": 3.660788749984931
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.1439261045306921,
+      "validation_loss": 0.21676638029862022,
+      "elapsed_seconds": 3.946396499988623
+    }
+  ],
+  "resource_plan": {
+    "hardware": {
+      "machine": "arm64",
+      "chip": "Apple M2",
+      "system": "Darwin",
+      "os_version": "macOS-14.4-arm64-arm-64bit",
+      "python": "3.11.9",
+      "python_executable": "/Users/davidvalenta/Documents/ChatGPT/Valentyn/.venv-model/bin/python",
+      "available_memory_estimate_bytes": 5163745280,
+      "free_disk_bytes": 58711531520,
+      "available_memory_note": "macOS estimate includes reclaimable inactive/speculative pages; not a guaranteed allocation.",
+      "physical_memory_bytes": 17179869184,
+      "conservative_target_bytes": 8589934592,
+      "torch_installed": true,
+      "mlx_installed": false
+    },
+    "estimated_training_tensor_bytes": 152570880,
+    "memory_budget": {
+      "process_rss_bytes": 3221225472,
+      "mps_driver_bytes": 3221225472
+    },
+    "note": "Estimate excludes runtime overhead. Monitoring checks process RSS and Metal driver counters separately."
+  },
+  "selection": "Lowest validation token loss; test set never used for selection.",
+  "scope": "Autoregressive proof generation, learned from random weights unless parent explicitly provided."
+}

@@ -1,0 +1,10 @@
+# Tested macOS/Python 3.11 optional model dependencies; install Torch CPU wheel separately on Linux.
+torch==2.9.1
+filelock==3.18.0
+typing_extensions==4.12.2
+sympy==1.14.0
+networkx==3.5
+jinja2==3.1.6
+fsspec==2025.7.0
+mpmath==1.3.0
+MarkupSafe==2.1.5

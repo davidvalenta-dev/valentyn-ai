@@ -51,6 +51,8 @@ These are elementary propositions, not claimed discoveries in the mathematical l
 
 [Portfolio report](../reports/portfolio.json), [curriculum report](../reports/curriculum.json), [transfer report](../reports/transfer.json).
 
-All raw experiment reports share implementation digest `36b90e560143f2672d915f45242cc7249d5729217f7eb44f9d7123b2a664081d`. This hashes Python source, bundled corpus, Lean proof modules/toolchain/build settings, package configuration, and experiment scripts. Timing and attempt IDs may differ on reproduction. The test and policy digests are retained in the reports.
+The initial symbolic experiment reports in the root `reports/` directory share implementation digest `36b90e560143f2672d915f45242cc7249d5729217f7eb44f9d7123b2a664081d`. This hashes Python source, bundled corpus, Lean proof modules/toolchain/build settings, package configuration, and experiment scripts. Timing and attempt IDs may differ on reproduction. The test and policy digests are retained in the reports.
 
 The most useful next scientific test is a larger, freshly frozen family/size-held-out suite and an oracle strategy comparison. If even the per-task oracle barely improves over a constant strategy, training a more elaborate selector is unlikely to be the right investment.
+
+The results above describe the initial symbolic system. Later neural experiments, with their own implementation hashes and controls, are recorded in [../EXPERIMENTS.md](../EXPERIMENTS.md) and `reports/neural/`.

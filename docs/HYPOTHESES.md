@@ -2,6 +2,8 @@
 
 These are proposed research directions, not established discoveries. The individual ingredients have substantial prior art. “New” below identifies a proposed distinction to investigate, not a verified priority claim. A proper novelty claim requires a deeper literature review and experiments. Six hypotheses are listed so that the program does not depend on one architectural bet.
 
+Update: the program now includes **H7**, below, plus actual from-scratch proof-generating models. The first six hypotheses and their initial negative results are retained as historical research proposals. The new sequential state policy is not the graph-memory architecture proposed in H6.
+
 ## Priority ranking
 
 Scores are judgement calls, 1 low to 5 high; low cost is desirable. Novelty is the estimated distinctiveness of the proposed experiment, not a claim of invention.
@@ -68,3 +70,33 @@ The first five have executable low-cost probes. For H3–H5, those probes test p
 **Experiment specification.** Collect traces with the existing prover; freeze train/family-validation/test partitions; train all small policies from random initialization on identical traces; evaluate unseen proof depth and retained earlier domains. The neural training/graph encoder is **not implemented in this release**. The executable trace-producing starting point is `valentyn train` and its archived search observations; finer per-node traces must be added before this experiment is runnable in full. **Success criterion.** At least 15% higher solve rate at fixed complete-run compute, with no retained-domain decline. **Falsification.** Gains vanish when parameter count, trace count, context size, and memory lookup time are matched. **Compute.** Start below 1M parameters with batches fitting in a conservative 2 GB process allowance; actual memory must be measured. **Scaling.** Quantified and multi-domain proof graphs only after the small model demonstrates a real benefit.
 
 **Hidden assumption.** More expressive memory is the bottleneck. Better search rules or more diverse tasks may matter more than neural architecture.
+
+## H7. Does learned local proof construction transfer more economically than whole-term generation?
+
+**Formulation.** At fixed teacher-proof data and generation caps, compare `Solve(π_state, typed_environment, B)` with whole-term generation and with learned/untrained/random policies in the same environment. Optimize the full curve of accepted proofs versus inference plus verification cost, not just action accuracy. The model predicts local actions from a goal and typed hypotheses; a fixed interpreter constructs terms, and Lean remains independent.
+
+**Mechanism.** Local states expose what is currently known, reducing the implicit proof-state reconstruction burden of long token generation. Composing learned inference choices may transfer to longer or unfamiliar proof patterns. **Prior work.** Factorization, neural policies, and execution guidance already appear in AlphaProof, HTPS, and NanoProof. Our prospective contribution is a carefully controlled small-memory transfer/cost study and, later, cost-selected reusable abstractions; it is not a claim to have invented factorization.
+
+**Executable experiment.** Generate data with `valentyn model-data`; train whole-term Transformer/GRU models with `model-train`; train local actions with `model-train --kind state`; evaluate with `model-evaluate`. `scripts/frozen_transfer.py` freezes checkpoint hashes before generating a fresh suite. `--random-policy-seed` supplies an environment-matched random control. All completed neural proofs pass Lean.
+
+**Baselines and ablations.** Include the best symbolic prover, proof retrieval, untrained sequence models, untrained state policy, five random-policy seeds, greedy versus wider search, and matched data/parameter/compute variants. Legality masking and projections must be held constant when estimating the value of learning. Remove or equalize each representation advantage in a follow-up experiment.
+
+**Held-out data.** Exclude theorem-family and canonical structure overlap from fitting. Evaluate a newly generated suite after model freezing, then independently sourced arithmetic/finite-combinatorics tasks. Synthetic logic alone cannot establish broad mathematical generalization.
+
+**Success criterion.** A preregistered five-training-seed study shows at least a 15-point solve-rate gain over environment-matched untrained/random controls on fresh families, with a better complete-run compute frontier; benefit survives representation and data-volume ablations. **Failure criterion.** Gains disappear under the same typed environment, are explained by the random policy or copied proof patterns, or vanish on a second mathematical domain.
+
+**Requirements.** The present models fit in small local processes and train with Metal; actual parameter, token, time, and memory counters are recorded. Initial tests do not require a 0.5B+ pretrained model. Larger Mathlib experiments need profiled CPU elaboration and an external training budget only after a positive small-domain result.
+
+**Publishable contribution.** A new abstraction/credit-assignment mechanism with replicated cross-family or cross-domain gains, verified artifacts, honest cost accounting, and reproducible low-memory implementation. The current synthetic pilot alone is not claimed as a publishable algorithmic breakthrough.
+
+## Follow-up experiment matrix for all seven hypotheses
+
+| Hypothesis | Required confounder control / ablation | Held-out data | Evidence needed for a paper | Priority |
+|---|---|---|---|---|
+| H1 strategy selection | Best constant/oracle, parameter count, fitting cost, feature ablation | New formula families and sizes | Gains beyond a constant selector across seeds | Low after initial null result |
+| H2 constrained evolution | Random mutation search at equal total cost; remove regression gate | Frozen new families | Transferable improvements, not selection-set tuning | Medium |
+| H3 portfolios | Equal node, latency, and total proposal budgets; independent versus shared caches | Difficult generators with oracle headroom | Improved compute frontier beyond best fixed/restart baseline | Medium |
+| H4 curricula | Equal updates/data/compute; uniform and size schedules; remove uncertainty/transfer terms | Independently generated families | Better learning efficiency and external transfer | Medium |
+| H5 abstraction memory | Exact-match cache, random macros, matched lookup cost; remove certified generalization | Held-out composition depths and a second domain | Lifecycle cost savings from reusable concepts | High scientific value; higher difficulty |
+| H6 recurrent graph memory | Match parameters/context/data; remove persistent memory; retention battery | Longer proofs and prior domains | Transfer gains without context-size or forgetting confounders | High difficulty; defer expensive training |
+| H7 local neural construction | Same legality/projection environment for learned/untrained/random; match data and search | Fresh frozen composition suite, then arithmetic | Replicated transfer/cost gains plus a substantive new mechanism | Highest immediate affordability |

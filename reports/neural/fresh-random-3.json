@@ -1,0 +1,2776 @@
+{
+  "kind": "factorized_evaluation",
+  "split": "test",
+  "dataset_digest": "6583e3a7c8db75c4dedbfb847563bd51cf499df6ce1e7b7b85715e558036f7d4",
+  "weights_sha256": "5549eb08220d501ef7be3c1678882911f747ea1de6ae84622ee75a5a8f5eeef8",
+  "parameters": 72005,
+  "device": "cpu",
+  "torch_version": "2.9.1",
+  "tasks": 128,
+  "solved": 31,
+  "max_nodes": 200,
+  "beam": 1,
+  "random_policy_seed": 3,
+  "inference_calls": 0,
+  "nodes": 886,
+  "inference_seconds": 0.04538062581559643,
+  "total_evaluation_seconds": 7.580688624992035,
+  "slices": {
+    "substitution": {
+      "tasks": 0,
+      "solved": 0
+    },
+    "held_out_family": {
+      "tasks": 128,
+      "solved": 31
+    }
+  },
+  "memory": {
+    "peak_process_rss_bytes": 225148928
+  },
+  "results": [
+    {
+      "task_id": "fresh-0",
+      "formula": "((q -> u) -> ((u -> (r -> r)) -> (((r -> r) -> (s | r)) -> (q -> (s | r)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004127920255996287,
+        "random_policy_seed": 3,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-1",
+      "formula": "((s -> u) -> (((t -> t) -> u) -> ((q -> u) -> ((s | ((t -> t) | q)) -> u))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002371660084463656,
+        "random_policy_seed": 4,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-2",
+      "formula": "(((((p | p) & s) & s) & ((t & (p | t)) & (r & q))) -> (((r & q) & (t & (p | t))) & (s & ((p | p) & s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000654415984172374,
+        "random_policy_seed": 5,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-3",
+      "formula": "(((p | t) -> (q & (q | (q | s)))) -> (((t -> s) -> (q & (q | (q | s)))) -> (((p | t) | (t -> s)) -> ((q | (q | s)) & q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003772919881157577,
+        "random_policy_seed": 6,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-4",
+      "formula": "((r -> r) -> ((r -> q) -> ((q -> (p -> u)) -> (r -> (p -> u)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-4",
+          "split": "factorized-test",
+          "formula": "((r -> r) -> ((r -> q) -> ((q -> (p -> u)) -> (r -> (p -> u)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => (h6 (h3 h9) h12))))))",
+          "nodes": 9,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "8f886b2cb6bfa1706249bda9514664a1bd381ff00ee7388f619f8ebb1135e302",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22816733398940414,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : ((r \u2192 r) \u2192 ((r \u2192 q) \u2192 ((q \u2192 (p \u2192 u)) \u2192 (r \u2192 (p \u2192 u))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( fun h12 => ( h6 ( h3 h9 ) h12 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1157
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => (h6 (h3 h9) h12))))))"
+        ],
+        "nodes": 9,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002827499993145466,
+        "random_policy_seed": 7,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-5",
+      "formula": "((q -> (s -> q)) -> ((p -> (s -> q)) -> (((t -> t) -> (s -> q)) -> ((q | (p | (t -> t))) -> (s -> q)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-5",
+          "split": "factorized-test",
+          "formula": "((q -> (s -> q)) -> ((p -> (s -> q)) -> (((t -> t) -> (s -> q)) -> ((q | (p | (t -> t))) -> (s -> q)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (Or.elim h9 (fun h16 => (fun h21 => h21)) (fun h17 => (Or.elim h17 (fun h25 => (fun h30 => h30)) (fun h26 => h26)))))))))",
+          "nodes": 12,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "6c997a140cf38edf78c9b536058801c7683d2453bdaf3539d0ffa014f88f8cef",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23217783303698525,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : ((q \u2192 (s \u2192 q)) \u2192 ((p \u2192 (s \u2192 q)) \u2192 (((t \u2192 t) \u2192 (s \u2192 q)) \u2192 ((q \u2228 (p \u2228 (t \u2192 t))) \u2192 (s \u2192 q))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( Or.elim h9 ( fun h16 => ( fun h21 => h21 ) ) ( fun h17 => ( Or.elim h17 ( fun h25 => ( fun h30 => h30 ) ) ( fun h26 => h26 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1158
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (Or.elim h9 (fun h16 => (fun h21 => h21)) (fun h17 => (Or.elim h17 (fun h25 => (fun h30 => h30)) (fun h26 => h26)))))))))"
+        ],
+        "nodes": 12,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005590000073425472,
+        "random_policy_seed": 8,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-6",
+      "formula": "(((r & (p & s)) & ((q -> p) & t)) -> ((t & (q -> p)) & ((p & s) & r)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-6",
+          "split": "factorized-test",
+          "formula": "(((r & (p & s)) & ((q -> p) & t)) -> ((t & (q -> p)) & ((p & s) & r)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (fun h15 => ((And.left (And.right h0)) h15))) (And.intro (And.intro (And.left (And.right (And.left h0))) (And.right (And.right (And.left h0)))) (And.left (And.left h0)))))",
+          "nodes": 12,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "ecd985f46b7ba5dedb17e8d76ebb69a7d54ed7a165156c282f9e6f925a63fce7",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2318995000096038,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t : Prop) : (((r \u2227 (p \u2227 s)) \u2227 ((q \u2192 p) \u2227 t)) \u2192 ((t \u2227 (q \u2192 p)) \u2227 ((p \u2227 s) \u2227 r))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.right h0 ) ) ( fun h15 => ( ( And.left ( And.right h0 ) ) h15 ) ) ) ( And.intro ( And.intro ( And.left ( And.right ( And.left h0 ) ) ) ( And.right ( And.right ( And.left h0 ) ) ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1159
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (fun h15 => ((And.left (And.right h0)) h15))) (And.intro (And.intro (And.left (And.right (And.left h0))) (And.right (And.right (And.left h0)))) (And.left (And.left h0)))))"
+        ],
+        "nodes": 12,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0007926669786684215,
+        "random_policy_seed": 9,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-7",
+      "formula": "(((t & q) -> (q & p)) -> ((((u -> t) -> s) -> (q & p)) -> (((t & q) | ((u -> t) -> s)) -> (p & q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003381249844096601,
+        "random_policy_seed": 10,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-8",
+      "formula": "((t -> p) -> ((p -> p) -> ((p -> s) -> (t -> s))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-8",
+          "split": "factorized-test",
+          "formula": "((t -> p) -> ((p -> p) -> ((p -> s) -> (t -> s))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h0 h9))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "fa50cdca65e03f008f876fba409f530b790aa7e1fdef77ea388acf2029b21ddc",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2291991250240244,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t : Prop) : ((t \u2192 p) \u2192 ((p \u2192 p) \u2192 ((p \u2192 s) \u2192 (t \u2192 s)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h0 h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1161
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h0 h9))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002055419608950615,
+        "random_policy_seed": 11,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-9",
+      "formula": "((t -> t) -> ((s -> t) -> ((s -> t) -> ((t | (s | s)) -> t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003132080310024321,
+        "random_policy_seed": 12,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-10",
+      "formula": "(((u & (r -> r)) & (u & (r -> p))) -> (((r -> p) & u) & ((r -> r) & u)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000325417029671371,
+        "random_policy_seed": 13,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-11",
+      "formula": "((t -> (t & t)) -> ((u -> (t & t)) -> ((t | u) -> (t & t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00017462496180087328,
+        "random_policy_seed": 14,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-12",
+      "formula": "((p -> s) -> ((s -> ((q | r) -> (p -> u))) -> ((((q | r) -> (p -> u)) -> ((p & t) | q)) -> (p -> ((p & t) | q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00022587500279769301,
+        "random_policy_seed": 15,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-13",
+      "formula": "((t -> (s | s)) -> ((t -> (s | s)) -> ((((u | s) | (t & u)) -> (s | s)) -> ((t | (t | ((u | s) | (t & u)))) -> (s | s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000284458976238966,
+        "random_policy_seed": 16,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-14",
+      "formula": "((((p | q) & (p & u)) & (q & u)) -> ((u & q) & ((p & u) & (p | q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 4,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002354579628445208,
+        "random_policy_seed": 17,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-15",
+      "formula": "((((s | t) | t) -> (u & t)) -> ((s -> (u & t)) -> ((((s | t) | t) | s) -> (t & u))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00032724998891353607,
+        "random_policy_seed": 18,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-16",
+      "formula": "(((q -> u) -> ((r & t) -> r)) -> ((((r & t) -> r) -> q) -> ((q -> t) -> ((q -> u) -> t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-16",
+          "split": "factorized-test",
+          "formula": "(((q -> u) -> ((r & t) -> r)) -> ((((r & t) -> r) -> q) -> ((q -> t) -> ((q -> u) -> t))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "cce9fb183acf5f832d045a375fafdd3445563e329dbb7ad25cbbd7728e41eed0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2313662079977803,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t u : Prop) : (((q \u2192 u) \u2192 ((r \u2227 t) \u2192 r)) \u2192 ((((r \u2227 t) \u2192 r) \u2192 q) \u2192 ((q \u2192 t) \u2192 ((q \u2192 u) \u2192 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1169
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002840419765561819,
+        "random_policy_seed": 19,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-17",
+      "formula": "((r -> q) -> ((t -> q) -> ((q -> q) -> ((r | (t | q)) -> q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00022987497504800558,
+        "random_policy_seed": 20,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-18",
+      "formula": "(((((t & s) | (s | q)) & r) & (s & (s -> (r | s)))) -> (((s -> (r | s)) & s) & (r & ((t & s) | (s | q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005945829907432199,
+        "random_policy_seed": 21,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-19",
+      "formula": "(((t & t) -> (p & (u | t))) -> ((((q -> p) | (t | p)) -> (p & (u | t))) -> (((t & t) | ((q -> p) | (t | p))) -> ((u | t) & p))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003688749857246876,
+        "random_policy_seed": 22,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-20",
+      "formula": "(((u | s) -> p) -> ((p -> s) -> ((s -> s) -> ((u | s) -> s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001818749587982893,
+        "random_policy_seed": 23,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-21",
+      "formula": "((t -> s) -> ((((t | r) -> q) -> s) -> ((((p -> q) & t) -> s) -> ((t | (((t | r) -> q) | ((p -> q) & t))) -> s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003326250007376075,
+        "random_policy_seed": 24,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-22",
+      "formula": "(((q & r) & ((u | r) & u)) -> ((u & (u | r)) & (r & q)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 3,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00015645899111405015,
+        "random_policy_seed": 25,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-23",
+      "formula": "((u -> (s & p)) -> (((t -> p) -> (s & p)) -> ((u | (t -> p)) -> (p & s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001602920237928629,
+        "random_policy_seed": 26,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-24",
+      "formula": "((q -> r) -> ((r -> t) -> ((t -> (p & s)) -> (q -> (p & s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001420410117134452,
+        "random_policy_seed": 27,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-25",
+      "formula": "((r -> t) -> (((q & (p & p)) -> t) -> ((((u | u) | p) -> t) -> ((r | ((q & (p & p)) | ((u | u) | p))) -> t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002798750065267086,
+        "random_policy_seed": 28,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-26",
+      "formula": "(((s & q) & (q & s)) -> ((s & q) & (q & s)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-26",
+          "split": "factorized-test",
+          "formula": "(((s & q) & (q & s)) -> ((s & q) & (q & s)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "1127f7af9f2acbcd9454deacfaba7ddf594629055d570485568fa513182209ea",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2321509590256028,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : (((s \u2227 q) \u2227 (q \u2227 s)) \u2192 ((s \u2227 q) \u2227 (q \u2227 s))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1179
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 2,
+        "inference_calls": 0,
+        "elapsed_seconds": 8.241605246439576e-05,
+        "random_policy_seed": 29,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-27",
+      "formula": "(((s -> u) -> (t & (q -> u))) -> ((q -> (t & (q -> u))) -> (((s -> u) | q) -> ((q -> u) & t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00039608299266546965,
+        "random_policy_seed": 30,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-28",
+      "formula": "(((u | (p | p)) -> u) -> ((u -> q) -> ((q -> ((q | r) | q)) -> ((u | (p | p)) -> ((q | r) | q)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-28",
+          "split": "factorized-test",
+          "formula": "(((u | (p | p)) -> u) -> ((u -> q) -> ((q -> ((q | r) | q)) -> ((u | (p | p)) -> ((q | r) | q)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (Or.elim h9 (fun h19 => h19) (fun h20 => (Or.elim h20 (fun h25 => (h0 (Or.inr (Or.inr h25)))) (fun h26 => (h0 (Or.inr (Or.inr h26)))))))))))))",
+          "nodes": 17,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "4e735bca61486a446b19be4d021d95d554269117d23b1adecdfe4b2d0f0ecd49",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23611670901300386,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : (((u \u2228 (p \u2228 p)) \u2192 u) \u2192 ((u \u2192 q) \u2192 ((q \u2192 ((q \u2228 r) \u2228 q)) \u2192 ((u \u2228 (p \u2228 p)) \u2192 ((q \u2228 r) \u2228 q))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( Or.elim h9 ( fun h19 => h19 ) ( fun h20 => ( Or.elim h20 ( fun h25 => ( h0 ( Or.inr ( Or.inr h25 ) ) ) ) ( fun h26 => ( h0 ( Or.inr ( Or.inr h26 ) ) ) ) ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1181
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (Or.elim h9 (fun h19 => h19) (fun h20 => (Or.elim h20 (fun h25 => (h0 (Or.inr (Or.inr h25)))) (fun h26 => (h0 (Or.inr (Or.inr h26)))))))))))))"
+        ],
+        "nodes": 17,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0006177090108394623,
+        "random_policy_seed": 31,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-29",
+      "formula": "(((q | q) -> (r -> p)) -> ((u -> (r -> p)) -> ((s -> (r -> p)) -> (((q | q) | (u | s)) -> (r -> p)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0012745410203933716,
+        "random_policy_seed": 32,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-30",
+      "formula": "(((((r -> p) & (p | t)) & t) & (u & ((q & r) | (s -> t)))) -> ((((q & r) | (s -> t)) & u) & (t & ((r -> p) & (p | t)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0017935829819180071,
+        "random_policy_seed": 33,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-31",
+      "formula": "((s -> (u & (s | s))) -> ((p -> (u & (s | s))) -> ((s | p) -> ((s | s) & u))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0009488330106250942,
+        "random_policy_seed": 34,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-32",
+      "formula": "((r -> u) -> ((u -> (s & (q -> t))) -> (((s & (q -> t)) -> (s -> r)) -> (r -> (s -> r)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-32",
+          "split": "factorized-test",
+          "formula": "((r -> u) -> ((u -> (s & (q -> t))) -> (((s & (q -> t)) -> (s -> r)) -> (r -> (s -> r)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => h9)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7afecf3d6aa6280b229088d7f5a79782da9833e6b0023524945dcf1c3b4887d3",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.28652479202719405,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t u : Prop) : ((r \u2192 u) \u2192 ((u \u2192 (s \u2227 (q \u2192 t))) \u2192 (((s \u2227 (q \u2192 t)) \u2192 (s \u2192 r)) \u2192 (r \u2192 (s \u2192 r))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( fun h12 => h9 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1185
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => h9)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00023483397671952844,
+        "random_policy_seed": 35,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-33",
+      "formula": "((p -> (p & q)) -> ((u -> (p & q)) -> ((u -> (p & q)) -> ((p | (u | u)) -> (p & q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 9,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00043220800580456853,
+        "random_policy_seed": 36,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-34",
+      "formula": "(((p & p) & ((r | r) & u)) -> ((u & (r | r)) & (p & p)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 3,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001984999980777502,
+        "random_policy_seed": 37,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-35",
+      "formula": "(((t & t) -> (q & t)) -> ((q -> (q & t)) -> (((t & t) | q) -> (t & q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002067919704131782,
+        "random_policy_seed": 38,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-36",
+      "formula": "(((s & p) -> ((u -> p) -> q)) -> ((((u -> p) -> q) -> (r | (s -> s))) -> (((r | (s -> s)) -> ((t | t) -> (p & s))) -> ((s & p) -> ((t | t) -> (p & s))))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0006362919812090695,
+        "random_policy_seed": 39,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-37",
+      "formula": "((p -> (t | q)) -> ((t -> (t | q)) -> ((r -> (t | q)) -> ((p | (t | r)) -> (t | q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002804580144584179,
+        "random_policy_seed": 40,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-38",
+      "formula": "(((u & s) & (t & t)) -> ((t & t) & (s & u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-38",
+          "split": "factorized-test",
+          "formula": "(((u & s) & (t & t)) -> ((t & t) & (s & u)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.left (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2ebe04e46b44d8197c2f6f060420f58cd6851865ecce3caebe9b5d81669ad66b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.3437158750020899,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : (((u \u2227 s) \u2227 (t \u2227 t)) \u2192 ((t \u2227 t) \u2227 (s \u2227 u))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.left ( And.right h0 ) ) ( And.left ( And.right h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1191
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.left (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00028666702564805746,
+        "random_policy_seed": 41,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-39",
+      "formula": "((p -> (s & r)) -> ((s -> (s & r)) -> ((p | s) -> (r & s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00023391697322949767,
+        "random_policy_seed": 42,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-40",
+      "formula": "((u -> u) -> ((u -> ((t | r) & r)) -> ((((t | r) & r) -> t) -> (u -> t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00023087498266249895,
+        "random_policy_seed": 43,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-41",
+      "formula": "((t -> r) -> (((p & q) -> r) -> ((p -> r) -> ((t | ((p & q) | p)) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00022604101104661822,
+        "random_policy_seed": 44,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-42",
+      "formula": "((((t -> q) & p) & (((q | p) -> q) & u)) -> ((u & ((q | p) -> q)) & (p & (t -> q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004040829953737557,
+        "random_policy_seed": 45,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-43",
+      "formula": "(((r | r) -> (q & (s -> s))) -> (((q | (q -> s)) -> (q & (s -> s))) -> (((r | r) | (q | (q -> s))) -> ((s -> s) & q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 11,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004142079851590097,
+        "random_policy_seed": 46,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-44",
+      "formula": "((r -> r) -> ((r -> s) -> ((s -> q) -> (r -> q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00016612495528534055,
+        "random_policy_seed": 47,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-45",
+      "formula": "(((r -> q) -> r) -> ((p -> r) -> ((p -> r) -> (((r -> q) | (p | p)) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00020004197722300887,
+        "random_policy_seed": 48,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-46",
+      "formula": "(((s & t) & (r & u)) -> ((u & r) & (t & s)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-46",
+          "split": "factorized-test",
+          "formula": "(((s & t) & (r & u)) -> ((u & r) & (t & s)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9df409a67844e38b66170754d748a105a0dea8fd0b303a570da3e18a74d9d864",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.26424345799023286,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s t u : Prop) : (((s \u2227 t) \u2227 (r \u2227 u)) \u2192 ((u \u2227 r) \u2227 (t \u2227 s))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.right h0 ) ) ( And.left ( And.right h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1199
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00028450001263991,
+        "random_policy_seed": 49,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-47",
+      "formula": "((s -> (r & s)) -> ((q -> (r & s)) -> ((s | q) -> (s & r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00025216699577867985,
+        "random_policy_seed": 50,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-48",
+      "formula": "((s -> r) -> ((r -> u) -> ((u -> (q -> r)) -> (s -> (q -> r)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00021420797565951943,
+        "random_policy_seed": 51,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-49",
+      "formula": "((s -> r) -> ((u -> r) -> (((u -> q) -> r) -> ((s | (u | (u -> q))) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002922500134445727,
+        "random_policy_seed": 52,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-50",
+      "formula": "((((q | (u | s)) & u) & ((u | s) & ((t | q) & t))) -> ((((t | q) & t) & (u | s)) & (u & (q | (u | s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 4,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000342042010743171,
+        "random_policy_seed": 53,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-51",
+      "formula": "((((t -> t) & r) -> ((r & (t & r)) & q)) -> ((s -> ((r & (t & r)) & q)) -> ((((t -> t) & r) | s) -> (q & (r & (t & r))))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00025945797096937895,
+        "random_policy_seed": 54,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-52",
+      "formula": "((t -> s) -> ((s -> q) -> ((q -> (s & r)) -> (t -> (s & r)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-52",
+          "split": "factorized-test",
+          "formula": "((t -> s) -> ((s -> q) -> ((q -> (s & r)) -> (t -> (s & r)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "af1b9d70b7c77801ba7d83289665d2975eb513674e9c50279142bcbe6c652dec",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2302767499932088,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t : Prop) : ((t \u2192 s) \u2192 ((s \u2192 q) \u2192 ((q \u2192 (s \u2227 r)) \u2192 (t \u2192 (s \u2227 r))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1205
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00021229201229289174,
+        "random_policy_seed": 55,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-53",
+      "formula": "((t -> ((s & q) -> r)) -> ((p -> ((s & q) -> r)) -> ((p -> ((s & q) -> r)) -> ((t | (p | p)) -> ((s & q) -> r)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00037758296821266413,
+        "random_policy_seed": 56,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-54",
+      "formula": "(((u & r) & (r & (u -> q))) -> (((u -> q) & r) & (r & u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-54",
+          "split": "factorized-test",
+          "formula": "(((u & r) & (r & (u -> q))) -> (((u -> q) & r) & (r & u)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.right (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9dd6e00cd5a877dbef6040e34fa00ac4ed202f7212994669d739eeae7819d67d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2831779589760117,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r u : Prop) : (((u \u2227 r) \u2227 (r \u2227 (u \u2192 q))) \u2192 (((u \u2192 q) \u2227 r) \u2227 (r \u2227 u))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.right h0 ) ) ( And.right ( And.left h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1207
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.right (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003626660327427089,
+        "random_policy_seed": 57,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-55",
+      "formula": "((p -> (((r & s) & (r | r)) & (q -> (q & p)))) -> (((p -> u) -> (((r & s) & (r | r)) & (q -> (q & p)))) -> ((p | (p -> u)) -> ((q -> (q & p)) & ((r & s) & (r | r))))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 11,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005648750229738653,
+        "random_policy_seed": 58,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-56",
+      "formula": "((s -> s) -> ((s -> (r & (r | s))) -> (((r & (r | s)) -> r) -> (s -> r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-56",
+          "split": "factorized-test",
+          "formula": "((s -> s) -> ((s -> (r & (r | s))) -> (((r & (r | s)) -> r) -> (s -> r))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 h9))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "d04bc1dd6744520d5c203c8f37074da453e0d46ce10cee3957db9cab8d0e5364",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22934991697547957,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : ((s \u2192 s) \u2192 ((s \u2192 (r \u2227 (r \u2228 s))) \u2192 (((r \u2227 (r \u2228 s)) \u2192 r) \u2192 (s \u2192 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1209
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 h9))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00021533400285989046,
+        "random_policy_seed": 59,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-57",
+      "formula": "((q -> r) -> (((s | p) -> r) -> (((t | (s -> q)) -> r) -> ((q | ((s | p) | (t | (s -> q)))) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003725829883478582,
+        "random_policy_seed": 60,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-58",
+      "formula": "(((r & q) & (s & ((p | r) & (u -> s)))) -> ((((p | r) & (u -> s)) & s) & (q & r)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 4,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004699169658124447,
+        "random_policy_seed": 61,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-59",
+      "formula": "((q -> (t & (s -> p))) -> ((s -> (t & (s -> p))) -> ((q | s) -> ((s -> p) & t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00023904204135760665,
+        "random_policy_seed": 62,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-60",
+      "formula": "((r -> p) -> ((p -> u) -> ((u -> (q -> u)) -> (r -> (q -> u)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-60",
+          "split": "factorized-test",
+          "formula": "((r -> p) -> ((p -> u) -> ((u -> (q -> u)) -> (r -> (q -> u)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "4c827181b45a60b4805d551687b949ca3c87c31bb49ea2c91053c10423d4a0f9",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23276191699551418,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : ((r \u2192 p) \u2192 ((p \u2192 u) \u2192 ((u \u2192 (q \u2192 u)) \u2192 (r \u2192 (q \u2192 u))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( fun h12 => ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1213
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00025054102297872305,
+        "random_policy_seed": 63,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-61",
+      "formula": "((p -> q) -> ((p -> q) -> (((p & q) -> q) -> ((p | (p | (p & q))) -> q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 9,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00040908402297645807,
+        "random_policy_seed": 64,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-62",
+      "formula": "(((r & s) & (((u | r) -> (q | t)) & s)) -> ((s & ((u | r) -> (q | t))) & (s & r)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00046620797365903854,
+        "random_policy_seed": 65,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-63",
+      "formula": "((s -> (s & ((q & u) -> (q -> r)))) -> ((t -> (s & ((q & u) -> (q -> r)))) -> ((s | t) -> (((q & u) -> (q -> r)) & s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00034425000194460154,
+        "random_policy_seed": 66,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-64",
+      "formula": "((((r & u) & (s | u)) -> p) -> ((p -> q) -> ((q -> u) -> (((r & u) & (s | u)) -> u))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 11,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005383750540204346,
+        "random_policy_seed": 67,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-65",
+      "formula": "((p -> r) -> ((u -> r) -> ((u -> r) -> ((p | (u | u)) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002125839819200337,
+        "random_policy_seed": 68,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-66",
+      "formula": "(((q & (q | t)) & (p & ((p & u) & (t -> q)))) -> ((((p & u) & (t -> q)) & p) & ((q | t) & q)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 2,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00020191597286611795,
+        "random_policy_seed": 69,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-67",
+      "formula": "((p -> ((r & p) & q)) -> ((s -> ((r & p) & q)) -> ((p | s) -> (q & (r & p)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000181332987267524,
+        "random_policy_seed": 70,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-68",
+      "formula": "(((t -> (p | s)) -> s) -> ((s -> u) -> ((u -> r) -> ((t -> (p | s)) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 11,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003542079939506948,
+        "random_policy_seed": 71,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-69",
+      "formula": "((((u -> r) & t) -> u) -> (((s & s) -> u) -> ((s -> u) -> ((((u -> r) & t) | ((s & s) | s)) -> u))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000294625002425164,
+        "random_policy_seed": 72,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-70",
+      "formula": "(((p & u) & ((u | (t | q)) & ((u & p) & t))) -> ((((u & p) & t) & (u | (t | q))) & (u & p)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 3,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00025529199047014117,
+        "random_policy_seed": 73,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-71",
+      "formula": "((s -> (s & s)) -> ((s -> (s & s)) -> ((s | s) -> (s & s))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-71",
+          "split": "factorized-test",
+          "formula": "((s -> (s & s)) -> ((s -> (s & s)) -> ((s | s) -> (s & s))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (Or.elim h6 (fun h13 => h13) (fun h14 => h14))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "89dcd582b656f1d68f4bcf736a039a91e62c09490b6cba087c7649a108c56bf7",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2314969159779139,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s : Prop) : ((s \u2192 (s \u2227 s)) \u2192 ((s \u2192 (s \u2227 s)) \u2192 ((s \u2228 s) \u2192 (s \u2227 s)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( Or.elim h6 ( fun h13 => h13 ) ( fun h14 => h14 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1224
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (Or.elim h6 (fun h13 => h13) (fun h14 => h14))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00020629196660593152,
+        "random_policy_seed": 74,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-72",
+      "formula": "((r -> s) -> ((s -> (r | r)) -> (((r | r) -> p) -> (r -> p))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-72",
+          "split": "factorized-test",
+          "formula": "((r -> s) -> ((s -> (r | r)) -> (((r | r) -> p) -> (r -> p))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (Or.inl h9))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "01847c5abaf4f70305471d264d83c694f6aa9e4cf85b156a67a96700517e41a4",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23197379196062684,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((r \u2192 s) \u2192 ((s \u2192 (r \u2228 r)) \u2192 (((r \u2228 r) \u2192 p) \u2192 (r \u2192 p)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( Or.inl h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1225
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (Or.inl h9))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003102909540757537,
+        "random_policy_seed": 75,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-73",
+      "formula": "((s -> t) -> ((r -> t) -> (((p | (q -> r)) -> t) -> ((s | (r | (p | (q -> r)))) -> t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00039779103826731443,
+        "random_policy_seed": 76,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-74",
+      "formula": "(((t & q) & (q & q)) -> ((q & q) & (q & t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-74",
+          "split": "factorized-test",
+          "formula": "(((t & q) & (q & q)) -> ((q & q) & (q & t)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.left h0)) (And.right (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "5395ae5d61c374f50263d6e5335680d7e996efc0fa8b17a2e5071f796cd46414",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22748429101193324,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((t \u2227 q) \u2227 (q \u2227 q)) \u2192 ((q \u2227 q) \u2227 (q \u2227 t))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.left h0 ) ) ( And.right ( And.left h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1227
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.left h0)) (And.right (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003067079815082252,
+        "random_policy_seed": 77,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-75",
+      "formula": "((u -> (p & u)) -> ((((t & s) & r) -> (p & u)) -> ((u | ((t & s) & r)) -> (u & p))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003173339646309614,
+        "random_policy_seed": 78,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-76",
+      "formula": "((u -> r) -> ((r -> u) -> ((u -> r) -> (u -> r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-76",
+          "split": "factorized-test",
+          "formula": "((u -> r) -> ((r -> u) -> ((u -> r) -> (u -> r))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => h6)))",
+          "nodes": 4,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "061c2792501182dbb84e771d6be6124819fb4d2df0fc721a99475adde98bc81b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23224079195642844,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r u : Prop) : ((u \u2192 r) \u2192 ((r \u2192 u) \u2192 ((u \u2192 r) \u2192 (u \u2192 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => h6 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1229
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => h6)))"
+        ],
+        "nodes": 4,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00018112495308741927,
+        "random_policy_seed": 79,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-77",
+      "formula": "((t -> s) -> (((p & r) -> s) -> ((s -> s) -> ((t | ((p & r) | s)) -> s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00039491598727181554,
+        "random_policy_seed": 80,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-78",
+      "formula": "(((((q | r) -> r) & (q | p)) & ((u | s) & u)) -> ((u & (u | s)) & ((q | p) & ((q | r) -> r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005319999763742089,
+        "random_policy_seed": 81,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-79",
+      "formula": "((q -> ((u & q) & ((s | r) | u))) -> (((q -> t) -> ((u & q) & ((s | r) | u))) -> ((q | (q -> t)) -> (((s | r) | u) & (u & q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00034220796078443527,
+        "random_policy_seed": 82,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-80",
+      "formula": "((p -> (s -> p)) -> (((s -> p) -> p) -> ((p -> q) -> (p -> q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-80",
+          "split": "factorized-test",
+          "formula": "((p -> (s -> p)) -> (((s -> p) -> p) -> ((p -> q) -> (p -> q))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 h9)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "b637c474f51c53b9c8a5f6b7070f0ac38d47a2d149c5b9f3dad5cb80781f389a",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2319133750279434,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s : Prop) : ((p \u2192 (s \u2192 p)) \u2192 (((s \u2192 p) \u2192 p) \u2192 ((p \u2192 q) \u2192 (p \u2192 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 h9 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1233
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 h9)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00019208301091566682,
+        "random_policy_seed": 83,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-81",
+      "formula": "((u -> (u -> r)) -> (((q -> p) -> (u -> r)) -> ((p -> (u -> r)) -> ((u | ((q -> p) | p)) -> (u -> r)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005315000307746232,
+        "random_policy_seed": 84,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-82",
+      "formula": "(((q & (u -> r)) & (p & (r | s))) -> (((r | s) & p) & ((u -> r) & q)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 3,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002346669789403677,
+        "random_policy_seed": 85,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-83",
+      "formula": "((t -> (r & u)) -> ((((p | q) & u) -> (r & u)) -> ((t | ((p | q) & u)) -> (u & r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00022433296544477344,
+        "random_policy_seed": 86,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-84",
+      "formula": "((p -> s) -> ((s -> s) -> ((s -> (u -> t)) -> (p -> (u -> t)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00019091699505224824,
+        "random_policy_seed": 87,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-85",
+      "formula": "((u -> t) -> ((u -> t) -> ((t -> t) -> ((u | (u | t)) -> t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00016395800048485398,
+        "random_policy_seed": 88,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-86",
+      "formula": "(((((r -> r) -> (r & u)) & ((s | u) & p)) & (q & q)) -> ((q & q) & (((s | u) & p) & ((r -> r) -> (r & u)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 4,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00038908299757167697,
+        "random_policy_seed": 89,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-87",
+      "formula": "((s -> ((r & (q -> p)) & u)) -> ((q -> ((r & (q -> p)) & u)) -> ((s | q) -> (u & (r & (q -> p))))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002132499939762056,
+        "random_policy_seed": 90,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-88",
+      "formula": "((p -> p) -> ((p -> (p | p)) -> (((p | p) -> (r | s)) -> (p -> (r | s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001657090033404529,
+        "random_policy_seed": 91,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-89",
+      "formula": "((((s | q) & (u & q)) -> (p & q)) -> (((t | q) -> (p & q)) -> ((r -> (p & q)) -> ((((s | q) & (u & q)) | ((t | q) | r)) -> (p & q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005311249988153577,
+        "random_policy_seed": 92,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-90",
+      "formula": "(((u & t) & ((t & (t -> s)) & u)) -> ((u & (t & (t -> s))) & (t & u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-90",
+          "split": "factorized-test",
+          "formula": "(((u & t) & ((t & (t -> s)) & u)) -> ((u & (t & (t -> s))) & (t & u)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.left (And.left h0)) (And.intro (And.right (And.left h0)) (fun h21 => ((And.right (And.left (And.right h0))) h21)))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 12,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f7288a9967297f71c60a30c2b96e0953782aa0ef71d3d8677126f591027055f1",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23192358302185312,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : (((u \u2227 t) \u2227 ((t \u2227 (t \u2192 s)) \u2227 u)) \u2192 ((u \u2227 (t \u2227 (t \u2192 s))) \u2227 (t \u2227 u))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.left ( And.left h0 ) ) ( And.intro ( And.right ( And.left h0 ) ) ( fun h21 => ( ( And.right ( And.left ( And.right h0 ) ) ) h21 ) ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1243
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.left (And.left h0)) (And.intro (And.right (And.left h0)) (fun h21 => ((And.right (And.left (And.right h0))) h21)))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 12,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0006450840155594051,
+        "random_policy_seed": 93,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-91",
+      "formula": "((u -> ((q -> t) & s)) -> ((s -> ((q -> t) & s)) -> ((u | s) -> (s & (q -> t)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00029279099544510245,
+        "random_policy_seed": 94,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-92",
+      "formula": "((s -> ((p & t) & (s | q))) -> ((((p & t) & (s | q)) -> r) -> ((r -> t) -> (s -> t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-92",
+          "split": "factorized-test",
+          "formula": "((s -> ((p & t) & (s | q))) -> ((((p & t) & (s | q)) -> r) -> ((r -> t) -> (s -> t))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "630d1c687a0b0e3d4279786d8e930e683f90802113b14918a72e7251f6afded4",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2316407500184141,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t : Prop) : ((s \u2192 ((p \u2227 t) \u2227 (s \u2228 q))) \u2192 ((((p \u2227 t) \u2227 (s \u2228 q)) \u2192 r) \u2192 ((r \u2192 t) \u2192 (s \u2192 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1245
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003548749955371022,
+        "random_policy_seed": 95,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-93",
+      "formula": "((q -> ((u & r) | r)) -> ((q -> ((u & r) | r)) -> (((t & (t & u)) -> ((u & r) | r)) -> ((q | (q | (t & (t & u)))) -> ((u & r) | r)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00043266703141853213,
+        "random_policy_seed": 96,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-94",
+      "formula": "((((s | q) & p) & (u & p)) -> ((p & u) & (p & (s | q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000308374990709126,
+        "random_policy_seed": 97,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-95",
+      "formula": "((r -> (t & s)) -> (((u | s) -> (t & s)) -> ((r | (u | s)) -> (s & t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001901250216178596,
+        "random_policy_seed": 98,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-96",
+      "formula": "((s -> t) -> ((t -> q) -> ((q -> ((p | r) | t)) -> (s -> ((p | r) | t)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00020616600522771478,
+        "random_policy_seed": 99,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-97",
+      "formula": "((p -> u) -> (((t | r) -> u) -> (((u -> t) -> u) -> ((p | ((t | r) | (u -> t))) -> u))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 9,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003302500117570162,
+        "random_policy_seed": 100,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-98",
+      "formula": "(((q & q) & (t & q)) -> ((q & t) & (q & q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-98",
+          "split": "factorized-test",
+          "formula": "(((q & q) & (t & q)) -> ((q & t) & (q & q)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.left (And.left h0)) (And.left (And.right h0))) (And.left h0)))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c6610f7c40bbf2840016fa45e207643eeebd8e936d979eddb3026962be6c1f3b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2313372910139151,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((q \u2227 q) \u2227 (t \u2227 q)) \u2192 ((q \u2227 t) \u2227 (q \u2227 q))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.left ( And.left h0 ) ) ( And.left ( And.right h0 ) ) ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1251
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.left (And.left h0)) (And.left (And.right h0))) (And.left h0)))"
+        ],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00022879202151671052,
+        "random_policy_seed": 101,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-99",
+      "formula": "(((r | r) -> (((u & q) -> u) & ((u -> u) & (q & r)))) -> ((q -> (((u & q) -> u) & ((u -> u) & (q & r)))) -> (((r | r) | q) -> (((u -> u) & (q & r)) & ((u & q) -> u)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0006316250073723495,
+        "random_policy_seed": 102,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-100",
+      "formula": "((s -> r) -> ((r -> (p & (p -> s))) -> (((p & (p -> s)) -> (r | t)) -> (s -> (r | t)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-100",
+          "split": "factorized-test",
+          "formula": "((s -> r) -> ((r -> (p & (p -> s))) -> (((p & (p -> s)) -> (r | t)) -> (s -> (r | t)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.inl (h0 h9))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "fb8a3cfd9c3cfdc03e75ca062fd219a119205ecf69ff9d57bf9227561a3fae29",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23232245905091986,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : ((s \u2192 r) \u2192 ((r \u2192 (p \u2227 (p \u2192 s))) \u2192 (((p \u2227 (p \u2192 s)) \u2192 (r \u2228 t)) \u2192 (s \u2192 (r \u2228 t))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.inl ( h0 h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1253
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.inl (h0 h9))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002636670251376927,
+        "random_policy_seed": 103,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-101",
+      "formula": "(((r | q) -> s) -> ((r -> s) -> (((r & p) -> s) -> (((r | q) | (r | (r & p))) -> s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00040454103145748377,
+        "random_policy_seed": 104,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-102",
+      "formula": "(((p & s) & ((s -> (q | q)) & u)) -> ((u & (s -> (q | q))) & (s & p)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00036162498872727156,
+        "random_policy_seed": 105,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-103",
+      "formula": "((r -> ((q | t) & r)) -> ((s -> ((q | t) & r)) -> ((r | s) -> (r & (q | t)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002464999561198056,
+        "random_policy_seed": 106,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-104",
+      "formula": "((t -> q) -> ((q -> (u -> (t & q))) -> (((u -> (t & q)) -> ((q | q) -> (u | p))) -> (t -> ((q | q) -> (u | p))))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-104",
+          "split": "factorized-test",
+          "formula": "((t -> q) -> ((q -> (u -> (t & q))) -> (((u -> (t & q)) -> ((q | q) -> (u | p))) -> (t -> ((q | q) -> (u | p))))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (fun h15 => (And.intro h9 (h0 h9))))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7cd15b2e1d52214af447c41a5a639533668d9f438cbc6b2d4d69bea8cecd69d5",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22934666596120223,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t u : Prop) : ((t \u2192 q) \u2192 ((q \u2192 (u \u2192 (t \u2227 q))) \u2192 (((u \u2192 (t \u2227 q)) \u2192 ((q \u2228 q) \u2192 (u \u2228 p))) \u2192 (t \u2192 ((q \u2228 q) \u2192 (u \u2228 p)))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( fun h15 => ( And.intro h9 ( h0 h9 ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1257
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (fun h15 => (And.intro h9 (h0 h9))))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00044220901327207685,
+        "random_policy_seed": 107,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-105",
+      "formula": "((r -> t) -> (((u | s) -> t) -> ((u -> t) -> ((r | ((u | s) | u)) -> t))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 11,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004675419768318534,
+        "random_policy_seed": 108,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-106",
+      "formula": "(((r & ((r & p) | t)) & (t & (u & q))) -> (((u & q) & t) & (((r & p) | t) & r)))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004095000331290066,
+        "random_policy_seed": 109,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-107",
+      "formula": "((u -> ((q & (s | q)) & p)) -> (((s -> u) -> ((q & (s | q)) & p)) -> ((u | (s -> u)) -> (p & (q & (s | q))))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002694590366445482,
+        "random_policy_seed": 110,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-108",
+      "formula": "((s -> u) -> ((u -> u) -> ((u -> (q & q)) -> (s -> (q & q)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-108",
+          "split": "factorized-test",
+          "formula": "((s -> u) -> ((u -> u) -> ((u -> (q & q)) -> (s -> (q & q)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h0 h9))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "97162112063c0a2950e395dd19b9cd9d044e116ebf323427451ce5a30c21e61c",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23201633396092802,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : ((s \u2192 u) \u2192 ((u \u2192 u) \u2192 ((u \u2192 (q \u2227 q)) \u2192 (s \u2192 (q \u2227 q))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h0 h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1261
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h0 h9))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0002196670393459499,
+        "random_policy_seed": 111,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-109",
+      "formula": "(((t & t) -> s) -> (((q | r) -> s) -> ((q -> s) -> (((t & t) | ((q | r) | q)) -> s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0005109590128995478,
+        "random_policy_seed": 112,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-110",
+      "formula": "(((((s | r) | q) & u) & (s & r)) -> ((r & s) & (u & ((s | r) | q))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 4,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00028145796386525035,
+        "random_policy_seed": 113,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-111",
+      "formula": "(((t -> r) -> (s & (t & (q & s)))) -> ((q -> (s & (t & (q & s)))) -> (((t -> r) | q) -> ((t & (q & s)) & s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00029379199258983135,
+        "random_policy_seed": 114,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-112",
+      "formula": "((u -> (u -> q)) -> (((u -> q) -> p) -> ((p -> r) -> (u -> r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-112",
+          "split": "factorized-test",
+          "formula": "((u -> (u -> q)) -> (((u -> q) -> p) -> ((p -> r) -> (u -> r))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (fun h18 => (h0 h18 h18))))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7b24da45a8beaaa5c867c8c118772a98d8a97b5cbcefd4b595eaf3b48f60bb53",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23191004095133394,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : ((u \u2192 (u \u2192 q)) \u2192 (((u \u2192 q) \u2192 p) \u2192 ((p \u2192 r) \u2192 (u \u2192 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( fun h18 => ( h0 h18 h18 ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1265
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (fun h18 => (h0 h18 h18))))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003572499845176935,
+        "random_policy_seed": 115,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-113",
+      "formula": "((q -> ((r & t) | q)) -> ((u -> ((r & t) | q)) -> ((r -> ((r & t) | q)) -> ((q | (u | r)) -> ((r & t) | q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00044495798647403717,
+        "random_policy_seed": 116,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-114",
+      "formula": "(((t & s) & (t & u)) -> ((u & t) & (s & t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-114",
+          "split": "factorized-test",
+          "formula": "(((t & s) & (t & u)) -> ((u & t) & (s & t)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.left (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "50674ea56309b6e8883c5071baa16045688e96a6c7707806eedac60eb2b1620b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23188070894684643,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : (((t \u2227 s) \u2227 (t \u2227 u)) \u2192 ((u \u2227 t) \u2227 (s \u2227 t))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.right h0 ) ) ( And.left ( And.left h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1267
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.left (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00031870801467448473,
+        "random_policy_seed": 117,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-115",
+      "formula": "((r -> (r & t)) -> ((q -> (r & t)) -> ((r | q) -> (t & r))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00026475003687664866,
+        "random_policy_seed": 118,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-116",
+      "formula": "((p -> r) -> ((r -> r) -> ((r -> p) -> (p -> p))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0001776250428520143,
+        "random_policy_seed": 119,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-117",
+      "formula": "(((r | (r & p)) -> p) -> ((p -> p) -> ((r -> p) -> (((r | (r & p)) | (p | r)) -> p))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003760000108741224,
+        "random_policy_seed": 120,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-118",
+      "formula": "((((s -> (s | t)) & t) & (t & p)) -> ((p & t) & (t & (s -> (s | t)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-118",
+          "split": "factorized-test",
+          "formula": "((((s -> (s | t)) & t) & (t & p)) -> ((p & t) & (t & (s -> (s | t)))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.right (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "32291cac19e7432dfd6193ebfc5b52f3e9a5a0efe9eb22148387542c0074fdef",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23214350000489503,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t : Prop) : ((((s \u2192 (s \u2228 t)) \u2227 t) \u2227 (t \u2227 p)) \u2192 ((p \u2227 t) \u2227 (t \u2227 (s \u2192 (s \u2228 t))))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.right h0 ) ) ( And.right ( And.left h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1271
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.right (And.left h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0004383340128697455,
+        "random_policy_seed": 121,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-119",
+      "formula": "((u -> (s & t)) -> ((r -> (s & t)) -> ((u | r) -> (t & s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 5,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00025462498888373375,
+        "random_policy_seed": 122,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-120",
+      "formula": "((t -> (u | (u & r))) -> (((u | (u & r)) -> (q -> (r & p))) -> (((q -> (r & p)) -> r) -> (t -> r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-120",
+          "split": "factorized-test",
+          "formula": "((t -> (u | (u & r))) -> (((u | (u & r)) -> (q -> (r & p))) -> (((q -> (r & p)) -> r) -> (t -> r))))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f027a7c6871f0f886aa91561cf56cedfceb7bc70eeb49c687f687736488f3ff6",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2270298340008594,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((t \u2192 (u \u2228 (u \u2227 r))) \u2192 (((u \u2228 (u \u2227 r)) \u2192 (q \u2192 (r \u2227 p))) \u2192 (((q \u2192 (r \u2227 p)) \u2192 r) \u2192 (t \u2192 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1273
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00034645904088392854,
+        "random_policy_seed": 123,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-121",
+      "formula": "(((s -> r) -> s) -> ((p -> s) -> ((u -> s) -> (((s -> r) | (p | u)) -> s))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00028491602279245853,
+        "random_policy_seed": 124,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-122",
+      "formula": "(((s & q) & (t & (q & p))) -> (((q & p) & t) & (q & s)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-122",
+          "split": "factorized-test",
+          "formula": "(((s & q) & (t & (q & p))) -> (((q & p) & t) & (q & s)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "bf0b2ad2525fad369f60e9de8d05f17ae0fe6aef20ca9dcdeae9a99375008866",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23201216699089855,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((s \u2227 q) \u2227 (t \u2227 (q \u2227 p))) \u2192 (((q \u2227 p) \u2227 t) \u2227 (q \u2227 s))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.right ( And.right h0 ) ) ( And.left ( And.right h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1275
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.right (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.00040129199624061584,
+        "random_policy_seed": 125,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-123",
+      "formula": "((q -> (p & (r & t))) -> ((((u | t) & u) -> (p & (r & t))) -> ((q | ((u | t) & u)) -> ((r & t) & p))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000345708045642823,
+        "random_policy_seed": 126,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    },
+    {
+      "task_id": "fresh-124",
+      "formula": "((u -> t) -> ((t -> t) -> ((t -> (t -> s)) -> (u -> (t -> s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 6,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.000188209000043571,
+        "random_policy_seed": 127,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_chain"
+    },
+    {
+      "task_id": "fresh-125",
+      "formula": "((t -> ((t -> s) -> p)) -> ((r -> ((t -> s) -> p)) -> ((s -> ((t -> s) -> p)) -> ((t | (r | s)) -> ((t -> s) -> p)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 10,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0006374999647960067,
+        "random_policy_seed": 128,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases"
+    },
+    {
+      "task_id": "fresh-126",
+      "formula": "(((u & (s -> p)) & (q & q)) -> ((q & q) & ((s -> p) & u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "fresh-126",
+          "split": "factorized-test",
+          "formula": "(((u & (s -> p)) & (q & q)) -> ((q & q) & ((s -> p) & u)))",
+          "strategy": "factorized-random",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.intro (And.left (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "59fa3c394cf3ef92c03246647b9bf7a2e8e79e3500f95235badb3e2d72e643bb",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22939270798815414,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : (((u \u2227 (s \u2192 p)) \u2227 (q \u2227 q)) \u2192 ((q \u2227 q) \u2227 ((s \u2192 p) \u2227 u))) :=\n  ( fun h0 => ( And.intro ( And.intro ( And.left ( And.right h0 ) ) ( And.left ( And.right h0 ) ) ) ( And.intro ( And.right ( And.left h0 ) ) ( And.left ( And.left h0 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1279
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.intro (And.left (And.right h0)) (And.left (And.right h0))) (And.intro (And.right (And.left h0)) (And.left (And.left h0)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0003933749976567924,
+        "random_policy_seed": 129,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_pair_reverse"
+    },
+    {
+      "task_id": "fresh-127",
+      "formula": "((((t & u) & (r | q)) -> ((p & (q -> t)) & u)) -> ((u -> ((p & (q -> t)) & u)) -> ((((t & u) & (r | q)) | u) -> (u & (p & (q -> t))))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 13,
+        "inference_calls": 0,
+        "elapsed_seconds": 0.0008258339948952198,
+        "random_policy_seed": 130,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "transfer_cases_pair"
+    }
+  ],
+  "scope": "Learned local action policy with typed inference rules; no calls to the symbolic search engine.",
+  "limitations": [
+    "Legality masks and conjunction projection supply symbolic structure.",
+    "Same typed environment must be used for untrained and random controls.",
+    "Synthetic family transfer is not novel mathematical discovery."
+  ],
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "401fa8c6e72f7e3ac1fe94e3c8a6a092ed7d2014305decc175e396ef513c1e6a",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}

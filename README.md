@@ -2,17 +2,17 @@
 
 **A research program in verifiable reasoning, mathematical discovery, and measured self-improvement.**
 
-Valentyn starts with an executable symbolic reasoning system and a learning loop built from scratch. It runs locally on Apple Silicon without a GPU, model downloads, API keys, or Python runtime dependencies. The long-term research objective is increasingly general scientific discovery, including major open mathematical problems.
+Valentyn includes neural proof generators trained from random initialization, typed proof search, and an independent Lean verifier. The symbolic core runs locally on Apple Silicon without a GPU, model downloads, API keys, or Python runtime dependencies. The long-term research objective is increasingly general scientific discovery, including major open mathematical problems.
 
-Version 0.1 is a bounded propositional prover with Lean verification, a small learned strategy selector, controlled policy evolution, generated conjectures, and an experiment archive. It does not demonstrate superintelligence, unrestricted recursive improvement, or new research mathematics. Those are research objectives with separate evidence requirements.
+The initial symbolic system is a bounded propositional prover with Lean verification, a small learned strategy selector, controlled policy evolution, generated conjectures, and an experiment archive. It does not demonstrate superintelligence, unrestricted recursive improvement, or new research mathematics. Those are research objectives with separate evidence requirements.
 
 ## Run on your Mac
 
 Install Python 3.11 or newer, Git, and curl. From a terminal:
 
 ```sh
-git clone https://github.com/davidvalenta-dev/Valentyn.git
-cd Valentyn
+git clone https://github.com/davidvalenta-dev/valentyn-ai.git
+cd valentyn-ai
 sh scripts/setup.sh
 . .venv/bin/activate
 valentyn prove '(p & q) -> (q & p)' --output .valentyn/proofs/swap.lean
@@ -41,6 +41,23 @@ valentyn history
 ```
 
 Use `valentyn --help` and `valentyn prove --help` for options. `--project` and `--state` are global options and go before the command. `--nodes`, `--depth`, and `--timeout` limit each search. The `prove` exit codes are 0 verified, 1 error/rejection, 2 counterexample, and 3 search exhausted. Exhaustion is not disproof. `prove` accepts `p` through `z` (optionally numbered), `True`, `False`, `&`, `|`, `->`, `!`, and parentheses. It does not accept unrestricted Lean source or natural-language problems.
+
+## Trainable Valentyn models
+
+Bundled checkpoints include a 72,005-parameter local proof-action policy and whole-term Transformer/GRU baselines. Training and inference use optional PyTorch; weights were initialized randomly. No API key or pretrained model is used.
+
+```sh
+# After the Lean setup above; activate your environment first.
+python -m pip install -r requirements-model.lock
+valentyn prove --theorem example --output .valentyn/proofs/model-example.lean
+valentyn train --config configs/mac_m2_8gb.yaml
+valentyn evaluate --held-out --checkpoint models/valentyn-state
+valentyn compare --architectures mha gqa mla hybrid --help
+```
+
+On the fresh frozen 128-problem suite, learned beam-4 search solved 91 and a matching random-search control solved 90. This is a working learned proof system, without evidence of superintelligence or research-level discovery. Training ran on a 16 GB M2; an actual 8 GB machine has not been tested. Config files are strict JSON-formatted YAML 1.2. Training output is separate from bundled checkpoints.
+
+[Architecture](ARCHITECTURE.md) · [Experiments](EXPERIMENTS.md) · [Benchmark protocol](BENCHMARKS.md) · [Frontier source audit](FRONTIER_CODE_REVIEW.md) · [Findings](DISCOVERIES.md) · [Roadmap](ROADMAP.md) · [Research log](RESEARCH_LOG.md)
 
 ## What executes
 

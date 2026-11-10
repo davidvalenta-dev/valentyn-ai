@@ -1,0 +1,65 @@
+Build completed successfully (5 jobs).
+test_cached_generation_matches_uncached (test_attention.AttentionTests.test_cached_generation_matches_uncached) ... ok
+test_grouped_and_latent_cache_are_actually_smaller (test_attention.AttentionTests.test_grouped_and_latent_cache_are_actually_smaller) ... ok
+test_incremental_cache_matches_full_prefix (test_attention.AttentionTests.test_incremental_cache_matches_full_prefix) ... ok
+test_shapes_gradients_and_causality_for_all_variants (test_attention.AttentionTests.test_shapes_gradients_and_causality_for_all_variants) ... ok
+test_bundled_configs_are_data_only (test_configuration.ConfigurationTests.test_bundled_configs_are_data_only) ... ok
+test_promotion_rejects_test_selection_and_regressions (test_configuration.ConfigurationTests.test_promotion_rejects_test_selection_and_regressions) ... ok
+test_rejects_unknown_fields_and_nonfinite_learning_rate (test_configuration.ConfigurationTests.test_rejects_unknown_fields_and_nonfinite_learning_rate) ... ok
+test_resource_preflight_rejects_oversized_training (test_configuration.ConfigurationTests.test_resource_preflight_rejects_oversized_training) ... ok
+test_budget_is_enforced (test_factorized.FactorizedModelTests.test_budget_is_enforced) ... ok
+test_constructed_terms_pass_real_lean (test_factorized.FactorizedModelTests.test_constructed_terms_pass_real_lean) ... ok
+test_false_theorem_has_no_closed_construction (test_factorized.FactorizedModelTests.test_false_theorem_has_no_closed_construction) ... ok
+test_model_generation_has_no_solver_fallback (test_factorized.FactorizedModelTests.test_model_generation_has_no_solver_fallback) ... ok
+test_random_control_does_not_use_model_or_solver (test_factorized.FactorizedModelTests.test_random_control_does_not_use_model_or_solver) ... ok
+test_extract_inference_steps_from_verified_language (test_factorized.StateExtractionTests.test_extract_inference_steps_from_verified_language) ... ok
+test_invalid_proof_term_is_not_silently_traced (test_factorized.StateExtractionTests.test_invalid_proof_term_is_not_silently_traced) ... ok
+test_term_parser_roundtrip (test_factorized.StateExtractionTests.test_term_parser_roundtrip) ... ok
+test_all_strategies_construct_nontrivial_proofs (test_logic.LogicTests.test_all_strategies_construct_nontrivial_proofs) ... ok
+test_bounded_input (test_logic.LogicTests.test_bounded_input) ... ok
+test_budget_exhaustion_is_not_disproof (test_logic.LogicTests.test_budget_exhaustion_is_not_disproof) ... ok
+test_canonical_renaming_and_split_integrity (test_logic.LogicTests.test_canonical_renaming_and_split_integrity) ... ok
+test_classical_validity_is_not_a_proof (test_logic.LogicTests.test_classical_validity_is_not_a_proof) ... ok
+test_counterexample_is_actually_false (test_logic.LogicTests.test_counterexample_is_actually_false) ... ok
+test_formula_round_trip (test_logic.LogicTests.test_formula_round_trip) ... ok
+test_invalid_search_configuration (test_logic.LogicTests.test_invalid_search_configuration) ... ok
+test_precedence_and_right_associativity (test_logic.LogicTests.test_precedence_and_right_associativity) ... ok
+test_reject_lean_injection_and_malformed_inputs (test_logic.LogicTests.test_reject_lean_injection_and_malformed_inputs) ... ok
+test_search_is_deterministic_under_node_budget (test_logic.LogicTests.test_search_is_deterministic_under_node_budget) ... ok
+test_causal_attention_does_not_read_future_proof_tokens (test_neural.NeuralTests.test_causal_attention_does_not_read_future_proof_tokens) ... ok
+test_checkpoint_roundtrip_and_tamper_detection (test_neural.NeuralTests.test_checkpoint_roundtrip_and_tamper_detection) ... ok
+test_generator_never_uses_symbolic_solver (test_neural.NeuralTests.test_generator_never_uses_symbolic_solver) ... ok
+test_model_configuration_is_bounded (test_neural.NeuralTests.test_model_configuration_is_bounded) ... ok
+test_prompt_loss_is_masked (test_neural.NeuralTests.test_prompt_loss_is_masked) ... ok
+test_small_training_run_reduces_validation_loss (test_neural.NeuralTests.test_small_training_run_reduces_validation_loss) ... ok
+test_alpha_renaming_preserves_repeated_references (test_neural.ProofNormalizationTests.test_alpha_renaming_preserves_repeated_references) ... ok
+test_rejected_attempt_does_not_enter_theorem_archive (test_policy_memory.MemoryTests.test_rejected_attempt_does_not_enter_theorem_archive) ... ok
+test_status_must_match_verification (test_policy_memory.MemoryTests.test_status_must_match_verification) ... ok
+test_invalid_weights_and_schemas (test_policy_memory.PolicyTests.test_invalid_weights_and_schemas) ... ok
+test_learning_changes_strategy_selection (test_policy_memory.PolicyTests.test_learning_changes_strategy_selection) ... ok
+test_reward_requires_verification (test_policy_memory.PolicyTests.test_reward_requires_verification) ... ok
+test_round_trip_and_mutation_do_not_modify_parent (test_policy_memory.PolicyTests.test_round_trip_and_mutation_do_not_modify_parent) ... ok
+test_axiom_audit_is_required (test_verification.BoundaryTests.test_axiom_audit_is_required) ... ok
+test_forbidden_terms (test_verification.BoundaryTests.test_forbidden_terms) ... ok
+test_malicious_formula_tree (test_verification.BoundaryTests.test_malicious_formula_tree) ... ok
+test_missing_lean_fails_closed (test_verification.BoundaryTests.test_missing_lean_fails_closed) ... ok
+test_wrong_toolchain_fails_closed (test_verification.BoundaryTests.test_wrong_toolchain_fails_closed) ... ok
+test_accepted_proof_is_archived_and_recheckable (test_verification.LeanIntegrationTests.test_accepted_proof_is_archived_and_recheckable) ... ok
+test_all_inference_constructors_with_real_lean (test_verification.LeanIntegrationTests.test_all_inference_constructors_with_real_lean) ... ok
+test_isolated_worker_proof_is_checked_in_parent (test_verification.LeanIntegrationTests.test_isolated_worker_proof_is_checked_in_parent) ... ok
+test_type_incorrect_but_lexically_allowed_proof_is_rejected (test_verification.LeanIntegrationTests.test_type_incorrect_but_lexically_allowed_proof_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 5.786s
+
+OK
+'Valentyn.acceptance_sound' does not depend on any axioms
+'Valentyn.promotion_never_decreases' does not depend on any axioms
+'Valentyn.promotion_is_observed' does not depend on any axioms
+'Valentyn.derivation_sound' does not depend on any axioms
+'Valentyn.conjunction_commutes' does not depend on any axioms
+'Valentyn.implication_composes' does not depend on any axioms
+'Valentyn.disjunction_distributes' does not depend on any axioms
+'Valentyn.no_finite_maximum' does not depend on any axioms
+'Valentyn.sum_of_odds_step' does not depend on any axioms
+Audited 9 project theorems: no axiom dependencies.

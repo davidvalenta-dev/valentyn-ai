@@ -1,0 +1,1917 @@
+{
+  "kind": "neural_retrieval_baseline",
+  "split": "test",
+  "dataset_digest": "a5f2d032e59715ad2932b605513078f0751f22f382c69d084dd22f186da26002",
+  "tasks": 100,
+  "solved": 13,
+  "total_evaluation_seconds": 23.668495292018633,
+  "results": [
+    {
+      "task_id": "test-0",
+      "family": "identity",
+      "formula": "((p & (t & p)) -> (p & (t & p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => h2)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "d65e1c29863fd4d13b4512f94818e3eff533a340499894d64f1f2b98272764b9",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23559237498557195,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-4ol8v97h/Candidate.lean:5:14: error: Type mismatch\n  fun h1 h2 => h2\nhas type\n  (h1 : ?m.2) \u2192 ?m.4 h1 \u2192 ?m.4 h1\nbut is expected to have type\n  p \u2227 t \u2227 p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((p \u2227 (t \u2227 p)) \u2192 (p \u2227 (t \u2227 p))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => h2 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-1",
+      "family": "pair",
+      "formula": "(s -> ((s -> (q | p)) -> (s & (s -> (q | p)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => h2)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "11f3843806191a6ceb359db57612068e46511a8df9a4bbf03e95e4994f04d4cf",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23344816599274054,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-93lg8y9d/Candidate.lean:5:26: error: Type mismatch\n  fun h2 => h2\nhas type\n  ?m.3 \u2192 ?m.3\nbut is expected to have type\n  s \u2227 (s \u2192 q \u2228 p)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s : Prop) : (s \u2192 ((s \u2192 (q \u2228 p)) \u2192 (s \u2227 (s \u2192 (q \u2228 p))))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => h2 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-2",
+      "family": "compose",
+      "formula": "(((p & u) -> u) -> ((u -> t) -> ((p & u) -> t)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "d82ade4b91610c69a34be41db7e61422a2c8fc7ccbaaf2a5e6a3eda174deff67",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22809362498810515,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dv4rqpaf/Candidate.lean:5:26: error: Type mismatch\n  h0\nhas type\n  p \u2227 u \u2192 u\nbut is expected to have type\n  p \u2227 u \u2192 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : (((p \u2227 u) \u2192 u) \u2192 ((u \u2192 t) \u2192 ((p \u2227 u) \u2192 t))) :=\n  ( fun h0 => ( fun h1 => h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-3",
+      "family": "inject_right",
+      "formula": "(u -> (((s & q) -> (t -> p)) | u))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "f2eb9f6d287acf88f94ebc623649b6a103cb7576069b5475479fbccfe2e9fe84",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23430620902217925,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-7jhcoc21/Candidate.lean:5:23: error: Application type mismatch: The argument\n  h0\nhas type\n  u\nbut is expected to have type\n  s \u2227 q \u2192 t \u2192 p\nin the application\n  Or.inl h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (u \u2192 (((s \u2227 q) \u2192 (t \u2192 p)) \u2228 u)) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-4",
+      "family": "swap_or",
+      "formula": "(((t & (t -> q)) | (t | (t & q))) -> ((t | (t & q)) | (t & (t -> q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl (And.intro (And.left h0) (And.left h0))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "174f4da7d9d80226c815cb3c2b061a303314a8af44a1197189e0d18bd51c1f9b",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23301212495425716,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-rstx8so9/Candidate.lean:5:46: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2227 (t \u2192 q) \u2228 t \u2228 t \u2227 q\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-rstx8so9/Candidate.lean:5:62: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2227 (t \u2192 q) \u2228 t \u2228 t \u2227 q\nbut is expected to have type\n  ?m.8 \u2227 ?m.9\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((t \u2227 (t \u2192 q)) \u2228 (t \u2228 (t \u2227 q))) \u2192 ((t \u2228 (t \u2227 q)) \u2228 (t \u2227 (t \u2192 q)))) :=\n  ( fun h0 => ( Or.inl ( And.intro ( And.left h0 ) ( And.left h0 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-5",
+      "family": "cases",
+      "formula": "((((q -> q) | s) -> t) -> ((t -> t) -> ((((q -> q) | s) | t) -> t)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "db230d3d8016094f4aaf1173468369dbc144bd1e7010f6fbc633af2945532bfc",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23388895898824558,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-yt1gkgpk/Candidate.lean:5:14: error: Type mismatch\n  Or.inl h0\nhas type\n  ((q \u2192 q) \u2228 s \u2192 t) \u2228 ?m.3\nbut is expected to have type\n  (t \u2192 t) \u2192 ((q \u2192 q) \u2228 s) \u2228 t \u2192 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((((q \u2192 q) \u2228 s) \u2192 t) \u2192 ((t \u2192 t) \u2192 ((((q \u2192 q) \u2228 s) \u2228 t) \u2192 t))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-6",
+      "family": "curry",
+      "formula": "((((t | s) & (s & p)) -> t) -> ((t | s) -> ((s & p) -> t)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => h1)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "69acca2bb8183c80cc5ca2104fa88d2ca1f2a60823871fa126dca73f20810cc1",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22878741601016372,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-n24nwivg/Candidate.lean:5:38: error: Type mismatch\n  h1\nhas type\n  t \u2228 s\nbut is expected to have type\n  t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t : Prop) : ((((t \u2228 s) \u2227 (s \u2227 p)) \u2192 t) \u2192 ((t \u2228 s) \u2192 ((s \u2227 p) \u2192 t))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-7",
+      "family": "uncurry",
+      "formula": "((r -> (((p | p) -> p) -> u)) -> ((r & ((p | p) -> p)) -> u))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (And.intro h0 h1)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8f1bb1d8cb4660f10d398888ff53c34cb53415c3106fa400b4ab9a440f6ac828",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2323364169569686,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-qzdrov4d/Candidate.lean:5:26: error: Type mismatch\n  \u27e8h0, h1\u27e9\nhas type\n  (r \u2192 (p \u2228 p \u2192 p) \u2192 u) \u2227 r \u2227 (p \u2228 p \u2192 p)\nbut is expected to have type\n  u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : ((r \u2192 (((p \u2228 p) \u2192 p) \u2192 u)) \u2192 ((r \u2227 ((p \u2228 p) \u2192 p)) \u2192 u)) :=\n  ( fun h0 => ( fun h1 => ( And.intro h0 h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-8",
+      "family": "distribute",
+      "formula": "(((s | (u & p)) & (t | (s & (u | p)))) -> (((s | (u & p)) & t) | ((s | (u & p)) & (s & (u | p)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.left h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "708354ded8338880568ed57f5f2a1b20e75303f68d00936e1cab11408a8eb4b5",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23254075000295416,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-yn3enoru/Candidate.lean:5:25: error: Application type mismatch: The argument\n  h0\nhas type\n  (s \u2228 u \u2227 p) \u2227 (t \u2228 s \u2227 (u \u2228 p))\nbut is expected to have type\n  ((s \u2228 u \u2227 p) \u2227 t \u2228 (s \u2228 u \u2227 p) \u2227 s \u2227 (u \u2228 p)) \u2227 ?m.3\nin the application\n  h0.left\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : (((s \u2228 (u \u2227 p)) \u2227 (t \u2228 (s \u2227 (u \u2228 p)))) \u2192 (((s \u2228 (u \u2227 p)) \u2227 t) \u2228 ((s \u2228 (u \u2227 p)) \u2227 (s \u2227 (u \u2228 p))))) :=\n  ( fun h0 => ( And.left h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-9",
+      "family": "swap_pair",
+      "formula": "((((t & u) -> q) & q) -> (q & ((t & u) -> q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (And.right h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "93baf2db1f1bd9aadf31dbc7cf6ce2828403f1ee7219830224d47a52cc994101",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23273512499872595,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-95f7vsij/Candidate.lean:5:52: error: Function expected at\n  h0\nbut this term has type\n  (t \u2227 u \u2192 q) \u2227 q\n\nNote: Expected a function because this term is being applied to the argument\n  (And.left h2)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t u : Prop) : ((((t \u2227 u) \u2192 q) \u2227 q) \u2192 (q \u2227 ((t \u2227 u) \u2192 q))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( And.right h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-10",
+      "family": "pair",
+      "formula": "(((r & r) & u) -> (u -> (((r & r) & u) & u)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "ba9af602b93f6ea628ba17ecebc5918a1ac181f7652cacaa99d9b62849d161dc",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23360395798226818,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-5jeu2jmi/Candidate.lean:5:14: error: Type mismatch\n  \u27e8h0.right, h0.left\u27e9\nhas type\n  u \u2227 r \u2227 r\nbut is expected to have type\n  u \u2192 ((r \u2227 r) \u2227 u) \u2227 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r u : Prop) : (((r \u2227 r) \u2227 u) \u2192 (u \u2192 (((r \u2227 r) \u2227 u) \u2227 u))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-11",
+      "family": "compose",
+      "formula": "(((u -> (p & r)) -> q) -> ((q -> t) -> ((u -> (p & r)) -> t)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => ((h0 (And.left h1)) (And.right h1))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "eb094d1079f5797b8173c09530af3f9bf4cd2f0f38eb5c5394eaade6c0820b8d",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22936287499032915,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dse5zb3r/Candidate.lean:5:44: error: Application type mismatch: The argument\n  h1\nhas type\n  q \u2192 t\nbut is expected to have type\n  (u \u2192 p \u2227 r) \u2227 ?m.4\nin the application\n  And.left h1\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : (((u \u2192 (p \u2227 r)) \u2192 q) \u2192 ((q \u2192 t) \u2192 ((u \u2192 (p \u2227 r)) \u2192 t))) :=\n  ( fun h0 => ( fun h1 => ( ( h0 ( And.left h1 ) ) ( And.right h1 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-12",
+      "family": "apply",
+      "formula": "((((u | s) & (u & q)) -> (p & q)) -> (((u | s) & (u & q)) -> (p & q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8ed93329b70b9eef3a458929d2c65731509e044f42e240eeb4d2be6c814ac5d7",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23397612501867115,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-3dtne3o5/Candidate.lean:5:89: error: Function expected at\n  h1\nbut this term has type\n  (u \u2228 s) \u2227 u \u2227 q\n\nNote: Expected a function because this term is being applied to the argument\n  h4\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : ((((u \u2228 s) \u2227 (u \u2227 q)) \u2192 (p \u2227 q)) \u2192 (((u \u2228 s) \u2227 (u \u2227 q)) \u2192 (p \u2227 q))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-13",
+      "family": "inject_left",
+      "formula": "((p | (u -> q)) -> ((p | (u -> q)) | (p & p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => ((h0 (And.left h1)) (And.right h1))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "3f43ac34bdeaabae87a668fd91831ec91a4682d3e23ad0e8d8fc52ecd7f73096",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23377483402146026,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ewjzejet/Candidate.lean:5:14: error: Type mismatch\n  fun h1 => ?m.4\nhas type\n  (h1 : ?m.2) \u2192 ?m.5 h1\nbut is expected to have type\n  (p \u2228 (u \u2192 q)) \u2228 p \u2227 p\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ewjzejet/Candidate.lean:5:30: error: Function expected at\n  h0\nbut this term has type\n  p \u2228 (u \u2192 q)\n\nNote: Expected a function because this term is being applied to the argument\n  (And.left h1)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q u : Prop) : ((p \u2228 (u \u2192 q)) \u2192 ((p \u2228 (u \u2192 q)) \u2228 (p \u2227 p))) :=\n  ( fun h0 => ( fun h1 => ( ( h0 ( And.left h1 ) ) ( And.right h1 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-14",
+      "family": "map_pair",
+      "formula": "((r -> s) -> ((r -> ((s | p) | q)) -> ((r & r) -> (s & ((s | p) | q)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "61f708f598e2dbe22afc47035bc349da83e2eb32bb6ca76e05d075296c597124",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23349033400882035,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dhfgy5dl/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2192 s\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dhfgy5dl/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2192 s\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dhfgy5dl/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2192 s\nbut is expected to have type\n  ?m.20 \u2227 ?m.21\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((r \u2192 s) \u2192 ((r \u2192 ((s \u2228 p) \u2228 q)) \u2192 ((r \u2227 r) \u2192 (s \u2227 ((s \u2228 p) \u2228 q))))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-15",
+      "family": "distribute",
+      "formula": "((t & (s | (u | (p | s)))) -> ((t & s) | (t & (u | (p | s)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.left h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "f2bce8d523af2943b95f5fe8ce5acf59406b41594342404da8c79ea1ff385b4f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23330225003883243,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-12pnil1e/Candidate.lean:5:25: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2227 (s \u2228 u \u2228 p \u2228 s)\nbut is expected to have type\n  (t \u2227 s \u2228 t \u2227 (u \u2228 p \u2228 s)) \u2227 ?m.3\nin the application\n  h0.left\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : ((t \u2227 (s \u2228 (u \u2228 (p \u2228 s)))) \u2192 ((t \u2227 s) \u2228 (t \u2227 (u \u2228 (p \u2228 s))))) :=\n  ( fun h0 => ( And.left h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-16",
+      "family": "weaken",
+      "formula": "((r & p) -> ((t -> s) -> (r & p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (h1 (And.right h2))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "2ffa4b88aa5e35db2f2a39703b07f0e9ae8d9fa6d1cafe9c545bdd717bc30daf",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23338291700929403,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ivrstmwj/Candidate.lean:5:52: error: Function expected at\n  h0\nbut this term has type\n  r \u2227 p\n\nNote: Expected a function because this term is being applied to the argument\n  (And.left h2)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : ((r \u2227 p) \u2192 ((t \u2192 s) \u2192 (r \u2227 p))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( h1 ( And.right h2 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-17",
+      "family": "pair",
+      "formula": "(r -> ((r & s) -> (r & (r & s))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (And.right h1)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "c1e0742a2aa6b349945f4c02e1b2099998b29e55d5e17e4c4eb0b69005c198a5",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2326852090191096,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-s402k5_m/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h1\nhas type\n  r \u2227 s\nbut is expected to have type\n  ?m.8 h0 h1 \u2227 r \u2227 r \u2227 s\nin the application\n  h1.right\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : (r \u2192 ((r \u2227 s) \u2192 (r \u2227 (r \u2227 s)))) :=\n  ( fun h0 => ( fun h1 => ( And.right h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-18",
+      "family": "apply",
+      "formula": "(((s -> (s & q)) -> s) -> ((s -> (s & q)) -> s))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (And.right h2) (And.left h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "b1415c4e9e8fcf76096e21279e1bd77e8c04b3184c65080e8fd881eeaeca1a0f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23235008399933577,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-mvb5hlq1/Candidate.lean:5:26: error: Type mismatch\n  fun h2 => \u27e8h2.right, h2.left\u27e9\nhas type\n  ?m.8 \u2227 ?m.9 \u2192 ?m.9 \u2227 ?m.8\nbut is expected to have type\n  s\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : (((s \u2192 (s \u2227 q)) \u2192 s) \u2192 ((s \u2192 (s \u2227 q)) \u2192 s)) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( And.right h2 ) ( And.left h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-19",
+      "family": "inject_left",
+      "formula": "(p -> (p | ((r -> t) -> s)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inr h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "0dbb96497f38ca8ea05e8b6bf35d9aa57de9589267d3f42e93f0e20c864351ff",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2328788330196403,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-j5u0pxqq/Candidate.lean:5:23: error: Application type mismatch: The argument\n  h0\nhas type\n  p\nbut is expected to have type\n  (r \u2192 t) \u2192 s\nin the application\n  Or.inr h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : (p \u2192 (p \u2228 ((r \u2192 t) \u2192 s))) :=\n  ( fun h0 => ( Or.inr h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-20",
+      "family": "cases",
+      "formula": "((q -> r) -> (((q & s) -> r) -> ((q | (q & s)) -> r)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8c27ab9e6216cfec9ca688d66538839ce83ce998a0eb31e435e681301b221737",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22911362501326948,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-2dqcthg3/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2192 r\nbut is expected to have type\n  ?m.4 \u2227 ?m.5\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-2dqcthg3/Candidate.lean:5:54: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2192 r\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s : Prop) : ((q \u2192 r) \u2192 (((q \u2227 s) \u2192 r) \u2192 ((q \u2228 (q \u2227 s)) \u2192 r))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-21",
+      "family": "map_pair",
+      "formula": "((p -> (u & t)) -> ((((t -> r) -> (q -> s)) -> t) -> ((p & ((t -> r) -> (q -> s))) -> ((u & t) & t))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (And.intro h1 h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "07d967f5f1f2ecca57c3d23a641183a66a1cd73404781c78d091dcea492a2c47",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23814437503460795,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-572ydm26/Candidate.lean:5:43: error: Application type mismatch: The argument\n  \u27e8h1, h2\u27e9\nhas type\n  (((t \u2192 r) \u2192 q \u2192 s) \u2192 t) \u2227 p \u2227 ((t \u2192 r) \u2192 q \u2192 s)\nbut is expected to have type\n  p\nin the application\n  h0 \u27e8h1, h2\u27e9\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t u : Prop) : ((p \u2192 (u \u2227 t)) \u2192 ((((t \u2192 r) \u2192 (q \u2192 s)) \u2192 t) \u2192 ((p \u2227 ((t \u2192 r) \u2192 (q \u2192 s))) \u2192 ((u \u2227 t) \u2227 t)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( And.intro h1 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-22",
+      "family": "curry",
+      "formula": "(((q & (r -> (p | q))) -> s) -> (q -> ((r -> (p | q)) -> s)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "5735a392497a5b522506ec6458a784d19ea877193571f3549c767d9f994f12b9",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23322325001936406,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-69o0u_6q/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2227 (r \u2192 p \u2228 q) \u2192 s\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-69o0u_6q/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2227 (r \u2192 p \u2228 q) \u2192 s\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-69o0u_6q/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2227 (r \u2192 p \u2228 q) \u2192 s\nbut is expected to have type\n  ?m.20 \u2227 ?m.21\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : (((q \u2227 (r \u2192 (p \u2228 q))) \u2192 s) \u2192 (q \u2192 ((r \u2192 (p \u2228 q)) \u2192 s))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-23",
+      "family": "uncurry",
+      "formula": "(((s & p) -> (r -> p)) -> (((s & p) & r) -> p))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (h0 (And.left h2))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "508015e459a5c262497b474475a6f38d485706eda8a9c7e25530085e17f49d25",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.233468999969773,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nqx4gf94/Candidate.lean:5:26: error: Type mismatch\n  fun h2 => \u27e8h0 h2.left, h0 h2.left\u27e9\nhas type\n  (s \u2227 p) \u2227 ?m.8 \u2192 (r \u2192 p) \u2227 (r \u2192 p)\nbut is expected to have type\n  p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : (((s \u2227 p) \u2192 (r \u2192 p)) \u2192 (((s \u2227 p) \u2227 r) \u2192 p)) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( h0 ( And.left h2 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-24",
+      "family": "distribute",
+      "formula": "((q & (t | (t | (q & s)))) -> ((q & t) | (q & (t | (q & s)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8e45607a27d55692d66688788a0fda76f8aefef19b82f3cf8813c81d650d5863",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23344833398004994,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-fbj5z2ga/Candidate.lean:5:14: error: Type mismatch\n  fun h1 => h0\nhas type\n  \u2200 (h1 : ?m.2), q \u2227 (t \u2228 t \u2228 q \u2227 s)\nbut is expected to have type\n  q \u2227 t \u2228 q \u2227 (t \u2228 q \u2227 s)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((q \u2227 (t \u2228 (t \u2228 (q \u2227 s)))) \u2192 ((q \u2227 t) \u2228 (q \u2227 (t \u2228 (q \u2227 s))))) :=\n  ( fun h0 => ( fun h1 => h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-25",
+      "family": "contrapositive",
+      "formula": "((q -> (q | r)) -> (((q | r) -> False) -> (q -> False)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (h0 h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "76dc72e346507224a8ec70960d1bc708e51ad147883bb09914b63e9e4a4c2452",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23460525000700727,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : ((q \u2192 (q \u2228 r)) \u2192 (((q \u2228 r) \u2192 False) \u2192 (q \u2192 False))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( h0 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-26",
+      "family": "compose",
+      "formula": "((p -> ((t -> u) -> q)) -> ((((t -> u) -> q) -> q) -> (p -> q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (And.intro h1 h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "6dab116f3322d770642bf663c442f71e426dd59156e80c2a737e533972cac5fc",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2322483750176616,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-pal_qh9p/Candidate.lean:5:43: error: Application type mismatch: The argument\n  \u27e8h1, h2\u27e9\nhas type\n  (((t \u2192 u) \u2192 q) \u2192 q) \u2227 p\nbut is expected to have type\n  p\nin the application\n  h0 \u27e8h1, h2\u27e9\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t u : Prop) : ((p \u2192 ((t \u2192 u) \u2192 q)) \u2192 ((((t \u2192 u) \u2192 q) \u2192 q) \u2192 (p \u2192 q))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( And.intro h1 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-27",
+      "family": "cases",
+      "formula": "((((q & q) -> s) -> ((t -> s) | u)) -> ((s -> ((t -> s) | u)) -> ((((q & q) -> s) | s) -> ((t -> s) | u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "a3397dc065372024d8b037b933c3a142c5063285cab077b6cb9c11fd01ff955b",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23427695804275572,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t u : Prop) : ((((q \u2227 q) \u2192 s) \u2192 ((t \u2192 s) \u2228 u)) \u2192 ((s \u2192 ((t \u2192 s) \u2228 u)) \u2192 ((((q \u2227 q) \u2192 s) \u2228 s) \u2192 ((t \u2192 s) \u2228 u)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-28",
+      "family": "map_pair",
+      "formula": "((q -> (r | (s -> p))) -> ((u -> q) -> ((q & u) -> ((r | (s -> p)) & q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "17944a89196cd85d23979a08d95e6cb2ba76c680d4d42d625cca120a3a2c6fef",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23144837497966364,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8tnj1uwv/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2192 r \u2228 (s \u2192 p)\nbut is expected to have type\n  ?m.4 \u2227 ?m.5\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8tnj1uwv/Candidate.lean:5:54: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2192 r \u2228 (s \u2192 p)\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((q \u2192 (r \u2228 (s \u2192 p))) \u2192 ((u \u2192 q) \u2192 ((q \u2227 u) \u2192 ((r \u2228 (s \u2192 p)) \u2227 q)))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-29",
+      "family": "uncurry",
+      "formula": "((p -> (((u -> u) -> (u -> q)) -> (t & r))) -> ((p & ((u -> u) -> (u -> q))) -> (t & r)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => ((h0 (And.left h1)) (And.right h1))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "6ad9f536e8e9505b69d1a57169a13b2bec1b5c2941cd55341c6d7e659f432e48",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23398129199631512,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((p \u2192 (((u \u2192 u) \u2192 (u \u2192 q)) \u2192 (t \u2227 r))) \u2192 ((p \u2227 ((u \u2192 u) \u2192 (u \u2192 q))) \u2192 (t \u2227 r))) :=\n  ( fun h0 => ( fun h1 => ( ( h0 ( And.left h1 ) ) ( And.right h1 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-30",
+      "family": "contrapositive",
+      "formula": "(((q -> q) -> t) -> ((t -> False) -> ((q -> q) -> False)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (h0 h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "3431ff8690f9711d08e1417215a654867b59f3752e56ea30ab0756ad319e97c7",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23362062498927116,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((q \u2192 q) \u2192 t) \u2192 ((t \u2192 False) \u2192 ((q \u2192 q) \u2192 False))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( h0 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-31",
+      "family": "compose",
+      "formula": "(((s | p) -> s) -> ((s -> p) -> ((s | p) -> p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (fun h3 => h3)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "6552228e3e8aba9513ce4efd7fafd2e55085677c777ac3fe3c466cffa153cf93",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23218158300733194,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-91k4yeov/Candidate.lean:5:43: error: Application type mismatch: The argument\n  fun h3 => h3\nhas type\n  ?m.4 \u2192 ?m.4\nbut is expected to have type\n  s\nin the application\n  h1 fun h3 => h3\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s : Prop) : (((s \u2228 p) \u2192 s) \u2192 ((s \u2192 p) \u2192 ((s \u2228 p) \u2192 p))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( fun h3 => h3 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-32",
+      "family": "apply",
+      "formula": "((((p & t) & t) -> p) -> (((p & t) & t) -> p))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => h2)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "a99bc9b46bc992c685682921b4e1c3f5b3ec416a28cda84725f6ee8da2f2a743",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2335963340010494,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-i4t2v3l_/Candidate.lean:5:26: error: Type mismatch\n  fun h2 => h2\nhas type\n  ?m.3 \u2192 ?m.3\nbut is expected to have type\n  p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((((p \u2227 t) \u2227 t) \u2192 p) \u2192 (((p \u2227 t) \u2227 t) \u2192 p)) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => h2 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-33",
+      "family": "swap_or",
+      "formula": "((s | ((r -> s) -> q)) -> (((r -> s) -> q) | s))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h1))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8119b2fd280f1c4407c052e1501dd155ad8607921ad854010747d1c577bc36a0",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23242970899445936,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-xz3loik0/Candidate.lean:5:14: error: Type mismatch\n  fun h1 => h1\nhas type\n  ?m.2 \u2192 ?m.2\nbut is expected to have type\n  ((r \u2192 s) \u2192 q) \u2228 s\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s : Prop) : ((s \u2228 ((r \u2192 s) \u2192 q)) \u2192 (((r \u2192 s) \u2192 q) \u2228 s)) :=\n  ( fun h0 => ( fun h1 => h1 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-34",
+      "family": "map_pair",
+      "formula": "((((u | p) -> p) -> s) -> ((s -> p) -> ((((u | p) -> p) & s) -> (s & p))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "02e2d09e3a386334639c4cd9c29283ef106cc958c763954e65c3c3ec9c64fc0a",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22331237501930445,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-j_n2jis9/Candidate.lean:5:14: error: Type mismatch\n  Or.inl h0\nhas type\n  ((u \u2228 p \u2192 p) \u2192 s) \u2228 ?m.3\nbut is expected to have type\n  (s \u2192 p) \u2192 (u \u2228 p \u2192 p) \u2227 s \u2192 s \u2227 p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s u : Prop) : ((((u \u2228 p) \u2192 p) \u2192 s) \u2192 ((s \u2192 p) \u2192 ((((u \u2228 p) \u2192 p) \u2227 s) \u2192 (s \u2227 p)))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-35",
+      "family": "curry",
+      "formula": "((((t & p) & r) -> (s -> t)) -> ((t & p) -> (r -> (s -> t))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (h1 (And.right h2))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "73e4b261421fdc98f6aea4d83148d8739d65da3b2f3ea9dbaaa8da4a5433abf0",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23266674997285008,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-6lg3bmct/Candidate.lean:5:66: error: Application type mismatch: The argument\n  h2\nhas type\n  r\nbut is expected to have type\n  ((t \u2227 p) \u2227 r) \u2227 ?m.7\nin the application\n  And.left h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-6lg3bmct/Candidate.lean:5:75: error: Function expected at\n  h1\nbut this term has type\n  t \u2227 p\n\nNote: Expected a function because this term is being applied to the argument\n  (And.right h2)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : ((((t \u2227 p) \u2227 r) \u2192 (s \u2192 t)) \u2192 ((t \u2227 p) \u2192 (r \u2192 (s \u2192 t)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( h1 ( And.right h2 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-36",
+      "family": "uncurry",
+      "formula": "(((u & (t | p)) -> (p -> s)) -> (((u & (t | p)) & p) -> s))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.left h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "a1d4baaf8bd2a0604e56c96a2de7d4c1140f63814ef025c7de8f837a417377c9",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23470033303601667,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ggb15o6l/Candidate.lean:5:25: error: Application type mismatch: The argument\n  h0\nhas type\n  u \u2227 (t \u2228 p) \u2192 p \u2192 s\nbut is expected to have type\n  ((u \u2227 (t \u2228 p)) \u2227 p \u2192 s) \u2227 ?m.3\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : (((u \u2227 (t \u2228 p)) \u2192 (p \u2192 s)) \u2192 (((u \u2227 (t \u2228 p)) \u2227 p) \u2192 s)) :=\n  ( fun h0 => ( And.left h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-37",
+      "family": "distribute",
+      "formula": "((p & ((u | (r -> p)) | p)) -> ((p & (u | (r -> p))) | (p & p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (And.intro h0 h1)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "9bfbd4faca23479824e7072ef26d099fb96233181cc4f08fe39e07c4ca5b2543",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23414837499149144,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-0ok7g2z4/Candidate.lean:5:14: error: Type mismatch\n  fun h1 => \u27e8h0, h1\u27e9\nhas type\n  ?m.2 \u2192 (p \u2227 ((u \u2228 (r \u2192 p)) \u2228 p)) \u2227 ?m.2\nbut is expected to have type\n  p \u2227 (u \u2228 (r \u2192 p)) \u2228 p \u2227 p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : ((p \u2227 ((u \u2228 (r \u2192 p)) \u2228 p)) \u2192 ((p \u2227 (u \u2228 (r \u2192 p))) \u2228 (p \u2227 p))) :=\n  ( fun h0 => ( fun h1 => ( And.intro h0 h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-38",
+      "family": "swap_pair",
+      "formula": "((((q -> s) | u) & ((s & u) -> u)) -> (((s & u) -> u) & ((q -> s) | u)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (And.right h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "27581173f307f78c13e080a9566ce1d15f8636831a00b278c43564c576c06fdf",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2295159170171246,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-r2_tswxb/Candidate.lean:5:52: error: Function expected at\n  h0\nbut this term has type\n  ((q \u2192 s) \u2228 u) \u2227 (s \u2227 u \u2192 u)\n\nNote: Expected a function because this term is being applied to the argument\n  (And.left h2)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : ((((q \u2192 s) \u2228 u) \u2227 ((s \u2227 u) \u2192 u)) \u2192 (((s \u2227 u) \u2192 u) \u2227 ((q \u2192 s) \u2228 u))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( And.right h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-39",
+      "family": "compose",
+      "formula": "((((r | q) -> (p & s)) -> q) -> ((q -> t) -> (((r | q) -> (p & s)) -> t)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8af96faa3a451bfebc49748446ba24194cbcf0fd51b3e8f6713c34ae13b6e0ab",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2323499579797499,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-0uh0rqeb/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h0\nhas type\n  (r \u2228 q \u2192 p \u2227 s) \u2192 q\nbut is expected to have type\n  ?m.4 \u2227 ?m.5\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-0uh0rqeb/Candidate.lean:5:54: error: Application type mismatch: The argument\n  h0\nhas type\n  (r \u2228 q \u2192 p \u2227 s) \u2192 q\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t : Prop) : ((((r \u2228 q) \u2192 (p \u2227 s)) \u2192 q) \u2192 ((q \u2192 t) \u2192 (((r \u2228 q) \u2192 (p \u2227 s)) \u2192 t))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-40",
+      "family": "inject_left",
+      "formula": "(u -> (u | (p | (p | q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "65b17418af3815f2820dbc5dafbfdb3467e1dfacba7be93adac4018cd962282b",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2337736250483431,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q u : Prop) : (u \u2192 (u \u2228 (p \u2228 (p \u2228 q)))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-41",
+      "family": "map_pair",
+      "formula": "(((r & r) -> t) -> ((u -> t) -> (((r & r) & u) -> (t & t))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "0a979ef3cd1473e122ff34ec129583f5a51c8a8e7badcb650c6f28a051d7efd0",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23317999998107553,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-la80e8bb/Candidate.lean:5:26: error: Type mismatch\n  h0\nhas type\n  r \u2227 r \u2192 t\nbut is expected to have type\n  (r \u2227 r) \u2227 u \u2192 t \u2227 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r t u : Prop) : (((r \u2227 r) \u2192 t) \u2192 ((u \u2192 t) \u2192 (((r \u2227 r) \u2227 u) \u2192 (t \u2227 t)))) :=\n  ( fun h0 => ( fun h1 => h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-42",
+      "family": "uncurry",
+      "formula": "(((s | r) -> (t -> u)) -> (((s | r) & t) -> u))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim h0 (fun h1 => (Or.inr h1)) (fun h2 => (Or.inl h2))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "0952c079fa8f16a787fc925c8a4c4987196c9833466f83ba9b9a2c087601b791",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22985695803072304,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-d9zzvca4/Candidate.lean:5:24: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2228 r \u2192 t \u2192 u\nbut is expected to have type\n  ?m.2 \u2228 ?m.3\nin the application\n  Or.elim h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-d9zzvca4/Candidate.lean:5:39: error: Type mismatch\n  Or.inr h1\nhas type\n  ?m.6 \u2228 ?m.2\nbut is expected to have type\n  (s \u2228 r) \u2227 t \u2192 u\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-d9zzvca4/Candidate.lean:5:67: error: Type mismatch\n  Or.inl h2\nhas type\n  ?m.3 \u2228 ?m.11\nbut is expected to have type\n  (s \u2228 r) \u2227 t \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s t u : Prop) : (((s \u2228 r) \u2192 (t \u2192 u)) \u2192 (((s \u2228 r) \u2227 t) \u2192 u)) :=\n  ( fun h0 => ( Or.elim h0 ( fun h1 => ( Or.inr h1 ) ) ( fun h2 => ( Or.inl h2 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-43",
+      "family": "identity",
+      "formula": "(((r -> q) | q) -> ((r -> q) | q))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "030f647ee4d689f1a11ed85627d6466ca793a4d12beb051dd7caff369ad7e768",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23443858401151374,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-3frszxaw/Candidate.lean:5:23: error: Application type mismatch: The argument\n  h0\nhas type\n  (r \u2192 q) \u2228 q\nbut is expected to have type\n  r \u2192 q\nin the application\n  Or.inl h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : (((r \u2192 q) \u2228 q) \u2192 ((r \u2192 q) \u2228 q)) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-44",
+      "family": "weaken",
+      "formula": "((p -> (t -> q)) -> (t -> (p -> (t -> q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim h0 (fun h1 => (Or.inr h1)) (fun h2 => (Or.inl h2))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "a8b517c7deb653a02ee9329eecb8a63853123943f83af0829ddd1fc928296607",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23439787497045472,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vzh3ipwz/Candidate.lean:5:24: error: Application type mismatch: The argument\n  h0\nhas type\n  p \u2192 t \u2192 q\nbut is expected to have type\n  ?m.2 \u2228 ?m.3\nin the application\n  Or.elim h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vzh3ipwz/Candidate.lean:5:39: error: Type mismatch\n  Or.inr h1\nhas type\n  ?m.6 \u2228 ?m.2\nbut is expected to have type\n  t \u2192 p \u2192 t \u2192 q\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-vzh3ipwz/Candidate.lean:5:67: error: Type mismatch\n  Or.inl h2\nhas type\n  ?m.3 \u2228 ?m.11\nbut is expected to have type\n  t \u2192 p \u2192 t \u2192 q\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t : Prop) : ((p \u2192 (t \u2192 q)) \u2192 (t \u2192 (p \u2192 (t \u2192 q)))) :=\n  ( fun h0 => ( Or.elim h0 ( fun h1 => ( Or.inr h1 ) ) ( fun h2 => ( Or.inl h2 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-45",
+      "family": "compose",
+      "formula": "(((t | (p & p)) -> p) -> ((p -> q) -> ((t | (p & p)) -> q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "fdee67fe83455b08d879024ef89f757830d09eaf927d785b3580440ce5bdaf1d",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2275717500015162,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8vgjn_kv/Candidate.lean:5:68: error: Application type mismatch: The argument\n  h3\nhas type\n  t\nbut is expected to have type\n  t \u2228 p \u2227 p\nin the application\n  h0 h3\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8vgjn_kv/Candidate.lean:5:92: error: Application type mismatch: The argument\n  h4\nhas type\n  p \u2227 p\nbut is expected to have type\n  p\nin the application\n  h1 h4\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t : Prop) : (((t \u2228 (p \u2227 p)) \u2192 p) \u2192 ((p \u2192 q) \u2192 ((t \u2228 (p \u2227 p)) \u2192 q))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-46",
+      "family": "map_pair",
+      "formula": "((((t & u) | s) -> s) -> (((q -> t) -> r) -> ((((t & u) | s) & (q -> t)) -> (s & r))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => ((h0 (And.left h1)) (And.right h1))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "3963977c8e76121bd291e353996f0926e0f8d88a46c2808e9e57374e00263a13",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23409779102075845,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-3az2s_sn/Candidate.lean:5:44: error: Application type mismatch: The argument\n  h1\nhas type\n  (q \u2192 t) \u2192 r\nbut is expected to have type\n  (t \u2227 u \u2228 s) \u2227 ?m.4\nin the application\n  And.left h1\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t u : Prop) : ((((t \u2227 u) \u2228 s) \u2192 s) \u2192 (((q \u2192 t) \u2192 r) \u2192 ((((t \u2227 u) \u2228 s) \u2227 (q \u2192 t)) \u2192 (s \u2227 r)))) :=\n  ( fun h0 => ( fun h1 => ( ( h0 ( And.left h1 ) ) ( And.right h1 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-47",
+      "family": "uncurry",
+      "formula": "(((u -> t) -> ((t -> q) -> p)) -> (((u -> t) & (t -> q)) -> p))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (And.intro h1 h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "ad089992fdeae5ec5bff28a082e1d3153eeded2e39fc9144866b78c4ea1baced",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23267416702583432,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-hvkp2c8x/Candidate.lean:5:43: error: Application type mismatch: The argument\n  \u27e8h1, h2\u27e9\nhas type\n  ((u \u2192 t) \u2227 (t \u2192 q)) \u2227 ?m.3\nbut is expected to have type\n  u \u2192 t\nin the application\n  h0 \u27e8h1, h2\u27e9\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t u : Prop) : (((u \u2192 t) \u2192 ((t \u2192 q) \u2192 p)) \u2192 (((u \u2192 t) \u2227 (t \u2192 q)) \u2192 p)) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( And.intro h1 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-48",
+      "family": "distribute",
+      "formula": "((p & (((u | q) | r) | p)) -> ((p & ((u | q) | r)) | (p & p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "9d385216e990409c21d648c0be49ba021e082173a8ee8a2d4cf7994c0d962369",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22673704201588407,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : ((p \u2227 (((u \u2228 q) \u2228 r) \u2228 p)) \u2192 ((p \u2227 ((u \u2228 q) \u2228 r)) \u2228 (p \u2227 p))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-49",
+      "family": "identity",
+      "formula": "(((s -> q) -> (u & q)) -> ((s -> q) -> (u & q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (h1 (And.left h2))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "ab7930280a272426e7b7406f03abc9328d6c411874a484c5a8d229d78799b505",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22624658298445866,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-5i5q1ej8/Candidate.lean:5:89: error: Application type mismatch: The argument\n  h2\nhas type\n  (s \u2192 q) \u2227 ?m.8\nbut is expected to have type\n  s \u2227 ?m.10\nin the application\n  h2.left\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : (((s \u2192 q) \u2192 (u \u2227 q)) \u2192 ((s \u2192 q) \u2192 (u \u2227 q))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( h1 ( And.left h2 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-50",
+      "family": "weaken",
+      "formula": "(((u | t) | s) -> ((u -> s) -> ((u | t) | s)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => h0)",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "7ea5818c415d4e7366367cc01b704c3af7311e9ef407fc53e8b4c08f62fa4867",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2315366250113584,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-tav5_enw/Candidate.lean:5:14: error: Type mismatch\n  h0\nhas type\n  (u \u2228 t) \u2228 s\nbut is expected to have type\n  (u \u2192 s) \u2192 (u \u2228 t) \u2228 s\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : (((u \u2228 t) \u2228 s) \u2192 ((u \u2192 s) \u2192 ((u \u2228 t) \u2228 s))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-51",
+      "family": "swap_pair",
+      "formula": "(((s | q) & (s -> s)) -> ((s -> s) & (s | q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "09c23ebc2871cffad20b4d38f42ae7e77643a00743d3ab89887b17f1b01e2fb1",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22785795904928818,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : (((s \u2228 q) \u2227 (s \u2192 s)) \u2192 ((s \u2192 s) \u2227 (s \u2228 q))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-52",
+      "family": "first",
+      "formula": "((s & (s | s)) -> s)",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (And.intro h0 h1)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "594bcdfc28275f4970c5aa69ba61cfc7c003f456dfaddef2cc3a6f9431e581aa",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22868454101262614,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-5w2x64ot/Candidate.lean:5:14: error: Type mismatch\n  fun h1 => \u27e8h0, h1\u27e9\nhas type\n  ?m.2 \u2192 (s \u2227 (s \u2228 s)) \u2227 ?m.2\nbut is expected to have type\n  s\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s : Prop) : ((s \u2227 (s \u2228 s)) \u2192 s) :=\n  ( fun h0 => ( fun h1 => ( And.intro h0 h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-53",
+      "family": "swap_or",
+      "formula": "((((q | r) | u) | r) -> (r | ((q | r) | u)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (fun h3 => h3)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "a4aefd932fdb518b7a37735b61ceee72c8cfe7395c48a30066ae3a1b3257a506",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2332423329935409,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-xe_d575z/Candidate.lean:5:40: error: Function expected at\n  h0\nbut this term has type\n  ((q \u2228 r) \u2228 u) \u2228 r\n\nNote: Expected a function because this term is being applied to the argument\n  (fun h3 => h3)\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r u : Prop) : ((((q \u2228 r) \u2228 u) \u2228 r) \u2192 (r \u2228 ((q \u2228 r) \u2228 u))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( fun h3 => h3 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-54",
+      "family": "cases",
+      "formula": "((((r | s) | r) -> (t -> (s -> q))) -> ((s -> (t -> (s -> q))) -> ((((r | s) | r) | s) -> (t -> (s -> q)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "67bff7687ed58ed960305db778af4beaac9928bc7309567cc00e3700868c7cf8",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2348263330059126,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ke3dh2m7/Candidate.lean:5:14: error: Type mismatch\n  Or.inl h0\nhas type\n  ((r \u2228 s) \u2228 r \u2192 t \u2192 s \u2192 q) \u2228 ?m.3\nbut is expected to have type\n  (s \u2192 t \u2192 s \u2192 q) \u2192 ((r \u2228 s) \u2228 r) \u2228 s \u2192 t \u2192 s \u2192 q\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t : Prop) : ((((r \u2228 s) \u2228 r) \u2192 (t \u2192 (s \u2192 q))) \u2192 ((s \u2192 (t \u2192 (s \u2192 q))) \u2192 ((((r \u2228 s) \u2228 r) \u2228 s) \u2192 (t \u2192 (s \u2192 q))))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-55",
+      "family": "map_pair",
+      "formula": "(((s & p) -> q) -> (((s & (p | u)) -> q) -> (((s & p) & (s & (p | u))) -> (q & q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "3d33e7593610462c9f211f130dfcda720112ad48e968037c7a88a2762505a66c",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.229628709028475,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-97lixm2t/Candidate.lean:5:48: error: Application type mismatch: The argument\n  h2\nhas type\n  (s \u2227 p) \u2227 s \u2227 (p \u2228 u)\nbut is expected to have type\n  ?m.4 \u2228 ?m.5\nin the application\n  Or.elim h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-97lixm2t/Candidate.lean:5:63: error: Type mismatch\n  h0 h3\nhas type\n  q\nbut is expected to have type\n  q \u2227 q\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-97lixm2t/Candidate.lean:5:87: error: Type mismatch\n  h1 h4\nhas type\n  q\nbut is expected to have type\n  q \u2227 q\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : (((s \u2227 p) \u2192 q) \u2192 (((s \u2227 (p \u2228 u)) \u2192 q) \u2192 (((s \u2227 p) \u2227 (s \u2227 (p \u2228 u))) \u2192 (q \u2227 q)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-56",
+      "family": "curry",
+      "formula": "(((s & s) -> ((t & t) & q)) -> (s -> (s -> ((t & t) & q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (And.intro h1 h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "62fc1589215f4e25058499e449527dbfea4d9749c94bad1eef6f846287888b4c",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2340436250087805,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : (((s \u2227 s) \u2192 ((t \u2227 t) \u2227 q)) \u2192 (s \u2192 (s \u2192 ((t \u2227 t) \u2227 q)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( And.intro h1 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-57",
+      "family": "uncurry",
+      "formula": "((t -> (u -> ((p & u) -> t))) -> ((t & u) -> ((p & u) -> t)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "7896cca2ef2bdd50d860c163787cf82960b99230080e200036854affdf325a38",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23093804199015722,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-h62quuwa/Candidate.lean:5:26: error: Type mismatch\n  h0\nhas type\n  t \u2192 u \u2192 p \u2227 u \u2192 t\nbut is expected to have type\n  p \u2227 u \u2192 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : ((t \u2192 (u \u2192 ((p \u2227 u) \u2192 t))) \u2192 ((t \u2227 u) \u2192 ((p \u2227 u) \u2192 t))) :=\n  ( fun h0 => ( fun h1 => h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-58",
+      "family": "contrapositive",
+      "formula": "(((s | (p & t)) -> q) -> ((q -> False) -> ((s | (p & t)) -> False)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (h0 h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "967c8f4c40632faf0515433734a76a88f8c13af0c506d370a8333a6de6709734",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2335001250030473,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((s \u2228 (p \u2227 t)) \u2192 q) \u2192 ((q \u2192 False) \u2192 ((s \u2228 (p \u2227 t)) \u2192 False))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( h0 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-59",
+      "family": "pair",
+      "formula": "(((p & r) -> r) -> ((u -> (p | r)) -> (((p & r) -> r) & (u -> (p | r)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (And.intro h0 h1)))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "b99f0841ec634056062539e45c9dab8c2ea69607a73450f4fee0e39dba40ae20",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22915270796511322,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : (((p \u2227 r) \u2192 r) \u2192 ((u \u2192 (p \u2228 r)) \u2192 (((p \u2227 r) \u2192 r) \u2227 (u \u2192 (p \u2228 r))))) :=\n  ( fun h0 => ( fun h1 => ( And.intro h0 h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-60",
+      "family": "apply",
+      "formula": "(((p | (t | u)) -> (s | q)) -> ((p | (t | u)) -> (s | q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "2daba083e295e0970f215fd37cb88e1504076c0f865674f07d80a82c5b87a831",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2282324999687262,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-9nft_g98/Candidate.lean:5:89: error: Function expected at\n  h1\nbut this term has type\n  p \u2228 t \u2228 u\n\nNote: Expected a function because this term is being applied to the argument\n  h4\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (((p \u2228 (t \u2228 u)) \u2192 (s \u2228 q)) \u2192 ((p \u2228 (t \u2228 u)) \u2192 (s \u2228 q))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-61",
+      "family": "map_pair",
+      "formula": "((p -> s) -> (((p -> s) -> r) -> ((p & (p -> s)) -> (s & r))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (h0 (And.left h2))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "eb9a4ba8456a0b0f2b9825a7835189ddd270eda5c07dc8c3f3a900eb4d75512d",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23343387502245605,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-8pwreh52/Candidate.lean:5:73: error: Application type mismatch: The argument\n  h0 h2.left\nhas type\n  s\nbut is expected to have type\n  r\nin the application\n  \u27e8h0 h2.left, h0 h2.left\u27e9\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((p \u2192 s) \u2192 (((p \u2192 s) \u2192 r) \u2192 ((p \u2227 (p \u2192 s)) \u2192 (s \u2227 r)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( h0 ( And.left h2 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-62",
+      "family": "curry",
+      "formula": "(((s & (p -> s)) -> u) -> (s -> ((p -> s) -> u)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => h0)",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "ac696750635e6668c49d097f8dc793add79a9a194ffed71384eebb334c3434a8",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23333083296893165,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-b9j1p05m/Candidate.lean:5:14: error: Type mismatch\n  h0\nhas type\n  s \u2227 (p \u2192 s) \u2192 u\nbut is expected to have type\n  s \u2192 (p \u2192 s) \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s u : Prop) : (((s \u2227 (p \u2192 s)) \u2192 u) \u2192 (s \u2192 ((p \u2192 s) \u2192 u))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-63",
+      "family": "uncurry",
+      "formula": "((t -> (t -> ((u | t) & p))) -> ((t & t) -> ((u | t) & p)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (Or.inl h1) h2))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "79d91cc4c5832534134589f0910e650fa35d321e5b35a0e5b61639de062e151c",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23173383297398686,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-i75rhkpa/Candidate.lean:5:26: error: Type mismatch\n  fun h2 => \u27e8Or.inl h1, h2\u27e9\nhas type\n  \u2200 (h2 : ?m.3), (t \u2227 t \u2228 ?m.8 h2) \u2227 ?m.3\nbut is expected to have type\n  (u \u2228 t) \u2227 p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : ((t \u2192 (t \u2192 ((u \u2228 t) \u2227 p))) \u2192 ((t \u2227 t) \u2192 ((u \u2228 t) \u2227 p))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( Or.inl h1 ) h2 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-64",
+      "family": "distribute",
+      "formula": "(((p & t) & (r | (t | q))) -> (((p & t) & r) | ((p & t) & (t | q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "755cc9913d70bab5f69c107b4113d77a86282f8da7b8c05bf892f95a771c8d08",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23301070800516754,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-au46hsm9/Candidate.lean:5:65: error: Function expected at\n  h0\nbut this term has type\n  (p \u2227 t) \u2227 (r \u2228 t \u2228 q)\n\nNote: Expected a function because this term is being applied to the argument\n  h3\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-au46hsm9/Candidate.lean:5:89: error: Function expected at\n  h1\nbut this term has type\n  ?m.2\n\nNote: Expected a function because this term is being applied to the argument\n  h4\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t : Prop) : (((p \u2227 t) \u2227 (r \u2228 (t \u2228 q))) \u2192 (((p \u2227 t) \u2227 r) \u2228 ((p \u2227 t) \u2227 (t \u2228 q)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-65",
+      "family": "swap_pair",
+      "formula": "((q & (q | (q -> s))) -> ((q | (q -> s)) & q))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "36a40ad7c7bda02582d4d3d10b5f2794514e51cb9c295400e8eb04e400c175f0",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2319582090131007,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : ((q \u2227 (q \u2228 (q \u2192 s))) \u2192 ((q \u2228 (q \u2192 s)) \u2227 q)) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-66",
+      "family": "compose",
+      "formula": "((r -> r) -> ((r -> ((t -> q) -> (u & r))) -> (r -> ((t -> q) -> (u & r)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => ((h0 (And.left h1)) (And.right h1))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "efc561a6706507e40571816c1392929deb20be3e7be23685f141c5073faa7e3a",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23309454100672156,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-64f946x0/Candidate.lean:5:44: error: Application type mismatch: The argument\n  h1\nhas type\n  r \u2192 (t \u2192 q) \u2192 u \u2227 r\nbut is expected to have type\n  r \u2227 ?m.4\nin the application\n  And.left h1\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t u : Prop) : ((r \u2192 r) \u2192 ((r \u2192 ((t \u2192 q) \u2192 (u \u2227 r))) \u2192 (r \u2192 ((t \u2192 q) \u2192 (u \u2227 r))))) :=\n  ( fun h0 => ( fun h1 => ( ( h0 ( And.left h1 ) ) ( And.right h1 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-67",
+      "family": "inject_right",
+      "formula": "((s -> (u & u)) -> (t | (s -> (u & u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "abd33556953f2c1fca774bac40d250f1ca27525670cdd9d238b33706b4fa71b8",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23117399995680898,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ut_jo2yi/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2192 u \u2227 u\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ut_jo2yi/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2192 u \u2227 u\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ut_jo2yi/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2192 u \u2227 u\nbut is expected to have type\n  ?m.19 \u2227 ?m.20\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((s \u2192 (u \u2227 u)) \u2192 (t \u2228 (s \u2192 (u \u2227 u)))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-68",
+      "family": "swap_or",
+      "formula": "((r | ((s & s) -> t)) -> (((s & s) -> t) | r))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "c4797d662a6542928f005dd29cddaa3ec4b86896c7cf8fc574f9c8f2150c215f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22944412502693012,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dyj4mxp0/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2228 (s \u2227 s \u2192 t)\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dyj4mxp0/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2228 (s \u2227 s \u2192 t)\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-dyj4mxp0/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2228 (s \u2227 s \u2192 t)\nbut is expected to have type\n  ?m.20 \u2227 ?m.21\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s t : Prop) : ((r \u2228 ((s \u2227 s) \u2192 t)) \u2192 (((s \u2227 s) \u2192 t) \u2228 r)) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-69",
+      "family": "map_pair",
+      "formula": "((r -> ((s -> s) -> s)) -> (((r | q) -> (u | (p & u))) -> ((r & (r | q)) -> (((s -> s) -> s) & (u | (p & u))))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "e049df56274cbbeea2364e7282f3e4adf06be8d08263b0d2202a54d01f22bf4b",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23117629101034254,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nslxtov4/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2192 (s \u2192 s) \u2192 s\nbut is expected to have type\n  ?m.4 \u2227 ?m.5\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nslxtov4/Candidate.lean:5:54: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2192 (s \u2192 s) \u2192 s\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((r \u2192 ((s \u2192 s) \u2192 s)) \u2192 (((r \u2228 q) \u2192 (u \u2228 (p \u2227 u))) \u2192 ((r \u2227 (r \u2228 q)) \u2192 (((s \u2192 s) \u2192 s) \u2227 (u \u2228 (p \u2227 u)))))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-70",
+      "family": "contrapositive",
+      "formula": "(((p & (r & s)) -> u) -> ((u -> False) -> ((p & (r & s)) -> False)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (h0 h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "c7bcc5c56941edc5161c6d6ac21c179dcdd16fbe129c315f6c41328cfe3d9941",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23410016699926928,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s u : Prop) : (((p \u2227 (r \u2227 s)) \u2192 u) \u2192 ((u \u2192 False) \u2192 ((p \u2227 (r \u2227 s)) \u2192 False))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( h0 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-71",
+      "family": "identity",
+      "formula": "(((r -> q) -> r) -> ((r -> q) -> r))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (And.intro h0 h1)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "13e90b92fee0eaf2c464092ada487e8d71e9a079e8ca321a06bff16fff083895",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2331104589975439,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-gaqipfj9/Candidate.lean:5:26: error: Type mismatch\n  \u27e8h0, h1\u27e9\nhas type\n  ((r \u2192 q) \u2192 r) \u2227 (r \u2192 q)\nbut is expected to have type\n  r\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : (((r \u2192 q) \u2192 r) \u2192 ((r \u2192 q) \u2192 r)) :=\n  ( fun h0 => ( fun h1 => ( And.intro h0 h1 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-72",
+      "family": "compose",
+      "formula": "((s -> p) -> ((p -> ((s | r) | (u -> q))) -> (s -> ((s | r) | (u -> q)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (h0 h2)))))",
+      "status": "verified",
+      "nodes": 0,
+      "verification": {
+        "accepted": true,
+        "reason": "verified",
+        "source_hash": "b268b95125b9976e6ec1e9271b6c385a59dfb55e9bb02af0257aac9faaba6c40",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2309291249839589,
+        "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((s \u2192 p) \u2192 ((p \u2192 ((s \u2228 r) \u2228 (u \u2192 q))) \u2192 (s \u2192 ((s \u2228 r) \u2228 (u \u2192 q))))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( h0 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-73",
+      "family": "inject_left",
+      "formula": "(s -> (s | ((t | p) | q)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "34911fae7489ac9ebf31ff195ed48553f3edf67f36fe1c0b612b3758da4c00e3",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23340370901860297,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-a0kvhhie/Candidate.lean:5:14: error: Type mismatch\n  fun h1 => h0\nhas type\n  \u2200 (h1 : ?m.2), s\nbut is expected to have type\n  s \u2228 (t \u2228 p) \u2228 q\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (s \u2192 (s \u2228 ((t \u2228 p) \u2228 q))) :=\n  ( fun h0 => ( fun h1 => h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-74",
+      "family": "inject_right",
+      "formula": "((s -> u) -> ((s | r) | (s -> u)))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim h0 (fun h1 => (Or.inr h1)) (fun h2 => (Or.inl h2))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "07222a6882ffa9c268712f794da81cd0f1bfea0fbaf31635f1e9a66dd00db1ae",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23355841700686142,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-cv0r_p_g/Candidate.lean:5:24: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2192 u\nbut is expected to have type\n  ?m.2 \u2228 ?m.3\nin the application\n  Or.elim h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s u : Prop) : ((s \u2192 u) \u2192 ((s \u2228 r) \u2228 (s \u2192 u))) :=\n  ( fun h0 => ( Or.elim h0 ( fun h1 => ( Or.inr h1 ) ) ( fun h2 => ( Or.inl h2 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-75",
+      "family": "nested_cases",
+      "formula": "(((q | r) -> u) -> (((q -> (q -> s)) -> u) -> (((r -> q) -> u) -> (((q | r) | ((q -> (q -> s)) | (r -> q))) -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inr h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "fdabef1b912bb91e6464f017fd949145e213700ac337e044c8b7dc1b6b682d73",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23436883400427178,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-sta8pi1d/Candidate.lean:5:14: error: Type mismatch\n  Or.inr h0\nhas type\n  ?m.2 \u2228 (q \u2228 r \u2192 u)\nbut is expected to have type\n  ((q \u2192 q \u2192 s) \u2192 u) \u2192 ((r \u2192 q) \u2192 u) \u2192 (q \u2228 r) \u2228 (q \u2192 q \u2192 s) \u2228 (r \u2192 q) \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s u : Prop) : (((q \u2228 r) \u2192 u) \u2192 (((q \u2192 (q \u2192 s)) \u2192 u) \u2192 (((r \u2192 q) \u2192 u) \u2192 (((q \u2228 r) \u2228 ((q \u2192 (q \u2192 s)) \u2228 (r \u2192 q))) \u2192 u)))) :=\n  ( fun h0 => ( Or.inr h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-76",
+      "family": "long_chain",
+      "formula": "((p -> t) -> ((t -> r) -> ((r -> q) -> (p -> q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h1 (h0 h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8c1c80a1e02596fd8f0b3d233b5dd6aa12996f82de65c5059a2bc1ebbc68decb",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23353308299556375,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-7eo_u4m2/Candidate.lean:5:48: error: Application type mismatch: The argument\n  h2\nhas type\n  r \u2192 q\nbut is expected to have type\n  p\nin the application\n  h0 h2\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t : Prop) : ((p \u2192 t) \u2192 ((t \u2192 r) \u2192 ((r \u2192 q) \u2192 (p \u2192 q)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h1 ( h0 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-77",
+      "family": "nested_cases",
+      "formula": "((r -> r) -> (((p | q) -> r) -> ((r -> r) -> ((r | ((p | q) | r)) -> r))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => h0)",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "da070815b61e2ea3026b1faa38ae753c9faae93ac11cb32848042d544bf97f26",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23319270805222914,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ecmzop3h/Candidate.lean:5:14: error: Type mismatch\n  h0\nhas type\n  r \u2192 r\nbut is expected to have type\n  (p \u2228 q \u2192 r) \u2192 (r \u2192 r) \u2192 r \u2228 (p \u2228 q) \u2228 r \u2192 r\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((r \u2192 r) \u2192 (((p \u2228 q) \u2192 r) \u2192 ((r \u2192 r) \u2192 ((r \u2228 ((p \u2228 q) \u2228 r)) \u2192 r)))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-78",
+      "family": "long_chain",
+      "formula": "(((p | u) -> q) -> ((q -> r) -> ((r -> q) -> ((p | u) -> q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "b42948d35a6953976d6c4f31654d5b0c79b2b9662d9b55023c26e09c018e8e0f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22951337503036484,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-y2s6rqpf/Candidate.lean:5:14: error: Type mismatch\n  Or.inl h0\nhas type\n  (p \u2228 u \u2192 q) \u2228 ?m.3\nbut is expected to have type\n  (q \u2192 r) \u2192 (r \u2192 q) \u2192 p \u2228 u \u2192 q\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : (((p \u2228 u) \u2192 q) \u2192 ((q \u2192 r) \u2192 ((r \u2192 q) \u2192 ((p \u2228 u) \u2192 q)))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-79",
+      "family": "nested_cases",
+      "formula": "((t -> q) -> (((t & r) -> q) -> ((t -> q) -> ((t | ((t & r) | t)) -> q))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.left h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "a7af6b34237fae103b40e6c3bea754fd8601f177c9216a375f6fed741e45086f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23167816596105695,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-y1ojbw_w/Candidate.lean:5:25: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 q\nbut is expected to have type\n  ((t \u2227 r \u2192 q) \u2192 (t \u2192 q) \u2192 t \u2228 t \u2227 r \u2228 t \u2192 q) \u2227 ?m.3\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t : Prop) : ((t \u2192 q) \u2192 (((t \u2227 r) \u2192 q) \u2192 ((t \u2192 q) \u2192 ((t \u2228 ((t \u2227 r) \u2228 t)) \u2192 q)))) :=\n  ( fun h0 => ( And.left h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-80",
+      "family": "long_chain",
+      "formula": "((((u -> q) & (r -> u)) -> (s -> u)) -> (((s -> u) -> ((s -> r) & r)) -> ((((s -> r) & r) -> s) -> (((u -> q) & (r -> u)) -> s))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (And.intro h1 h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "4e82a3f341383297802a51a44fd32cc99e491cdab39e2f80a6f647f1b05a08cb",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23383754200767726,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-4ngtirm3/Candidate.lean:5:55: error: Application type mismatch: The argument\n  h1\nhas type\n  (s \u2192 u) \u2192 (s \u2192 r) \u2227 r\nbut is expected to have type\n  u \u2192 q\nin the application\n  And.intro h1\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s u : Prop) : ((((u \u2192 q) \u2227 (r \u2192 u)) \u2192 (s \u2192 u)) \u2192 (((s \u2192 u) \u2192 ((s \u2192 r) \u2227 r)) \u2192 ((((s \u2192 r) \u2227 r) \u2192 s) \u2192 (((u \u2192 q) \u2227 (r \u2192 u)) \u2192 s)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( And.intro h1 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-81",
+      "family": "nested_cases",
+      "formula": "((s -> s) -> ((s -> s) -> ((r -> s) -> ((s | (s | r)) -> s))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => h0)",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "4b92f59455b437116e37e0664f763f4220be3f6a85b27c6431f38fe038721b4a",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23141558305360377,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-k8ph9k7m/Candidate.lean:5:14: error: Type mismatch\n  h0\nhas type\n  s \u2192 s\nbut is expected to have type\n  (s \u2192 s) \u2192 (r \u2192 s) \u2192 s \u2228 s \u2228 r \u2192 s\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : ((s \u2192 s) \u2192 ((s \u2192 s) \u2192 ((r \u2192 s) \u2192 ((s \u2228 (s \u2228 r)) \u2192 s)))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-82",
+      "family": "long_chain",
+      "formula": "((s -> t) -> ((t -> u) -> ((u -> s) -> (s -> s))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "ae445f0a65a0d2892f13896b037c7d4f8627e34d1a21a95749b466384d5b59af",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23078858299413696,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ov7ph0lo/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2192 t\nbut is expected to have type\n  ?m.4 \u2227 ?m.5\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-ov7ph0lo/Candidate.lean:5:54: error: Application type mismatch: The argument\n  h0\nhas type\n  s \u2192 t\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((s \u2192 t) \u2192 ((t \u2192 u) \u2192 ((u \u2192 s) \u2192 (s \u2192 s)))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-83",
+      "family": "nested_cases",
+      "formula": "((t -> ((u | s) & s)) -> ((u -> ((u | s) & s)) -> (((u | s) -> ((u | s) & s)) -> ((t | (u | (u | s))) -> ((u | s) & s)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "b357fb808fc68853710a31bb437347b79eabffef997dd909d824d0cebdb7d928",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.233046707988251,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c0wvj3s5/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 (u \u2228 s) \u2227 s\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c0wvj3s5/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 (u \u2228 s) \u2227 s\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c0wvj3s5/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 (u \u2228 s) \u2227 s\nbut is expected to have type\n  ?m.20 \u2227 ?m.21\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((t \u2192 ((u \u2228 s) \u2227 s)) \u2192 ((u \u2192 ((u \u2228 s) \u2227 s)) \u2192 (((u \u2228 s) \u2192 ((u \u2228 s) \u2227 s)) \u2192 ((t \u2228 (u \u2228 (u \u2228 s))) \u2192 ((u \u2228 s) \u2227 s))))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-84",
+      "family": "nested_cases",
+      "formula": "((r -> u) -> ((s -> u) -> ((r -> u) -> ((r | (s | r)) -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim h0 (fun h1 => (Or.inr h1)) (fun h2 => (Or.inl h2))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "94f4b795dbac93566283cc56d187b4fd76b5d8a4f6e221aeadf0e3efab1e4e50",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22886270802700892,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nft90234/Candidate.lean:5:24: error: Application type mismatch: The argument\n  h0\nhas type\n  r \u2192 u\nbut is expected to have type\n  ?m.2 \u2228 ?m.3\nin the application\n  Or.elim h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nft90234/Candidate.lean:5:39: error: Type mismatch\n  Or.inr h1\nhas type\n  ?m.6 \u2228 ?m.2\nbut is expected to have type\n  (s \u2192 u) \u2192 (r \u2192 u) \u2192 r \u2228 s \u2228 r \u2192 u\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nft90234/Candidate.lean:5:67: error: Type mismatch\n  Or.inl h2\nhas type\n  ?m.3 \u2228 ?m.11\nbut is expected to have type\n  (s \u2192 u) \u2192 (r \u2192 u) \u2192 r \u2228 s \u2228 r \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s u : Prop) : ((r \u2192 u) \u2192 ((s \u2192 u) \u2192 ((r \u2192 u) \u2192 ((r \u2228 (s \u2228 r)) \u2192 u)))) :=\n  ( fun h0 => ( Or.elim h0 ( fun h1 => ( Or.inr h1 ) ) ( fun h2 => ( Or.inl h2 ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-85",
+      "family": "long_chain",
+      "formula": "((p -> p) -> ((p -> (p -> t)) -> (((p -> t) -> t) -> (p -> t))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "4d96758f9d89bb28d29f808eb924ec974126be0c01f74cd0be80130fc1c37458",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2314720000140369,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kr7ey3md/Candidate.lean:5:26: error: Type mismatch\n  h0\nhas type\n  p \u2192 p\nbut is expected to have type\n  ((p \u2192 t) \u2192 t) \u2192 p \u2192 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((p \u2192 p) \u2192 ((p \u2192 (p \u2192 t)) \u2192 (((p \u2192 t) \u2192 t) \u2192 (p \u2192 t)))) :=\n  ( fun h0 => ( fun h1 => h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-86",
+      "family": "nested_cases",
+      "formula": "((r -> (s -> s)) -> ((r -> (s -> s)) -> ((p -> (s -> s)) -> ((r | (r | p)) -> (s -> s)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "c9586927943129f74a498c1e195cd70ecc0b4d8843b5bd1411031df199df533a",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2337578340084292,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-itdcnl1k/Candidate.lean:5:48: error: Application type mismatch: The argument\n  h2\nhas type\n  p \u2192 s \u2192 s\nbut is expected to have type\n  ?m.4 \u2228 ?m.5\nin the application\n  Or.elim h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-itdcnl1k/Candidate.lean:5:63: error: Type mismatch\n  h0 h3\nhas type\n  s \u2192 s\nbut is expected to have type\n  r \u2228 r \u2228 p \u2192 s \u2192 s\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-itdcnl1k/Candidate.lean:5:87: error: Type mismatch\n  h1 h4\nhas type\n  s \u2192 s\nbut is expected to have type\n  r \u2228 r \u2228 p \u2192 s \u2192 s\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((r \u2192 (s \u2192 s)) \u2192 ((r \u2192 (s \u2192 s)) \u2192 ((p \u2192 (s \u2192 s)) \u2192 ((r \u2228 (r \u2228 p)) \u2192 (s \u2192 s))))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-87",
+      "family": "long_chain",
+      "formula": "((p -> ((p | u) | p)) -> ((((p | u) | p) -> ((q & s) & (p & u))) -> ((((q & s) & (p & u)) -> u) -> (p -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "ac7bb718e63a81c613eed76307be645821cb7803fefba1a5ad1ac931141731db",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22797249996801838,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c7i2obs1/Candidate.lean:5:48: error: Application type mismatch: The argument\n  h2\nhas type\n  (q \u2227 s) \u2227 p \u2227 u \u2192 u\nbut is expected to have type\n  ?m.4 \u2228 ?m.5\nin the application\n  Or.elim h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c7i2obs1/Candidate.lean:5:63: error: Type mismatch\n  h0 h3\nhas type\n  (p \u2228 u) \u2228 p\nbut is expected to have type\n  p \u2192 u\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-c7i2obs1/Candidate.lean:5:87: error: Type mismatch\n  h1 h4\nhas type\n  (q \u2227 s) \u2227 p \u2227 u\nbut is expected to have type\n  p \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : ((p \u2192 ((p \u2228 u) \u2228 p)) \u2192 ((((p \u2228 u) \u2228 p) \u2192 ((q \u2227 s) \u2227 (p \u2227 u))) \u2192 ((((q \u2227 s) \u2227 (p \u2227 u)) \u2192 u) \u2192 (p \u2192 u)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-88",
+      "family": "nested_cases",
+      "formula": "((p -> r) -> (((q | (t | u)) -> r) -> (((p & (q -> t)) -> r) -> ((p | ((q | (t | u)) | (p & (q -> t)))) -> r))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "1153b469a5377bcd79b976406042576c9f6f6e5102ef17bb2a95003d0b2b3df0",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23368133296025917,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-2yq9wfcz/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  p \u2192 r\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-2yq9wfcz/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  p \u2192 r\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-2yq9wfcz/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  p \u2192 r\nbut is expected to have type\n  ?m.20 \u2227 ?m.21\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((p \u2192 r) \u2192 (((q \u2228 (t \u2228 u)) \u2192 r) \u2192 (((p \u2227 (q \u2192 t)) \u2192 r) \u2192 ((p \u2228 ((q \u2228 (t \u2228 u)) \u2228 (p \u2227 (q \u2192 t)))) \u2192 r)))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-89",
+      "family": "long_chain",
+      "formula": "((q -> s) -> ((s -> t) -> ((t -> t) -> (q -> t))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "b1188e93b86dff5ed014429902931d734cd8c2cbd530344d5522e5e6c76da589",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.3436225830228068,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-irp9swta/Candidate.lean:5:14: error: Type mismatch\n  Or.inl h0\nhas type\n  (q \u2192 s) \u2228 ?m.3\nbut is expected to have type\n  (s \u2192 t) \u2192 (t \u2192 t) \u2192 q \u2192 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((q \u2192 s) \u2192 ((s \u2192 t) \u2192 ((t \u2192 t) \u2192 (q \u2192 t)))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-90",
+      "family": "nested_cases",
+      "formula": "(((t & r) -> ((q | r) -> s)) -> ((((p | t) -> q) -> ((q | r) -> s)) -> (((u -> q) -> ((q | r) -> s)) -> (((t & r) | (((p | t) -> q) | (u -> q))) -> ((q | r) -> s)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (h1 (And.right h2))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "2b8ca6b62e7086969121b082d9bf8abf7bc701fc1d10523bf79c4c02c2738f51",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2735555000253953,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nhyjjxj1/Candidate.lean:5:66: error: Application type mismatch: The argument\n  h2\nhas type\n  (u \u2192 q) \u2192 q \u2228 r \u2192 s\nbut is expected to have type\n  (t \u2227 r) \u2227 ?m.7\nin the application\n  And.left h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nhyjjxj1/Candidate.lean:5:90: error: Application type mismatch: The argument\n  h2\nhas type\n  (u \u2192 q) \u2192 q \u2228 r \u2192 s\nbut is expected to have type\n  ?m.8 \u2227 (p \u2228 t \u2192 q)\nin the application\n  And.right h2\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t u : Prop) : (((t \u2227 r) \u2192 ((q \u2228 r) \u2192 s)) \u2192 ((((p \u2228 t) \u2192 q) \u2192 ((q \u2228 r) \u2192 s)) \u2192 (((u \u2192 q) \u2192 ((q \u2228 r) \u2192 s)) \u2192 (((t \u2227 r) \u2228 (((p \u2228 t) \u2192 q) \u2228 (u \u2192 q))) \u2192 ((q \u2228 r) \u2192 s))))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( h1 ( And.right h2 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-91",
+      "family": "long_chain",
+      "formula": "(((u | p) -> t) -> ((t -> s) -> ((s -> (q -> t)) -> ((u | p) -> (q -> t)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "df29b886e1fb7e5a181bdc9cca0eab315044642d1672ec7a931cc885a9dac8e5",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23379566695075482,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-oww15620/Candidate.lean:5:48: error: Application type mismatch: The argument\n  h2\nhas type\n  s \u2192 q \u2192 t\nbut is expected to have type\n  ?m.4 \u2228 ?m.5\nin the application\n  Or.elim h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-oww15620/Candidate.lean:5:63: error: Type mismatch\n  h0 h3\nhas type\n  t\nbut is expected to have type\n  u \u2228 p \u2192 q \u2192 t\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-oww15620/Candidate.lean:5:87: error: Type mismatch\n  h1 h4\nhas type\n  s\nbut is expected to have type\n  u \u2228 p \u2192 q \u2192 t\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (((u \u2228 p) \u2192 t) \u2192 ((t \u2192 s) \u2192 ((s \u2192 (q \u2192 t)) \u2192 ((u \u2228 p) \u2192 (q \u2192 t))))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-92",
+      "family": "nested_cases",
+      "formula": "((((u -> u) -> (u & p)) -> (s & q)) -> ((t -> (s & q)) -> ((s -> (s & q)) -> ((((u -> u) -> (u & p)) | (t | s)) -> (s & q)))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.inl h0))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "8759d120903d89ddaa80925e2c19eb5781371d39aec14e93e2c06de8324936d9",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23298183298902586,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-zu0lh9z5/Candidate.lean:5:14: error: Type mismatch\n  Or.inl h0\nhas type\n  (((u \u2192 u) \u2192 u \u2227 p) \u2192 s \u2227 q) \u2228 ?m.3\nbut is expected to have type\n  (t \u2192 s \u2227 q) \u2192 (s \u2192 s \u2227 q) \u2192 ((u \u2192 u) \u2192 u \u2227 p) \u2228 t \u2228 s \u2192 s \u2227 q\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : ((((u \u2192 u) \u2192 (u \u2227 p)) \u2192 (s \u2227 q)) \u2192 ((t \u2192 (s \u2227 q)) \u2192 ((s \u2192 (s \u2227 q)) \u2192 ((((u \u2192 u) \u2192 (u \u2227 p)) \u2228 (t \u2228 s)) \u2192 (s \u2227 q))))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-93",
+      "family": "long_chain",
+      "formula": "(((q | (p & s)) -> ((s | u) & s)) -> ((((s | u) & s) -> r) -> ((r -> u) -> ((q | (p & s)) -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "877245a94d9d75211aa2f4c10ecd61a8ebb44e8bd32dfd65685809971512e7eb",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.28433524997672066,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-cqzmxq2g/Candidate.lean:5:38: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2228 p \u2227 s \u2192 (s \u2228 u) \u2227 s\nbut is expected to have type\n  ?m.4 \u2227 ?m.5\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-cqzmxq2g/Candidate.lean:5:54: error: Application type mismatch: The argument\n  h0\nhas type\n  q \u2228 p \u2227 s \u2192 (s \u2228 u) \u2227 s\nbut is expected to have type\n  ?m.6 \u2227 ?m.7\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : (((q \u2228 (p \u2227 s)) \u2192 ((s \u2228 u) \u2227 s)) \u2192 ((((s \u2228 u) \u2227 s) \u2192 r) \u2192 ((r \u2192 u) \u2192 ((q \u2228 (p \u2227 s)) \u2192 u)))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-94",
+      "family": "nested_cases",
+      "formula": "(((q | (t -> t)) -> p) -> (((t -> t) -> p) -> (((s & p) -> p) -> (((q | (t -> t)) | ((t -> t) | (s & p))) -> p))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (And.intro (h0 (And.left h2)) (And.right h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "c4fed71b14b97e1e8c960eaf8fa6491721421a995055238208c9f70531f084dd",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.3238929160288535,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-hvscmig9/Candidate.lean:5:66: error: Application type mismatch: The argument\n  h2\nhas type\n  s \u2227 p \u2192 p\nbut is expected to have type\n  (q \u2228 (t \u2192 t)) \u2227 ?m.7\nin the application\n  And.left h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-hvscmig9/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h2\nhas type\n  s \u2227 p \u2192 p\nbut is expected to have type\n  ?m.8 \u2227 ?m.9\nin the application\n  And.right h2\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((q \u2228 (t \u2192 t)) \u2192 p) \u2192 (((t \u2192 t) \u2192 p) \u2192 (((s \u2227 p) \u2192 p) \u2192 (((q \u2228 (t \u2192 t)) \u2228 ((t \u2192 t) \u2228 (s \u2227 p))) \u2192 p)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( And.intro ( h0 ( And.left h2 ) ) ( And.right h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-95",
+      "family": "long_chain",
+      "formula": "((u -> u) -> ((u -> p) -> ((p -> u) -> (u -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => h2)))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "79c6899fb799629fd1c46451363a708540919440d5795276cdd301bfe02abd33",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22715900000184774,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-grx1g4b5/Candidate.lean:5:38: error: Type mismatch\n  h2\nhas type\n  p \u2192 u\nbut is expected to have type\n  u \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p u : Prop) : ((u \u2192 u) \u2192 ((u \u2192 p) \u2192 ((p \u2192 u) \u2192 (u \u2192 u)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => h2 ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-96",
+      "family": "nested_cases",
+      "formula": "((r -> u) -> ((p -> u) -> ((t -> u) -> ((r | (p | t)) -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (Or.elim h2 (fun h3 => (h0 h3)) (fun h4 => (h1 h4))))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "69eb3e2186b6a8b0bb711113063168b5a4d133261ddd4a8934af24028bd6c51f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.22337470902130008,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kyqyr403/Candidate.lean:5:48: error: Application type mismatch: The argument\n  h2\nhas type\n  t \u2192 u\nbut is expected to have type\n  ?m.4 \u2228 ?m.5\nin the application\n  Or.elim h2\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kyqyr403/Candidate.lean:5:63: error: Type mismatch\n  h0 h3\nhas type\n  u\nbut is expected to have type\n  r \u2228 p \u2228 t \u2192 u\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-kyqyr403/Candidate.lean:5:87: error: Type mismatch\n  h1 h4\nhas type\n  u\nbut is expected to have type\n  r \u2228 p \u2228 t \u2192 u\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r t u : Prop) : ((r \u2192 u) \u2192 ((p \u2192 u) \u2192 ((t \u2192 u) \u2192 ((r \u2228 (p \u2228 t)) \u2192 u)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( Or.elim h2 ( fun h3 => ( h0 h3 ) ) ( fun h4 => ( h1 h4 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-97",
+      "family": "long_chain",
+      "formula": "(((t & t) -> (u -> s)) -> (((u -> s) -> r) -> ((r -> p) -> ((t & t) -> p))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (fun h1 => (fun h2 => (h0 (And.intro h1 h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "e9f5c90b5136cceaa5ea89365bf47aa0645e6da368ff15bb5e581be1d7ee9d3f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.2272199169965461,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-_oax_p3o/Candidate.lean:5:55: error: Application type mismatch: The argument\n  h1\nhas type\n  (u \u2192 s) \u2192 r\nbut is expected to have type\n  t\nin the application\n  And.intro h1\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t u : Prop) : (((t \u2227 t) \u2192 (u \u2192 s)) \u2192 (((u \u2192 s) \u2192 r) \u2192 ((r \u2192 p) \u2192 ((t \u2227 t) \u2192 p)))) :=\n  ( fun h0 => ( fun h1 => ( fun h2 => ( h0 ( And.intro h1 h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-98",
+      "family": "nested_cases",
+      "formula": "((p -> p) -> ((r -> p) -> ((q -> p) -> ((p | (r | q)) -> p))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => h0)",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "7dfd83741a391ab5d05ea85dac990193d001122d3b4af8520c2a739ff5dc889f",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23481562500819564,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-nge7mior/Candidate.lean:5:14: error: Type mismatch\n  h0\nhas type\n  p \u2192 p\nbut is expected to have type\n  (r \u2192 p) \u2192 (q \u2192 p) \u2192 p \u2228 r \u2228 q \u2192 p\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2192 p) \u2192 ((r \u2192 p) \u2192 ((q \u2192 p) \u2192 ((p \u2228 (r \u2228 q)) \u2192 p)))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+      }
+    },
+    {
+      "task_id": "test-99",
+      "family": "long_chain",
+      "formula": "((t -> (q | p)) -> (((q | p) -> ((r & r) | t)) -> ((((r & r) | t) -> u) -> (t -> u))))",
+      "split": "neural-test",
+      "strategy": "training-proof-token-retrieval",
+      "proof": "(fun h0 => (Or.elim (And.right h0) (fun h1 => (Or.inl (And.intro (And.left h0) h1))) (fun h2 => (Or.inr (And.intro (And.left h0) h2)))))",
+      "status": "rejected",
+      "nodes": 0,
+      "verification": {
+        "accepted": false,
+        "reason": "lean_rejected",
+        "source_hash": "3e8f8fe4f6afdc098c32462bbdf3f32acef1c0888eca7cd790c418f1571d04f5",
+        "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+        "elapsed": 0.23548420798033476,
+        "diagnostics": "/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-zx4jqi9h/Candidate.lean:5:36: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 q \u2228 p\nbut is expected to have type\n  ?m.5 \u2227 (?m.2 \u2228 ?m.3)\nin the application\n  And.right h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-zx4jqi9h/Candidate.lean:5:85: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 q \u2228 p\nbut is expected to have type\n  ?m.12 \u2227 ?m.13\nin the application\n  And.left h0\n/var/folders/kz/ns6mgh691p96xr58_86r95pw0000gn/T/valentyn-proof-zx4jqi9h/Candidate.lean:5:143: error: Application type mismatch: The argument\n  h0\nhas type\n  t \u2192 q \u2228 p\nbut is expected to have type\n  ?m.20 \u2227 ?m.21\nin the application\n  And.left h0\n'valentyn_candidate' depends on axioms: [sorryAx]\n",
+        "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((t \u2192 (q \u2228 p)) \u2192 (((q \u2228 p) \u2192 ((r \u2227 r) \u2228 t)) \u2192 ((((r \u2227 r) \u2228 t) \u2192 u) \u2192 (t \u2192 u)))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h1 => ( Or.inl ( And.intro ( And.left h0 ) h1 ) ) ) ( fun h2 => ( Or.inr ( And.intro ( And.left h0 ) h2 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+      }
+    }
+  ],
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "314ab0a2d3edd1dd41aef06bccfd5def0b46eb84af06b7dd333149379654f4f2",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}

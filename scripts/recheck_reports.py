@@ -32,7 +32,7 @@ def main() -> None:
     verifier = LeanVerifier(ROOT)
     seen = set()
     occurrences = 0
-    for path in sorted(args.reports.glob("*.json")):
+    for path in sorted(args.reports.rglob("*.json")):
         for attempt in accepted_attempts(json.loads(path.read_text())):
             occurrences += 1
             archive = attempt["verification"]

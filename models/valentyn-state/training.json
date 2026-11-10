@@ -1,0 +1,116 @@
+{
+  "kind": "factorized_training",
+  "dataset_digest": "a5f2d032e59715ad2932b605513078f0751f22f382c69d084dd22f186da26002",
+  "random_seed": 7,
+  "pretrained_weights": false,
+  "parameters": 72005,
+  "architecture": "GRU policy over typed local proof states",
+  "epochs": 15,
+  "training_states": 5281,
+  "validation_states": 433,
+  "training_state_tokens": 233671,
+  "skipped_theorems": {
+    "train": [],
+    "validation": []
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "validation_loss": 1.2554286930357337,
+      "validation_action_accuracy": 0.5935334872979214,
+      "elapsed_seconds": 5.528751292033121
+    },
+    {
+      "epoch": 2,
+      "validation_loss": 0.9039668464220149,
+      "validation_action_accuracy": 0.648960739030023,
+      "elapsed_seconds": 8.92748858302366
+    },
+    {
+      "epoch": 3,
+      "validation_loss": 0.7614119620025847,
+      "validation_action_accuracy": 0.7020785219399538,
+      "elapsed_seconds": 12.481485708034597
+    },
+    {
+      "epoch": 4,
+      "validation_loss": 0.6508317026750595,
+      "validation_action_accuracy": 0.7274826789838337,
+      "elapsed_seconds": 16.485307375027332
+    },
+    {
+      "epoch": 5,
+      "validation_loss": 0.6162026297412899,
+      "validation_action_accuracy": 0.7505773672055427,
+      "elapsed_seconds": 20.07648158300435
+    },
+    {
+      "epoch": 6,
+      "validation_loss": 0.5444689171418857,
+      "validation_action_accuracy": 0.7759815242494227,
+      "elapsed_seconds": 23.778539000020828
+    },
+    {
+      "epoch": 7,
+      "validation_loss": 0.511343641038855,
+      "validation_action_accuracy": 0.7990762124711316,
+      "elapsed_seconds": 27.859440958010964
+    },
+    {
+      "epoch": 8,
+      "validation_loss": 0.46716715612257326,
+      "validation_action_accuracy": 0.8198614318706697,
+      "elapsed_seconds": 31.33255245804321
+    },
+    {
+      "epoch": 9,
+      "validation_loss": 0.44192728214396065,
+      "validation_action_accuracy": 0.8290993071593533,
+      "elapsed_seconds": 34.881613667006604
+    },
+    {
+      "epoch": 10,
+      "validation_loss": 0.4492951981189895,
+      "validation_action_accuracy": 0.8175519630484989,
+      "elapsed_seconds": 38.3083506670082
+    },
+    {
+      "epoch": 11,
+      "validation_loss": 0.40018300151164204,
+      "validation_action_accuracy": 0.8452655889145496,
+      "elapsed_seconds": 41.82594287500251
+    },
+    {
+      "epoch": 12,
+      "validation_loss": 0.36907019846433853,
+      "validation_action_accuracy": 0.8383371824480369,
+      "elapsed_seconds": 45.35691637499258
+    },
+    {
+      "epoch": 13,
+      "validation_loss": 0.38128977504668554,
+      "validation_action_accuracy": 0.8799076212471132,
+      "elapsed_seconds": 48.83657916699303
+    },
+    {
+      "epoch": 14,
+      "validation_loss": 0.3874481324510817,
+      "validation_action_accuracy": 0.8383371824480369,
+      "elapsed_seconds": 52.28599475004012
+    },
+    {
+      "epoch": 15,
+      "validation_loss": 0.3405294220111662,
+      "validation_action_accuracy": 0.859122401847575,
+      "elapsed_seconds": 55.76676970801782
+    }
+  ],
+  "training_seconds": 55.769973499991465,
+  "memory": {
+    "peak_process_rss_bytes": 564789248,
+    "mps_allocated_bytes": 1624320,
+    "mps_driver_bytes": 98779136
+  },
+  "device": "mps",
+  "torch_version": "2.9.1"
+}

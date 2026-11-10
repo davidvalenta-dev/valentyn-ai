@@ -1,0 +1,3780 @@
+{
+  "kind": "factorized_evaluation",
+  "split": "test",
+  "dataset_digest": "a5f2d032e59715ad2932b605513078f0751f22f382c69d084dd22f186da26002",
+  "weights_sha256": "5549eb08220d501ef7be3c1678882911f747ea1de6ae84622ee75a5a8f5eeef8",
+  "parameters": 72005,
+  "device": "cpu",
+  "torch_version": "2.9.1",
+  "tasks": 100,
+  "solved": 97,
+  "max_nodes": 200,
+  "beam": 4,
+  "random_policy_seed": null,
+  "inference_calls": 1407,
+  "nodes": 1407,
+  "inference_seconds": 0.9297040411620401,
+  "total_evaluation_seconds": 23.78497924999101,
+  "slices": {
+    "substitution": {
+      "tasks": 75,
+      "solved": 75
+    },
+    "held_out_family": {
+      "tasks": 25,
+      "solved": 22
+    }
+  },
+  "memory": {
+    "peak_process_rss_bytes": 219054080
+  },
+  "results": [
+    {
+      "task_id": "test-0",
+      "formula": "((p & (t & p)) -> (p & (t & p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-0",
+          "split": "factorized-test",
+          "formula": "((p & (t & p)) -> (p & (t & p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "dd27873971d12e3657a289441dbf27cf282ff1f0ec22080622c0c4d00d5e5995",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.284734999993816,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((p \u2227 (t \u2227 p)) \u2192 (p \u2227 (t \u2227 p))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1017
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 2,
+        "inference_calls": 2,
+        "elapsed_seconds": 0.0019909159746021032,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-1",
+      "formula": "(s -> ((s -> (q | p)) -> (s & (s -> (q | p)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-1",
+          "split": "factorized-test",
+          "formula": "(s -> ((s -> (q | p)) -> (s & (s -> (q | p)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (And.intro h0 h3)))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "aa9f5641967c1d50c225d36d003fa1acf0d3f401ef44cc22530279d2e181eac1",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.27850995800690725,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s : Prop) : (s \u2192 ((s \u2192 (q \u2228 p)) \u2192 (s \u2227 (s \u2192 (q \u2228 p))))) :=\n  ( fun h0 => ( fun h3 => ( And.intro h0 h3 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1018
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (And.intro h0 h3)))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.002383040962740779,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-2",
+      "formula": "(((p & u) -> u) -> ((u -> t) -> ((p & u) -> t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-2",
+          "split": "factorized-test",
+          "formula": "(((p & u) -> u) -> ((u -> t) -> ((p & u) -> t)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (And.right h6)))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f067e0cecf6a25be6ac131ca5166985497acb69270c6d5c12d3fa4500a875f54",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2299268749775365,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : (((p \u2227 u) \u2192 u) \u2192 ((u \u2192 t) \u2192 ((p \u2227 u) \u2192 t))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( And.right h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1020
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (And.right h6)))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.003230125003028661,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-3",
+      "formula": "(u -> (((s & q) -> (t -> p)) | u))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-3",
+          "split": "factorized-test",
+          "formula": "(u -> (((s & q) -> (t -> p)) | u))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inr h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f55f68058ea78ed3b390c57df924e05f1f0b341e11e2a6a797121623e2dc1e7e",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23257204197579995,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (u \u2192 (((s \u2227 q) \u2192 (t \u2192 p)) \u2228 u)) :=\n  ( fun h0 => ( Or.inr h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1022
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inr h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0013430829858407378,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_right"
+    },
+    {
+      "task_id": "test-4",
+      "formula": "(((t & (t -> q)) | (t | (t & q))) -> ((t | (t & q)) | (t & (t -> q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-4",
+          "split": "factorized-test",
+          "formula": "(((t & (t -> q)) | (t | (t & q))) -> ((t | (t & q)) | (t & (t -> q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim h0 (fun h4 => (Or.inl (Or.inr (And.intro (And.left h4) ((And.right h4) (And.left h4)))))) (fun h5 => (Or.inl h5))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "ae3038a4c475fe004ce2f8031dada7f80ef2e59151ea37617b2c6675fae84d47",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23360379197401926,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((t \u2227 (t \u2192 q)) \u2228 (t \u2228 (t \u2227 q))) \u2192 ((t \u2228 (t \u2227 q)) \u2228 (t \u2227 (t \u2192 q)))) :=\n  ( fun h0 => ( Or.elim h0 ( fun h4 => ( Or.inl ( Or.inr ( And.intro ( And.left h4 ) ( ( And.right h4 ) ( And.left h4 ) ) ) ) ) ) ( fun h5 => ( Or.inl h5 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1024
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim h0 (fun h4 => (Or.inl (Or.inr (And.intro (And.left h4) ((And.right h4) (And.left h4)))))) (fun h5 => (Or.inl h5))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 10,
+        "elapsed_seconds": 0.004910791991278529,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-5",
+      "formula": "((((q -> q) | s) -> t) -> ((t -> t) -> ((((q -> q) | s) | t) -> t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-5",
+          "split": "factorized-test",
+          "formula": "((((q -> q) | s) -> t) -> ((t -> t) -> ((((q -> q) | s) | t) -> t)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => h11)))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2d6279e6db9dc9c1cd58f6bb358972e7d79e60c922fcf6ed6048bbb8d6ddf342",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23286841699155048,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((((q \u2192 q) \u2228 s) \u2192 t) \u2192 ((t \u2192 t) \u2192 ((((q \u2192 q) \u2228 s) \u2228 t) \u2192 t))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( Or.elim h6 ( fun h10 => ( h0 h10 ) ) ( fun h11 => h11 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1026
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => h11)))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.003998458036221564,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-6",
+      "formula": "((((t | s) & (s & p)) -> t) -> ((t | s) -> ((s & p) -> t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-6",
+          "split": "factorized-test",
+          "formula": "((((t | s) & (s & p)) -> t) -> ((t | s) -> ((s & p) -> t)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro (Or.inr (And.left h6)) (And.intro (And.left h6) (And.right h6)))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c44862f328aab9196a5073db204ef6b38787744ee25d015dca2622fcc388f288",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23726566700497642,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t : Prop) : ((((t \u2228 s) \u2227 (s \u2227 p)) \u2192 t) \u2192 ((t \u2228 s) \u2192 ((s \u2227 p) \u2192 t))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h0 ( And.intro ( Or.inr ( And.left h6 ) ) ( And.intro ( And.left h6 ) ( And.right h6 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1029
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro (Or.inr (And.left h6)) (And.intro (And.left h6) (And.right h6)))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 10,
+        "elapsed_seconds": 0.005932917003519833,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-7",
+      "formula": "((r -> (((p | p) -> p) -> u)) -> ((r & ((p | p) -> p)) -> u))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-7",
+          "split": "factorized-test",
+          "formula": "((r -> (((p | p) -> p) -> u)) -> ((r & ((p | p) -> p)) -> u))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "e4e9b972b668b74d18f766c223a390b22bb7fb7a1c17a1ff15dc8a35762856b9",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2814844159875065,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : ((r \u2192 (((p \u2228 p) \u2192 p) \u2192 u)) \u2192 ((r \u2227 ((p \u2228 p) \u2192 p)) \u2192 u)) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1031
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.003918041998986155,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-8",
+      "formula": "(((s | (u & p)) & (t | (s & (u | p)))) -> (((s | (u & p)) & t) | ((s | (u & p)) & (s & (u | p)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-8",
+          "split": "factorized-test",
+          "formula": "(((s | (u & p)) & (t | (s & (u | p)))) -> (((s | (u & p)) & t) | ((s | (u & p)) & (s & (u | p)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim (And.right h0) (fun h4 => (Or.inl (And.intro (And.left h0) h4))) (fun h5 => (Or.inr (And.intro (And.left h0) h5)))))",
+          "nodes": 23,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2e51d0c246aa81f02b53d7e38c9449c717f3055823fc672307f044900a6147d3",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23460774996783584,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : (((s \u2228 (u \u2227 p)) \u2227 (t \u2228 (s \u2227 (u \u2228 p)))) \u2192 (((s \u2228 (u \u2227 p)) \u2227 t) \u2228 ((s \u2228 (u \u2227 p)) \u2227 (s \u2227 (u \u2228 p))))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h4 => ( Or.inl ( And.intro ( And.left h0 ) h4 ) ) ) ( fun h5 => ( Or.inr ( And.intro ( And.left h0 ) h5 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1033
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim (And.right h0) (fun h4 => (Or.inl (And.intro (And.left h0) h4))) (fun h5 => (Or.inr (And.intro (And.left h0) h5)))))"
+        ],
+        "nodes": 23,
+        "inference_calls": 23,
+        "elapsed_seconds": 0.021527750010136515,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-9",
+      "formula": "((((t & u) -> q) & q) -> (q & ((t & u) -> q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-9",
+          "split": "factorized-test",
+          "formula": "((((t & u) -> q) & q) -> (q & ((t & u) -> q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+          "nodes": 4,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "057bc8cc7860446234021a6ba1a646a70af0d1f5cde2f6ad811730da000df95b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23290300002554432,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t u : Prop) : ((((t \u2227 u) \u2192 q) \u2227 q) \u2192 (q \u2227 ((t \u2227 u) \u2192 q))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1035
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.right h0) (And.left h0)))"
+        ],
+        "nodes": 4,
+        "inference_calls": 4,
+        "elapsed_seconds": 0.0023057079524733126,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-10",
+      "formula": "(((r & r) & u) -> (u -> (((r & r) & u) & u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-10",
+          "split": "factorized-test",
+          "formula": "(((r & r) & u) -> (u -> (((r & r) & u) & u)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (And.intro (And.intro (And.left h0) (And.right h0)) (And.right h0))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c051073d9f6eb4eea3e3572834849fe647c5c1ade16dbebf4fb3e220c98fa87f",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23073758301325142,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r u : Prop) : (((r \u2227 r) \u2227 u) \u2192 (u \u2192 (((r \u2227 r) \u2227 u) \u2227 u))) :=\n  ( fun h0 => ( fun h3 => ( And.intro ( And.intro ( And.left h0 ) ( And.right h0 ) ) ( And.right h0 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1037
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (And.intro (And.intro (And.left h0) (And.right h0)) (And.right h0))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.003524457977619022,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-11",
+      "formula": "(((u -> (p & r)) -> q) -> ((q -> t) -> ((u -> (p & r)) -> t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-11",
+          "split": "factorized-test",
+          "formula": "(((u -> (p & r)) -> q) -> ((q -> t) -> ((u -> (p & r)) -> t)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "57770a7717096bc5eea812c7f1d2b319fb0c869a153793a83d9686c03dc84e82",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23253287497209385,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : (((u \u2192 (p \u2227 r)) \u2192 q) \u2192 ((q \u2192 t) \u2192 ((u \u2192 (p \u2227 r)) \u2192 t))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1039
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0032027080305851996,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-12",
+      "formula": "((((u | s) & (u & q)) -> (p & q)) -> (((u | s) & (u & q)) -> (p & q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-12",
+          "split": "factorized-test",
+          "formula": "((((u | s) & (u & q)) -> (p & q)) -> (((u | s) & (u & q)) -> (p & q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.intro (And.left h3) (And.right h3)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9ef2fb2b71de816306c8ba408874d4cc447a674fb0300dc208ff766c2e9c40b6",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.228948375035543,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : ((((u \u2228 s) \u2227 (u \u2227 q)) \u2192 (p \u2227 q)) \u2192 (((u \u2228 s) \u2227 (u \u2227 q)) \u2192 (p \u2227 q))) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.intro ( And.left h3 ) ( And.right h3 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1040
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.intro (And.left h3) (And.right h3)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.004538708017207682,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-13",
+      "formula": "((p | (u -> q)) -> ((p | (u -> q)) | (p & p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-13",
+          "split": "factorized-test",
+          "formula": "((p | (u -> q)) -> ((p | (u -> q)) | (p & p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inl h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "8a9a66df38ea345bdf8d711bd96a0cf794f8b9aad93e74bf19b0d36db164e53e",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23213341599330306,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q u : Prop) : ((p \u2228 (u \u2192 q)) \u2192 ((p \u2228 (u \u2192 q)) \u2228 (p \u2227 p))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1042
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inl h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0016603340045548975,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-14",
+      "formula": "((r -> s) -> ((r -> ((s | p) | q)) -> ((r & r) -> (s & ((s | p) | q)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-14",
+          "split": "factorized-test",
+          "formula": "((r -> s) -> ((r -> ((s | p) | q)) -> ((r & r) -> (s & ((s | p) | q)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.left h6))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "aefec755e7e249d087a0b2d79f398cbad29b7932b21ebd33ca884e5e67891a24",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23215079196961597,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : ((r \u2192 s) \u2192 ((r \u2192 ((s \u2228 p) \u2228 q)) \u2192 ((r \u2227 r) \u2192 (s \u2227 ((s \u2228 p) \u2228 q))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.left h6 ) ) ( h3 ( And.left h6 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1044
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.left h6))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.004333457967732102,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-15",
+      "formula": "((t & (s | (u | (p | s)))) -> ((t & s) | (t & (u | (p | s)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-15",
+          "split": "factorized-test",
+          "formula": "((t & (s | (u | (p | s)))) -> ((t & s) | (t & (u | (p | s)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim (And.right h0) (fun h4 => (Or.inl (And.intro (And.left h0) h4))) (fun h5 => (Or.inr (And.intro (And.left h0) h5)))))",
+          "nodes": 16,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "488fa3112822fdf9fcb27eda6b877e4ab60f2a071cf25e2adb61ebf0b1957e94",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23183745803544298,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : ((t \u2227 (s \u2228 (u \u2228 (p \u2228 s)))) \u2192 ((t \u2227 s) \u2228 (t \u2227 (u \u2228 (p \u2228 s))))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h4 => ( Or.inl ( And.intro ( And.left h0 ) h4 ) ) ) ( fun h5 => ( Or.inr ( And.intro ( And.left h0 ) h5 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1046
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim (And.right h0) (fun h4 => (Or.inl (And.intro (And.left h0) h4))) (fun h5 => (Or.inr (And.intro (And.left h0) h5)))))"
+        ],
+        "nodes": 16,
+        "inference_calls": 16,
+        "elapsed_seconds": 0.009908792038913816,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-16",
+      "formula": "((r & p) -> ((t -> s) -> (r & p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-16",
+          "split": "factorized-test",
+          "formula": "((r & p) -> ((t -> s) -> (r & p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "28883842f4babc0ca06b219c4d54ec83284d19e9c04e1dc3a98515c9e141bc59",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23271254100836813,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : ((r \u2227 p) \u2192 ((t \u2192 s) \u2192 (r \u2227 p))) :=\n  ( fun h0 => ( fun h3 => h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1048
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0015027920017018914,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "weaken"
+    },
+    {
+      "task_id": "test-17",
+      "formula": "(r -> ((r & s) -> (r & (r & s))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-17",
+          "split": "factorized-test",
+          "formula": "(r -> ((r & s) -> (r & (r & s))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (And.intro h0 h3)))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "6abe489cc591b90eff1922a711293af8e7b93a6214182120bae2d55711abd778",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23276708397315815,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : (r \u2192 ((r \u2227 s) \u2192 (r \u2227 (r \u2227 s)))) :=\n  ( fun h0 => ( fun h3 => ( And.intro h0 h3 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1050
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (And.intro h0 h3)))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.001956332998815924,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-18",
+      "formula": "(((s -> (s & q)) -> s) -> ((s -> (s & q)) -> s))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-18",
+          "split": "factorized-test",
+          "formula": "(((s -> (s & q)) -> s) -> ((s -> (s & q)) -> s))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "a55195877d611dccf18b6d376ef2ac0d8ee3364bb97bac66e52a4cc82e51eb19",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23072258301544935,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : (((s \u2192 (s \u2227 q)) \u2192 s) \u2192 ((s \u2192 (s \u2227 q)) \u2192 s)) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1052
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 2,
+        "inference_calls": 2,
+        "elapsed_seconds": 0.0012806670274585485,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-19",
+      "formula": "(p -> (p | ((r -> t) -> s)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-19",
+          "split": "factorized-test",
+          "formula": "(p -> (p | ((r -> t) -> s)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inl h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "28936a5833e060c5a898216d38489639f2d8bc110ff23bc0c55ecb63ca5b86fc",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23423825000645593,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : (p \u2192 (p \u2228 ((r \u2192 t) \u2192 s))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1054
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inl h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.00120825000340119,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-20",
+      "formula": "((q -> r) -> (((q & s) -> r) -> ((q | (q & s)) -> r)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-20",
+          "split": "factorized-test",
+          "formula": "((q -> r) -> (((q & s) -> r) -> ((q | (q & s)) -> r)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => (h0 (And.left h11)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "7f23a2d395d6701213a990e0759853ff7ac459bce78e7a4eb9fb850963a7487c",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23227333300746977,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s : Prop) : ((q \u2192 r) \u2192 (((q \u2227 s) \u2192 r) \u2192 ((q \u2228 (q \u2227 s)) \u2192 r))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( Or.elim h6 ( fun h10 => ( h0 h10 ) ) ( fun h11 => ( h0 ( And.left h11 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1056
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => (h0 (And.left h11)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.0037500839680433273,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-21",
+      "formula": "((p -> (u & t)) -> ((((t -> r) -> (q -> s)) -> t) -> ((p & ((t -> r) -> (q -> s))) -> ((u & t) & t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-21",
+          "split": "factorized-test",
+          "formula": "((p -> (u & t)) -> ((((t -> r) -> (q -> s)) -> t) -> ((p & ((t -> r) -> (q -> s))) -> ((u & t) & t))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.right h6))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c6fb7c02bc7c18614dd41c4bfcee795e3fa535ee47cc4902021d7923968f0f49",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23378162499284372,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t u : Prop) : ((p \u2192 (u \u2227 t)) \u2192 ((((t \u2192 r) \u2192 (q \u2192 s)) \u2192 t) \u2192 ((p \u2227 ((t \u2192 r) \u2192 (q \u2192 s))) \u2192 ((u \u2227 t) \u2227 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.left h6 ) ) ( h3 ( And.right h6 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1058
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.right h6))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.006474874971900135,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-22",
+      "formula": "(((q & (r -> (p | q))) -> s) -> (q -> ((r -> (p | q)) -> s)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-22",
+          "split": "factorized-test",
+          "formula": "(((q & (r -> (p | q))) -> s) -> (q -> ((r -> (p | q)) -> s)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro h3 h6)))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "a01a3c88b35fe11f727cc9b6919c5520762e4c958a86ac05e7c5df42c9ae26f0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23421666701324284,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s : Prop) : (((q \u2227 (r \u2192 (p \u2228 q))) \u2192 s) \u2192 (q \u2192 ((r \u2192 (p \u2228 q)) \u2192 s))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h0 ( And.intro h3 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1060
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro h3 h6)))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.0038617500104010105,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-23",
+      "formula": "(((s & p) -> (r -> p)) -> (((s & p) & r) -> p))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-23",
+          "split": "factorized-test",
+          "formula": "(((s & p) -> (r -> p)) -> (((s & p) & r) -> p))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "50454a085a89f4a9e40908ad50a2a2549bf3d28a5b337e425533eae4408394af",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23410658398643136,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : (((s \u2227 p) \u2192 (r \u2192 p)) \u2192 (((s \u2227 p) \u2227 r) \u2192 p)) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1062
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.0029043329996056855,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-24",
+      "formula": "((q & (t | (t | (q & s)))) -> ((q & t) | (q & (t | (q & s)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-24",
+          "split": "factorized-test",
+          "formula": "((q & (t | (t | (q & s)))) -> ((q & t) | (q & (t | (q & s)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim (And.right h0) (fun h4 => (Or.inl (And.intro (And.left h0) h4))) (fun h5 => (Or.inr (And.intro (And.left h0) h5)))))",
+          "nodes": 18,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "84fbd2daf08a7153d7827155c03f1a35acde5e99bdfb6887a68813d24b616ef8",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.232594583008904,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((q \u2227 (t \u2228 (t \u2228 (q \u2227 s)))) \u2192 ((q \u2227 t) \u2228 (q \u2227 (t \u2228 (q \u2227 s))))) :=\n  ( fun h0 => ( Or.elim ( And.right h0 ) ( fun h4 => ( Or.inl ( And.intro ( And.left h0 ) h4 ) ) ) ( fun h5 => ( Or.inr ( And.intro ( And.left h0 ) h5 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1064
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim (And.right h0) (fun h4 => (Or.inl (And.intro (And.left h0) h4))) (fun h5 => (Or.inr (And.intro (And.left h0) h5)))))"
+        ],
+        "nodes": 18,
+        "inference_calls": 18,
+        "elapsed_seconds": 0.011590124981012195,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-25",
+      "formula": "((q -> (q | r)) -> (((q | r) -> False) -> (q -> False)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-25",
+          "split": "factorized-test",
+          "formula": "((q -> (q | r)) -> (((q | r) -> False) -> (q -> False)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "bd84f9887bdb2925d4246e479f54314c47ccabc0e94bc6288f043b511040d926",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23276525002438575,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : ((q \u2192 (q \u2228 r)) \u2192 (((q \u2228 r) \u2192 False) \u2192 (q \u2192 False))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1066
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0029049580334685743,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-26",
+      "formula": "((p -> ((t -> u) -> q)) -> ((((t -> u) -> q) -> q) -> (p -> q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-26",
+          "split": "factorized-test",
+          "formula": "((p -> ((t -> u) -> q)) -> ((((t -> u) -> q) -> q) -> (p -> q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3744924848a11ea3ba31d70dcfc017b19bea37ebb323ebcded92e90752c05151",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23066108295461163,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t u : Prop) : ((p \u2192 ((t \u2192 u) \u2192 q)) \u2192 ((((t \u2192 u) \u2192 q) \u2192 q) \u2192 (p \u2192 q))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1068
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0032114170026034117,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-27",
+      "formula": "((((q & q) -> s) -> ((t -> s) | u)) -> ((s -> ((t -> s) | u)) -> ((((q & q) -> s) | s) -> ((t -> s) | u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-27",
+          "split": "factorized-test",
+          "formula": "((((q & q) -> s) -> ((t -> s) | u)) -> ((s -> ((t -> s) | u)) -> ((((q & q) -> s) | s) -> ((t -> s) | u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => (h0 (fun h21 => h11)))))))",
+          "nodes": 11,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "1e441b92554f2db1333806a7b5f37c6cee0feecace11c054618962b745f45899",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2324238329892978,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t u : Prop) : ((((q \u2227 q) \u2192 s) \u2192 ((t \u2192 s) \u2228 u)) \u2192 ((s \u2192 ((t \u2192 s) \u2228 u)) \u2192 ((((q \u2227 q) \u2192 s) \u2228 s) \u2192 ((t \u2192 s) \u2228 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( Or.elim h6 ( fun h10 => ( h0 h10 ) ) ( fun h11 => ( h0 ( fun h21 => h11 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1070
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => (h0 (fun h21 => h11)))))))"
+        ],
+        "nodes": 11,
+        "inference_calls": 11,
+        "elapsed_seconds": 0.007653124979697168,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-28",
+      "formula": "((q -> (r | (s -> p))) -> ((u -> q) -> ((q & u) -> ((r | (s -> p)) & q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-28",
+          "split": "factorized-test",
+          "formula": "((q -> (r | (s -> p))) -> ((u -> q) -> ((q & u) -> ((r | (s -> p)) & q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (And.left h6)))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "ecc8de8e7a57e5d308002c59dbacee2ecbf7f29bd8a38d92f42e7bf491759759",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2318198750144802,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((q \u2192 (r \u2228 (s \u2192 p))) \u2192 ((u \u2192 q) \u2192 ((q \u2227 u) \u2192 ((r \u2228 (s \u2192 p)) \u2227 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.left h6 ) ) ( And.left h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1072
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (And.left h6)))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.004116416967008263,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-29",
+      "formula": "((p -> (((u -> u) -> (u -> q)) -> (t & r))) -> ((p & ((u -> u) -> (u -> q))) -> (t & r)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-29",
+          "split": "factorized-test",
+          "formula": "((p -> (((u -> u) -> (u -> q)) -> (t & r))) -> ((p & ((u -> u) -> (u -> q))) -> (t & r)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "bd54ac611707ed5966baac76a254ff26017e06c1b55015835b49911fde639ebb",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23357516701798886,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((p \u2192 (((u \u2192 u) \u2192 (u \u2192 q)) \u2192 (t \u2227 r))) \u2192 ((p \u2227 ((u \u2192 u) \u2192 (u \u2192 q))) \u2192 (t \u2227 r))) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1074
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.00404866598546505,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-30",
+      "formula": "(((q -> q) -> t) -> ((t -> False) -> ((q -> q) -> False)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-30",
+          "split": "factorized-test",
+          "formula": "(((q -> q) -> t) -> ((t -> False) -> ((q -> q) -> False)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "b8025b82cfe4acbe307bb39212c5f948585fbd523219353f8b304451c54f91a6",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23415183305041865,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q t : Prop) : (((q \u2192 q) \u2192 t) \u2192 ((t \u2192 False) \u2192 ((q \u2192 q) \u2192 False))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1076
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0027759589720517397,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-31",
+      "formula": "(((s | p) -> s) -> ((s -> p) -> ((s | p) -> p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-31",
+          "split": "factorized-test",
+          "formula": "(((s | p) -> s) -> ((s -> p) -> ((s | p) -> p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h3 h10)) (fun h11 => h11)))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "ce3fa7b437fff57eac1d16ac14eae54c5d2ea07c276989293c9120d9f35c2632",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23430358298355713,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s : Prop) : (((s \u2228 p) \u2192 s) \u2192 ((s \u2192 p) \u2192 ((s \u2228 p) \u2192 p))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( Or.elim h6 ( fun h10 => ( h3 h10 ) ) ( fun h11 => h11 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1078
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h3 h10)) (fun h11 => h11)))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.0031842089956626296,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-32",
+      "formula": "((((p & t) & t) -> p) -> (((p & t) & t) -> p))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-32",
+          "split": "factorized-test",
+          "formula": "((((p & t) & t) -> p) -> (((p & t) & t) -> p))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (And.left (And.left h3))))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "42d13db44ebfa6ae38bba077ea367615cbc56a36450c6d439abb77ba1d8bc1a7",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22981216700281948,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((((p \u2227 t) \u2227 t) \u2192 p) \u2192 (((p \u2227 t) \u2227 t) \u2192 p)) :=\n  ( fun h0 => ( fun h3 => ( And.left ( And.left h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1080
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (And.left (And.left h3))))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0017759170150384307,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-33",
+      "formula": "((s | ((r -> s) -> q)) -> (((r -> s) -> q) | s))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-33",
+          "split": "factorized-test",
+          "formula": "((s | ((r -> s) -> q)) -> (((r -> s) -> q) | s))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim h0 (fun h4 => (Or.inr h4)) (fun h5 => (Or.inl h5))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "6112fd96c8ed6561cede1763cb29516984c7f803baeb077dc8b1a77d05192489",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23130012501496822,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s : Prop) : ((s \u2228 ((r \u2192 s) \u2192 q)) \u2192 (((r \u2192 s) \u2192 q) \u2228 s)) :=\n  ( fun h0 => ( Or.elim h0 ( fun h4 => ( Or.inr h4 ) ) ( fun h5 => ( Or.inl h5 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1082
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim h0 (fun h4 => (Or.inr h4)) (fun h5 => (Or.inl h5))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.002355500007979572,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-34",
+      "formula": "((((u | p) -> p) -> s) -> ((s -> p) -> ((((u | p) -> p) & s) -> (s & p))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-34",
+          "split": "factorized-test",
+          "formula": "((((u | p) -> p) -> s) -> ((s -> p) -> ((((u | p) -> p) & s) -> (s & p))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (And.right h6) (h3 (And.right h6))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "0835660345c8fd8b90a2f2506af053b0bdacd25ccc19ada06241bc933af70062",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2333687500213273,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s u : Prop) : ((((u \u2228 p) \u2192 p) \u2192 s) \u2192 ((s \u2192 p) \u2192 ((((u \u2228 p) \u2192 p) \u2227 s) \u2192 (s \u2227 p)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( And.right h6 ) ( h3 ( And.right h6 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1084
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (And.right h6) (h3 (And.right h6))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.004448792024049908,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-35",
+      "formula": "((((t & p) & r) -> (s -> t)) -> ((t & p) -> (r -> (s -> t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-35",
+          "split": "factorized-test",
+          "formula": "((((t & p) & r) -> (s -> t)) -> ((t & p) -> (r -> (s -> t))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 (And.intro h3 h6) h9)))))",
+          "nodes": 9,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "a86bb9300778b97c08b2cc59af8d822f0169e22c54c112c6621e8ea5dd20ac57",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23156462499173358,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t : Prop) : ((((t \u2227 p) \u2227 r) \u2192 (s \u2192 t)) \u2192 ((t \u2227 p) \u2192 (r \u2192 (s \u2192 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h0 ( And.intro h3 h6 ) h9 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1085
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 (And.intro h3 h6) h9)))))"
+        ],
+        "nodes": 9,
+        "inference_calls": 9,
+        "elapsed_seconds": 0.005057415983173996,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-36",
+      "formula": "(((u & (t | p)) -> (p -> s)) -> (((u & (t | p)) & p) -> s))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-36",
+          "split": "factorized-test",
+          "formula": "(((u & (t | p)) -> (p -> s)) -> (((u & (t | p)) & p) -> s))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "17077015918c09c2aea4e64ba50d9c629b807f704b3ab87a6fa67eed4bf0e7a9",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23236787499627098,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s t u : Prop) : (((u \u2227 (t \u2228 p)) \u2192 (p \u2192 s)) \u2192 (((u \u2227 (t \u2228 p)) \u2227 p) \u2192 s)) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1086
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.0039040829869918525,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-37",
+      "formula": "((p & ((u | (r -> p)) | p)) -> ((p & (u | (r -> p))) | (p & p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-37",
+          "split": "factorized-test",
+          "formula": "((p & ((u | (r -> p)) | p)) -> ((p & (u | (r -> p))) | (p & p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inl (And.intro (And.left h0) (Or.inr (fun h15 => (And.left h0))))))",
+          "nodes": 72,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "e8da616ad81c895d5dde79ef55549d46f177c23084dc98411aa40cccc0f54fc8",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23341637500561774,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : ((p \u2227 ((u \u2228 (r \u2192 p)) \u2228 p)) \u2192 ((p \u2227 (u \u2228 (r \u2192 p))) \u2228 (p \u2227 p))) :=\n  ( fun h0 => ( Or.inl ( And.intro ( And.left h0 ) ( Or.inr ( fun h15 => ( And.left h0 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1087
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inl (And.intro (And.left h0) (Or.inr (fun h15 => (And.left h0))))))"
+        ],
+        "nodes": 72,
+        "inference_calls": 72,
+        "elapsed_seconds": 0.044760042044799775,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-38",
+      "formula": "((((q -> s) | u) & ((s & u) -> u)) -> (((s & u) -> u) & ((q -> s) | u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-38",
+          "split": "factorized-test",
+          "formula": "((((q -> s) | u) & ((s & u) -> u)) -> (((s & u) -> u) & ((q -> s) | u)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+          "nodes": 4,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "cd2b5bacc4df339801d9a907e66caf5fb564eddb7512a20e5084120759c7dc04",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23304183402797207,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : ((((q \u2192 s) \u2228 u) \u2227 ((s \u2227 u) \u2192 u)) \u2192 (((s \u2227 u) \u2192 u) \u2227 ((q \u2192 s) \u2228 u))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1088
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.right h0) (And.left h0)))"
+        ],
+        "nodes": 4,
+        "inference_calls": 4,
+        "elapsed_seconds": 0.0034800420398823917,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-39",
+      "formula": "((((r | q) -> (p & s)) -> q) -> ((q -> t) -> (((r | q) -> (p & s)) -> t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-39",
+          "split": "factorized-test",
+          "formula": "((((r | q) -> (p & s)) -> q) -> ((q -> t) -> (((r | q) -> (p & s)) -> t)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "0d8287f8c556c3c52d8f7711f2c8843c779000d2a408708ab815112fa21bb092",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2314071249566041,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s t : Prop) : ((((r \u2228 q) \u2192 (p \u2227 s)) \u2192 q) \u2192 ((q \u2192 t) \u2192 (((r \u2228 q) \u2192 (p \u2227 s)) \u2192 t))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1089
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.004118165990803391,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-40",
+      "formula": "(u -> (u | (p | (p | q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-40",
+          "split": "factorized-test",
+          "formula": "(u -> (u | (p | (p | q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inl h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "65b17418af3815f2820dbc5dafbfdb3467e1dfacba7be93adac4018cd962282b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23317145800683647,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q u : Prop) : (u \u2192 (u \u2228 (p \u2228 (p \u2228 q)))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1090
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inl h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0014409999712370336,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-41",
+      "formula": "(((r & r) -> t) -> ((u -> t) -> (((r & r) & u) -> (t & t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-41",
+          "split": "factorized-test",
+          "formula": "(((r & r) -> t) -> ((u -> t) -> (((r & r) & u) -> (t & t))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h3 (And.right h6)) (h3 (And.right h6))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "10b9ecce11a89228590ecc761e27871a1f6d24a5ac47323b6b8e766423cb532d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23343466699589044,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r t u : Prop) : (((r \u2227 r) \u2192 t) \u2192 ((u \u2192 t) \u2192 (((r \u2227 r) \u2227 u) \u2192 (t \u2227 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h3 ( And.right h6 ) ) ( h3 ( And.right h6 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1091
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h3 (And.right h6)) (h3 (And.right h6))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.00503075000597164,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-42",
+      "formula": "(((s | r) -> (t -> u)) -> (((s | r) & t) -> u))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-42",
+          "split": "factorized-test",
+          "formula": "(((s | r) -> (t -> u)) -> (((s | r) & t) -> u))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f425bb2b31d932577caebd0a3ad4d3bf18b7b9a5c19a6c82f63f84fced25162b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2339591250056401,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s t u : Prop) : (((s \u2228 r) \u2192 (t \u2192 u)) \u2192 (((s \u2228 r) \u2227 t) \u2192 u)) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1092
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.0027264590025879443,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-43",
+      "formula": "(((r -> q) | q) -> ((r -> q) | q))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-43",
+          "split": "factorized-test",
+          "formula": "(((r -> q) | q) -> ((r -> q) | q))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "4fd25374c41f98f1c837066b7e9d61b1b6d1aed7d01f6b27b652a9884e957b01",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2340052499785088,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : (((r \u2192 q) \u2228 q) \u2192 ((r \u2192 q) \u2228 q)) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1093
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 2,
+        "inference_calls": 2,
+        "elapsed_seconds": 0.001068917044904083,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-44",
+      "formula": "((p -> (t -> q)) -> (t -> (p -> (t -> q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-44",
+          "split": "factorized-test",
+          "formula": "((p -> (t -> q)) -> (t -> (p -> (t -> q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "86e2e075344913aca92b0acd5401b0b40de1bfe231a443f0b4640a767465d3a4",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23410304199205711,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t : Prop) : ((p \u2192 (t \u2192 q)) \u2192 (t \u2192 (p \u2192 (t \u2192 q)))) :=\n  ( fun h0 => ( fun h3 => h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1094
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0015091249952092767,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "weaken"
+    },
+    {
+      "task_id": "test-45",
+      "formula": "(((t | (p & p)) -> p) -> ((p -> q) -> ((t | (p & p)) -> q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-45",
+          "split": "factorized-test",
+          "formula": "(((t | (p & p)) -> p) -> ((p -> q) -> ((t | (p & p)) -> q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h3 (h0 (Or.inl h10)))) (fun h11 => (h3 (And.left h11)))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "88d90e013868efd2da335500b5ced2bc0c6413d99903f793705379eba22f454a",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23127708298852667,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t : Prop) : (((t \u2228 (p \u2227 p)) \u2192 p) \u2192 ((p \u2192 q) \u2192 ((t \u2228 (p \u2227 p)) \u2192 q))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( Or.elim h6 ( fun h10 => ( h3 ( h0 ( Or.inl h10 ) ) ) ) ( fun h11 => ( h3 ( And.left h11 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1095
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h3 (h0 (Or.inl h10)))) (fun h11 => (h3 (And.left h11)))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 10,
+        "elapsed_seconds": 0.005294166970998049,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-46",
+      "formula": "((((t & u) | s) -> s) -> (((q -> t) -> r) -> ((((t & u) | s) & (q -> t)) -> (s & r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-46",
+          "split": "factorized-test",
+          "formula": "((((t & u) | s) -> s) -> (((q -> t) -> r) -> ((((t & u) | s) & (q -> t)) -> (s & r))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.right h6))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "5d7bea165523dae698351e1f6cf215c871b51e5c162b82c6ac4ea2f84704af0b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2331757500069216,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t u : Prop) : ((((t \u2227 u) \u2228 s) \u2192 s) \u2192 (((q \u2192 t) \u2192 r) \u2192 ((((t \u2227 u) \u2228 s) \u2227 (q \u2192 t)) \u2192 (s \u2227 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.left h6 ) ) ( h3 ( And.right h6 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1096
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.right h6))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.006782082957215607,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-47",
+      "formula": "(((u -> t) -> ((t -> q) -> p)) -> (((u -> t) & (t -> q)) -> p))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-47",
+          "split": "factorized-test",
+          "formula": "(((u -> t) -> ((t -> q) -> p)) -> (((u -> t) & (t -> q)) -> p))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "8b25f9a88441d280cb5f6abd4eba3faf9d29da53902afc6f1eaaf65d07a4dc72",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23297287500463426,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q t u : Prop) : (((u \u2192 t) \u2192 ((t \u2192 q) \u2192 p)) \u2192 (((u \u2192 t) \u2227 (t \u2192 q)) \u2192 p)) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1097
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.003663124982267618,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-48",
+      "formula": "((p & (((u | q) | r) | p)) -> ((p & ((u | q) | r)) | (p & p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-48",
+          "split": "factorized-test",
+          "formula": "((p & (((u | q) | r) | p)) -> ((p & ((u | q) | r)) | (p & p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inr (And.intro (And.left h0) (And.left h0))))",
+          "nodes": 103,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "e5fe5ff9a9c4c77136223ccbe853123ece8cefbb51f5d331d44987664c0033ca",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22730608301935717,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : ((p \u2227 (((u \u2228 q) \u2228 r) \u2228 p)) \u2192 ((p \u2227 ((u \u2228 q) \u2228 r)) \u2228 (p \u2227 p))) :=\n  ( fun h0 => ( Or.inr ( And.intro ( And.left h0 ) ( And.left h0 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1098
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inr (And.intro (And.left h0) (And.left h0))))"
+        ],
+        "nodes": 103,
+        "inference_calls": 103,
+        "elapsed_seconds": 0.0636558749829419,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-49",
+      "formula": "(((s -> q) -> (u & q)) -> ((s -> q) -> (u & q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-49",
+          "split": "factorized-test",
+          "formula": "(((s -> q) -> (u & q)) -> ((s -> q) -> (u & q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "1616ed5cbafa97075b9e2d9a693c0a9d5179ca6a145dab002bbb6721f99441e7",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22929824999300763,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s u : Prop) : (((s \u2192 q) \u2192 (u \u2227 q)) \u2192 ((s \u2192 q) \u2192 (u \u2227 q))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1099
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 2,
+        "inference_calls": 2,
+        "elapsed_seconds": 0.0012865410535596311,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-50",
+      "formula": "(((u | t) | s) -> ((u -> s) -> ((u | t) | s)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-50",
+          "split": "factorized-test",
+          "formula": "(((u | t) | s) -> ((u -> s) -> ((u | t) | s)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "4091e5969faf1a6feaf517a8131192a4dd0553a4aab7307c8e82147da96f8f83",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23298462497768924,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : (((u \u2228 t) \u2228 s) \u2192 ((u \u2192 s) \u2192 ((u \u2228 t) \u2228 s))) :=\n  ( fun h0 => ( fun h3 => h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1100
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0016107920091599226,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "weaken"
+    },
+    {
+      "task_id": "test-51",
+      "formula": "(((s | q) & (s -> s)) -> ((s -> s) & (s | q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-51",
+          "split": "factorized-test",
+          "formula": "(((s | q) & (s -> s)) -> ((s -> s) & (s | q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+          "nodes": 4,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "09c23ebc2871cffad20b4d38f42ae7e77643a00743d3ab89887b17f1b01e2fb1",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23454116703942418,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : (((s \u2228 q) \u2227 (s \u2192 s)) \u2192 ((s \u2192 s) \u2227 (s \u2228 q))) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1101
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.right h0) (And.left h0)))"
+        ],
+        "nodes": 4,
+        "inference_calls": 4,
+        "elapsed_seconds": 0.0028266250155866146,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-52",
+      "formula": "((s & (s | s)) -> s)",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-52",
+          "split": "factorized-test",
+          "formula": "((s & (s | s)) -> s)",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (And.left h0))",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "b22eecf490650b06147633dcd987f0f7f5e6f2672b6899e8670d7c514e473c48",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2336768329842016,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s : Prop) : ((s \u2227 (s \u2228 s)) \u2192 s) :=\n  ( fun h0 => ( And.left h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1102
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.left h0))"
+        ],
+        "nodes": 2,
+        "inference_calls": 2,
+        "elapsed_seconds": 0.0011907090083695948,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "first"
+    },
+    {
+      "task_id": "test-53",
+      "formula": "((((q | r) | u) | r) -> (r | ((q | r) | u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-53",
+          "split": "factorized-test",
+          "formula": "((((q | r) | u) | r) -> (r | ((q | r) | u)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim h0 (fun h4 => (Or.inr h4)) (fun h5 => (Or.inl h5))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "ea40aa41cb73915b174274e32eb6a4f941350fd0688b34d0a002346300a47a67",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23150841699680313,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r u : Prop) : ((((q \u2228 r) \u2228 u) \u2228 r) \u2192 (r \u2228 ((q \u2228 r) \u2228 u))) :=\n  ( fun h0 => ( Or.elim h0 ( fun h4 => ( Or.inr h4 ) ) ( fun h5 => ( Or.inl h5 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1103
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim h0 (fun h4 => (Or.inr h4)) (fun h5 => (Or.inl h5))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0027876250096596777,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-54",
+      "formula": "((((r | s) | r) -> (t -> (s -> q))) -> ((s -> (t -> (s -> q))) -> ((((r | s) | r) | s) -> (t -> (s -> q)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-54",
+          "split": "factorized-test",
+          "formula": "((((r | s) | r) -> (t -> (s -> q))) -> ((s -> (t -> (s -> q))) -> ((((r | s) | r) | s) -> (t -> (s -> q)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => (h3 h11))))))",
+          "nodes": 14,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "fc47df37d299cc4d4195f3776c0e737188559e53e70ed50f705037d7eb66873f",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22867079195566475,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s t : Prop) : ((((r \u2228 s) \u2228 r) \u2192 (t \u2192 (s \u2192 q))) \u2192 ((s \u2192 (t \u2192 (s \u2192 q))) \u2192 ((((r \u2228 s) \u2228 r) \u2228 s) \u2192 (t \u2192 (s \u2192 q))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( Or.elim h6 ( fun h10 => ( h0 h10 ) ) ( fun h11 => ( h3 h11 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1104
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (Or.elim h6 (fun h10 => (h0 h10)) (fun h11 => (h3 h11))))))"
+        ],
+        "nodes": 14,
+        "inference_calls": 14,
+        "elapsed_seconds": 0.010251250001601875,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "cases"
+    },
+    {
+      "task_id": "test-55",
+      "formula": "(((s & p) -> q) -> (((s & (p | u)) -> q) -> (((s & p) & (s & (p | u))) -> (q & q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-55",
+          "split": "factorized-test",
+          "formula": "(((s & p) -> q) -> (((s & (p | u)) -> q) -> (((s & p) & (s & (p | u))) -> (q & q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.intro (And.left (And.left h6)) (And.right (And.left h6)))) (h0 (And.intro (And.left (And.left h6)) (And.right (And.left h6))))))))",
+          "nodes": 24,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "a1fa809b18cd97708dbfb9de6e133ff01972352a4c44f1f4fafcc40e34ed7d6e",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.232715709018521,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : (((s \u2227 p) \u2192 q) \u2192 (((s \u2227 (p \u2228 u)) \u2192 q) \u2192 (((s \u2227 p) \u2227 (s \u2227 (p \u2228 u))) \u2192 (q \u2227 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.intro ( And.left ( And.left h6 ) ) ( And.right ( And.left h6 ) ) ) ) ( h0 ( And.intro ( And.left ( And.left h6 ) ) ( And.right ( And.left h6 ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1105
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.intro (And.left (And.left h6)) (And.right (And.left h6)))) (h0 (And.intro (And.left (And.left h6)) (And.right (And.left h6))))))))"
+        ],
+        "nodes": 24,
+        "inference_calls": 24,
+        "elapsed_seconds": 0.021914125012699515,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-56",
+      "formula": "(((s & s) -> ((t & t) & q)) -> (s -> (s -> ((t & t) & q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-56",
+          "split": "factorized-test",
+          "formula": "(((s & s) -> ((t & t) & q)) -> (s -> (s -> ((t & t) & q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro h6 h6)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "d50e1342cca27567e5218dd3d08c04080dd06210ee587f5a0095ff048df5330a",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23345816700020805,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : (((s \u2227 s) \u2192 ((t \u2227 t) \u2227 q)) \u2192 (s \u2192 (s \u2192 ((t \u2227 t) \u2227 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h0 ( And.intro h6 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1106
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro h6 h6)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.004559249966405332,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-57",
+      "formula": "((t -> (u -> ((p & u) -> t))) -> ((t & u) -> ((p & u) -> t)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-57",
+          "split": "factorized-test",
+          "formula": "((t -> (u -> ((p & u) -> t))) -> ((t & u) -> ((p & u) -> t)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "60c9df185c8549ed1b978959def02833a26b2b304ff5acea7307e0e55c011bd3",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23052283300785348,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : ((t \u2192 (u \u2192 ((p \u2227 u) \u2192 t))) \u2192 ((t \u2227 u) \u2192 ((p \u2227 u) \u2192 t))) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.right h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1107
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.right h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.003217332996428013,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-58",
+      "formula": "(((s | (p & t)) -> q) -> ((q -> False) -> ((s | (p & t)) -> False)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-58",
+          "split": "factorized-test",
+          "formula": "(((s | (p & t)) -> q) -> ((q -> False) -> ((s | (p & t)) -> False)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "ff600fc2360d4c8c29bf24a4f4b2e7ef2d7a1d2815466b3448b0dae13428a6ab",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2330772079876624,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((s \u2228 (p \u2227 t)) \u2192 q) \u2192 ((q \u2192 False) \u2192 ((s \u2228 (p \u2227 t)) \u2192 False))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1108
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0037454170524142683,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-59",
+      "formula": "(((p & r) -> r) -> ((u -> (p | r)) -> (((p & r) -> r) & (u -> (p | r)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-59",
+          "split": "factorized-test",
+          "formula": "(((p & r) -> r) -> ((u -> (p | r)) -> (((p & r) -> r) & (u -> (p | r)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (And.intro (fun h12 => (And.right h12)) (fun h15 => (h3 h15)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3a1d710183c9f5681fd09e8e7a04e5d8ced883b319e010b4ff2d539a71afc18d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.232586124970112,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r u : Prop) : (((p \u2227 r) \u2192 r) \u2192 ((u \u2192 (p \u2228 r)) \u2192 (((p \u2227 r) \u2192 r) \u2227 (u \u2192 (p \u2228 r))))) :=\n  ( fun h0 => ( fun h3 => ( And.intro ( fun h12 => ( And.right h12 ) ) ( fun h15 => ( h3 h15 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1109
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (And.intro (fun h12 => (And.right h12)) (fun h15 => (h3 h15)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.004884125024545938,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "pair"
+    },
+    {
+      "task_id": "test-60",
+      "formula": "(((p | (t | u)) -> (s | q)) -> ((p | (t | u)) -> (s | q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-60",
+          "split": "factorized-test",
+          "formula": "(((p | (t | u)) -> (s | q)) -> ((p | (t | u)) -> (s | q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 12,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2644a015ede1c98b4818292d16d761e3e3993244b3735e23dc3a6ccc615c06bc",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23243050003657117,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (((p \u2228 (t \u2228 u)) \u2192 (s \u2228 q)) \u2192 ((p \u2228 (t \u2228 u)) \u2192 (s \u2228 q))) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1110
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 12,
+        "inference_calls": 12,
+        "elapsed_seconds": 0.006382457970175892,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "apply"
+    },
+    {
+      "task_id": "test-61",
+      "formula": "((p -> s) -> (((p -> s) -> r) -> ((p & (p -> s)) -> (s & r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-61",
+          "split": "factorized-test",
+          "formula": "((p -> s) -> (((p -> s) -> r) -> ((p & (p -> s)) -> (s & r))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (fun h21 => (h0 (And.left h6))))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "200492c830391c7f366135c87d7d82735213c9301df93dfe9a8ffd5c0f59c250",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22857704100897536,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((p \u2192 s) \u2192 (((p \u2192 s) \u2192 r) \u2192 ((p \u2227 (p \u2192 s)) \u2192 (s \u2227 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.left h6 ) ) ( h3 ( fun h21 => ( h0 ( And.left h6 ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1111
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (fun h21 => (h0 (And.left h6))))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 10,
+        "elapsed_seconds": 0.005633916996885091,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-62",
+      "formula": "(((s & (p -> s)) -> u) -> (s -> ((p -> s) -> u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-62",
+          "split": "factorized-test",
+          "formula": "(((s & (p -> s)) -> u) -> (s -> ((p -> s) -> u)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro h3 h6)))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2cbd5642f90e597d509fe65cfb858a3d460ba1e31813153e33319f8075bd17cc",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22986020799726248,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p s u : Prop) : (((s \u2227 (p \u2192 s)) \u2192 u) \u2192 (s \u2192 ((p \u2192 s) \u2192 u))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h0 ( And.intro h3 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1112
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h0 (And.intro h3 h6)))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.0035332919796928763,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "curry"
+    },
+    {
+      "task_id": "test-63",
+      "formula": "((t -> (t -> ((u | t) & p))) -> ((t & t) -> ((u | t) & p)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-63",
+          "split": "factorized-test",
+          "formula": "((t -> (t -> ((u | t) & p))) -> ((t & t) -> ((u | t) & p)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (h0 (And.left h3) (And.left h3))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2f8623e1280ad8c2e0a3dc5a493262b049ac2b8217cf31891112f812be4fdb14",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2335726250312291,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t u : Prop) : ((t \u2192 (t \u2192 ((u \u2228 t) \u2227 p))) \u2192 ((t \u2227 t) \u2192 ((u \u2228 t) \u2227 p))) :=\n  ( fun h0 => ( fun h3 => ( h0 ( And.left h3 ) ( And.left h3 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1113
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (h0 (And.left h3) (And.left h3))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.0030073749949224293,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "uncurry"
+    },
+    {
+      "task_id": "test-64",
+      "formula": "(((p & t) & (r | (t | q))) -> (((p & t) & r) | ((p & t) & (t | q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-64",
+          "split": "factorized-test",
+          "formula": "(((p & t) & (r | (t | q))) -> (((p & t) & r) | ((p & t) & (t | q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inr (And.intro (And.left h0) (Or.inl (And.right (And.left h0))))))",
+          "nodes": 11,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "0a75c9cfa71fc086e503c479e548396dd35abb4f5709e8e604187be13ff3fb5b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2336380829801783,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t : Prop) : (((p \u2227 t) \u2227 (r \u2228 (t \u2228 q))) \u2192 (((p \u2227 t) \u2227 r) \u2228 ((p \u2227 t) \u2227 (t \u2228 q)))) :=\n  ( fun h0 => ( Or.inr ( And.intro ( And.left h0 ) ( Or.inl ( And.right ( And.left h0 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1114
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inr (And.intro (And.left h0) (Or.inl (And.right (And.left h0))))))"
+        ],
+        "nodes": 11,
+        "inference_calls": 11,
+        "elapsed_seconds": 0.007911666005384177,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "distribute"
+    },
+    {
+      "task_id": "test-65",
+      "formula": "((q & (q | (q -> s))) -> ((q | (q -> s)) & q))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-65",
+          "split": "factorized-test",
+          "formula": "((q & (q | (q -> s))) -> ((q | (q -> s)) & q))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (And.intro (And.right h0) (And.left h0)))",
+          "nodes": 4,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "36a40ad7c7bda02582d4d3d10b5f2794514e51cb9c295400e8eb04e400c175f0",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.25930904201231897,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s : Prop) : ((q \u2227 (q \u2228 (q \u2192 s))) \u2192 ((q \u2228 (q \u2192 s)) \u2227 q)) :=\n  ( fun h0 => ( And.intro ( And.right h0 ) ( And.left h0 ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1115
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (And.intro (And.right h0) (And.left h0)))"
+        ],
+        "nodes": 4,
+        "inference_calls": 4,
+        "elapsed_seconds": 0.002703875012230128,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_pair"
+    },
+    {
+      "task_id": "test-66",
+      "formula": "((r -> r) -> ((r -> ((t -> q) -> (u & r))) -> (r -> ((t -> q) -> (u & r)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-66",
+          "split": "factorized-test",
+          "formula": "((r -> r) -> ((r -> ((t -> q) -> (u & r))) -> (r -> ((t -> q) -> (u & r)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 h6))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "0f4af70e27a65f1eb4ce790af54ff46c7d8c4abb29dc5008af3f72d5f2cde903",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.232423540961463,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t u : Prop) : ((r \u2192 r) \u2192 ((r \u2192 ((t \u2192 q) \u2192 (u \u2227 r))) \u2192 (r \u2192 ((t \u2192 q) \u2192 (u \u2227 r))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 h6 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1116
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 h6))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.0029799590120092034,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-67",
+      "formula": "((s -> (u & u)) -> (t | (s -> (u & u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-67",
+          "split": "factorized-test",
+          "formula": "((s -> (u & u)) -> (t | (s -> (u & u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inr h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "d8cd74749d3aac42129af0698ec26fd266799276965817dcfe4d75db0f5fd5b6",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23339850001502782,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((s \u2192 (u \u2227 u)) \u2192 (t \u2228 (s \u2192 (u \u2227 u)))) :=\n  ( fun h0 => ( Or.inr h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1117
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inr h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0016629580059088767,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_right"
+    },
+    {
+      "task_id": "test-68",
+      "formula": "((r | ((s & s) -> t)) -> (((s & s) -> t) | r))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-68",
+          "split": "factorized-test",
+          "formula": "((r | ((s & s) -> t)) -> (((s & s) -> t) | r))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.elim h0 (fun h4 => (Or.inr h4)) (fun h5 => (Or.inl h5))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "acbccb38d7d3266cea9c38e44728f022225f581d92e7b18be4e6d1811d5ebfbe",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23353308299556375,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s t : Prop) : ((r \u2228 ((s \u2227 s) \u2192 t)) \u2192 (((s \u2227 s) \u2192 t) \u2228 r)) :=\n  ( fun h0 => ( Or.elim h0 ( fun h4 => ( Or.inr h4 ) ) ( fun h5 => ( Or.inl h5 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1118
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.elim h0 (fun h4 => (Or.inr h4)) (fun h5 => (Or.inl h5))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0028683330165222287,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "swap_or"
+    },
+    {
+      "task_id": "test-69",
+      "formula": "((r -> ((s -> s) -> s)) -> (((r | q) -> (u | (p & u))) -> ((r & (r | q)) -> (((s -> s) -> s) & (u | (p & u))))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-69",
+          "split": "factorized-test",
+          "formula": "((r -> ((s -> s) -> s)) -> (((r | q) -> (u | (p & u))) -> ((r & (r | q)) -> (((s -> s) -> s) & (u | (p & u))))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.right h6))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c94021db9af56ad2c8e3848ce1951165c005d9431289a16c83a0296db6c95200",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23231741599738598,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((r \u2192 ((s \u2192 s) \u2192 s)) \u2192 (((r \u2228 q) \u2192 (u \u2228 (p \u2227 u))) \u2192 ((r \u2227 (r \u2228 q)) \u2192 (((s \u2192 s) \u2192 s) \u2227 (u \u2228 (p \u2227 u)))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( And.intro ( h0 ( And.left h6 ) ) ( h3 ( And.right h6 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1119
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (And.intro (h0 (And.left h6)) (h3 (And.right h6))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.007326791994273663,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "map_pair"
+    },
+    {
+      "task_id": "test-70",
+      "formula": "(((p & (r & s)) -> u) -> ((u -> False) -> ((p & (r & s)) -> False)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-70",
+          "split": "factorized-test",
+          "formula": "(((p & (r & s)) -> u) -> ((u -> False) -> ((p & (r & s)) -> False)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "8642c6a9c7fe7d671e9543a1a664b3c6ef16ee64d51f53cea647173aa90744eb",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23115545802284032,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s u : Prop) : (((p \u2227 (r \u2227 s)) \u2192 u) \u2192 ((u \u2192 False) \u2192 ((p \u2227 (r \u2227 s)) \u2192 False))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1120
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0041548750014044344,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "contrapositive"
+    },
+    {
+      "task_id": "test-71",
+      "formula": "(((r -> q) -> r) -> ((r -> q) -> r))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-71",
+          "split": "factorized-test",
+          "formula": "(((r -> q) -> r) -> ((r -> q) -> r))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => h0)",
+          "nodes": 2,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3309eade05713d1426144e26a14e16cbf3138e13c88908ca14a4674806087094",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23243420803919435,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r : Prop) : (((r \u2192 q) \u2192 r) \u2192 ((r \u2192 q) \u2192 r)) :=\n  ( fun h0 => h0 )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1121
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => h0)"
+        ],
+        "nodes": 2,
+        "inference_calls": 2,
+        "elapsed_seconds": 0.0012222499935887754,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "identity"
+    },
+    {
+      "task_id": "test-72",
+      "formula": "((s -> p) -> ((p -> ((s | r) | (u -> q))) -> (s -> ((s | r) | (u -> q)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-72",
+          "split": "factorized-test",
+          "formula": "((s -> p) -> ((p -> ((s | r) | (u -> q))) -> (s -> ((s | r) | (u -> q)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "022d385736337636acf436deb686b9f96476089b409f89dcae32cd22851ff942",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23026516701793298,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : ((s \u2192 p) \u2192 ((p \u2192 ((s \u2228 r) \u2228 (u \u2192 q))) \u2192 (s \u2192 ((s \u2228 r) \u2228 (u \u2192 q))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( h3 ( h0 h6 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1122
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (h3 (h0 h6)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.0037785840104334056,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "compose"
+    },
+    {
+      "task_id": "test-73",
+      "formula": "(s -> (s | ((t | p) | q)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-73",
+          "split": "factorized-test",
+          "formula": "(s -> (s | ((t | p) | q)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inl h0))",
+          "nodes": 3,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "2f4622661081b7ed7cd1e58b0d61a3783f083e99b6a326258ccbcb331ff46754",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23004679201403633,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (s \u2192 (s \u2228 ((t \u2228 p) \u2228 q))) :=\n  ( fun h0 => ( Or.inl h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1123
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inl h0))"
+        ],
+        "nodes": 3,
+        "inference_calls": 3,
+        "elapsed_seconds": 0.0013736250111833215,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_left"
+    },
+    {
+      "task_id": "test-74",
+      "formula": "((s -> u) -> ((s | r) | (s -> u)))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-74",
+          "split": "factorized-test",
+          "formula": "((s -> u) -> ((s | r) | (s -> u)))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (Or.inr h0))",
+          "nodes": 4,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9664e98551cc3c869fd8963845dad9c9fbb970eb1a33cdb761665501003a3857",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2303426670259796,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s u : Prop) : ((s \u2192 u) \u2192 ((s \u2228 r) \u2228 (s \u2192 u))) :=\n  ( fun h0 => ( Or.inr h0 ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1124
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (Or.inr h0))"
+        ],
+        "nodes": 4,
+        "inference_calls": 4,
+        "elapsed_seconds": 0.0018091669771820307,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "inject_right"
+    },
+    {
+      "task_id": "test-75",
+      "formula": "(((q | r) -> u) -> (((q -> (q -> s)) -> u) -> (((r -> q) -> u) -> (((q | r) | ((q -> (q -> s)) | (r -> q))) -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-75",
+          "split": "factorized-test",
+          "formula": "(((q | r) -> u) -> (((q -> (q -> s)) -> u) -> (((r -> q) -> u) -> (((q | r) | ((q -> (q -> s)) | (r -> q))) -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 (fun h30 => (fun h33 => (h22 h30 h30))))) (fun h23 => (h6 h23)))))))))",
+          "nodes": 194,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "65b64ff31e0a4e016ecb4a9fe68b7083ea61a5d9327b62099156a18acd037d78",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23311008396558464,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s u : Prop) : (((q \u2228 r) \u2192 u) \u2192 (((q \u2192 (q \u2192 s)) \u2192 u) \u2192 (((r \u2192 q) \u2192 u) \u2192 (((q \u2228 r) \u2228 ((q \u2192 (q \u2192 s)) \u2228 (r \u2192 q))) \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => ( h0 h13 ) ) ( fun h14 => ( Or.elim h14 ( fun h22 => ( h3 ( fun h30 => ( fun h33 => ( h22 h30 h30 ) ) ) ) ) ( fun h23 => ( h6 h23 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1125
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 (fun h30 => (fun h33 => (h22 h30 h30))))) (fun h23 => (h6 h23)))))))))"
+        ],
+        "nodes": 194,
+        "inference_calls": 194,
+        "elapsed_seconds": 0.115701041999273,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-76",
+      "formula": "((p -> t) -> ((t -> r) -> ((r -> q) -> (p -> q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-76",
+          "split": "factorized-test",
+          "formula": "((p -> t) -> ((t -> r) -> ((r -> q) -> (p -> q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "e690275ac294a29c8d7d61bd61fe693d12f3cce9af3c34106ef85776ccb2028a",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23349012498511001,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t : Prop) : ((p \u2192 t) \u2192 ((t \u2192 r) \u2192 ((r \u2192 q) \u2192 (p \u2192 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1126
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.0038312500109896064,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-77",
+      "formula": "((r -> r) -> (((p | q) -> r) -> ((r -> r) -> ((r | ((p | q) | r)) -> r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-77",
+          "split": "factorized-test",
+          "formula": "((r -> r) -> (((p | q) -> r) -> ((r -> r) -> ((r | ((p | q) | r)) -> r))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => h13) (fun h14 => (Or.elim h14 (fun h19 => (h3 h19)) (fun h20 => h20))))))))",
+          "nodes": 26,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9dcca3e152c1d4029497bbc21134cf7f006f6b4241e224edbe9f6932ced7d21d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23223458405118436,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((r \u2192 r) \u2192 (((p \u2228 q) \u2192 r) \u2192 ((r \u2192 r) \u2192 ((r \u2228 ((p \u2228 q) \u2228 r)) \u2192 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => h13 ) ( fun h14 => ( Or.elim h14 ( fun h19 => ( h3 h19 ) ) ( fun h20 => h20 ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1127
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => h13) (fun h14 => (Or.elim h14 (fun h19 => (h3 h19)) (fun h20 => h20))))))))"
+        ],
+        "nodes": 26,
+        "inference_calls": 26,
+        "elapsed_seconds": 0.013882667000871152,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-78",
+      "formula": "(((p | u) -> q) -> ((q -> r) -> ((r -> q) -> ((p | u) -> q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-78",
+          "split": "factorized-test",
+          "formula": "(((p | u) -> q) -> ((q -> r) -> ((r -> q) -> ((p | u) -> q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 h9)))))",
+          "nodes": 6,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f4ba2f55c9df60e2afb464ec02a0f65b5da46e95d9f43fc10af678268e469e67",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23338170803617686,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r u : Prop) : (((p \u2228 u) \u2192 q) \u2192 ((q \u2192 r) \u2192 ((r \u2192 q) \u2192 ((p \u2228 u) \u2192 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h0 h9 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1128
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 h9)))))"
+        ],
+        "nodes": 6,
+        "inference_calls": 6,
+        "elapsed_seconds": 0.003628875012509525,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-79",
+      "formula": "((t -> q) -> (((t & r) -> q) -> ((t -> q) -> ((t | ((t & r) | t)) -> q))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-79",
+          "split": "factorized-test",
+          "formula": "((t -> q) -> (((t & r) -> q) -> ((t -> q) -> ((t | ((t & r) | t)) -> q))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 (Or.elim h9 (fun h16 => h16) (fun h17 => (Or.elim h17 (fun h22 => (And.left h22)) (fun h23 => h23)))))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9131d3dde0fd0495e9ebdd18dd49c67d0ad4fcd64e18aceb14dc353902787c32",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.22990383399883285,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r t : Prop) : ((t \u2192 q) \u2192 (((t \u2227 r) \u2192 q) \u2192 ((t \u2192 q) \u2192 ((t \u2228 ((t \u2227 r) \u2228 t)) \u2192 q)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h0 ( Or.elim h9 ( fun h16 => h16 ) ( fun h17 => ( Or.elim h17 ( fun h22 => ( And.left h22 ) ) ( fun h23 => h23 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1129
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 (Or.elim h9 (fun h16 => h16) (fun h17 => (Or.elim h17 (fun h22 => (And.left h22)) (fun h23 => h23)))))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 10,
+        "elapsed_seconds": 0.006077333993744105,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-80",
+      "formula": "((((u -> q) & (r -> u)) -> (s -> u)) -> (((s -> u) -> ((s -> r) & r)) -> ((((s -> r) & r) -> s) -> (((u -> q) & (r -> u)) -> s))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-80",
+          "split": "factorized-test",
+          "formula": "((((u -> q) & (r -> u)) -> (s -> u)) -> (((s -> u) -> ((s -> r) & r)) -> ((((s -> r) & r) -> s) -> (((u -> q) & (r -> u)) -> s))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 9,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "b0f7d12972fa86d6517fe825e7e182024d9b0d38d52bfa86767226a492bb6784",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23297566699329764,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q r s u : Prop) : ((((u \u2192 q) \u2227 (r \u2192 u)) \u2192 (s \u2192 u)) \u2192 (((s \u2192 u) \u2192 ((s \u2192 r) \u2227 r)) \u2192 ((((s \u2192 r) \u2227 r) \u2192 s) \u2192 (((u \u2192 q) \u2227 (r \u2192 u)) \u2192 s)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1130
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 9,
+        "inference_calls": 9,
+        "elapsed_seconds": 0.009552041010465473,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-81",
+      "formula": "((s -> s) -> ((s -> s) -> ((r -> s) -> ((s | (s | r)) -> s))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-81",
+          "split": "factorized-test",
+          "formula": "((s -> s) -> ((s -> s) -> ((r -> s) -> ((s | (s | r)) -> s))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => h13) (fun h14 => (Or.elim h14 (fun h19 => h19) (fun h20 => (h6 h20)))))))))",
+          "nodes": 12,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "090f3e00303dcc5195e06acbcbe3fb34d235fade80f4fdadad5ae99141bd9501",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23216016596416011,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s : Prop) : ((s \u2192 s) \u2192 ((s \u2192 s) \u2192 ((r \u2192 s) \u2192 ((s \u2228 (s \u2228 r)) \u2192 s)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => h13 ) ( fun h14 => ( Or.elim h14 ( fun h19 => h19 ) ( fun h20 => ( h6 h20 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1131
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => h13) (fun h14 => (Or.elim h14 (fun h19 => h19) (fun h20 => (h6 h20)))))))))"
+        ],
+        "nodes": 12,
+        "inference_calls": 12,
+        "elapsed_seconds": 0.006169916014187038,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-82",
+      "formula": "((s -> t) -> ((t -> u) -> ((u -> s) -> (s -> s))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-82",
+          "split": "factorized-test",
+          "formula": "((s -> t) -> ((t -> u) -> ((u -> s) -> (s -> s))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => h9))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "6275b2441fefbb2339d709af13cafcdbab3d2c7aad157bb9797d2e6f120404e5",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23025320802116767,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (s t u : Prop) : ((s \u2192 t) \u2192 ((t \u2192 u) \u2192 ((u \u2192 s) \u2192 (s \u2192 s)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => h9 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1132
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => h9))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.002685166022274643,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-83",
+      "formula": "((t -> ((u | s) & s)) -> ((u -> ((u | s) & s)) -> (((u | s) -> ((u | s) & s)) -> ((t | (u | (u | s))) -> ((u | s) & s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 17,
+        "inference_calls": 17,
+        "elapsed_seconds": 0.014069708005990833,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-84",
+      "formula": "((r -> u) -> ((s -> u) -> ((r -> u) -> ((r | (s | r)) -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-84",
+          "split": "factorized-test",
+          "formula": "((r -> u) -> ((s -> u) -> ((r -> u) -> ((r | (s | r)) -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 h22)) (fun h23 => (h0 h23)))))))))",
+          "nodes": 26,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "3ccd8785473240b879417f3f5047f188a1fcd1ebca29395f7235fbd2c1ead82b",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23275908402865753,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (r s u : Prop) : ((r \u2192 u) \u2192 ((s \u2192 u) \u2192 ((r \u2192 u) \u2192 ((r \u2228 (s \u2228 r)) \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => ( h0 h13 ) ) ( fun h14 => ( Or.elim h14 ( fun h22 => ( h3 h22 ) ) ( fun h23 => ( h0 h23 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1133
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 h22)) (fun h23 => (h0 h23)))))))))"
+        ],
+        "nodes": 26,
+        "inference_calls": 26,
+        "elapsed_seconds": 0.010645249974913895,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-85",
+      "formula": "((p -> p) -> ((p -> (p -> t)) -> (((p -> t) -> t) -> (p -> t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-85",
+          "split": "factorized-test",
+          "formula": "((p -> p) -> ((p -> (p -> t)) -> (((p -> t) -> t) -> (p -> t))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h3 h9 h9)))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "5c5b97b647e3fabff2ddc07f1cf8555949fe4ba15d68e168741413f7e3761d80",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23322191601619124,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p t : Prop) : ((p \u2192 p) \u2192 ((p \u2192 (p \u2192 t)) \u2192 (((p \u2192 t) \u2192 t) \u2192 (p \u2192 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h3 h9 h9 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1134
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h3 h9 h9)))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.004465750011149794,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-86",
+      "formula": "((r -> (s -> s)) -> ((r -> (s -> s)) -> ((p -> (s -> s)) -> ((r | (r | p)) -> (s -> s)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-86",
+          "split": "factorized-test",
+          "formula": "((r -> (s -> s)) -> ((r -> (s -> s)) -> ((p -> (s -> s)) -> ((r | (r | p)) -> (s -> s)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => h12)))))",
+          "nodes": 14,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c967de1e68e1483825a9b6e1bd6c185d5b66cb06c740630a6d3f447b31dd0284",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23415470804320648,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s : Prop) : ((r \u2192 (s \u2192 s)) \u2192 ((r \u2192 (s \u2192 s)) \u2192 ((p \u2192 (s \u2192 s)) \u2192 ((r \u2228 (r \u2228 p)) \u2192 (s \u2192 s))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( fun h12 => h12 ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1135
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => h12)))))"
+        ],
+        "nodes": 14,
+        "inference_calls": 14,
+        "elapsed_seconds": 0.00784554099664092,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-87",
+      "formula": "((p -> ((p | u) | p)) -> ((((p | u) | p) -> ((q & s) & (p & u))) -> ((((q & s) & (p & u)) -> u) -> (p -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-87",
+          "split": "factorized-test",
+          "formula": "((p -> ((p | u) | p)) -> ((((p | u) | p) -> ((q & s) & (p & u))) -> ((((q & s) & (p & u)) -> u) -> (p -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "db603acd00c89ea62c7447b098f662fbf34f5f71130faa3815111c8b1e0d7245",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23415804200340062,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s u : Prop) : ((p \u2192 ((p \u2228 u) \u2228 p)) \u2192 ((((p \u2228 u) \u2228 p) \u2192 ((q \u2227 s) \u2227 (p \u2227 u))) \u2192 ((((q \u2227 s) \u2227 (p \u2227 u)) \u2192 u) \u2192 (p \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1136
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.006317791005130857,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-88",
+      "formula": "((p -> r) -> (((q | (t | u)) -> r) -> (((p & (q -> t)) -> r) -> ((p | ((q | (t | u)) | (p & (q -> t)))) -> r))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-88",
+          "split": "factorized-test",
+          "formula": "((p -> r) -> (((q | (t | u)) -> r) -> (((p & (q -> t)) -> r) -> ((p | ((q | (t | u)) | (p & (q -> t)))) -> r))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 h22)) (fun h23 => (h0 (And.left h23))))))))))",
+          "nodes": 55,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "4092cb80c3d90ba106ff94d048cddddb9e44b4de940b8cc7d13a6a1d0ecadf68",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23441425000783056,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((p \u2192 r) \u2192 (((q \u2228 (t \u2228 u)) \u2192 r) \u2192 (((p \u2227 (q \u2192 t)) \u2192 r) \u2192 ((p \u2228 ((q \u2228 (t \u2228 u)) \u2228 (p \u2227 (q \u2192 t)))) \u2192 r)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => ( h0 h13 ) ) ( fun h14 => ( Or.elim h14 ( fun h22 => ( h3 h22 ) ) ( fun h23 => ( h0 ( And.left h23 ) ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1137
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 h22)) (fun h23 => (h0 (And.left h23))))))))))"
+        ],
+        "nodes": 55,
+        "inference_calls": 55,
+        "elapsed_seconds": 0.035254582995548844,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-89",
+      "formula": "((q -> s) -> ((s -> t) -> ((t -> t) -> (q -> t))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-89",
+          "split": "factorized-test",
+          "formula": "((q -> s) -> ((s -> t) -> ((t -> t) -> (q -> t))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h3 (h0 h9))))))",
+          "nodes": 7,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "4b2dfc55d4140ed4ef215ad2ae06dca2494a0d214b5b9589326b5a9c0fb8739c",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23302237497409806,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (q s t : Prop) : ((q \u2192 s) \u2192 ((s \u2192 t) \u2192 ((t \u2192 t) \u2192 (q \u2192 t)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h3 ( h0 h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1138
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h3 (h0 h9))))))"
+        ],
+        "nodes": 7,
+        "inference_calls": 7,
+        "elapsed_seconds": 0.0034334170049987733,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-90",
+      "formula": "(((t & r) -> ((q | r) -> s)) -> ((((p | t) -> q) -> ((q | r) -> s)) -> (((u -> q) -> ((q | r) -> s)) -> (((t & r) | (((p | t) -> q) | (u -> q))) -> ((q | r) -> s)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 200,
+        "inference_calls": 200,
+        "elapsed_seconds": 0.17780950001906604,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-91",
+      "formula": "(((u | p) -> t) -> ((t -> s) -> ((s -> (q -> t)) -> ((u | p) -> (q -> t)))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-91",
+          "split": "factorized-test",
+          "formula": "(((u | p) -> t) -> ((t -> s) -> ((s -> (q -> t)) -> ((u | p) -> (q -> t)))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => (h0 h9))))))",
+          "nodes": 10,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "e8445ffcdcfbbadddf588c1fdf21fe40cf35fc3e987bc84923d586ab91c6ecbc",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2330742499907501,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t u : Prop) : (((u \u2228 p) \u2192 t) \u2192 ((t \u2192 s) \u2192 ((s \u2192 (q \u2192 t)) \u2192 ((u \u2228 p) \u2192 (q \u2192 t))))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( fun h12 => ( h0 h9 ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1139
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (fun h12 => (h0 h9))))))"
+        ],
+        "nodes": 10,
+        "inference_calls": 10,
+        "elapsed_seconds": 0.0050020000198856,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-92",
+      "formula": "((((u -> u) -> (u & p)) -> (s & q)) -> ((t -> (s & q)) -> ((s -> (s & q)) -> ((((u -> u) -> (u & p)) | (t | s)) -> (s & q)))))",
+      "solved": false,
+      "attempts": [],
+      "generation": {
+        "proofs": [],
+        "nodes": 58,
+        "inference_calls": 58,
+        "elapsed_seconds": 0.04243929201038554,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-93",
+      "formula": "(((q | (p & s)) -> ((s | u) & s)) -> ((((s | u) & s) -> r) -> ((r -> u) -> ((q | (p & s)) -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-93",
+          "split": "factorized-test",
+          "formula": "(((q | (p & s)) -> ((s | u) & s)) -> ((((s | u) & s) -> r) -> ((r -> u) -> ((q | (p & s)) -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "c08a1dca926a170559ab2f88194bb264abdc548265568736bed37d79a0ab118d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23164762498345226,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r s u : Prop) : (((q \u2228 (p \u2227 s)) \u2192 ((s \u2228 u) \u2227 s)) \u2192 ((((s \u2228 u) \u2227 s) \u2192 r) \u2192 ((r \u2192 u) \u2192 ((q \u2228 (p \u2227 s)) \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1140
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.005158750049304217,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-94",
+      "formula": "(((q | (t -> t)) -> p) -> (((t -> t) -> p) -> (((s & p) -> p) -> (((q | (t -> t)) | ((t -> t) | (s & p))) -> p))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-94",
+          "split": "factorized-test",
+          "formula": "(((q | (t -> t)) -> p) -> (((t -> t) -> p) -> (((s & p) -> p) -> (((q | (t -> t)) | ((t -> t) | (s & p))) -> p))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 (Or.inr (fun h18 => h18)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "78b6fd8ba94d8dc7e6b075d60f6281fdd0524fc79c82916f0bd94e421d373c76",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23324304103152826,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q s t : Prop) : (((q \u2228 (t \u2192 t)) \u2192 p) \u2192 (((t \u2192 t) \u2192 p) \u2192 (((s \u2227 p) \u2192 p) \u2192 (((q \u2228 (t \u2192 t)) \u2228 ((t \u2192 t) \u2228 (s \u2227 p))) \u2192 p)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h0 ( Or.inr ( fun h18 => h18 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1141
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h0 (Or.inr (fun h18 => h18)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.00723883300088346,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-95",
+      "formula": "((u -> u) -> ((u -> p) -> ((p -> u) -> (u -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-95",
+          "split": "factorized-test",
+          "formula": "((u -> u) -> ((u -> p) -> ((p -> u) -> (u -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => h9))))",
+          "nodes": 5,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "5ed5ab612799c5884a8359338e27fbbdc31e520c5a532d19ec6c0ac0f9eb74be",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23215033300220966,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p u : Prop) : ((u \u2192 u) \u2192 ((u \u2192 p) \u2192 ((p \u2192 u) \u2192 (u \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => h9 ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1142
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => h9))))"
+        ],
+        "nodes": 5,
+        "inference_calls": 5,
+        "elapsed_seconds": 0.0023682499886490405,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-96",
+      "formula": "((r -> u) -> ((p -> u) -> ((t -> u) -> ((r | (p | t)) -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-96",
+          "split": "factorized-test",
+          "formula": "((r -> u) -> ((p -> u) -> ((t -> u) -> ((r | (p | t)) -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 h22)) (fun h23 => (h6 h23)))))))))",
+          "nodes": 21,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "158c7f155f7eea38e9c14d6be005c61177f02d7ef089846706e154d4dfc523f6",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23346929100807756,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r t u : Prop) : ((r \u2192 u) \u2192 ((p \u2192 u) \u2192 ((t \u2192 u) \u2192 ((r \u2228 (p \u2228 t)) \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => ( h0 h13 ) ) ( fun h14 => ( Or.elim h14 ( fun h22 => ( h3 h22 ) ) ( fun h23 => ( h6 h23 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1143
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => (h0 h13)) (fun h14 => (Or.elim h14 (fun h22 => (h3 h22)) (fun h23 => (h6 h23)))))))))"
+        ],
+        "nodes": 21,
+        "inference_calls": 21,
+        "elapsed_seconds": 0.010090292023960501,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-97",
+      "formula": "(((t & t) -> (u -> s)) -> (((u -> s) -> r) -> ((r -> p) -> ((t & t) -> p))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-97",
+          "split": "factorized-test",
+          "formula": "(((t & t) -> (u -> s)) -> (((u -> s) -> r) -> ((r -> p) -> ((t & t) -> p))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "9d6d37966e7912dc3cd5bee1e1b6860abdf308beefc2e013ad824c2b96336325",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.2303079590201378,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p r s t u : Prop) : (((t \u2227 t) \u2192 (u \u2192 s)) \u2192 (((u \u2192 s) \u2192 r) \u2192 ((r \u2192 p) \u2192 ((t \u2227 t) \u2192 p)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1144
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.005453749967273325,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    },
+    {
+      "task_id": "test-98",
+      "formula": "((p -> p) -> ((r -> p) -> ((q -> p) -> ((p | (r | q)) -> p))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-98",
+          "split": "factorized-test",
+          "formula": "((p -> p) -> ((r -> p) -> ((q -> p) -> ((p | (r | q)) -> p))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => h13) (fun h14 => (Or.elim h14 (fun h19 => (h3 h19)) (fun h20 => (h6 h20)))))))))",
+          "nodes": 16,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "451643f55dc9440a1e3098139bf898d2cc833436f02750f158190ad5a32e456c",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23217791703063995,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r : Prop) : ((p \u2192 p) \u2192 ((r \u2192 p) \u2192 ((q \u2192 p) \u2192 ((p \u2228 (r \u2228 q)) \u2192 p)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( Or.elim h9 ( fun h13 => h13 ) ( fun h14 => ( Or.elim h14 ( fun h19 => ( h3 h19 ) ) ( fun h20 => ( h6 h20 ) ) ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1145
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (Or.elim h9 (fun h13 => h13) (fun h14 => (Or.elim h14 (fun h19 => (h3 h19)) (fun h20 => (h6 h20)))))))))"
+        ],
+        "nodes": 16,
+        "inference_calls": 16,
+        "elapsed_seconds": 0.007766875030938536,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "nested_cases"
+    },
+    {
+      "task_id": "test-99",
+      "formula": "((t -> (q | p)) -> (((q | p) -> ((r & r) | t)) -> ((((r & r) | t) -> u) -> (t -> u))))",
+      "solved": true,
+      "attempts": [
+        {
+          "task_id": "test-99",
+          "split": "factorized-test",
+          "formula": "((t -> (q | p)) -> (((q | p) -> ((r & r) | t)) -> ((((r & r) | t) -> u) -> (t -> u))))",
+          "strategy": "factorized-neural",
+          "status": "verified",
+          "proof": "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))",
+          "nodes": 8,
+          "verification": {
+            "accepted": true,
+            "reason": "verified",
+            "source_hash": "f0966e507b27d182d17949892989c921d730b1c68a872480a612719895813d1d",
+            "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+            "elapsed": 0.23230258404510096,
+            "diagnostics": "'valentyn_candidate' does not depend on any axioms\n",
+            "source": "import Init\nset_option autoImplicit false\nset_option linter.unusedVariables false\ntheorem valentyn_candidate (p q r t u : Prop) : ((t \u2192 (q \u2228 p)) \u2192 (((q \u2228 p) \u2192 ((r \u2227 r) \u2228 t)) \u2192 ((((r \u2227 r) \u2228 t) \u2192 u) \u2192 (t \u2192 u)))) :=\n  ( fun h0 => ( fun h3 => ( fun h6 => ( fun h9 => ( h6 ( h3 ( h0 h9 ) ) ) ) ) ) )\n#print axioms valentyn_candidate\n"
+          },
+          "attempt_id": 1146
+        }
+      ],
+      "generation": {
+        "proofs": [
+          "(fun h0 => (fun h3 => (fun h6 => (fun h9 => (h6 (h3 (h0 h9)))))))"
+        ],
+        "nodes": 8,
+        "inference_calls": 8,
+        "elapsed_seconds": 0.005988541000988334,
+        "random_policy_seed": null,
+        "symbolic_solver_fallback": false
+      },
+      "symbolic_fallback": false,
+      "family": "long_chain"
+    }
+  ],
+  "scope": "Learned local action policy with typed inference rules; no calls to the symbolic search engine.",
+  "limitations": [
+    "Legality masks and conjunction projection supply symbolic structure.",
+    "Same typed environment must be used for untrained and random controls.",
+    "Synthetic family transfer is not novel mathematical discovery."
+  ],
+  "provenance": {
+    "valentyn_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "macOS-14.4-arm64-arm-64bit",
+    "implementation_digest": "1cf7681a51622f9dcc4b666d4cecbbed92bc3037f9735201c76dd7e7474069e8",
+    "lean_toolchain": "leanprover/lean4:v4.24.0"
+  }
+}
