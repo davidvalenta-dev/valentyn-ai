@@ -88,6 +88,7 @@ def parser() -> argparse.ArgumentParser:
     history = sub.add_parser("history")
     history.add_argument("--limit", type=int, default=10)
     sub.add_parser("report", help="Summarize symbolic and neural experiment archives")
+    sub.add_parser("arithmetic", help="Run the Lean-checked arithmetic curriculum")
     evaluation = sub.add_parser("evaluate", help="Evaluate the supplied learned state policy")
     evaluation.add_argument("--held-out", action="store_true", help="Use the fresh composition benchmark")
     evaluation.add_argument("--checkpoint", type=Path, default=Path("models/valentyn-state"))
@@ -126,6 +127,18 @@ def main(argv: list[str] | None = None) -> int:
             args.split, args.limit, args.retrieval_baseline, args.random_policy_seed = "test", None, False, None
             args.max_tokens = 100
             return run(args, project, state)
+        if args.command == "arithmetic":
+            from .arithmetic import generate_curriculum, lean_verify_identity
+            results = [lean_verify_identity(project, identity) for identity in generate_curriculum()]
+            report = {"kind": "arithmetic_curriculum", "tasks": len(results),
+                      "verified": sum(row["accepted"] for row in results),
+                      "results": results,
+                      "scope": "Closed natural-number evaluation and definitionally equal identities; no research mathematics."}
+            destination = state / "arithmetic-report.json"
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(json.dumps(report, indent=2) + "\n")
+            print(json.dumps({k: report[k] for k in ("kind", "tasks", "verified", "scope")}, indent=2))
+            return 0 if report["verified"] == report["tasks"] else 1
         if args.command == "prove":
             if args.theorem:
                 if args.formula:
